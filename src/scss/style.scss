@@ -14,6 +14,7 @@ $light-green: #559479;
 $pink: #e29aa8;
 $light-pink: #eec2cb;
 $grey-text: #898485;
+$grey-bg: #F4F4F4;
 $bgFon: rgb(244, 244, 244);
 
 // ---------------------------------- fonts ---------------------------------
@@ -36,12 +37,16 @@ html.lock body {
 }
 html,
 body {
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 // main
 main {
     position: relative;
+}
+
+section {
+    margin-bottom: 12rem;
 }
 
 .wrapper {
