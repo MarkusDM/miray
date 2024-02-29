@@ -25,7 +25,7 @@ body {
     height: 100%;
     font-size: 1.8rem;
     color: $fontColor; // цвет по умолчанию текста по сайту
-    background-color: $bgColor;
+    background-color: $white;
 }
 
 input,
@@ -102,7 +102,7 @@ ul li {
 }
 
 .container {
-    width: 156rem;
+    width: 168rem;
     margin: 0 auto;
 }
 
@@ -119,8 +119,8 @@ input[type='number'] {
 svg,
 img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
 }
 
 @media (min-width: 1920px) {
