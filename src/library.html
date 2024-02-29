@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главная</title>
+  </head>
+  <body>
+    <div class="wrapper home-page">
+      <include src="./components/header.html"></include>
+      <main>
+        <form data-dev action="#" class="form">
+          <div class="form__fields">
+            <div class="input txt16">
+             
+              <input
+                id="name"
+                data-validate
+                data-required
+                autocomplete="off"
+                type="text"
+                name="form[]"
+                placeholder="Имя"
+                class="input__field" />
+                <label for="name" class="input__label" data-hint="*Заполните поле"></label
+                    >
+            </div>
+            <div class="input txt16">
+              <input
+                id="email"
+                data-validate
+                data-required="email"
+                autocomplete="off"
+                type="email"
+                name="form[]"
+                placeholder="E-mail"
+                class="input__field" />
+                <label
+                for="email"
+                class="input__label"
+                data-hint="*Введите корректный e-mail"></label
+              >
+            </div>
+          </div>
+          <button type="submit" class="form__btn btn btn_primary">
+            Отправить
+          </button>
+        </form>
+        <div data-tabs class="tabs">
+          <nav data-tabs-titles class="tabs__navigation">
+            <button type="button" class="tabs__title _is-active">Таб №1</button>
+            <button type="button" class="tabs__title">Таб №2</button>
+            <button type="button" class="tabs__title">Таб №3</button>
+          </nav>
+          <div data-tabs-body class="tabs__content">
+            <div class="tabs__body">Содержимое первого таба</div>
+            <div class="tabs__body">Содержимое второго таба</div>
+            <div class="tabs__body">Содержимое третьего таба</div>
+          </div>
+        </div>
+        <div data-accordion data-accordion-single class="accordion">
+          <div class="accordion__item">
+            <button type="button" data-accordion-item class="accordion__title">
+              Заголовок №1
+            </button>
+            <div class="accordion__body">Контент №1</div>
+          </div>
+
+          <div class="accordion__item">
+            <button type="button" data-accordion-item class="accordion__title">
+              Заголовок №2
+            </button>
+            <div class="accordion__body">Контент №2</div>
+          </div>
+        </div>
+        <div data-select-single class="dropdowns">
+          <select data-show-selection name="form[]">
+            <option value="1" selected>Пункт №1</option>
+            <option value="2">Пункт №2</option>
+            <option value="3">Пункт №3</option>
+            <option value="4">Пункт №4</option>
+          </select>
+          <select data-show-selection data-sel-scroll name="form[]">
+            <option value="1" selected>Пункт №1</option>
+            <option value="2">Пункт №2</option>
+            <option value="3">Пункт №3</option>
+            <option value="4">Пункт №4</option>
+            <option value="5">Пункт №5</option>
+            <option value="6">Пункт №6</option>
+            <option value="7">Пункт №7</option>
+            <option value="8">Пункт №8</option>
+          </select>
+          <select data-sel-label="Выбор:" data-show-selection name="form[]">
+            <option value="1" selected>Пункт №1</option>
+            <option value="2">Пункт №2</option>
+            <option value="3">Пункт №3</option>
+            <option value="4">Пункт №4</option>
+          </select>
+        </div>
+      </main>
+      <include src="./components/footer.html"></include>
+    </div>
+  </body>
+</html>

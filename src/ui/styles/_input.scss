@@ -1,0 +1,89 @@
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+  color: $fontColor;
+}
+
+.input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3rem;
+  background-color: $white;
+  font-size: 1.6rem;
+  color: $textGray;
+  @media (max-width: 48em) {
+    row-gap: 1.6rem;
+  }
+
+  // .input__field
+
+  &__field {
+    padding: 1.6rem 2rem;
+    display: block;
+    width: 100%;
+    background-color: $white;
+    line-height: 1;
+    border: 1px solid transparent;
+    border-radius: 3.2rem;
+    transition: color 0.3s ease, border 0.3s ease;
+    &::placeholder {
+      color: $textGray;
+      transition: color 0.3s ease;
+    }
+
+    @media (max-width: 48em) {
+      padding: 2.4rem 3.6rem;
+      border-radius: 3.2rem;
+    }
+  }
+
+  // .input__label
+
+  &__label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 3rem;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    font-weight: 400;
+    
+  }
+
+  &._has-focus {
+    .input__field {
+      border: 1.5px solid rgb(226, 154, 168);
+      color: $fontColor;
+    }
+  }
+  &._has-error {
+    .input__label {
+      color: transparent;
+      &::after {
+        content: attr(data-hint);
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $red;
+        white-space: nowrap;
+      }
+    }
+    .input__field {
+      border: 1px solid $red;
+      color: $red;
+      &::placeholder {
+        color: $red;
+      }
+    }
+  }
+}

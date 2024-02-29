@@ -1,0 +1,91 @@
+// typography
+@import './typo';
+
+// input
+@import './input';
+
+// select
+@import './select';
+
+// accordion
+@import './accordion';
+
+// ---------------------------- для демонстрации ---------------------------
+
+.form {
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+  padding: 5rem;
+  background-color: $bgFon;
+  border-radius: 6rem;
+  // .form__fields
+
+  &__fields {
+    display: flex;
+    column-gap: 2rem;
+  }
+}
+
+.btn {
+  padding: 1.6rem 3.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1.6rem;
+  border-radius: 10rem;
+  color: $white;
+  background-color: $red;
+  font-size: 1.8rem;
+  &:hover {
+    background-color: $green;
+    color: $white;
+    transition: background-color 0.2s ease-in-out;
+  }
+}
+
+
+.btn.disabled {
+  background-color: $bgFon;
+  color: $white;
+}
+
+.btn.white {
+  background-color: $white;
+  color:$green;
+}
+
+.tabs {
+  margin: 6rem auto;
+  max-width: 80rem;
+
+  // .tabs__navigation
+
+  &__navigation {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem;
+  }
+
+  // .tabs__body
+
+  &__body {
+    padding: 3rem;
+    border-radius: 3rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.dropdowns {
+  margin: 3rem auto;
+  max-width: 80rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+// -------------------------------------------------------------------------
