@@ -10,7 +10,7 @@
   // .dropdown__label
 
   &__label {
-    color: $lightGray;
+    color: $grey-text;
   }
 }
 
@@ -224,7 +224,7 @@
     &:not(&._is-filled, &._is-opened) {
       .select__value._select-label {
         &::before {
-          color: $red;
+          color: $pink;
         }
       }
     }

@@ -28,7 +28,7 @@
         transform: rotate(-90deg);
       }
       .arr {
-        background-color: $blue;
+        background-color: $pink;
       }
     }
     .arr {
@@ -37,7 +37,7 @@
       height: 5rem;
       @media (any-hover: hover) {
         &:hover {
-          background-color: $blue;
+          background-color: $pink;
         }
       }
     }
