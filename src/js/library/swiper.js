@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 document.addEventListener('DOMContentLoaded', () => {
 
     
-    const saleSwiper = document.querySelector('.sale__swiper');
+const saleSwiper = document.querySelector('.sale__swiper');
     if (saleSwiper) {
         // Initialize Swiper inside the DOMContentLoaded event listener
         new Swiper(saleSwiper, {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pagination: {
                 el: '.sale__pagination-bullets',
                 clickable: true,
-                dynamicBullets: true
+               
             },
         });
     }

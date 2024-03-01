@@ -1,0 +1,63 @@
+.sale-card {
+    width: 53rem;
+    border-radius: 2.4rem;
+    padding: 2rem;
+    background-color: $bgFon;
+    display: flex;
+    justify-content: space-between;
+    &__image {
+        width: 23.6rem;
+        height: 20rem;
+        border-radius: 1.6rem;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1.6rem;
+        }
+    }
+
+    &__inner {
+        width: 23.6rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__percent {
+        width: 100%;
+        font-size: 4.8rem;
+        font-weight: 600;
+        color: $pink;
+        line-height: 110%;
+        letter-spacing: 4%;
+        position: relative;
+        border-bottom: 1.5px solid rgb(43, 86, 68);
+        padding-bottom: 1rem;
+        margin-bottom: 1.2rem;
+        &::before {
+            position: absolute;
+            content:'';
+            width: 3.2rem;
+            height: 3.2rem;
+            background-image: url(../assets/images/sale/arrow.svg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+    }
+
+    &__date {
+        color: $grey-text;
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+
+    &__text {
+        margin-top:  auto;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 120%;
+    }
+}
