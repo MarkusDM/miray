@@ -1,0 +1,108 @@
+.footer {
+    background-color: $grey-bg;
+    // .footer__inner
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+        padding: 12rem 0 6rem;
+    }
+    // .footer__main
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        gap: 16rem;
+        min-height: 30.2rem;
+    }
+    // .footer__block
+    &__block {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        max-width: 30rem;
+        &--logo {
+            width: 29.6rem;
+        }
+        &--info {
+            width: 23.4rem;
+        }
+
+        h6 {
+            color: $black;
+        }
+        // .footer__block-info
+        &-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
+        // .footer__block-icon
+        &-icon {
+            width: 2.8rem;
+            height: 2.8rem;
+        }
+        // .footer__block-text
+        &-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+    }
+    // .footer__logo
+    &__logo {
+        width: 100%;
+        margin-bottom: 1.6rem;
+        a {
+            display: block;
+        }
+    }
+    // .footer__subscribe
+    &__subscribe .btn {
+        column-gap: 2rem;
+        padding: 1.5rem 3.2rem 1.6rem 1.55rem;
+        display: flex;
+        font-size: 1.6rem;
+        justify-content: flex-start;
+        width: max-content;
+        background: #27a6e5;
+
+        svg {
+            width: 3.2rem;
+            height: 3.2rem;
+        }
+    }
+    // .footer__pay
+    &__pay {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: auto;
+    }
+    // .footer__nav-list
+    &__nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        li {
+            color: $grey-text;
+            width: max-content;
+        }
+    }
+    // .footer__bottom
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 2.4rem;
+
+        border-top: 0.15rem solid $grey-text;
+        color: $grey-text;
+    }
+}
+
+.social-list {
+    display: flex;
+    align-items: center;
+    margin-top: 0.8rem;
+    gap: 0.8rem;
+}
