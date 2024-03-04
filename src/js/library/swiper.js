@@ -4,11 +4,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-
 document.addEventListener('DOMContentLoaded', () => {
-
-    
-const saleSwiper = document.querySelector('.sale__swiper');
+    const saleSwiper = document.querySelector('.sale__swiper');
     if (saleSwiper) {
         // Initialize Swiper inside the DOMContentLoaded event listener
         new Swiper(saleSwiper, {
@@ -19,13 +16,12 @@ const saleSwiper = document.querySelector('.sale__swiper');
             loop: true,
             speed: 300,
             mousewheel: {
-                invert: false,
+                invert: false
             },
             pagination: {
                 el: '.sale__pagination-bullets',
-                clickable: true,
-               
-            },
+                clickable: true
+            }
         });
     }
 });
