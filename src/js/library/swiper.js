@@ -20,8 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             pagination: {
                 el: '.sale__pagination-bullets',
-                clickable: true,
-                dynamicBullets: true
+                clickable: true
             }
         });
     }
