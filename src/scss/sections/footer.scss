@@ -58,7 +58,7 @@
     }
     // .footer__subscribe
     &__subscribe .btn {
-        column-gap: 2rem;
+        column-gap: 1rem;
         padding: 1.5rem 3.2rem 1.6rem 1.55rem;
         display: flex;
         font-size: 1.6rem;
@@ -66,7 +66,7 @@
         width: max-content;
         background: #27a6e5;
 
-        svg {
+        img {
             width: 3.2rem;
             height: 3.2rem;
         }
