@@ -31,6 +31,10 @@ import './utils/modals.js';
 
 import './library/swiper.js';
 
+//input-mask
+
+import './library/input-mask.js';
+
 // --------------------------------------------------------------------------
 
 import './dev/vzmsk1.js';

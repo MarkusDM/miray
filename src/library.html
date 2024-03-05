@@ -11,7 +11,7 @@
             <main>
                 <form data-dev action="#" class="form">
                     <div class="form__fields">
-                        <div class="input txt16">
+                        <div class="input text__regular-16">
                             <input
                                 id="name"
                                 data-validate
@@ -24,7 +24,7 @@
                             />
                             <label for="name" class="input__label" data-hint="*Заполните поле"></label>
                         </div>
-                        <div class="input txt16">
+                        <div class="input text__regular-16">
                             <input
                                 id="email"
                                 data-validate
@@ -267,15 +267,113 @@
 
                     <button class="btn-secondary">
                         Все акции
-
                         <img src="./assets/images/icons/arrow-right.svg" alt="" />
                     </button>
 
                     <button class="btn-secondary">
                         <img src="./assets/images/icons/arrow-left.svg" alt="" />
-
                         Назад
                     </button>
+                    <button class="recommendations__card-button btn__card">
+                        <span> В корзину </span>
+
+                        <svg
+                            width="60"
+                            height="60"
+                            viewBox="0 0 60 60"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <rect width="60" height="60" rx="30" fill="#F4F4F4" />
+                            <path
+                                d="M25.5 25.6787V24.7087C25.5 22.4587 27.31 20.2487 29.56 20.0387C32.24 19.7787 34.5 21.8887 34.5 24.5187V25.8987"
+                                stroke="#1D1D1B"
+                                stroke-width="1.5"
+                                stroke-miterlimit="10"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M27.0008 40.0088H33.0008C37.0208 40.0088 37.7408 38.3988 37.9508 36.4388L38.7008 30.4388C38.9708 27.9988 38.2708 26.0088 34.0008 26.0088H26.0008C21.7308 26.0088 21.0308 27.9988 21.3008 30.4388L22.0508 36.4388C22.2608 38.3988 22.9808 40.0088 27.0008 40.0088Z"
+                                stroke="#1D1D1B"
+                                stroke-width="1.5"
+                                stroke-miterlimit="10"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M33.4945 30.0087H33.5035"
+                                stroke="#1D1D1B"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M26.4945 30.0087H26.5035"
+                                stroke="#1D1D1B"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </button>
+                </div>
+
+                <a href="#" class="link" style="margin: 0 auto 4.8rem">
+                    <span>Все категории</span>
+                    <svg viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16.9998 10.7498L2.99976 10.7498"
+                            stroke="#1D1D1B"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M14.3745 13.375L11.7495 16"
+                            stroke="#1D1D1B"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M17 10.75L11.75 5.5"
+                            stroke="#1D1D1B"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </a>
+
+                <div class="popular__title section-heading" style="width: fit-content; margin: 0 auto 4.8rem">
+                    <h2 class="h h_h1">Популярные категории</h2>
+                    <a href="#" class="link">
+                        <span>Все категории</span>
+                        <svg viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.9998 10.7498L2.99976 10.7498"
+                                stroke="#1D1D1B"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M14.3745 13.375L11.7495 16"
+                                stroke="#1D1D1B"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M17 10.75L11.75 5.5"
+                                stroke="#1D1D1B"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </a>
                 </div>
             </main>
             <include src="./components/footer.html"></include>

@@ -14,7 +14,7 @@ $light-green: #559479;
 $pink: #e29aa8;
 $light-pink: #eec2cb;
 $grey-text: #898485;
-$grey-bg: #F4F4F4;
+$grey-bg: #f4f4f4;
 $bgFon: rgb(244, 244, 244);
 
 // ---------------------------------- fonts ---------------------------------
@@ -52,6 +52,27 @@ section {
 .wrapper {
     margin: 0 auto;
     max-width: 1920px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    border-radius: 50%;
+    background: transparent;
+    width: 5.6rem !important;
+    height: 5.6rem !important;
+    position: initial !important;
+    margin: 0 !important;
+    border: 0.1rem solid $green;
+
+    &::after {
+        display: none;
+        visibility: hidden;
+    }
+
+    svg {
+        width: 2.5rem !important;
+        height: 1.9rem !important;
+    }
 }
 
 // --------------------------------------------------------------------------

@@ -1,0 +1,42 @@
+.news {
+    &__card {
+        padding: 3.2rem;
+        background-color: $grey-bg;
+        border-radius: 3rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        &-image {
+            border-radius: 2rem;
+            height: 38rem;
+            margin-bottom: 2.4rem;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+                border-radius: inherit;
+            }
+        }
+
+        &-publication {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.6rem;
+            gap: 1rem;
+
+            svg {
+                @include sizes(3.2rem, 3.2rem);
+            }
+        }
+
+        &-title {
+            margin-bottom: 0.8rem;
+        }
+
+        &-description {
+            @include clamp-text(3);
+        }
+    }
+}
