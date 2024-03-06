@@ -3,8 +3,42 @@ import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+import { remToPx } from '../utils/utils';
 
 document.addEventListener('DOMContentLoaded', () => {
+    const swiperSettings = (initializer, payload) => {
+        if (!document.querySelector(initializer)) return;
+
+        new Swiper(`${initializer}-swiper`, {
+            modules: [Navigation, Pagination],
+            spaceBetween: remToPx(4),
+            speed: 1200,
+            loop: true,
+            pagination: {
+                el: `${initializer} .swiper-pagination`,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '"></span>';
+                },
+                clickable: true
+            },
+            navigation: {
+                nextEl: `${initializer} .swiper-button-next`,
+                prevEl: `${initializer} .swiper-button-prev`
+            },
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 1
+                },
+                768: {
+                    slidesPerView: 4
+                }
+            },
+            ...payload
+        });
+    };
+
     const saleSwiper = document.querySelector('.sale__swiper');
     if (saleSwiper) {
         // Initialize Swiper inside the DOMContentLoaded event listener
@@ -13,8 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
             slidesPerView: 1,
             spaceBetween: 20,
             effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            speed: 500,
             loop: true,
-            speed: 300,
             mousewheel: {
                 invert: false
             },
@@ -24,4 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    swiperSettings('.recommendations', {});
 });

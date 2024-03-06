@@ -1,0 +1,56 @@
+.receipts{
+  &__card {
+    &-top {
+      height: 39rem;
+      background-color: #d9d9d9;
+      border-radius: 3rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 3.2rem;
+
+      &-image {
+        height: 100%;
+        width: 100%;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &-counter {
+        border-radius: 50%;
+        background-color: $pink;
+        padding-top: 4.5rem;
+        padding-right: 4.5rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        position: absolute;
+        left: -7.4rem;
+        bottom: -10rem;
+        font-size: 1.8rem;
+        color: $white;
+        @include sizes(21rem, 21rem);
+      }
+    }
+
+    &-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-title {
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 120%;
+        letter-spacing: 0.04em;
+        max-width: 26.4rem;
+      }
+
+      &-icon {
+        @include sizes(3.2rem, 3.2rem);
+      }
+    }
+  }
+}

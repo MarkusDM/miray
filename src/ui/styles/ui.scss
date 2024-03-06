@@ -19,6 +19,21 @@
 // breadcrumbs
 @import './breadcrumbs';
 
+// navigation-buttons
+@import './navigation-buttons';
+
+// news-card
+@import './news-card';
+
+// receipts-card
+@import './receipts-card';
+
+// recommendations-card
+@import './recommendations-card';
+
+// variants-card
+@import './variants-card';
+
 // ---------------------------- для демонстрации ---------------------------
 
 .form {
@@ -38,19 +53,86 @@
     }
 }
 
+.input{
+    &.textarea {
+        textarea {
+            height: 11.2rem;
+            resize: none;
+        }
+    }
+}
 
 .link {
     display: flex;
-    align-items:center;
+    align-items: center;
+    gap: 0.4rem;
+    position: relative;
+    width: fit-content;
+
+    @include hover{
+        &:not(._no-hover) {
+            &::after {
+                max-width: 100%;
+            }
+        }
+    }
+
+    &::after {
+        @include pseudo {
+            bottom: -0.4rem;
+            width: 100%;
+            border-bottom: 0.1rem solid $green;
+            max-width: 0;
+            transition: 0.3s max-width ease;
+        }
+    }
+
     span {
         display: block;
         font-size: 1.6rem;
-        font-weight: 400;
-        margin-right: 1.6rem;
+        color: $green;
     }
+
     svg {
-        width: 2rem;
-        height: 2rem;
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4.8rem;
+
+    .link {
+        gap: 1.6rem;
+    }
+
+    &.subtitle {
+        .subtitle {
+            &__text {
+                display: flex;
+                flex-direction: column;
+
+                [class*='text-subtext'] {
+                    display: flex;
+                    align-items: flex-end;
+                    gap: 2rem;
+                    margin-top: -0.5rem;
+
+                    span {
+                        margin-left: 3rem;
+                    }
+
+                    small {
+                        max-width: 7.3rem;
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -181,6 +263,72 @@
             @include small-tablet {
                 width: 4rem;
                 height: 4rem;
+            }
+        }
+    }
+
+    &__card {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        justify-content: space-between;
+        transition:
+            0.2s background-color ease,
+            0.2s border ease;
+        border: 0.1rem solid transparent;
+        background-color: $white;
+        padding: 0.8rem;
+        border-radius: 6rem;
+
+        span {
+            font-size: 1.8rem;
+            color: #1d1d1b;
+            display: block;
+            width: 100%;
+            text-align: center;
+            transition: 0.2s color ease;
+        }
+
+        svg {
+            @include sizes(6rem, 6rem);
+
+            path,
+            rect {
+                transition: 0.2s stroke ease;
+            }
+        }
+
+        @include hover{
+            background-color: $green;
+
+            span {
+                color: $white;
+            }
+
+            svg {
+                path {
+                    stroke: $green;
+                }
+            }
+        }
+
+        &:active {
+            border-color: $green;
+            background-color: $white;
+
+            span {
+                color: #1d1d1b;
+            }
+
+            svg {
+                path {
+                    stroke: $white;
+                }
+
+                rect {
+                    fill: $green;
+                }
             }
         }
     }

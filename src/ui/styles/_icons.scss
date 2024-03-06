@@ -13,7 +13,7 @@
         }
     }
 
-    &:hover {
+    @include hover{
         svg {
             rect {
                 fill: var(--color);
