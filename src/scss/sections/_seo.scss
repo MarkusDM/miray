@@ -1,0 +1,36 @@
+.seo {
+    &__content {
+        display: flex;
+        gap: 4rem;
+    }
+
+    &__text {
+        flex: 1 1 50%;
+
+        p {
+            &:not(:last-of-type) {
+                margin-bottom: 2.5rem;
+            }
+        }
+    }
+
+    &__showmore-button {
+        margin-top: 2.8rem;
+    }
+
+    &__title {
+        margin-bottom: 4.4rem;
+    }
+
+    &__image {
+        flex: 1 1 50%;
+        border-radius: 3.6rem;
+        height: 44rem;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            border-radius: inherit;
+        }
+    }
+}

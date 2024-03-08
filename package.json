@@ -51,6 +51,7 @@
     "inputmask": "^5.0.8",
     "jquery": "^3.7.1",
     "jsdom": "^22.1.0",
+    "nouislider": "^15.7.1",
     "simplebar": "^6.2.5",
     "swiper": "^11.0.7"
   }
