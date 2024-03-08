@@ -94,6 +94,7 @@ input:focus {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    width: fit-content;
 
     @include small-tablet{
         gap: 1.6rem;
