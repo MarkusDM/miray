@@ -1,0 +1,165 @@
+.catalog {
+    &__title {
+        margin-bottom: 6rem;
+    }
+
+    &__content {
+        position: relative;
+
+        &::after {
+            @include pseudo {
+                left: -32rem;
+                bottom: -57rem;
+                @include sizes(71rem, 71rem);
+                background-color: rgba($white, 0.2);
+                border-radius: 50%;
+            }
+        }
+
+        &::before {
+            @include pseudo {
+                left: 71rem;
+                top: -43rem;
+                @include sizes(73rem, 73rem);
+                background-color: rgba($white, 0.2);
+                border-radius: 50%;
+                z-index: 2;
+            }
+        }
+    }
+
+    &__banner {
+        border-radius: 4rem;
+        background-color: $light-green;
+        padding: 6.6rem 4.8rem;
+        position: relative;
+        color: $white;
+        overflow: hidden;
+        margin-bottom: 6rem;
+
+        &-text {
+            max-width: 76.2rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        &-poster {
+            position: absolute;
+            right: -9.6rem;
+            height: 100%;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            @include sizes(76rem, 57rem);
+            z-index: 2;
+
+            img {
+                border-radius: inherit;
+                object-fit: contain;
+                height: 100%;
+            }
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6rem 4rem;
+    }
+
+    &__card {
+        padding: 3.2rem;
+        border-radius: 3rem;
+        background-color: $grey-bg;
+        display: flex;
+        flex-direction: column;
+
+        &-image {
+            border-radius: 2rem;
+            height: 43.6rem;
+            margin-bottom: 3.2rem;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+                border-radius: inherit;
+            }
+        }
+
+        &-title {
+            font-weight: 500;
+            font-size: 2.4rem;
+            line-height: 120%;
+            letter-spacing: 0.04em;
+            margin-bottom: 1.2rem;
+        }
+
+        &-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &-link {
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+
+        &-detailed {
+            padding: 3.2rem;
+            border-radius: 3rem;
+            background-color: $light-green;
+            height: 100%;
+            color: $white;
+
+            &-heading {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-bottom: 2.4rem;
+                border-bottom: 0.1rem solid $white;
+                margin-bottom: 2.4rem;
+                width: 100%;
+
+                &-title {
+                    font-weight: 500;
+                    font-size: 2.4rem;
+                    line-height: 120%;
+                    letter-spacing: 0.04em;
+                    color: $white;
+                }
+
+                &-icon {
+                    @include sizes(2.8rem, 2.8rem);
+
+                    svg {
+                        width: 100%;
+                        height: 100%;
+
+                        path {
+                            stroke: $white
+                        }
+                    }
+                }
+            }
+
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+
+            &-item {
+                a {
+                    display: inline-block;
+                    width: fit-content;
+                }
+            }
+        }
+    }
+}
