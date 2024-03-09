@@ -1,0 +1,79 @@
+.cooperation {
+    &__title {
+        margin-bottom: 6rem;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__text {
+        max-width: 88.8rem;
+        width: 100%;
+    }
+
+    &__description {
+        color: $grey-text;
+
+        &:not(:last-child) {
+            margin-bottom: 3.2rem;
+        }
+    }
+
+    &__promotion {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        max-width: 67.7rem;
+        width: 100%;
+
+        &-top {
+            display: flex;
+            gap: 4rem;
+        }
+
+        &-block {
+            background-color: $grey-bg;
+            border-radius: 2.4rem;
+            position: relative;
+
+            &-subtitle {
+                color: $grey-text;
+            }
+
+            &:not(.--image) {
+                padding: 4.7rem 3.2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+                flex: 0 1 39.2rem;
+            }
+
+            &.--image {
+                flex: 0 1 24.6rem;
+            }
+
+            &-image {
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+            }
+        }
+
+        &-card {
+            padding: 2.4rem;
+            background-color: $light-green;
+            border-radius: 2.4rem;
+            color: $white;
+
+            &-text {
+                max-width: 37.5rem;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+            }
+        }
+    }
+}
