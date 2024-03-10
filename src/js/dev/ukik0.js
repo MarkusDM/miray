@@ -131,4 +131,22 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    if (document.querySelector('.addiction-swiper')) {
+        Array.from(document.querySelectorAll('.basket__card-addiction-heading'), (button) => {
+            button.addEventListener('click', () => {
+                const parent = button.parentElement;
+
+                parent.classList.toggle('--active');
+            })
+        })
+
+        Array.from(document.querySelectorAll('.basket__detailed-order-content-item-heading'), (button) => {
+            button.addEventListener('click', () => {
+                const parent = button.parentElement;
+
+                parent.classList.toggle('--active');
+            })
+        })
+    }
 });
