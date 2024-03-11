@@ -1,0 +1,46 @@
+.feature {
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__poster {
+        @include sizes(67.7rem, 53.2rem);
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &__text {
+        max-width: 67.7rem;
+        width: 100%;
+        margin-right: 14.3rem;
+    }
+
+    &__title {
+        margin-bottom: 6rem;
+    }
+
+    &__description {
+        color: $grey-text;
+
+        span {
+            color: $light-green;
+            font-weight: 600;
+        }
+
+        strong {
+            color: $fontColor;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        &:last-of-type {
+            margin-bottom: 6rem;
+        }
+    }
+}

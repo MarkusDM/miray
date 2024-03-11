@@ -281,7 +281,22 @@
                 }
             }
 
-            &.--active, &:hover {
+            &.--active {
+                svg {
+                    path {
+                        &:first-child{
+                            fill: $pink;
+                            stroke: $pink;
+                        }
+
+                        &:last-child{
+                            fill: $pink;
+                        }
+                    }
+                }
+            }
+
+            @include hover{
                 svg {
                     path {
                         &:first-child{

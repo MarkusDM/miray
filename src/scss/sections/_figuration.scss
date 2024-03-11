@@ -1,0 +1,104 @@
+.figuration {
+    &__title {
+        margin-bottom: 2rem;
+    }
+
+    &__subtitle {
+        display: block;
+        margin-bottom: 4.8rem;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+    }
+
+    &__item {
+        border-radius: 3.2rem;
+        padding: 3.2rem;
+        background-color: $grey-bg;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        overflow: hidden;
+
+        &::after {
+            @include pseudo {
+                background-color: $white;
+                width: 79.2rem;
+                height: 64.4rem;
+                z-index: -1;
+                border-radius: 50%;
+                opacity: .7;
+            }
+        }
+
+        &:nth-child(1) {
+            &::after {
+                left: -36.4rem;
+                top: -39.3rem;
+            }
+        }
+
+        &:nth-child(2) {
+            &::after {
+                bottom: -30rem;
+                right: -40.6rem;
+            }
+        }
+
+        &:nth-child(3) {
+            &::after {
+                top: -35.7rem;
+                right: -37.4rem;
+            }
+        }
+
+        &-icon {
+            display: block;
+            margin-left: auto;
+            @include sizes(6rem, 6rem);
+            margin-bottom: 2rem;
+        }
+
+        &-counter {
+            display: block;
+            padding-bottom: 1.2rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 0.1rem solid $fontColor;
+        }
+
+        &-description {
+            margin-bottom: 4rem;
+        }
+
+        &-bottom {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+
+            &-icon {
+                @include sizes(5.6rem, 5.6rem);
+
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $pink;
+
+                img {
+                    width: auto;
+                }
+            }
+        }
+
+        &-link {
+            width: fit-content;
+            padding: 1.65rem 9.1rem;
+            margin-top: auto;
+        }
+    }
+}
