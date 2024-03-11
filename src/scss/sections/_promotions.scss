@@ -1,0 +1,115 @@
+.promotions {
+    &__title {
+        margin-bottom: 6rem;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+
+    &__card {
+        padding: 2rem;
+        border-radius: 2.4rem;
+        display: flex;
+        gap: 2rem;
+        background-color: $grey-bg;
+
+        &-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 0.1rem solid $green;
+        }
+
+        &-discard {
+            color: $pink;
+        }
+
+        &-icon {
+            @include sizes(3.2rem, 3.2rem);
+        }
+
+        &-date {
+            display: block;
+            margin-bottom: 6.3rem;
+        }
+
+        &.--large {
+            grid-row: span 2;
+            background-color: $light-green;
+            padding: 5rem;
+            position: relative;
+            color: $white;
+            z-index: 2;
+            flex-direction: column;
+            gap: 0;
+            overflow: hidden;
+
+            &::after,
+            &::before {
+                @include pseudo {
+                    background-color: rgba($white, 0.2);
+                    border-radius: 50%;
+                    z-index: -2;
+                }
+            }
+
+            &::after {
+                @include sizes(32.9rem, 32.9rem);
+                left: -16.4rem;
+                top: -3.4rem;
+            }
+
+            &::before {
+                @include sizes(66rem, 66.2rem);
+                bottom: -15.2rem;
+                right: -19.4rem;
+            }
+
+            .promotions__card {
+                &-image {
+                    position: absolute;
+                    inset: 0;
+                    z-index: -1;
+                    max-width: 100%;
+                    height: 100%;
+                }
+
+                &-title {
+                    margin-bottom: 2rem;
+                    margin-top: auto;
+                }
+
+                &-description {
+                    margin-bottom: 4rem;
+                    font-size: 1.8rem;
+                }
+
+                &-link {
+                    width: fit-content;
+                }
+            }
+        }
+
+        &-description {
+            &:not(.--large &) {
+                @include clamp-text(3);
+            }
+        }
+
+        &-image {
+            @include sizes(36.4rem, 30.8rem);
+            border-radius: 1.6rem;
+
+            img {
+                border-radius: inherit;
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+    }
+}

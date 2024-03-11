@@ -1,0 +1,384 @@
+// typography
+@import './typo';
+
+// input
+@import './input';
+
+// select
+@import './select';
+
+// accordion
+@import './accordion';
+
+// icons
+@import './icons';
+
+// pagination
+@import './pagination';
+
+// breadcrumbs
+@import './breadcrumbs';
+
+// navigation-buttons
+@import './navigation-buttons';
+
+// news-card
+@import './news-card';
+
+// receipts-card
+@import './receipts-card';
+
+// recommendations-card
+@import './recommendations-card';
+
+// variants-card
+@import './variants-card';
+
+// showmore-button
+@import './showmore-button';
+
+// nouislider
+@import './nouislider';
+
+// ---------------------------- для демонстрации ---------------------------
+
+.form {
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+    padding: 5rem;
+    background-color: $bgFon;
+    border-radius: 6rem;
+    // .form__fields
+
+    &__fields {
+        display: flex;
+        column-gap: 2rem;
+    }
+}
+
+.input{
+    &.textarea {
+        textarea {
+            height: 11.2rem;
+            resize: none;
+        }
+    }
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    position: relative;
+    width: fit-content;
+
+    @include hover{
+        &:not(._no-hover) {
+            &::after {
+                max-width: 100%;
+            }
+        }
+    }
+
+    &::after {
+        @include pseudo {
+            bottom: -0.4rem;
+            left: 0;
+            width: 100%;
+            border-bottom: 0.1rem solid $green;
+            max-width: 0;
+            transition: 0.3s max-width ease;
+        }
+    }
+
+    span {
+        display: block;
+        font-size: 1.6rem;
+        color: $green;
+    }
+
+    svg {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4.8rem;
+
+    .link {
+        gap: 1.6rem;
+    }
+
+    &.subtitle {
+        .subtitle {
+            &__text {
+                display: flex;
+                flex-direction: column;
+
+                [class*='text-subtext'] {
+                    display: flex;
+                    align-items: flex-end;
+                    gap: 2rem;
+                    margin-top: -0.5rem;
+
+                    span {
+                        margin-left: 3rem;
+                    }
+
+                    small {
+                        max-width: 7.3rem;
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.btn {
+    padding: 1.5rem 3.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1.6rem;
+    border-radius: 10rem;
+    color: $white;
+    background-color: $pink;
+    font-size: 1.8rem;
+    transition:
+        background-color 0.3s ease,
+        0.3s color ease;
+    position: relative;
+
+    @include small-tablet {
+        padding: 2.4rem 6.4rem;
+        border-radius: 20rem;
+        font-size: 3rem;
+        line-height: 130%;
+    }
+
+    &:not(.--disabled) {
+        &:not(.--loading) {
+            @include hover {
+                background-color: $green;
+                color: $white;
+            }
+        }
+    }
+
+    &.--loading {
+        cursor: initial;
+
+        .loader {
+            width: 1.6rem;
+            height: 1.6rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+
+            @include small-tablet {
+                width: 3.2rem;
+                height: 3.2rem;
+            }
+
+            &::after {
+                @include pseudo {
+                    border: 0.2rem transparent solid;
+                    border-top: 0.2rem $white solid;
+                    border-right: 0.2rem $white solid;
+                    border-bottom: 0.2rem $white solid;
+                    border-radius: 50%;
+                    animation: spin 1.2s infinite linear;
+                    inset: 0;
+
+                    @include small-tablet {
+                        border: 0.4rem transparent solid;
+                        border-top: 0.4rem $white solid;
+                        border-right: 0.4rem $white solid;
+                        border-bottom: 0.4rem $white solid;
+                    }
+                }
+            }
+        }
+    }
+
+    &.--disabled {
+        cursor: not-allowed;
+        background-color: #d8d2d3;
+        color: $white;
+    }
+
+    &__white {
+        background-color: $white;
+        color: $green;
+
+        &.--loading {
+            .loader {
+                &::after {
+                    border: 0.2rem transparent solid;
+                    border-top: 0.2rem $green solid;
+                    border-right: 0.2rem $green solid;
+                    border-bottom: 0.2rem $green solid;
+
+                    @include small-tablet {
+                        border: 0.4rem transparent solid;
+                        border-top: 0.4rem $green solid;
+                        border-right: 0.4rem $green solid;
+                        border-bottom: 0.4rem $green solid;
+                    }
+                }
+            }
+        }
+    }
+
+    &-secondary {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        font-size: 1.6rem;
+        line-height: 120%;
+        color: #22614e;
+        padding: 1.3rem 1.6rem 1.4rem 2.4rem;
+        border: 0.1rem solid transparent;
+        transition: 0.3s border ease;
+        border-radius: 10rem;
+
+        @include small-tablet {
+            gap: 3.2rem;
+            font-size: 3rem;
+            line-height: 130%;
+            padding: 2.6rem 3.2rem 2.8rem 4.8rem;
+        }
+
+        @include hover {
+            border-color: $green;
+        }
+
+        img {
+            width: 2rem;
+            height: 2rem;
+
+            @include small-tablet {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+    }
+
+    &__card {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        justify-content: space-between;
+        transition:
+            0.2s background-color ease,
+            0.2s border ease;
+        border: 0.1rem solid transparent;
+        background-color: $white;
+        padding: 0.8rem;
+        border-radius: 6rem;
+
+        span {
+            font-size: 1.8rem;
+            color: #1d1d1b;
+            display: block;
+            width: 100%;
+            text-align: center;
+            transition: 0.2s color ease;
+        }
+
+        svg {
+            @include sizes(6rem, 6rem);
+
+            path,
+            rect {
+                transition: 0.2s all ease;
+            }
+        }
+
+        @include hover{
+            background-color: $green;
+
+            span {
+                color: $white;
+            }
+
+            svg {
+                path {
+                    stroke: $green;
+                }
+            }
+        }
+
+        &:active {
+            border-color: $green;
+            background-color: $white !important;
+
+            span {
+                color: #1d1d1b !important;
+            }
+
+            svg {
+                path {
+                    stroke: $white !important;
+                }
+
+                rect {
+                    fill: $green !important;
+                }
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.tabs {
+    margin: 6rem auto;
+    max-width: 80rem;
+
+    // .tabs__navigation
+
+    &__navigation {
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: center;
+        column-gap: 2rem;
+    }
+
+    // .tabs__body
+
+    &__body {
+        padding: 3rem;
+        border-radius: 3rem;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+.dropdowns {
+    margin: 3rem auto;
+    max-width: 80rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+// -------------------------------------------------------------------------

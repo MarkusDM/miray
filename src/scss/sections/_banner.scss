@@ -1,0 +1,80 @@
+.banner {
+    &__content {
+        padding: 7rem;
+        background: $light-green;
+        position: relative;
+        border-radius: 6rem;
+        overflow: hidden;
+        color: $white;
+
+        &::after {
+            @include pseudo {
+                left: -37rem;
+                bottom: -52rem;
+                @include sizes(71rem, 71rem);
+                background-color: rgba($white, 0.2);
+                border-radius: 50%;
+            }
+        }
+
+        &::before {
+            @include pseudo {
+                left: 61rem;
+                top: -49rem;
+                @include sizes(73rem, 73rem);
+                background-color: rgba($white, 0.2);
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+    }
+
+    &__description {
+        margin-bottom: 4rem;
+        max-width: 65rem;
+    }
+
+    &__info {
+        position: relative;
+        max-width: 96.6rem;
+        z-index: 1;
+
+        &-text {
+            max-width: 71.5rem;
+        }
+
+        &-offer {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            padding: 4.4rem 3.9rem;
+            border-radius: 50%;
+            background-color: $pink;
+            right: 0;
+            bottom: -2.8rem;
+            text-align: center;
+            align-items: center;
+            @include sizes(17rem, 17rem);
+            z-index: 1;
+        }
+    }
+
+    &__poster {
+        position: absolute;
+        right: -5.6rem;
+        height: 100%;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        @include sizes(80.4rem, 80.4rem);
+
+        img {
+            border-radius: inherit;
+            object-fit: contain;
+            height: 100%;
+        }
+    }
+}

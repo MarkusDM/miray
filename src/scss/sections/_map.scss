@@ -1,0 +1,213 @@
+.map {
+    // .map__inner
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+    }
+    // .map__content
+    &__content {
+        width: 100%;
+        height: 81.2rem;
+        overflow: hidden;
+        border-radius: 3rem;
+        position: relative;
+    }
+    // .map__canvas
+    &__canvas {
+        width: 100%;
+        height: 100%;
+    }
+    // .map__wrapper
+    &__wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 3.2rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    // .map__card
+    &__card {
+        width: 40rem;
+    }
+}
+.ymaps3x0--map-copyrights {
+    display: none !important;
+}
+
+.map-card {
+    &.hover {
+        .map-card__wrapper {
+            background-color: $light-green;
+            color: $white;
+        }
+        .map-card__header {
+            h6,
+            p {
+                color: $white;
+            }
+        }
+        .map-card__content-icon {
+            svg path {
+                fill: $white;
+            }
+        }
+        .map-card__footer {
+            display: block;
+        }
+    }
+    // .map-card__wrapper
+    &__wrapper {
+        padding: 3.2rem;
+        background-color: $white;
+        border-radius: 2.4rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+    }
+    // .map-card__header
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        line-height: 120%;
+
+        h6 {
+            font-weight: 600;
+            font-size: 2rem;
+            letter-spacing: 0.04em;
+            color: $black-secondary;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 1.6rem;
+            color: $black-secondary;
+        }
+    }
+    // .map-card__content
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    // .map-card__content-item
+    &__content-item {
+        display: flex;
+        align-items: center;
+        gap: 1.7rem;
+    }
+    // .map-card__content-icon
+    &__content-icon {
+        width: 2.8rem;
+        height: 2.8rem;
+        flex-shrink: 0;
+
+        svg path {
+            fill: $black-secondary;
+        }
+    }
+    // .map-card__footer
+    &__footer {
+        display: none;
+        position: relative;
+    }
+    // .map-card__button
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5rem;
+        padding: 1.4rem 2.4rem;
+        height: 5.6rem;
+        width: 100%;
+        background-color: $white;
+
+        span {
+            color: $black-secondary;
+            flex-shrink: 0;
+        }
+
+        svg {
+            width: 2.8rem;
+            height: 2.8rem;
+        }
+        .phone {
+            margin-right: 1rem;
+        }
+    }
+    // .map-card__list
+    &__list {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        display: none;
+    }
+}
+
+.marker {
+    width: fit-content;
+    cursor: pointer;
+
+    &__content {
+        will-change: transition;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        overflow: hidden;
+        transition: all 0.4s ease-in-out;
+        background-color: #fff;
+        border-radius: 10rem;
+        padding-right: 1.6rem;
+    }
+    &__text {
+        width: 100%;
+        font-size: 1.6rem;
+        line-height: 120%;
+        color: $black-secondary;
+
+        white-space: nowrap;
+        overflow: hidden;
+        transition: all 0.4s ease-in-out;
+    }
+    &__svg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 5rem;
+        height: 5rem;
+        transition: all 0.4s ease-in-out;
+        img {
+            width: 3.5rem;
+            height: 3rem;
+            transition: all 0.4s ease-in-out;
+        }
+    }
+    &.hover {
+        .marker__content {
+            width: 8rem;
+            gap: 0;
+            justify-content: center;
+            padding: 1.6rem 0;
+        }
+        .marker__svg {
+            width: 5.653rem;
+            height: 4.8rem;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .marker__text {
+            width: 0%;
+        }
+    }
+}

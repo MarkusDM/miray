@@ -1,0 +1,34 @@
+@mixin pseudo() {
+    content: '';
+    position: absolute;
+    @content;
+}
+
+@mixin small-tablet {
+    @media (max-width: 48em) {
+        @content;
+    }
+}
+
+@mixin sizes($width, $height) {
+    max-width: $width;
+    width: 100%;
+    height: $height;
+
+    @content;
+}
+
+@mixin hover() {
+    @media (any-hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin clamp-text($lines: 1) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

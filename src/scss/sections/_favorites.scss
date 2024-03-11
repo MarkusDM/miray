@@ -1,0 +1,22 @@
+.favorites {
+    &__title {
+        margin-bottom: 4.4rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+
+        sup {
+            color: $grey-text;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 3.2rem;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4rem;
+    }
+}
