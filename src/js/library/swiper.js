@@ -62,5 +62,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const header = document.querySelector('.header');
+    header &&
+        new Swiper('.search-modal__slider', {
+            modules: [Navigation],
+            spaceBetween: `${remToPx(0.8)}rem`,
+            slidesPerView: 'auto',
+            speed: 800,
+            navigation: {
+                nextEl: '.search-modal__slider-next',
+                prevEl: '.search-modal__slider-prev'
+            }
+        });
+
     swiperSettings('.recommendations', {});
 });

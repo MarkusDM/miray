@@ -1,0 +1,179 @@
+.authorization {
+    // .authorization__inner
+    &__inner {
+        border-radius: 6rem;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3.6rem;
+    }
+    // .authorization__info
+    &__info {
+        padding: 5rem;
+        max-width: 82.4rem;
+        width: 100%;
+    }
+    // .authorization__info-title
+    &__info-title {
+        margin-bottom: 2rem;
+    }
+    &__info-text {
+        margin-bottom: 4.8rem;
+    }
+    // .authorization__tabs
+    &__tabs {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    // .authorization__tabs-btn
+    &__tabs-btn {
+        margin-bottom: 4.8rem;
+        &.--active a {
+            background-color: $light-green;
+            color: #ffffff;
+        }
+        a {
+            display: block;
+            padding: 1.5rem 3.2rem;
+            color: $light-green;
+            border: 0.1rem solid $light-green;
+            border-radius: 10rem;
+            transition:
+                0.3s background-color ease,
+                0.3s color ease;
+
+            &:hover {
+                background-color: $light-green;
+                color: #ffffff;
+            }
+        }
+    }
+    // .authorization__info-form
+    &__info-form {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+
+        .footer {
+            display: flex;
+            align-items: flex-start;
+            gap: 4rem;
+            margin-top: 1.6rem;
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+                span {
+                    color: $grey-text;
+
+                    i {
+                        font-style: normal;
+                    }
+                }
+
+                svg {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                }
+            }
+
+            p {
+                max-width: 32.6rem;
+                font-weight: 400;
+                font-size: 1.6rem;
+                line-height: 120%;
+                color: $black-secondary;
+
+                a {
+                    color: $pink;
+                }
+            }
+
+            &.authorization {
+                align-items: center;
+                justify-content: space-between;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.6rem;
+
+                    color: $green;
+
+                    svg {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                }
+            }
+        }
+    }
+    // .authorization__info-form-button
+    &__info-form-button {
+        background-color: $green;
+        &.btn:not(.--disabled):not(.--loading):hover {
+            background-color: $pink;
+            color: #ffffff;
+        }
+    }
+    // .authorization__poster
+    &__poster {
+        max-width: 82rem;
+        width: 100%;
+        background-color: #559479;
+        border-radius: 0 6rem 6rem 0;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            position: relative;
+            z-index: 2;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            border-radius: 50%;
+            background-color: $white;
+            opacity: 0.2;
+            display: block;
+            z-index: 0;
+            position: absolute;
+        }
+        &::after {
+            width: 87.4rem;
+            height: 87.4rem;
+            top: 11.1rem;
+            left: 1.7rem;
+        }
+        &::before {
+            width: 81rem;
+            height: 81rem;
+            top: 13.2rem;
+            right: 5.7rem;
+        }
+    }
+}
+
+.input {
+    .show-password {
+        cursor: pointer;
+        svg {
+            display: none;
+            position: absolute;
+            top: 50%;
+            right: 2rem;
+            transform: translateY(-50%);
+            z-index: 1;
+            width: 2.4rem;
+            height: 2.4rem;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
