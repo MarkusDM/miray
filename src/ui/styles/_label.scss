@@ -1,0 +1,15 @@
+.label {
+  display: flex;
+  align-items: center;
+  column-gap: 0.8rem;
+
+  svg {
+    flex: 0 0 2.4rem;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &__txt {
+    color: $grey-text;
+  }
+}
