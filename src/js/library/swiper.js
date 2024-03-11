@@ -8,7 +8,7 @@ import { remToPx } from '../utils/utils';
 
 document.addEventListener('DOMContentLoaded', () => {
     const swiperSettings = (initializer, payload) => {
-        if (!document.querySelector(initializer)) return;
+        if (!document.querySelector(`${initializer}-swiper`)) return;
 
         new Swiper(`${initializer}-swiper`, {
             modules: [Navigation, Pagination],
@@ -76,4 +76,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     swiperSettings('.recommendations', {});
+
+    if (document.querySelector('.addiction-swiper')) {
+        const sliders = document.querySelectorAll('.addiction-swiper');
+
+        sliders.forEach((slider) => {
+            new Swiper(slider, {
+                modules: [Navigation, Pagination],
+                spaceBetween: remToPx(1.6),
+                slidesPerView: 2.5,
+                speed: 1200,
+                loop: true,
+            })
+        });
+    }
 });

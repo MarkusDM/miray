@@ -135,9 +135,11 @@
         background-color 0.3s ease,
         border 0.3s ease;
 
-    &:hover {
-        background-color: $light-green;
-        border-color: $light-green;
+    @include hover{
+        &:hover {
+            background-color: $light-green;
+            border-color: $light-green;
+        }
     }
 }
 .noUi-active {

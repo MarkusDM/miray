@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import { _slideToggle } from '../utils/utils';
-import {rangeSlider} from "../library/nouislider";
+import { rangeSlider } from '../library/nouislider';
 
 document.addEventListener('DOMContentLoaded', () => {
     $('.recommendations__card-group-button.--secondary').each((_, button) => {
@@ -129,6 +129,78 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 rangeSlider.noUiSlider.set([20000, 100000]);
             });
+        });
+    }
+
+    if (document.querySelector('.basket')) {
+        Array.from(document.querySelectorAll('.basket__card-addiction-heading'), (button) => {
+            button.addEventListener('click', () => {
+                const parent = button.parentElement;
+
+                parent.classList.toggle('--active');
+            });
+        });
+
+        Array.from(document.querySelectorAll('.basket__detailed-order-content-item-heading'), (button) => {
+            button.addEventListener('click', () => {
+                const parent = button.parentElement;
+
+                parent.classList.toggle('--active');
+            });
+        });
+
+        const selectAllButton = document.querySelector('.basket__cards-heading-field input');
+
+        selectAllButton.addEventListener('change', ({ target }) => {
+            Array.from(document.querySelectorAll('.basket__cards input[type="checkbox"]'), (input) => {
+                input.checked = !!target.checked;
+            });
+        });
+
+        Array.from(document.querySelectorAll('.basket__cards input[type="checkbox"]'), (input) => {
+            input.addEventListener('change', ({ target }) => {
+                checkBasketCards();
+            });
+        });
+
+        const checkBasketCards = () => {
+            const cardsLength = Array.from(document.querySelectorAll('.basket__card-row')).length;
+            const checkedCardsLength = Array.from(
+                document.querySelectorAll('.basket__card-field input:checked')
+            ).length;
+
+            selectAllButton.checked = cardsLength === checkedCardsLength;
+        };
+    }
+
+    if (document.querySelector('.contacts')) {
+        const maps = document.querySelectorAll('[data-coordinats]');
+
+        maps.forEach(async (item, index) => {
+            await ymaps3.ready;
+
+            const center = item.dataset.coordinats.split(', ');
+
+            const content = document.createElement('div');
+            content.classList.add('marker');
+            const marker = new ymaps3.YMapMarker({ coordinates: center, draggable: false }, content);
+            content.insertAdjacentHTML(
+                'beforeend',
+                `
+                     <img src="./assets/images/icons/marker.svg" alt="" />
+			    `
+            );
+
+            const map = new ymaps3.YMap(document.getElementById(`map-${index + 1}`), {
+                location: {
+                    center,
+                    zoom: 12
+                }
+            });
+
+            map.addChild(new ymaps3.YMapDefaultSchemeLayer());
+            map.addChild(new ymaps3.YMapDefaultFeaturesLayer({ zIndex: 1800 }));
+            map.addChild(marker);
         });
     }
 });
