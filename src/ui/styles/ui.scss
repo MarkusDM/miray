@@ -40,6 +40,24 @@
 // nouislider
 @import './nouislider';
 
+// tab
+@import 'tab';
+
+// link with icon
+@import 'i-link';
+
+// label
+@import 'label';
+
+// option item
+@import 'option-item';
+
+// modals
+@import 'modals';
+
+// badge
+@import 'badge';
+
 // ---------------------------- для демонстрации ---------------------------
 
 .form {
@@ -165,7 +183,7 @@
         line-height: 130%;
     }
 
-    &:not(.--disabled) {
+    &:not(.--disabled, &[disabled], &_ghost) {
         &:not(.--loading) {
             @include hover {
                 background-color: $green;
@@ -336,6 +354,21 @@
                 rect {
                     fill: $green !important;
                 }
+            }
+        }
+    }
+
+    &_ghost {
+        border: 1.5px solid $white;
+        border-radius: 10rem;
+        background-color: transparent;
+        color: $white;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $bgFon;
+                color: #1D1D1B;
+                border: 1.5px solid $bgFon;
             }
         }
     }
