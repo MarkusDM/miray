@@ -20,7 +20,13 @@ $(document).ready(() => {
         }
     });
 
+    $('.header__catalog-button').on('click', function () {
+        $(this).toggleClass('show');
+        $('.header-catalog').toggleClass('show');
+    });
+
     clickOutsidePopup($('.header__search-modal'), $('.header .search'));
+    clickOutsidePopup($('.header-catalog'), $('.header__catalog-button'));
 
     // main-page map ==========================================================
     const map_card_buttons_modal = $('.map-card__button');
@@ -83,13 +89,13 @@ $(document).ready(() => {
         e.preventDefault();
         const input_check = !this.querySelector('.input__field').classList.contains('_has-error');
         const input_text_check = this.querySelector('.input__field').textContent !== ' ';
+        const button = this.querySelector('.authorization__info-form-button');
 
         if (input_check && input_text_check) {
             clearInterval(interval);
             interval = setInterval(countdown, 1000);
             seconds = 30;
 
-            const button = this.querySelector('.authorization__info-form-button');
             $(button).addClass('--disabled');
         }
     });
@@ -102,6 +108,7 @@ function clickOutsidePopup(popup, button = null) {
             const checkButton = !button.children().is(e.target) && !button.is(e.target);
             if (!popup.is(e.target) && popup.has(e.target).length === 0 && checkButton) {
                 popup.removeClass('show');
+                button.removeClass('show');
             }
         } else {
             if (!popup.is(e.target) && popup.has(e.target).length === 0) {
