@@ -1,0 +1,159 @@
+.contacts {
+    &__title {
+        margin-bottom: 3.6rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    &__item {
+        position: relative;
+
+        &-card {
+            border-radius: 2.4rem;
+            background-color: $grey-bg;
+            max-width: 109.2rem;
+            width: 100%;
+            padding: 4rem 9rem 4rem 4rem;
+            min-height: 49.1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-title {
+            display: block;
+            margin-bottom: 5.2rem;
+        }
+
+        &-subtitle {
+            display: block;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+            font-size: 1.6rem;
+            line-height: 120%;
+            margin-top: auto;
+        }
+
+        &-communication {
+            &-list {
+                display: grid;
+                grid-template-columns: repeat(2, 43.3rem);
+                gap: 2.8rem;
+                justify-content: space-between;
+            }
+
+            &-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 1.2rem;
+
+                &-icon {
+                    @include sizes(8rem, 8rem);
+                    border-radius: 50%;
+                    background-color: $white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        @include sizes(4rem, 4rem);
+                    }
+                }
+
+                &-info {
+                    display: flex;
+                    flex-direction: column;
+
+                    strong {
+                        display: block;
+                        margin-bottom: 0.8rem;
+                    }
+
+                    a {
+                        color: $grey-text;
+                        transition: 0.3s color ease;
+
+                        &:hover {
+                            color: $light-green;
+                        }
+                    }
+
+                    p {
+                        color: $grey-text;
+                    }
+                }
+            }
+        }
+
+        &-connection {
+            &-list {
+                display: flex;
+                gap: 1.2rem;
+            }
+
+            &-item {
+                @include sizes(5.2rem, 5.2rem);
+
+                svg {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+
+        &-bottom {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-top: auto;
+
+            &-icon {
+                padding: 1rem;
+                border-radius: 50%;
+                background-color: $white;
+
+                @include sizes(5.2rem, 5.2rem);
+
+                img {
+                    @include sizes(3.2rem, 3.2rem);
+                }
+            }
+
+            p {
+                font-weight: 500;
+            }
+        }
+
+        &-map {
+            position: absolute;
+            border-radius: 2.4rem;
+            @include sizes(71.6rem, 46.7rem);
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+
+            .map {
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+
+                [class*="-container"] {
+                    border-radius: inherit;
+                }
+
+                .marker {
+                    width: 3.6rem;
+                    height: 3.6rem;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

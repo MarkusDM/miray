@@ -1,0 +1,55 @@
+.benefits {
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__text {
+        max-width: 67.6rem;
+        width: 100%;
+    }
+
+    &__title {
+        margin-bottom: 6rem;
+    }
+
+    &__description {
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        span {
+            color: $green;
+            font-weight: 600;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 39rem);
+        gap: 4rem;
+    }
+
+    &__item {
+        padding: 3.2rem;
+        background-color: $grey-bg;
+        border-radius: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 3rem;
+
+        &-discard {
+            @include sizes(8rem, 8rem);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $pink;
+            color: $white;
+        }
+    }
+}
