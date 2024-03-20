@@ -98,6 +98,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    swiperSettings('.receipts', {
+        breakpoints: {
+            0: {
+                slidesPerView: 1.38,
+            },
+            768: {
+                slidesPerView: 4,
+            }
+        }
+    });
+
     if (document.querySelector('.addiction-swiper')) {
         const sliders = document.querySelectorAll('.addiction-swiper');
 
