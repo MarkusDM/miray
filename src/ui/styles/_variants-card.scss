@@ -7,10 +7,21 @@
         flex-direction: column;
         height: 100%;
 
+        @include small-tablet{
+            border-radius: 4.8rem;
+        }
+
         &-counter {
             display: block;
             margin-bottom: 1.2rem;
             color: $pink;
+
+            @include small-tablet{
+                margin-bottom: 2.4rem;
+                font-weight: 500;
+                font-size: 4.2rem;
+                line-height: 120%;
+            }
         }
 
         &-image {
@@ -19,6 +30,12 @@
 
             @include sizes(100%, 26.5rem);
             margin-bottom: 2.4rem;
+
+            @include small-tablet{
+                @include sizes(100%, 32rem);
+                border-radius: 3.2rem;
+                margin-bottom: 4rem;
+            }
 
             img {
                 border-radius: inherit;
@@ -30,10 +47,23 @@
             padding-bottom: 1.2rem;
             border-bottom: 0.1rem solid $fontColor;
             display: block;
+
+            @include small-tablet{
+                margin-bottom: 2.4rem;
+                padding-bottom: 2.4rem;
+                font-weight: 500;
+                font-size: 3.6rem;
+                line-height: 120%;
+            }
         }
 
         &-description {
             @include clamp-text(3);
+
+            @include small-tablet{
+                font-size: 3rem;
+                line-height: 130%;
+            }
         }
     }
 }
