@@ -56,6 +56,17 @@ section {
     margin-top: 21.4rem;
 }
 
+._desktop-only {
+    @media (max-width: 48em) {
+        display: none;
+    }
+}
+._mobile-only {
+    @media (min-width: 48em) {
+        display: none;
+    }
+}
+
 .swiper-button-next,
 .swiper-button-prev {
     border-radius: 50%;

@@ -58,6 +58,9 @@
 // badge
 @import 'badge';
 
+// swiper-pagination
+@import 'swiper-pagination';
+
 // ---------------------------- для демонстрации ---------------------------
 
 .form {
@@ -112,15 +115,29 @@
         }
     }
 
+    @include small-tablet{
+        width: 100%;
+        justify-content: center;
+        gap: 3.2rem;
+        margin-top: 4.8rem;
+    }
+
     span {
         display: block;
         font-size: 1.6rem;
         color: $green;
+
+        @include small-tablet{
+            font-weight: 400;
+            font-size: 3.6rem;
+        }
     }
 
     svg {
         width: 2.4rem;
         height: 2.4rem;
+
+        @include sizes(4.8rem, 4.8rem)
     }
 }
 
@@ -130,8 +147,18 @@
     justify-content: space-between;
     margin-bottom: 4.8rem;
 
+    @include small-tablet{
+        margin-bottom: 8rem;
+    }
+
     .link {
         gap: 1.6rem;
+
+        @include small-tablet{
+            gap: 3.2rem;
+            width: 100%;
+            justify-content: center;
+        }
     }
 
     &.subtitle {
@@ -146,14 +173,30 @@
                     gap: 2rem;
                     margin-top: -0.5rem;
 
+                    @include small-tablet{
+                        gap: 1.6rem;
+                        margin-top: 0;
+                    }
+
                     span {
                         margin-left: 3rem;
+
+                        @include small-tablet{
+                            margin-left: 0;
+                        }
                     }
 
                     small {
                         max-width: 7.3rem;
                         width: 100%;
                         display: block;
+
+                        @include small-tablet{
+                            max-width: 100%;
+                            font-weight: 400;
+                            font-size: 2.6rem;
+                            line-height: 120%;
+                        }
                     }
                 }
             }

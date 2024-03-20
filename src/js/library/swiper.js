@@ -77,7 +77,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     swiperSettings('.recommendations', {});
     swiperSettings('.watched-b', {});
-    
+    swiperSettings('.variants', {
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 3,
+            }
+        }
+    });
+    swiperSettings('.news', {
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 3,
+            }
+        }
+    });
+
+    swiperSettings('.receipts', {
+        breakpoints: {
+            0: {
+                slidesPerView: 1.38,
+            },
+            768: {
+                slidesPerView: 4,
+            }
+        }
+    });
 
     if (document.querySelector('.addiction-swiper')) {
         const sliders = document.querySelectorAll('.addiction-swiper');

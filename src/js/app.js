@@ -42,6 +42,9 @@ import './library/input-mask.js';
 //nouislider
 import './library/nouislider';
 
+// dynamic dom
+import './library/dd';
+
 // --------------------------------------------------------------------------
 
 import './dev/vzmsk1.js';
