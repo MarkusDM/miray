@@ -87,6 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+    swiperSettings('.news', {
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 3,
+            }
+        }
+    });
 
     if (document.querySelector('.addiction-swiper')) {
         const sliders = document.querySelectorAll('.addiction-swiper');
