@@ -16,7 +16,7 @@ $light-pink: #eec2cb;
 $grey-text: #898485;
 $grey-bg: #f4f4f4;
 $bgFon: rgb(244, 244, 244);
-$bgFonElement: #E6E6E6;
+$bgFonElement: #e6e6e6;
 
 // ---------------------------------- fonts ---------------------------------
 
@@ -48,6 +48,10 @@ main {
 
 section {
     margin-bottom: 12rem;
+
+    @media (max-width: 48em) {
+        margin-bottom: 20rem;
+    }
 }
 
 .wrapper {

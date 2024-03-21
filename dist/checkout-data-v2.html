@@ -1653,27 +1653,24 @@
                 <a href="#" class="breadcrumbs__txt">Корзина</a>
                 <span class="breadcrumbs__txt">Оформление заказа</span>
             </nav>
-            <span class="checkout__heading h h_h1">
-            Оформление заказа
-        </span>
-
+            <span class="checkout__heading h h_h1"> Оформление заказа </span>
         </div>
         <form data-dev="" action="#" class="checkout__body">
             <div class="checkout__content">
                 <div class="checkout__steps">
                     <div class="checkout__step tab _is-active">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            1: Ваши данные
+                        <span data-checkout-step="1" class="tab__txt text text__medium text__medium--18">
+                            <span>1: Ваши данные</span>
                         </span>
                     </div>
                     <div class="checkout__step tab">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            2: Доставка
+                        <span data-checkout-step="2" class="tab__txt text text__medium text__medium--18">
+                            <span>2: Доставка</span>
                         </span>
                     </div>
                     <div class="checkout__step tab">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            3: Оплата
+                        <span data-checkout-step="3" class="tab__txt text text__medium text__medium--18">
+                            <span>3: Оплата</span>
                         </span>
                     </div>
                 </div>
@@ -1733,7 +1730,9 @@
                         <div class="data-checkout__group">
                             <div class="data-checkout__group-head">
                                 <span class="data-checkout__group-heading h h_h4">Банковские реквизиты</span>
-                                <p class="data-checkout__group-txt">Введите банковские реквизиты или прикрепите файл с ними</p>
+                                <p class="data-checkout__group-txt">
+                                    Введите банковские реквизиты или прикрепите файл с ними
+                                </p>
                             </div>
                             <div class="data-checkout__fields">
                                 <div class="data-checkout__input input">
@@ -1751,9 +1750,14 @@
                                 <div class="data-checkout__input-wrap">
                                     <div class="data-checkout__input input input_file-input">
                                         <input data-ignore-validation="" type="file" name="form[]" class="input__field">
-                                        <span class="input__placeholder">Прикрепите файл с карточкой предприятия *</span>
+                                        <span class="input__placeholder text text__regular-20">Прикрепите файл с карточкой предприятия *</span>
                                     </div>
-                                    <span class="data-checkout__input-hint text text__regular text__regular-16">При прикреплении файла не надо заполнять поля</span>
+                                    <span class="data-checkout__input-hint"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 22.749C6.07 22.749 1.25 17.929 1.25 11.999C1.25 6.06902 6.07 1.24902 12 1.24902C17.93 1.24902 22.75 6.06902 22.75 11.999C22.75 17.929 17.93 22.749 12 22.749ZM12 2.74902C6.9 2.74902 2.75 6.89902 2.75 11.999C2.75 17.099 6.9 21.249 12 21.249C17.1 21.249 21.25 17.099 21.25 11.999C21.25 6.89902 17.1 2.74902 12 2.74902Z" fill="#898485"></path>
+                                            <path d="M12 13.749C11.59 13.749 11.25 13.409 11.25 12.999V7.99902C11.25 7.58902 11.59 7.24902 12 7.24902C12.41 7.24902 12.75 7.58902 12.75 7.99902V12.999C12.75 13.409 12.41 13.749 12 13.749Z" fill="#898485"></path>
+                                            <path d="M12 16.9999C11.87 16.9999 11.74 16.9699 11.62 16.9199C11.5 16.8699 11.39 16.7999 11.29 16.7099C11.2 16.6099 11.13 16.5099 11.08 16.3799C11.03 16.2599 11 16.1299 11 15.9999C11 15.8699 11.03 15.7399 11.08 15.6199C11.13 15.4999 11.2 15.3899 11.29 15.2899C11.39 15.1999 11.5 15.1299 11.62 15.0799C11.86 14.9799 12.14 14.9799 12.38 15.0799C12.5 15.1299 12.61 15.1999 12.71 15.2899C12.8 15.3899 12.87 15.4999 12.92 15.6199C12.97 15.7399 13 15.8699 13 15.9999C13 16.1299 12.97 16.2599 12.92 16.3799C12.87 16.5099 12.8 16.6099 12.71 16.7099C12.61 16.7999 12.5 16.8699 12.38 16.9199C12.26 16.9699 12.13 16.9999 12 16.9999Z" fill="#898485"></path>
+                                        </svg>
+                                        <span class="text text__regular text__regular-16">При прикреплении файла не надо заполнять поля</span></span>
                                 </div>
                             </div>
                         </div>
@@ -1778,13 +1782,12 @@
                         <span class="summary-checkout__total-price h h_h3"><span>41 540.20</span>₽</span>
                     </div>
                 </div>
-                <button disabled="" type="submit" class="summary-checkout__btn btn">
-                    Далее
-                </button>
+                <button type="submit" class="summary-checkout__btn btn">Далее</button>
             </div>
-            </form>
-        </div>
+        </form>
+    </div>
 </section>
+
 </main>
 <footer class="footer">
     <div class="container">

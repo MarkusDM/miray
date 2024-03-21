@@ -1653,35 +1653,36 @@
                 <a href="#" class="breadcrumbs__txt">Корзина</a>
                 <span class="breadcrumbs__txt">Оформление заказа</span>
             </nav>
-            <span class="checkout__heading h h_h1">
-            Оформление заказа
-        </span>
-
+            <span class="checkout__heading h h_h1"> Оформление заказа </span>
         </div>
         <form data-dev="" action="#" class="checkout__body">
             <div class="checkout__content">
                 <div class="checkout__steps">
-                    <div class="checkout__step tab _is-active">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            1: Ваши данные
+                    <div class="checkout__step tab">
+                        <span data-checkout-step="1" class="tab__txt text text__medium text__medium--18">
+                            <span>1: Ваши данные</span>
                         </span>
                     </div>
                     <div class="checkout__step tab _is-active">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            2: Доставка
+                        <span data-checkout-step="2" class="tab__txt text text__medium text__medium--18">
+                            <span>2: Доставка</span>
                         </span>
                     </div>
                     <div class="checkout__step tab">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            3: Оплата
+                        <span data-checkout-step="3" class="tab__txt text text__medium text__medium--18">
+                            <span>3: Оплата</span>
                         </span>
                     </div>
                 </div>
                 <div class="checkout__delivery delivery-checkout">
                     <div class="delivery-checkout__badges">
                         <button type="button" class="delivery-checkout__badge badge">Самовывоз</button>
-                        <button type="button" class="delivery-checkout__badge badge">По адресу в Москве</button>
-                        <button type="button" class="delivery-checkout__badge badge _is-active">До транспортной компании</button>
+                        <button type="button" class="delivery-checkout__badge badge">
+                            По адресу в Москве
+                        </button>
+                        <button type="button" class="delivery-checkout__badge badge _is-active">
+                            До транспортной компании
+                        </button>
                     </div>
                     <div class="delivery-checkout__label label">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1731,11 +1732,14 @@
                                     <span></span>
                                 </div>
                                 <div class="option-item__inner">
-                                    <p class="option-item__txt text text__medium text__medium-18">Другая транспортная компания</p>
+                                    <p class="option-item__txt text text__medium text__medium-18">
+                                        Другая транспортная компания
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <span class="companies-delivery-checkout__hint text text__medium text__medium-16">При выборе в качестве перевозчика компании&nbsp;ПЭК&nbsp;Вы получаете от них СКИДКУ —&nbsp;7%&nbsp;</span>
+                        <span data-da=".companies-delivery-checkout__row,768,1" class="companies-delivery-checkout__hint text text__medium text__medium-16">При выборе в качестве перевозчика компании&nbsp;ПЭК&nbsp;Вы получаете от них СКИДКУ
+                            —&nbsp;7%&nbsp;</span>
                         <div class="companies-delivery-checkout__input input">
                             <input autocomplete="off" type="text" name="form[]" data-hint="Заполните поле" placeholder="Ваша транспортная компания" class="input__field">
                         </div>
@@ -1769,13 +1773,12 @@
                         <span class="summary-checkout__total-price h h_h3"><span>41 540.20</span>₽</span>
                     </div>
                 </div>
-                <button disabled="" type="submit" class="summary-checkout__btn btn">
-                    Далее
-                </button>
+                <button type="submit" class="summary-checkout__btn btn">Далее</button>
             </div>
-            </form>
-        </div>
+        </form>
+    </div>
 </section>
+
 </main>
 <footer class="footer">
     <div class="container">

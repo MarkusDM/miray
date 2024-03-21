@@ -1653,27 +1653,24 @@
                 <a href="#" class="breadcrumbs__txt">Корзина</a>
                 <span class="breadcrumbs__txt">Оформление заказа</span>
             </nav>
-            <span class="checkout__heading h h_h1">
-            Оформление заказа
-        </span>
-
+            <span class="checkout__heading h h_h1"> Оформление заказа </span>
         </div>
         <form data-dev="" action="#" class="checkout__body">
             <div class="checkout__content">
                 <div class="checkout__steps">
                     <div class="checkout__step tab _is-active">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            1: Ваши данные
+                        <span data-checkout-step="1" class="tab__txt text text__medium text__medium--18">
+                            <span>1: Ваши данные</span>
                         </span>
                     </div>
                     <div class="checkout__step tab">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            2: Доставка
+                        <span data-checkout-step="2" class="tab__txt text text__medium text__medium--18">
+                            <span>2: Доставка</span>
                         </span>
                     </div>
                     <div class="checkout__step tab">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            3: Оплата
+                        <span data-checkout-step="3" class="tab__txt text text__medium text__medium--18">
+                            <span>3: Оплата</span>
                         </span>
                     </div>
                 </div>
@@ -1753,13 +1750,26 @@
                         <span class="summary-checkout__total-price h h_h3"><span>41 540.20</span>₽</span>
                     </div>
                 </div>
-                <button disabled="" type="submit" class="summary-checkout__btn btn">
-                    Далее
-                </button>
+                <button type="submit" class="summary-checkout__btn btn">Далее</button>
             </div>
         </form>
+        <div class="checkout__pricing-widget pricing-widget-checkout">
+            <div class="pricing-widget-checkout__content">
+                <span class="pricing-widget-checkout__subtitle text text__regular-12">Розничная цена:</span>
+                <span class="pricing-widget-checkout__price">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="#898485" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12 7V12" stroke="#898485" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <circle cx="12" cy="16" r="1" fill="#898485"></circle>
+                    </svg>
+                    <span class="h h_h3">41 540.20₽</span>
+                </span>
+            </div>
+            <button type="button" class="pricing-widget-checkout__btn btn">Далее</button>
+        </div>
     </div>
 </section>
+
 </main>
 <footer class="footer">
     <div class="container">

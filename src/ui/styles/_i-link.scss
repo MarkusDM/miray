@@ -1,16 +1,30 @@
 .i-link {
-  display: flex;
-  align-items: center;
-  column-gap: 0.8rem;
+    display: flex;
+    align-items: center;
+    column-gap: 0.8rem;
 
-  svg {
-    flex: 0 0 2.8rem;
-    width: 2.8rem;
-    height: 2.8rem;
-  }
+    svg {
+        flex: 0 0 2.8rem;
+        width: 2.8rem;
+        height: 2.8rem;
+    }
 
-  &__txt {
-    line-height: 2.1rem;
-    color: $green;
-  }
+    @media (max-width: 48em) {
+        column-gap: 0.8rem;
+
+        svg {
+            flex: 0 0 5.6rem;
+            width: 5.6rem;
+            height: 5.6rem;
+        }
+    }
+
+    &__txt {
+        line-height: 2.1rem;
+        color: $green;
+
+        @media (max-width: 48em) {
+            line-height: 4rem;
+        }
+    }
 }

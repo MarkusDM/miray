@@ -6,42 +6,57 @@
                 <a href="#" class="breadcrumbs__txt">Корзина</a>
                 <span class="breadcrumbs__txt">Оформление заказа</span>
             </nav>
-            <span class="checkout__heading h h_h1">
-            Оформление заказа
-        </span>
-
+            <span class="checkout__heading h h_h1"> Оформление заказа </span>
         </div>
         <form data-dev action="#" class="checkout__body">
             <div class="checkout__content">
                 <div class="checkout__steps">
-                    <div class="checkout__step tab _is-active">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            1: Ваши данные
+                    <div class="checkout__step tab">
+                        <span data-checkout-step="1" class="tab__txt text text__medium text__medium--18">
+                            <span>1: Ваши данные</span>
                         </span>
                     </div>
                     <div class="checkout__step tab _is-active">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            2: Доставка
+                        <span data-checkout-step="2" class="tab__txt text text__medium text__medium--18">
+                            <span>2: Доставка</span>
                         </span>
                     </div>
                     <div class="checkout__step tab">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            3: Оплата
+                        <span data-checkout-step="3" class="tab__txt text text__medium text__medium--18">
+                            <span>3: Оплата</span>
                         </span>
                     </div>
                 </div>
                 <div class="checkout__delivery delivery-checkout">
                     <div class="delivery-checkout__badges">
                         <button type="button" class="delivery-checkout__badge badge">Самовывоз</button>
-                        <button type="button" class="delivery-checkout__badge badge">По адресу в Москве</button>
-                        <button type="button" class="delivery-checkout__badge badge _is-active">До транспортной компании</button>
+                        <button type="button" class="delivery-checkout__badge badge">
+                            По адресу в Москве
+                        </button>
+                        <button type="button" class="delivery-checkout__badge badge _is-active">
+                            До транспортной компании
+                        </button>
                     </div>
                     <div class="delivery-checkout__label label">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.0691 21.9802C10.6591 21.9802 9.23911 21.4402 8.16911 20.3702L3.63911 15.8402C2.53911 14.7402 1.95911 13.2202 2.02911 11.6702L2.26911 6.67018C2.37911 4.28018 4.26911 2.39018 6.66911 2.27018L11.6691 2.03018C13.2191 1.97018 14.7391 2.54018 15.8391 3.64018L20.3691 8.17018C22.5191 10.3202 22.5191 13.8302 20.3691 15.9802L15.9791 20.3702C14.8991 21.4402 13.4891 21.9802 12.0691 21.9802ZM4.69911 14.7702L9.22911 19.3002C9.98911 20.0602 10.9991 20.4802 12.0691 20.4802C13.1391 20.4802 14.1491 20.0602 14.9091 19.3002L19.2991 14.9102C20.0591 14.1502 20.4791 13.1402 20.4791 12.0702C20.4791 11.0002 20.0591 9.99018 19.2991 9.23018L14.7691 4.70018C13.9691 3.90018 12.8591 3.47018 11.7391 3.53018L6.73911 3.77018C5.10911 3.84018 3.83911 5.11018 3.75911 6.73018L3.51911 11.7302C3.46911 12.8602 3.89911 13.9702 4.69911 14.7702Z" fill="#898485"/>
-                            <path d="M9.5 12.75C7.71 12.75 6.25 11.29 6.25 9.5C6.25 7.71 7.71 6.25 9.5 6.25C11.29 6.25 12.75 7.71 12.75 9.5C12.75 11.29 11.29 12.75 9.5 12.75ZM9.5 7.75C8.54 7.75 7.75 8.54 7.75 9.5C7.75 10.46 8.54 11.25 9.5 11.25C10.46 11.25 11.25 10.46 11.25 9.5C11.25 8.54 10.46 7.75 9.5 7.75Z" fill="#898485"/>
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M12.0691 21.9802C10.6591 21.9802 9.23911 21.4402 8.16911 20.3702L3.63911 15.8402C2.53911 14.7402 1.95911 13.2202 2.02911 11.6702L2.26911 6.67018C2.37911 4.28018 4.26911 2.39018 6.66911 2.27018L11.6691 2.03018C13.2191 1.97018 14.7391 2.54018 15.8391 3.64018L20.3691 8.17018C22.5191 10.3202 22.5191 13.8302 20.3691 15.9802L15.9791 20.3702C14.8991 21.4402 13.4891 21.9802 12.0691 21.9802ZM4.69911 14.7702L9.22911 19.3002C9.98911 20.0602 10.9991 20.4802 12.0691 20.4802C13.1391 20.4802 14.1491 20.0602 14.9091 19.3002L19.2991 14.9102C20.0591 14.1502 20.4791 13.1402 20.4791 12.0702C20.4791 11.0002 20.0591 9.99018 19.2991 9.23018L14.7691 4.70018C13.9691 3.90018 12.8591 3.47018 11.7391 3.53018L6.73911 3.77018C5.10911 3.84018 3.83911 5.11018 3.75911 6.73018L3.51911 11.7302C3.46911 12.8602 3.89911 13.9702 4.69911 14.7702Z"
+                                fill="#898485"
+                            />
+                            <path
+                                d="M9.5 12.75C7.71 12.75 6.25 11.29 6.25 9.5C6.25 7.71 7.71 6.25 9.5 6.25C11.29 6.25 12.75 7.71 12.75 9.5C12.75 11.29 11.29 12.75 9.5 12.75ZM9.5 7.75C8.54 7.75 7.75 8.54 7.75 9.5C7.75 10.46 8.54 11.25 9.5 11.25C10.46 11.25 11.25 10.46 11.25 9.5C11.25 8.54 10.46 7.75 9.5 7.75Z"
+                                fill="#898485"
+                            />
                         </svg>
-                        <span class="label__txt text text__medium text__medium-16">Стоимость доставки оговаривается с менеджером</span>
+                        <span class="label__txt text text__medium text__medium-16"
+                            >Стоимость доставки оговаривается с менеджером</span
+                        >
                     </div>
                     <div class="delivery-checkout__companies companies-delivery-checkout">
                         <div class="companies-delivery-checkout__row">
@@ -52,7 +67,11 @@
                                 </div>
                                 <div class="option-item__inner">
                                     <div class="option-item__image-wrap">
-                                        <img src="./assets/images/logos/gruz-po_Jcih1.webp" alt="" class="option-item__image">
+                                        <img
+                                            src="./assets/images/logos/gruz-po_Jcih1.webp"
+                                            alt=""
+                                            class="option-item__image"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +82,11 @@
                                 </div>
                                 <div class="option-item__inner">
                                     <div class="option-item__image-wrap">
-                                        <img src="./assets/images/logos/avtotreyding.webp" alt="" class="option-item__image">
+                                        <img
+                                            src="./assets/images/logos/avtotreyding.webp"
+                                            alt=""
+                                            class="option-item__image"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +97,11 @@
                                 </div>
                                 <div class="option-item__inner">
                                     <div class="option-item__image-wrap">
-                                        <img src="./assets/images/logos/gruz-po_Jcih2.webp" alt="" class="option-item__image">
+                                        <img
+                                            src="./assets/images/logos/gruz-po_Jcih2.webp"
+                                            alt=""
+                                            class="option-item__image"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -84,19 +111,26 @@
                                     <span></span>
                                 </div>
                                 <div class="option-item__inner">
-                                    <p class="option-item__txt text text__medium text__medium-18">Другая транспортная компания</p>
+                                    <p class="option-item__txt text text__medium text__medium-18">
+                                        Другая транспортная компания
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <span class="companies-delivery-checkout__hint text text__medium text__medium-16">При выборе в качестве перевозчика компании ПЭК Вы получаете от них СКИДКУ — 7% </span>
+                        <span
+                            data-da=".companies-delivery-checkout__row,768,1"
+                            class="companies-delivery-checkout__hint text text__medium text__medium-16"
+                            >При выборе в качестве перевозчика компании ПЭК Вы получаете от них СКИДКУ
+                            — 7% </span
+                        >
                         <div class="companies-delivery-checkout__input input">
                             <input
-                                    autocomplete="off"
-                                    type="text"
-                                    name="form[]"
-                                    data-hint="Заполните поле"
-                                    placeholder="Ваша транспортная компания"
-                                    class="input__field"
+                                autocomplete="off"
+                                type="text"
+                                name="form[]"
+                                data-hint="Заполните поле"
+                                placeholder="Ваша транспортная компания"
+                                class="input__field"
                             />
                         </div>
                     </div>
@@ -108,12 +142,16 @@
                     <ul data-accordion class="summary-checkout__list list-summary-checkout">
                         <li class="list-summary-checkout__item">
                             <span class="list-summary-checkout__label">Товары (6) — 0,123 м3</span>
-                            <span class="list-summary-checkout__value text text__medium text__medium-18">41 540.20₽</span>
+                            <span class="list-summary-checkout__value text text__medium text__medium-18"
+                                >41 540.20₽</span
+                            >
                         </li>
                         <li class="list-summary-checkout__item list-summary-checkout__item_benefit">
                             <div data-accordion-item class="list-summary-checkout__inner">
-                                <span  class="list-summary-checkout__label">Выгода</span>
-                                <span class="list-summary-checkout__value text text__medium text__medium-18">12 540.20₽</span>
+                                <span class="list-summary-checkout__label">Выгода</span>
+                                <span class="list-summary-checkout__value text text__medium text__medium-18"
+                                    >12 540.20₽</span
+                                >
                             </div>
                             <div class="list-summary-checkout__item-content">
                                 <p>Lorem ipsum dolor sit amet.</p>
@@ -121,7 +159,9 @@
                         </li>
                         <li class="list-summary-checkout__item">
                             <span class="list-summary-checkout__label">Общее кол-во единиц:</span>
-                            <span class="list-summary-checkout__value text text__medium text__medium-18">500 шт</span>
+                            <span class="list-summary-checkout__value text text__medium text__medium-18"
+                                >500 шт</span
+                            >
                         </li>
                     </ul>
                     <div class="summary-checkout__total">
@@ -129,10 +169,8 @@
                         <span class="summary-checkout__total-price h h_h3"><span>41 540.20</span>₽</span>
                     </div>
                 </div>
-                <button disabled type="submit" class="summary-checkout__btn btn">
-                    Далее
-                </button>
+                <button type="submit" class="summary-checkout__btn btn">Далее</button>
             </div>
-            </form>
-        </div>
+        </form>
+    </div>
 </section>

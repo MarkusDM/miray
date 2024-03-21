@@ -1653,35 +1653,38 @@
                 <a href="#" class="breadcrumbs__txt">Корзина</a>
                 <span class="breadcrumbs__txt">Оформление заказа</span>
             </nav>
-            <span class="checkout__heading h h_h1">
-            Оформление заказа
-        </span>
-
+            <span class="checkout__heading h h_h1"> Оформление заказа </span>
         </div>
         <form data-dev="" action="#" class="checkout__body">
             <div class="checkout__content">
                 <div class="checkout__steps">
-                    <div class="checkout__step tab _is-active">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            1: Ваши данные
+                    <div class="checkout__step tab">
+                        <span data-checkout-step="1" class="tab__txt text text__medium text__medium--18">
+                            <span>1: Ваши данные</span>
                         </span>
                     </div>
                     <div class="checkout__step tab _is-active">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            2: Доставка
+                        <span data-checkout-step="2" class="tab__txt text text__medium text__medium--18">
+                            <span>2: Доставка</span>
                         </span>
                     </div>
                     <div class="checkout__step tab">
-                        <span class="tab__txt text text__medium text__medium--18">
-                            3: Оплата
+                        <span data-checkout-step="3" class="tab__txt text text__medium text__medium--18">
+                            <span>3: Оплата</span>
                         </span>
                     </div>
                 </div>
                 <div class="checkout__delivery delivery-checkout">
                     <div class="delivery-checkout__badges">
-                        <button type="button" class="delivery-checkout__badge badge _is-active">Самовывоз</button>
-                        <button type="button" class="delivery-checkout__badge badge">По адресу в Москве</button>
-                        <button type="button" class="delivery-checkout__badge badge">До транспортной компании</button>
+                        <button type="button" class="delivery-checkout__badge badge _is-active">
+                            Самовывоз
+                        </button>
+                        <button type="button" class="delivery-checkout__badge badge">
+                            По адресу в Москве
+                        </button>
+                        <button type="button" class="delivery-checkout__badge badge">
+                            До транспортной компании
+                        </button>
                     </div>
                     <div class="delivery-checkout__label label">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1694,7 +1697,7 @@
                         <div class="map__content">
                             <div class="map__canvas" id="main-map"></div>
                             <div class="map__wrapper">
-                                <div class="map__card map-card" id="map-card-1">
+                                <div data-da=".map__content,768,first" class="map__card map-card" id="map-card-1">
                                     <div class="map-card__wrapper">
                                         <div class="map-card__header">
                                             <h6>Миррэй Cash&amp;Carry</h6>
@@ -1708,8 +1711,8 @@
                                                     </svg>
                                                 </div>
                                                 <p>
-                                                    г. Москва, поселение Сосенское, Калужское шоссе, 22-й километр, стр.
-                                                    10
+                                                    г. Москва, поселение Сосенское, Калужское шоссе, 22-й
+                                                    километр, стр. 10
                                                 </p>
                                             </div>
                                             <div class="map-card__content-item">
@@ -1833,13 +1836,12 @@
                         <span class="summary-checkout__total-price h h_h3"><span>41 540.20</span>₽</span>
                     </div>
                 </div>
-                <button disabled="" type="submit" class="summary-checkout__btn btn">
-                    Далее
-                </button>
+                <button type="submit" class="summary-checkout__btn btn">Далее</button>
             </div>
-            </form>
-        </div>
+        </form>
+    </div>
 </section>
+
 </main>
 <footer class="footer">
     <div class="container">
