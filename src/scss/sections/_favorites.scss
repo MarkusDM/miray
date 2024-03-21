@@ -24,7 +24,9 @@
         margin-bottom: 3.2rem;
 
         @include small-tablet{
-
+            font-weight: 400;
+            font-size: 3.6rem;
+            margin-bottom: 4.8rem;
         }
     }
 
