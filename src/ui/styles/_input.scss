@@ -11,7 +11,7 @@ input:focus {
     outline: none;
     color: $fontColor;
 }
-input[type=file]::file-selector-button {
+input[type='file']::file-selector-button {
     display: none;
 }
 textarea {
@@ -26,13 +26,16 @@ textarea {
     background-color: $white;
     font-size: 1.6rem;
     color: $grey-text;
+
     @media (max-width: 48em) {
         row-gap: 1.6rem;
+        border-radius: 6rem;
     }
 
     &_file-input {
-        height: 5rem;
         cursor: pointer;
+        border-radius: 0;
+        background-color: transparent;
 
         input[type='file'] {
             position: absolute;
@@ -57,10 +60,20 @@ textarea {
                 flex: 0 0 2.4rem;
                 width: 2.4rem;
                 height: 2.4rem;
-                background-image: url("./assets/images/icons/clip.svg");
+                background-image: url('./assets/images/icons/clip.svg');
                 background-size: contain;
                 background-repeat: no-repeat;
                 transform: translateY(-0.3rem);
+            }
+
+            @media (max-width: 48em) {
+                justify-content: space-between;
+
+                &::after {
+                    flex: 0 0 4.8rem;
+                    width: 4.8rem;
+                    height: 4.8rem;
+                }
             }
         }
     }
@@ -75,11 +88,14 @@ textarea {
             color: rgba(29, 29, 27, 1);
             cursor: auto;
         }
-
     }
 
     textarea {
         height: 12rem;
+
+        @media (max-width: 48em) {
+            height: 22.4rem;
+        }
     }
 
     // .input__btn
@@ -91,11 +107,28 @@ textarea {
         line-height: 120%;
         text-decoration: underline;
         color: $green;
+
+        svg {
+            flex: 0 0 4rem;
+            width: 4rem;
+            height: 4rem;
+        }
+
+        @media (max-width: 48em) {
+            margin-right: 4rem;
+            span {
+                display: none;
+            }
+        }
+        @media (min-width: 48em) {
+            svg {
+                display: none;
+            }
+        }
     }
 
     // .input__field
 
-    &_file-input,
     &__field {
         padding: 1.6rem 2rem;
         display: block;
@@ -113,8 +146,17 @@ textarea {
         }
 
         @media (max-width: 48em) {
-            padding: 2.4rem 3.6rem;
-            border-radius: 3.2rem;
+            padding: 2.4rem 4rem;
+            border-radius: 6rem;
+            line-height: 4rem;
+            font-size: 3rem;
+
+            &::placeholder {
+                font-size: 3rem;
+            }
+            &:placeholder-shown {
+                text-overflow: ellipsis;
+            }
         }
     }
 
@@ -166,7 +208,7 @@ textarea {
     gap: 0.8rem;
     width: fit-content;
 
-    @include small-tablet{
+    @include small-tablet {
         gap: 1.6rem;
     }
 
@@ -174,7 +216,7 @@ textarea {
         font-size: 1.8rem;
         color: #3c3c3c;
 
-        @include small-tablet{
+        @include small-tablet {
             font-size: 3.6rem;
         }
     }
@@ -195,10 +237,10 @@ textarea {
             0.3s background-color ease;
         position: relative;
 
-        @include small-tablet{
+        @include small-tablet {
             width: 4.3rem;
             height: 4.3rem;
-            border-radius: .8rem;
+            border-radius: 0.8rem;
         }
 
         &::before {
@@ -213,7 +255,7 @@ textarea {
                 opacity: 0;
                 transition: 0.3s opacity ease;
 
-                @include small-tablet{
+                @include small-tablet {
                     width: 2rem;
                     height: 1.4rem;
                 }
@@ -236,7 +278,7 @@ textarea {
     align-items: center;
     gap: 0.8rem;
 
-    @include small-tablet{
+    @include small-tablet {
         gap: 1.6rem;
     }
 
@@ -244,11 +286,10 @@ textarea {
         font-size: 1.8rem;
         color: #3c3c3c;
 
-        @include small-tablet{
-            font-size: 3.6rem;
+        @include small-tablet {
+            font-size: 3.2rem;
         }
     }
-
 
     input[type='radio'] {
         -webkit-appearance: none;
@@ -257,13 +298,15 @@ textarea {
         margin: 0;
         font: inherit;
         color: currentColor;
+        flex: 0 0 2.4rem;
         width: 2.4rem;
         height: 2.4rem;
         border: 0.1rem solid $light-green;
         border-radius: 50%;
         position: relative;
 
-        @include small-tablet{
+        @include small-tablet {
+            flex: 0 0 4.8rem;
             width: 4.8rem;
             height: 4.8rem;
         }
@@ -277,8 +320,8 @@ textarea {
                 transform: scale(0);
                 transition: 0.3s transform ease;
 
-                @include small-tablet{
-                    border-width: .8rem;
+                @include small-tablet {
+                    border-width: 0.8rem;
                 }
             }
         }

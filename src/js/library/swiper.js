@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { EffectFade, Navigation, Pagination, Thumbs } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -62,7 +62,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const header = document.querySelector('.header');
+    header &&
+        new Swiper('.search-modal__slider', {
+            modules: [Navigation],
+            spaceBetween: `${remToPx(0.8)}rem`,
+            slidesPerView: 'auto',
+            speed: 800,
+            navigation: {
+                nextEl: '.search-modal__slider-next',
+                prevEl: '.search-modal__slider-prev'
+            }
+        });
+
     swiperSettings('.recommendations', {});
+    swiperSettings('.watched-b', {});
+    
 
     if (document.querySelector('.addiction-swiper')) {
         const sliders = document.querySelectorAll('.addiction-swiper');
@@ -77,4 +92,42 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         });
     }
-});
+    });
+
+    if (document.querySelector('.card__left')) {
+        const cardThumb = new Swiper('.card__thumb', {
+            slidesPerView: 3,
+            freeMode: true,
+            watchSlidesProgress: true,
+            spaceBetween: remToPx(1.6),
+            speed: 1200,
+            slideToClickedSlide: true
+        });
+
+        const cardSwiper = new Swiper('.card__swiper', {
+            modules: [Thumbs, Navigation, Pagination, ],
+            speed: 1200,
+            grabCursor: true,
+            thumbs: {
+                swiper: cardThumb
+            },
+
+            navigation: {
+                prevEl: '.card__swiper-button-prev',
+                nextEl: '.card__swiper-button-next'
+            },
+            slidesPerView: 1,
+          
+            breakpoints: {
+                0: {
+                    spaceBetween: remToPx(3.2)
+                },
+                768: {
+                    spaceBetween: remToPx(1.6)
+                }
+            }
+        });
+
+       
+    }
+

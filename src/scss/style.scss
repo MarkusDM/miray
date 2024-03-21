@@ -16,6 +16,7 @@ $light-pink: #eec2cb;
 $grey-text: #898485;
 $grey-bg: #f4f4f4;
 $bgFon: rgb(244, 244, 244);
+$bgFonElement: #e6e6e6;
 
 // ---------------------------------- fonts ---------------------------------
 
@@ -47,11 +48,16 @@ main {
 
 section {
     margin-bottom: 12rem;
+
+    @media (max-width: 48em) {
+        margin-bottom: 20rem;
+    }
 }
 
 .wrapper {
     margin: 0 auto;
     max-width: 1920px;
+    margin-top: 21.4rem;
 }
 
 .swiper-button-next,
