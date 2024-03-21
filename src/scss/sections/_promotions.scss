@@ -159,6 +159,12 @@
             &:not(.--large &) {
                 @include clamp-text(3);
 
+                &._mobile-only {
+                    @media (min-width: 48em) {
+                        display: none;
+                    }
+                }
+
                 @include small-tablet{
                     @include clamp-text(2);
 
@@ -167,6 +173,8 @@
                             display: none;
                         }
                     }
+
+
                 }
             }
         }
