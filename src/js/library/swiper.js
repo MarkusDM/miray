@@ -80,20 +80,20 @@ document.addEventListener('DOMContentLoaded', () => {
     swiperSettings('.variants', {
         breakpoints: {
             0: {
-                slidesPerView: 1,
+                slidesPerView: 1
             },
             768: {
-                slidesPerView: 3,
+                slidesPerView: 3
             }
         }
     });
     swiperSettings('.news', {
         breakpoints: {
             0: {
-                slidesPerView: 1,
+                slidesPerView: 1
             },
             768: {
-                slidesPerView: 3,
+                slidesPerView: 3
             }
         }
     });
@@ -101,10 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
     swiperSettings('.receipts', {
         breakpoints: {
             0: {
-                slidesPerView: 1.38,
+                slidesPerView: 1.38
             },
             768: {
-                slidesPerView: 4,
+                slidesPerView: 4
             }
         }
     });
@@ -115,49 +115,57 @@ document.addEventListener('DOMContentLoaded', () => {
         sliders.forEach((slider) => {
             new Swiper(slider, {
                 modules: [Navigation, Pagination],
-                spaceBetween: remToPx(1.6),
-                slidesPerView: 2.5,
                 speed: 1200,
                 loop: true,
-            })
+                navigation: {
+                    nextEl: slider.querySelector('.basket__card-addiction-navigation')
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1.15,
+                        spaceBetween: remToPx(3.2)
+                    },
+                    768: {
+                        slidesPerView: 2.5,
+                        spaceBetween: remToPx(1.6)
+                    }
+                }
+            });
         });
     }
+});
+
+if (document.querySelector('.card__left')) {
+    const cardThumb = new Swiper('.card__thumb', {
+        slidesPerView: 3,
+        freeMode: true,
+        watchSlidesProgress: true,
+        spaceBetween: remToPx(1.6),
+        speed: 1200,
+        slideToClickedSlide: true
     });
 
-    if (document.querySelector('.card__left')) {
-        const cardThumb = new Swiper('.card__thumb', {
-            slidesPerView: 3,
-            freeMode: true,
-            watchSlidesProgress: true,
-            spaceBetween: remToPx(1.6),
-            speed: 1200,
-            slideToClickedSlide: true
-        });
+    const cardSwiper = new Swiper('.card__swiper', {
+        modules: [Thumbs, Navigation, Pagination],
+        speed: 1200,
+        grabCursor: true,
+        thumbs: {
+            swiper: cardThumb
+        },
 
-        const cardSwiper = new Swiper('.card__swiper', {
-            modules: [Thumbs, Navigation, Pagination, ],
-            speed: 1200,
-            grabCursor: true,
-            thumbs: {
-                swiper: cardThumb
-            },
+        navigation: {
+            prevEl: '.card__swiper-button-prev',
+            nextEl: '.card__swiper-button-next'
+        },
+        slidesPerView: 1,
 
-            navigation: {
-                prevEl: '.card__swiper-button-prev',
-                nextEl: '.card__swiper-button-next'
+        breakpoints: {
+            0: {
+                spaceBetween: remToPx(3.2)
             },
-            slidesPerView: 1,
-          
-            breakpoints: {
-                0: {
-                    spaceBetween: remToPx(3.2)
-                },
-                768: {
-                    spaceBetween: remToPx(1.6)
-                }
+            768: {
+                spaceBetween: remToPx(1.6)
             }
-        });
-
-       
-    }
-
+        }
+    });
+}
