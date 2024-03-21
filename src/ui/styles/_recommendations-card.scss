@@ -9,6 +9,11 @@
         height: 100%;
         position: relative;
 
+        @include small-tablet{
+            padding: 3.2rem;
+            border-radius: 4.8rem;
+        }
+
         &.--list {
             flex-direction: row;
             gap: 2.1rem;
@@ -112,6 +117,12 @@
             @include sizes(100%, 30.8rem);
             margin-bottom: 1.6rem;
 
+            @include small-tablet{
+                height: 54rem;
+                margin-bottom: 3.2rem;
+                border-radius: 4rem;
+            }
+
             img {
                 border-radius: inherit;
                 height: 100%;
@@ -122,11 +133,25 @@
         &-title {
             margin-bottom: 0.8rem;
             @include clamp-text(2);
+
+            @include small-tablet{
+                margin-bottom: 1.6rem;
+                font-weight: 400;
+                font-size: 3rem;
+                line-height: 130%;
+            }
         }
 
         &-articul {
             display: block;
             margin-bottom: 2rem;
+
+            @include small-tablet{
+                font-weight: 400;
+                font-size: 3rem;
+                line-height: 130%;
+                margin-bottom: 3.2rem;
+            }
         }
 
         &-group {
@@ -139,6 +164,11 @@
             border-radius: 10rem;
             margin-top: auto;
 
+            @include small-tablet{
+                border-radius: 20rem;
+                margin-bottom: 3.2rem;
+            }
+
             &-button {
                 border-radius: 10rem;
                 color: $green;
@@ -150,6 +180,14 @@
                 height: 4.4rem;
                 white-space: nowrap;
                 justify-content: center;
+
+                @include small-tablet{
+                    border-radius: 20rem;
+                    font-weight: 400;
+                    font-size: 3rem;
+                    line-height: 130%;
+                    height: 8rem;
+                }
 
                 span {
                     display: none;
@@ -205,28 +243,28 @@
                         }
                     }
 
-                   &:not(.--list &) {
-                       &.--hovered {
-                           max-width: max-content;
-                           gap: 0;
-                           padding: 1.25rem 2rem;
+                    &:not(.--list &) {
+                        &.--hovered {
+                            max-width: max-content;
+                            gap: 0;
+                            padding: 1.25rem 2rem;
 
-                           span {
-                               display: none;
-                           }
-                       }
-                   }
+                            span {
+                                display: none;
+                            }
+                        }
+                    }
 
                     &.--selected-value {
-                       &:not(.--list &) {
-                           max-width: max-content;
-                           gap: 0;
-                           padding: 1.25rem 2rem;
+                        &:not(.--list &) {
+                            max-width: max-content;
+                            gap: 0;
+                            padding: 1.25rem 2rem;
 
-                           span {
-                               display: none;
-                           }
-                       }
+                            span {
+                                display: none;
+                            }
+                        }
                     }
                 }
 
@@ -270,12 +308,12 @@
                 path {
                     transition: 0.3s all ease;
 
-                    &:first-child{
+                    &:first-child {
                         fill: $grey-text;
                         stroke: $grey-text;
                     }
 
-                    &:last-child{
+                    &:last-child {
                         fill: transparent;
                     }
                 }
@@ -284,27 +322,27 @@
             &.--active {
                 svg {
                     path {
-                        &:first-child{
+                        &:first-child {
                             fill: $pink;
                             stroke: $pink;
                         }
 
-                        &:last-child{
+                        &:last-child {
                             fill: $pink;
                         }
                     }
                 }
             }
 
-            @include hover{
+            @include hover {
                 svg {
                     path {
-                        &:first-child{
+                        &:first-child {
                             fill: $pink;
                             stroke: $pink;
                         }
 
-                        &:last-child{
+                        &:last-child {
                             fill: $pink;
                         }
                     }

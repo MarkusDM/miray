@@ -2,4 +2,10 @@
     .swiper-slide {
         height: unset;
     }
+
+    &__title {
+        @include small-tablet{
+            margin-bottom: 8rem;
+        }
+    }
 }

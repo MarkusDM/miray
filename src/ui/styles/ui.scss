@@ -137,7 +137,9 @@
         width: 2.4rem;
         height: 2.4rem;
 
-        @include sizes(4.8rem, 4.8rem)
+        @include small-tablet{
+            @include sizes(4.8rem, 4.8rem)
+        }
     }
 }
 
@@ -349,6 +351,11 @@
         padding: 0.8rem;
         border-radius: 6rem;
 
+        @include small-tablet{
+            gap: 4rem;
+            border-radius: 12rem;
+        }
+
         span {
             font-size: 1.8rem;
             color: #1d1d1b;
@@ -356,10 +363,20 @@
             width: 100%;
             text-align: center;
             transition: 0.2s color ease;
+
+            @include small-tablet{
+                font-weight: 400;
+                font-size: 3rem;
+                line-height: 130%;
+            }
         }
 
         svg {
             @include sizes(6rem, 6rem);
+
+            @include small-tablet{
+                @include sizes(8.8rem, 8.8rem);
+            }
 
             path,
             rect {
