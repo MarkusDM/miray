@@ -1,12 +1,22 @@
 .promotions {
     &__title {
         margin-bottom: 6rem;
+
+        @include small-tablet{
+            margin-bottom: 8rem;
+        }
     }
 
     &__cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 4rem;
+
+        @include small-tablet{
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
     }
 
     &__card {
@@ -16,6 +26,13 @@
         gap: 2rem;
         background-color: $grey-bg;
 
+        @include small-tablet{
+            flex-direction: column;
+            padding: 3.2rem;
+            border-radius: 4.8rem;
+            gap: 0;
+        }
+
         &-heading {
             display: flex;
             align-items: center;
@@ -23,19 +40,42 @@
             padding-bottom: 0.4rem;
             margin-bottom: 1.2rem;
             border-bottom: 0.1rem solid $green;
+
+            @include small-tablet{
+                padding-bottom: .8rem;
+                margin-bottom: 2.4rem;
+            }
         }
 
         &-discard {
             color: $pink;
+
+            @include small-tablet{
+                font-weight: 600;
+                font-size: 4.8rem;
+                line-height: 110%;
+                letter-spacing: 0.04em;
+            }
         }
 
         &-icon {
             @include sizes(3.2rem, 3.2rem);
+
+            @include small-tablet{
+                @include sizes(5rem, 5rem);
+            }
         }
 
         &-date {
             display: block;
             margin-bottom: 6.3rem;
+
+            @include small-tablet{
+                margin-bottom: 4rem;
+                font-weight: 400;
+                font-size: 3rem;
+                line-height: 130%;
+            }
         }
 
         &.--large {
@@ -48,6 +88,11 @@
             flex-direction: column;
             gap: 0;
             overflow: hidden;
+
+            @include small-tablet{
+                padding: 3.2rem;
+                height: 94.2rem;
+            }
 
             &::after,
             &::before {
@@ -82,11 +127,26 @@
                 &-title {
                     margin-bottom: 2rem;
                     margin-top: auto;
+
+                    @include small-tablet{
+                        font-weight: 600;
+                        font-size: 4.8rem;
+                        line-height: 110%;
+                        letter-spacing: 0.04em;
+                        margin-bottom: 4rem;
+                    }
                 }
 
                 &-description {
                     margin-bottom: 4rem;
                     font-size: 1.8rem;
+
+                    @include small-tablet{
+                        margin-bottom: 4rem;
+                        font-weight: 400;
+                        font-size: 3rem;
+                        line-height: 130%;
+                    }
                 }
 
                 &-link {
@@ -98,12 +158,36 @@
         &-description {
             &:not(.--large &) {
                 @include clamp-text(3);
+
+                &._mobile-only {
+                    @media (min-width: 48em) {
+                        display: none;
+                    }
+                }
+
+                @include small-tablet{
+                    @include clamp-text(2);
+
+                    &._desktop-only {
+                        @include small-tablet{
+                            display: none;
+                        }
+                    }
+
+
+                }
             }
         }
 
         &-image {
             @include sizes(36.4rem, 30.8rem);
             border-radius: 1.6rem;
+
+            @include small-tablet{
+                border-radius: 3.2rem;
+                @include sizes(100%, 54.2rem);
+                margin-bottom: 4rem;
+            }
 
             img {
                 border-radius: inherit;

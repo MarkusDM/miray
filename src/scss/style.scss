@@ -77,6 +77,11 @@ section {
     margin: 0 !important;
     border: 0.1rem solid $green;
 
+    @include small-tablet{
+        width: 8.8rem !important;
+        height: 8.8rem !important;
+    }
+
     &::after {
         display: none;
         visibility: hidden;
@@ -85,6 +90,12 @@ section {
     svg {
         width: 2.5rem !important;
         height: 1.9rem !important;
+
+        @include small-tablet{
+            width: 3.4rem !important;
+            height: 2.6rem !important;
+        }
+
     }
 }
 
