@@ -3,16 +3,29 @@
         display: flex;
         justify-content: space-between;
         gap: 4rem;
+
+        @include small-tablet {
+            flex-direction: column;
+            gap: 4.8rem;
+        }
     }
 
     &__info {
         max-width: 57.3rem;
         width: 100%;
 
+        @include small-tablet {
+            max-width: 100%;
+        }
+
         &-list {
             display: flex;
             flex-direction: column;
             gap: 2rem;
+
+            @include small-tablet {
+                gap: 1.6rem;
+            }
         }
 
         &-item {
@@ -23,6 +36,12 @@
             border-radius: 2rem;
             background-color: $grey-bg;
 
+            @include small-tablet {
+                padding: 3.2rem;
+                border-radius: 4.8rem;
+                gap: 3.2rem;
+            }
+
             &-icon {
                 @include sizes(7.5rem, 7.5rem);
                 display: flex;
@@ -31,8 +50,16 @@
                 border-radius: 50%;
                 background-color: $green;
 
+                @include small-tablet {
+                    @include sizes(8rem, 8rem);
+                }
+
                 img {
                     @include sizes(3.2rem, 3.2rem);
+
+                    @include small-tablet {
+                        @include sizes(3.4rem, 3.4rem);
+                    }
                 }
             }
 
@@ -41,23 +68,44 @@
                 font-size: 2rem;
                 line-height: 120%;
                 letter-spacing: 0.04em;
+
+                @include small-tablet {
+                    font-weight: 500;
+                    font-size: 3rem;
+                    line-height: 120%;
+                    letter-spacing: 0.04em;
+                }
             }
         }
     }
 
     &__title {
         margin-bottom: 2.8rem;
+
+        @include small-tablet {
+            margin-bottom: 8rem;
+        }
     }
 
     &__description {
         margin-bottom: 4.8rem;
         font-size: 2rem;
         color: $grey-text;
+
+        @include small-tablet {
+            font-size: 3rem;
+            line-height: 130%;
+        }
     }
 
     &__image {
         border-radius: 2rem;
         @include sizes(62rem, 100%);
+
+        @include small-tablet {
+            @include sizes(100%, 85.2rem);
+            border-radius: 4rem;
+        }
 
         img {
             border-radius: inherit;
@@ -71,29 +119,45 @@
         flex-direction: column;
         gap: 3.9rem;
 
-        &-text {
-        }
-
         &-title {
             font-weight: 600;
             font-size: 2rem;
             line-height: 120%;
             letter-spacing: 0.04em;
             margin-bottom: 0.8rem;
-          display: block;
+            display: block;
+
+            @include small-tablet {
+                font-weight: 500;
+                font-size: 3.6rem;
+                margin-bottom: 1.6rem;
+            }
         }
 
         &-description {
             font-size: 1.8rem;
             margin-bottom: 2.4rem;
+
+            @include small-tablet {
+                font-size: 3rem;
+                line-height: 130%;
+                margin-bottom: 4.8rem;
+            }
         }
 
         &-button {
+            @include small-tablet {
+                width: 100%;
+            }
         }
 
         &-image {
             @include sizes(60.7rem, 100%);
             border-radius: 2rem;
+
+            @include small-tablet{
+                display: none;
+            }
 
             img {
                 border-radius: inherit;

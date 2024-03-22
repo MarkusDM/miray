@@ -1,6 +1,10 @@
 .mission {
     margin-bottom: 26rem;
 
+    @include small-tablet{
+        margin-bottom: 20rem;
+    }
+
     &__content {
         position: relative;
 
