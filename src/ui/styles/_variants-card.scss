@@ -1,4 +1,10 @@
 .variants {
+    &__slider {
+        .swiper-slide {
+            height: unset;
+        }
+    }
+
     &__card {
         padding: 3.2rem;
         border-radius: 3rem;
@@ -58,8 +64,6 @@
         }
 
         &-description {
-            @include clamp-text(3);
-
             @include small-tablet{
                 font-size: 3rem;
                 line-height: 130%;

@@ -179,6 +179,14 @@
     &__phone {
         position: relative;
         z-index: 1;
+
+        &-wrapper {
+            @include small-tablet {
+                position: absolute;
+                inset: 0;
+                z-index: 5;
+            }
+        }
     }
     // .header__phone-btn
     &__phone-btn {

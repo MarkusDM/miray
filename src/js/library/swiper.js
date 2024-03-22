@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             breakpoints: {
                 0: {
-                    slidesPerView: 1
+                    slidesPerView: 1,
+                    spaceBetween: remToPx(2.4),
                 },
                 768: {
                     slidesPerView: 4
@@ -105,6 +106,17 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             768: {
                 slidesPerView: 4
+            }
+        }
+    });
+
+    swiperSettings('.figuration', {
+        breakpoints: {
+            0: {
+                slidesPerView: 1
+            },
+            768: {
+                slidesPerView: 3
             }
         }
     });

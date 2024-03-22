@@ -184,6 +184,12 @@ body::after {
         }
     }
 
+    &#phone-figuration {
+        .modal__close {
+            margin-bottom: 3.2rem;
+        }
+    }
+
     @include small-tablet {
         display: block;
     }
@@ -198,6 +204,49 @@ body::after {
             background-color: $white;
             border-radius: 4.8rem;
             padding: 4.8rem 3.2rem;
+
+            .header__phone {
+                &-list {
+                    position: initial;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6.4rem;
+                    border: none;
+                    padding: 0;
+                    margin-bottom: 6.4rem;
+
+                    li {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2.4rem;
+
+                        span {
+                            font-weight: 400;
+                            font-size: 3rem;
+                            line-height: 130%;
+                            color: $grey-text;
+
+                            &:last-of-type {
+                                max-width: 55%;
+                            }
+                        }
+
+                        a {
+                            font-weight: 400;
+                            font-size: 3.6rem;
+                        }
+                    }
+
+
+                }
+
+                &-button {
+                    @include small-tablet{
+                        width: 100%;
+                        padding: 3rem;
+                    }
+                }
+            }
         }
 
         &__close {
