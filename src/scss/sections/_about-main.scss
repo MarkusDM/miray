@@ -1,6 +1,10 @@
 .about {
     margin-bottom: 6.8rem;
 
+    @include small-tablet{
+        margin-bottom: 42.8rem;
+    }
+
     &__content {
         display: flex;
         justify-content: space-between;
