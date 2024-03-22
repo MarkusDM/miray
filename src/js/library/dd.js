@@ -24,21 +24,34 @@ DynamicAdapt.prototype.init = function () {
     this.mediaQueries = Array.prototype.map.call(
         this.оbjects,
         function (item) {
-            return '(' + this.type + '-width: ' + item.breakpoint + 'px),' + item.breakpoint;
+            return (
+                '(' +
+                this.type +
+                '-width: ' +
+                item.breakpoint +
+                'px),' +
+                item.breakpoint
+            );
         },
         this
     );
-    this.mediaQueries = Array.prototype.filter.call(this.mediaQueries, function (item, index, self) {
-        return Array.prototype.indexOf.call(self, item) === index;
-    });
+    this.mediaQueries = Array.prototype.filter.call(
+        this.mediaQueries,
+        function (item, index, self) {
+            return Array.prototype.indexOf.call(self, item) === index;
+        }
+    );
     for (let i = 0; i < this.mediaQueries.length; i++) {
         const media = this.mediaQueries[i];
         const mediaSplit = String.prototype.split.call(media, ',');
         const matchMedia = window.matchMedia(mediaSplit[0]);
         const mediaBreakpoint = mediaSplit[1];
-        const оbjectsFilter = Array.prototype.filter.call(this.оbjects, function (item) {
-            return item.breakpoint === mediaBreakpoint;
-        });
+        const оbjectsFilter = Array.prototype.filter.call(
+            this.оbjects,
+            function (item) {
+                return item.breakpoint === mediaBreakpoint;
+            }
+        );
         matchMedia.addListener(function () {
             _this.mediaHandler(matchMedia, оbjectsFilter);
         });

@@ -30,6 +30,7 @@ import './utils/modals.js';
 // modals
 import './utils/modals.js';
 
+
 // ---------------------------------- libs ----------------------------------
 
 //swiper
@@ -42,7 +43,7 @@ import './library/input-mask.js';
 import './library/nouislider';
 
 // dynamic dom
-import './library/da';
+import './library/dd';
 
 // --------------------------------------------------------------------------
 

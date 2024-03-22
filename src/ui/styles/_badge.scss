@@ -22,4 +22,10 @@
         background-color: $green;
         color: $white;
     }
+    &._disabled {
+        color: $grey-text;
+    }
+    &._canceled {
+        color: #e88585;
+    }
 }

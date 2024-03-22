@@ -1,9 +1,4 @@
 .checkout {
-    padding-top: 21.4rem;
-
-    @media (max-width: 48em) {
-        padding-top: 28rem;
-    }
 
     &__container {
         display: flex;

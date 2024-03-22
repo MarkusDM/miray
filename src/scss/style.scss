@@ -58,6 +58,21 @@ section {
     margin: 0 auto;
     max-width: 1920px;
     margin-top: 21.4rem;
+    
+    @media (max-width: 48em) {
+        margin-top: 30.4rem;
+    }
+}
+
+._desktop-only {
+    @media (max-width: 48em) {
+        display: none;
+    }
+}
+._mobile-only {
+    @media (min-width: 48em) {
+        display: none;
+    }
 }
 
 .swiper-button-next,
@@ -70,6 +85,11 @@ section {
     margin: 0 !important;
     border: 0.1rem solid $green;
 
+    @include small-tablet{
+        width: 8.8rem !important;
+        height: 8.8rem !important;
+    }
+
     &::after {
         display: none;
         visibility: hidden;
@@ -78,6 +98,12 @@ section {
     svg {
         width: 2.5rem !important;
         height: 1.9rem !important;
+
+        @include small-tablet{
+            width: 3.4rem !important;
+            height: 2.6rem !important;
+        }
+
     }
 }
 

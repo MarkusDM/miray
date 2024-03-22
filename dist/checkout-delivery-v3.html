@@ -1923,21 +1923,34 @@
     </div>
 </footer>
 
+<div style="position: absolute; top: -110%; left: -110%; transform: translate(-100%, -100%)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" fill="none" preserveAspectRatio="none">
+        <clipPath id="banner-poster" clipPathUnits="objectBoundingBox">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0,0.862 C0,0.823,0,0.803,0,0.786 C0.01,0.36,0.206,0.018,0.451,0.001 C0.461,0,0.472,0,0.495,0 H0.862 C0.921,0,0.95,0,0.971,0.027 C0.976,0.034,0.98,0.042,0.984,0.051 C1,0.087,1,0.138,1,0.24 V0.738 C1,0.861,1,0.923,0.978,0.962 C0.956,1,0.92,1,0.85,1 H0.079 C0.076,1,0.074,1,0.072,1 C0.033,0.997,0.002,0.942,0,0.874 C0,0.872,0,0.868,0,0.862"></path>
+        </clipPath>
+    </svg>
+</div>
+
+
+
 <div id="checkoutComplete" aria-hidden="true" class="modal checkout-complete-modal">
     <div class="modal__wrapper">
         <div class="modal__content">
             <div class="modal__body">
                 <div class="checkout-complete-modal__inner">
-                        <button data-close="" type="button" class="modal__close">
-                            <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
-                        </button>
-                        <span class="checkout-complete-modal__heading h h_h2">Ваш заказ <span>#123456</span> оформлен!</span>
-                        <p class="checkout-complete-modal__text">Спасибо за выбор компании Миррэй! В ближайшее время с Вами свяжется наш менеджер для уточнения деталей.</p>
-                        <div class="checkout-complete-modal__actions">
-                            <a href="#" class="checkout-complete-modal__btn btn btn__white">Перейти в личный кабинет</a>
-                            <a href="#" class="checkout-complete-modal__btn btn btn_ghost">Перейти в каталог</a>
-                        </div>
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="checkout-complete-modal__heading h h_h2">Ваш заказ <span>#123456</span> оформлен!</span>
+                    <p class="checkout-complete-modal__text">
+                        Спасибо за выбор компании Миррэй! В ближайшее время с Вами свяжется наш менеджер для
+                        уточнения деталей.
+                    </p>
+                    <div class="checkout-complete-modal__actions">
+                        <a href="#" class="checkout-complete-modal__btn btn btn__white">Перейти в личный кабинет</a>
+                        <a href="#" class="checkout-complete-modal__btn btn btn_ghost">Перейти в каталог</a>
                     </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1953,7 +1966,10 @@
                         <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
                     </button>
                     <span class="checkout-complete-modal__heading h h_h2">Ваш заказ <span>#123456</span> оформлен!</span>
-                    <p class="checkout-complete-modal__text">Спасибо за выбор компании Миррэй! Данные для личного кабинета направлены на почту "farexampe@.com"</p>
+                    <p class="checkout-complete-modal__text">
+                        Спасибо за выбор компании Миррэй! Данные для личного кабинета направлены на почту
+                        "farexampe@.com"
+                    </p>
                     <div class="checkout-complete-modal__actions">
                         <a href="#" class="checkout-complete-modal__btn btn btn__white">Перейти к регистрации</a>
                         <a href="#" class="checkout-complete-modal__btn btn btn_ghost">Перейти в каталог</a>
@@ -1963,6 +1979,68 @@
         </div>
     </div>
 </div>
+
+<!-- информационное меню в мобильной версии -->
+<div id="basket-order-info" aria-hidden="true" class="modal info-modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <button data-close="" type="button" class="modal__close">
+                    <img src="./assets/images/icons/close.svg" alt="" class="modal__close-icon">
+                </button>
+
+                <ul class="modal__list">
+                    <li class="modal__item">
+                        <div class="modal__item-heading">
+                            <strong class="modal__item-title"> Розничная цена: </strong>
+
+                            <span class="modal__item-price"> 40.90₽ </span>
+                        </div>
+
+                        <p class="modal__item-description">
+                            При заказе на общую сумму от 15 000₽ применяется скидка 5%
+                        </p>
+                    </li>
+                    <li class="modal__item">
+                        <div class="modal__item-heading">
+                            <strong class="modal__item-title"> Оптовая цена: </strong>
+
+                            <span class="modal__item-price">
+                                40.90₽
+
+                                <sub> 40.90₽ </sub>
+                            </span>
+                        </div>
+
+                        <p class="modal__item-description">При заказе на общую сумму от 100 000 ₽</p>
+                    </li>
+                    <li class="modal__item">
+                        <div class="modal__item-heading">
+                            <strong class="modal__item-title"> Спеццена: </strong>
+
+                            <span class="modal__item-price"> 32.90₽ </span>
+                        </div>
+
+                        <p class="modal__item-description">Действует за заказ кратный коробу</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="basket-order-info-price" aria-hidden="true" class="modal info-modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <button data-close="" type="button" class="modal__close">
+                    <img src="./assets/images/icons/close.svg" alt="" class="modal__close-icon">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
 
