@@ -60,8 +60,6 @@
         width: 110.7rem;
         border-radius: 2.4rem;
         background-color: $bgFon;
-        padding-top: 7.4rem;
-        padding-bottom: 7.4rem;
         height: 31rem;
         z-index: 1;
         left: -6rem;
@@ -69,15 +67,29 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-left: 9rem;
+        padding: 6.4rem 4rem 7.4rem 13rem;
+
+        &-icon {
+            position: absolute;
+            top: -2.8rem;
+            right: 5.2rem;
+            @include sizes(9.7rem, 8.2rem);
+
+            img {
+                height: 100%;
+            }
+        }
+
         &-title {
             display: flex;
             flex-direction: column;
             margin-bottom: 4.4rem;
             strong {
                 display: block;
-                font-size: 2.8rem;
                 font-weight: 600;
+                font-size: 2.8rem;
+                line-height: 110%;
+                letter-spacing: 0.04em;
                 color: $green;
                 margin-bottom: 1.4rem;
             }
