@@ -3,6 +3,14 @@
         font-size: 4.8rem;
         font-weight: 600;
         margin-bottom: 12.3rem;
+
+        @include small-tablet {
+            margin-bottom: 8rem;
+            font-weight: 600;
+            font-size: 4.8rem;
+            line-height: 110%;
+            letter-spacing: 0.04em;
+        }
     }
 
     &__content {
@@ -43,7 +51,6 @@
         &-wrap:last-child {
             margin-bottom: 0;
         }
-
     }
 
     &__image {
@@ -82,5 +89,41 @@
         top: -19rem;
         right: 0;
         z-index: 1;
+    }
+
+    @include small-tablet {
+        &__blocks {
+            padding: 3.2rem;
+            border-radius: 4.8rem;
+            background-color: $grey-bg;
+            display: flex;
+            flex-direction: column;
+            gap: 8rem;
+        }
+
+        &__block {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+
+            &-image {
+                @include sizes(100%, 46.6rem);
+                border-radius: 4rem;
+                margin-bottom: 1.6rem;
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: inherit;
+                }
+            }
+
+            &-text {
+                font-weight: 400;
+                font-size: 3rem;
+                line-height: 130%;
+                color: $grey-text;
+            }
+        }
     }
 }
