@@ -1,52 +1,64 @@
-<section class="pricing">
+<section class="pricing variants">
     <div class="container">
         <div class="pricing__content">
             <h2 class="pricing__title h h_h1">Варианты ценообразования</h2>
 
-            <ul class="variants__list">
-                <li class="variants__card">
-                    <span class="variants__card-counter h h_h2">01</span>
+            <div class="swiper variants__slider variants-swiper">
+                <ul class="swiper-wrapper variants__list">
+                    <li class="swiper-slide">
+                        <div class="variants__card">
+                            <span class="variants__card-counter h h_h2">01</span>
 
-                    <figure class="variants__card-image">
-                        <img src="./assets/images/sections/variants/variants-image-1.png" alt="" />
-                    </figure>
+                            <figure class="variants__card-image">
+                                <img src="./assets/images/sections/variants/variants-image-1.png" alt="" />
+                            </figure>
 
-                    <strong class="variants__card-category h h_h4"> Розничная цена </strong>
+                            <strong class="variants__card-category h h_h4"> Розничная цена </strong>
 
-                    <p class="variants__card-description text__regular-16">
-                        Без минимальной суммы заказа и от любого количества штук товара. Для заказа на общую
-                        сумму до 100 000 ₽ по оптовому прайсу.
-                    </p>
-                </li>
-                <li class="variants__card">
-                    <span class="variants__card-counter h h_h2">02</span>
+                            <p class="variants__card-description text__regular-16">
+                                Без минимальной суммы заказа и от любого количества штук товара. Для заказа
+                                на общую сумму до 100 000 ₽ по оптовому прайсу.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="variants__card">
+                            <span class="variants__card-counter h h_h2">02</span>
 
-                    <figure class="variants__card-image">
-                        <img src="./assets/images/sections/variants/variants-image-2.png" alt="" />
-                    </figure>
+                            <figure class="variants__card-image">
+                                <img src="./assets/images/sections/variants/variants-image-2.png" alt="" />
+                            </figure>
 
-                    <strong class="variants__card-category h h_h4">Оптовая цена</strong>
+                            <strong class="variants__card-category h h_h4">Оптовая цена</strong>
 
-                    <p class="variants__card-description text__regular-16">
-                        Распространяется на заказ на общую сумму от 100 000 ₽ по оптовому прайсу. + бесплатная
-                        доставка по Москве и до ТК (в пределах МКАД).
-                    </p>
-                </li>
-                <li class="variants__card">
-                    <span class="variants__card-counter h h_h2">03</span>
+                            <p class="variants__card-description text__regular-16">
+                                Распространяется на заказ на общую сумму от 100 000 ₽ по оптовому прайсу. +
+                                бесплатная доставка по Москве и до ТК (в пределах МКАД).
+                            </p>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="variants__card">
+                            <span class="variants__card-counter h h_h2">03</span>
 
-                    <figure class="variants__card-image">
-                        <img src="./assets/images/sections/variants/variants-image-3.png" alt="" />
-                    </figure>
+                            <figure class="variants__card-image">
+                                <img src="./assets/images/sections/variants/variants-image-3.png" alt="" />
+                            </figure>
 
-                    <strong class="variants__card-category h h_h4">Спеццена</strong>
+                            <strong class="variants__card-category h h_h4">Спеццена</strong>
 
-                    <p class="variants__card-description text__regular-16">
-                        Получите дополнительную выгоду, оформив заказ кратно коробу. Распространяется только
-                        на оптовый заказ на общую сумму от 100 000 ₽ по оптовому прайсу.
-                    </p>
-                </li>
-            </ul>
+                            <p class="variants__card-description text__regular-16">
+                                При оформлении заказа на общую сумму  от 100 000 рублей по оптовому прайсу и
+                                добавлении в корзину отдельных товаров в количестве кратном коробу Вы
+                                получаете еще более выгодную спеццену на этот конкретный товар.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="variants__pagination swiper-pagination">
+            </div>
 
             <div class="pricing__contacts">
                 <div class="pricing__contacts-text">
@@ -62,7 +74,7 @@
                 <ul class="pricing__contacts-list">
                     <li class="pricing__contacts-item">
                         <figure class="pricing__contacts-item-icon">
-                            <img src="../assets/images/icons/phone.svg" alt="">
+                            <img src="../assets/images/icons/phone.svg" alt="" />
                         </figure>
 
                         <div class="pricing__contacts-item-text">
@@ -75,7 +87,7 @@
                     </li>
                     <li class="pricing__contacts-item">
                         <figure class="pricing__contacts-item-icon">
-                            <img src="../assets/images/icons/email.svg" alt="">
+                            <img src="../assets/images/icons/email.svg" alt="" />
                         </figure>
 
                         <div class="pricing__contacts-item-text">
@@ -88,14 +100,14 @@
                     </li>
                     <li class="pricing__contacts-item">
                         <figure class="pricing__contacts-item-icon">
-                            <img src="../assets/images/icons/clock.svg" alt="">
+                            <img src="../assets/images/icons/clock.svg" alt="" />
                         </figure>
 
                         <div class="pricing__contacts-item-text">
                             <strong class="pricing__contacts-item-title h h_h4"> График работы </strong>
 
                             <p class="pricing__contacts-item-description">
-                                Пн - Пт: с 9:00 до 18:00 <br>Сб - Вс: выходные
+                                Пн - Пт: с 9:00 до 18:00 <br />Сб - Вс: выходные
                             </p>
                         </div>
                     </li>
