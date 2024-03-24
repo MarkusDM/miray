@@ -27,7 +27,9 @@ textarea {
     font-size: 1.6rem;
     color: $grey-text;
     @media (max-width: 48em) {
-        row-gap: 1.6rem;
+        border-radius: 6rem;
+        font-size: 3rem;
+        line-height: 130%;
     }
 
     &_file-input {
@@ -80,6 +82,10 @@ textarea {
 
     textarea {
         height: 12rem;
+
+        @include small-tablet{
+            height: 22.4rem;
+        }
     }
 
     // .input__btn
@@ -110,11 +116,13 @@ textarea {
         &::placeholder {
             color: $grey-text;
             transition: color 0.3s ease;
+            font-size: 3.2rem;
+            line-height: 120%;
         }
 
         @media (max-width: 48em) {
-            padding: 2.4rem 3.6rem;
-            border-radius: 3.2rem;
+            padding: 2.4rem 4rem;
+            border-radius: 6rem;
         }
     }
 
@@ -147,6 +155,10 @@ textarea {
                 left: 0;
                 color: $pink;
                 white-space: nowrap;
+
+                @include small-tablet{
+                    font-size: 2.4rem;
+                }
             }
         }
         .input__field {

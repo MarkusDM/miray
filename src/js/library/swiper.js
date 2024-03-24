@@ -59,7 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
             pagination: {
                 el: '.sale__pagination-bullets',
                 clickable: true
-            }
+            },
+            grabCursor: true
         });
     }
 
