@@ -118,11 +118,17 @@
             transition: 0.3s margin-bottom ease;
 
             &.--active {
-                .catalog__filters-block-heading-icon {
-                    transform: rotate(-180deg);
+                > .catalog__filters-block-heading {
+                    figure {
+                        transform: rotate(-180deg);
+                    }
+
+                    span {
+                        color: $green;
+                    }
                 }
 
-                .catalog__filters-fields-wrapper {
+                > .catalog__filters-fields-wrapper {
                     grid-template-rows: 1fr;
                 }
             }
@@ -132,7 +138,7 @@
                 align-items: center;
                 justify-content: space-between;
                 cursor: pointer;
-                padding-bottom: 2rem;
+                padding-bottom: 2.4rem;
 
                 @include hover {
                     .catalog__filters-block-heading-title {
@@ -149,15 +155,130 @@
                     transition: 0.3s transform ease;
                 }
             }
+
+            &-nested {
+                position: relative;
+
+                &::after {
+                    @include pseudo {
+                        width: 0.1rem;
+                        left: 0;
+                        height: calc(100% - 4.5rem);
+                        top: 2.7rem;
+                        opacity: 0;
+                        transition: 0.3s opacity ease-out;
+                        background-image: repeating-linear-gradient(
+                                2deg,
+                                #858585,
+                                #858585 1.5rem,
+                                transparent 1.5rem,
+                                transparent 2.8rem,
+                                #858585 2.8rem
+                            ),
+                            repeating-linear-gradient(
+                                92deg,
+                                #858585,
+                                #858585 1.5rem,
+                                transparent 1.5rem,
+                                transparent 2.8rem,
+                                #858585 2.8rem
+                            ),
+                            repeating-linear-gradient(
+                                182deg,
+                                #858585,
+                                #858585 1.5rem,
+                                transparent 1.5rem,
+                                transparent 2.8rem,
+                                #858585 2.8rem
+                            ),
+                            repeating-linear-gradient(
+                                272deg,
+                                #858585,
+                                #858585 1.5rem,
+                                transparent 1.5rem,
+                                transparent 2.8rem,
+                                #858585 2.8rem
+                            );
+                        background-size:
+                            0.1rem 100%,
+                            100% 0.1rem,
+                            0.1rem 100%,
+                            100% 0.1rem;
+                        background-position:
+                            0 0,
+                            0 0,
+                            100% 0,
+                            0 100%;
+                        background-repeat: no-repeat;
+                    }
+                }
+
+                &.--active {
+                    &:has(.catalog__filters-block-nested-wrapper) {
+                        &::after {
+                            opacity: 1;
+                        }
+                    }
+
+                    > .catalog__filters-block-nested-wrapper {
+                        grid-template-rows: 1fr;
+
+                        &:has(.catalog__filters-block-nested-wrapper) {
+                            padding-left: 2.2rem;
+                        }
+                    }
+
+                    > .catalog__filters-block-nested-heading {
+                        figure {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+
+                &-heading {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-bottom: 1.6rem;
+                    cursor: pointer;
+
+                    .catalog__filters-block-heading-title {
+                        font-weight: 500;
+                        font-size: 1.8rem;
+                        line-height: 120%;
+                        color: $green;
+                    }
+                }
+
+                &-wrapper {
+                    display: grid;
+                    grid-template-rows: 0fr;
+                    transition:
+                        grid-template-rows 500ms,
+                        0.5s padding ease;
+
+                    .catalog__filters-block-nested-wrapper {
+                        padding-left: 2.2rem;
+                    }
+                }
+
+                &-content {
+                    overflow: hidden;
+                }
+            }
         }
 
         &-fields {
-            overflow: hidden;
+            &-content {
+                overflow: hidden;
+            }
 
             &-wrapper {
                 display: grid;
                 grid-template-rows: 0fr;
-                transition: grid-template-rows 500ms;
+                transition:
+                    grid-template-rows 500ms,
+                    0.5s padding ease;
             }
         }
 

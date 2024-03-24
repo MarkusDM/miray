@@ -36,14 +36,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    Array.from(document.querySelectorAll('.catalog__filters-block'), (block) => {
-        const heading = block.querySelector('.catalog__filters-block-heading');
 
-        heading.addEventListener('click', () => {
-            block.classList.toggle('--active');
+    //catalog filters
+    function toggleFilterActiveMenuClass(listClass, headingClass) {
+        Array.from(document.querySelectorAll(listClass), (block) => {
+            const heading = block.querySelector(headingClass);
+
+            heading.addEventListener('click', () => {
+                block.classList.toggle('--active');
+            });
         });
-    });
+    };
 
+    toggleFilterActiveMenuClass('.catalog__filters-block', '.catalog__filters-block-heading')
+    toggleFilterActiveMenuClass('.catalog__filters-block-nested', '.catalog__filters-block-nested-heading')
+
+    //catalog change view
     const CLASSES = {
         grid: 'list',
         list: 'grid'
