@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { _slideToggle } from '../utils/utils';
+import {_slideToggle, bodyLock, bodyUnlock} from '../utils/utils';
 import { rangeSlider } from '../library/nouislider';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,20 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
     //catalog filters
     function toggleFilterActiveMenuClass(listClass, headingClass) {
         Array.from(document.querySelectorAll(listClass), (block) => {
             const heading = block.querySelector(headingClass);
 
-            heading.addEventListener('click', () => {
-                block.classList.toggle('--active');
-            });
+           if (heading) {
+               heading.addEventListener('click', () => {
+                   block.classList.toggle('--active');
+               });
+           }
         });
-    };
+    }
 
-    toggleFilterActiveMenuClass('.catalog__filters-block', '.catalog__filters-block-heading')
-    toggleFilterActiveMenuClass('.catalog__filters-block-nested', '.catalog__filters-block-nested-heading')
+    toggleFilterActiveMenuClass('.catalog__filters-block', '.catalog__filters-block-heading');
+    toggleFilterActiveMenuClass('.catalog__filters-block-nested', '.catalog__filters-block-nested-heading');
 
     //catalog change view
     const CLASSES = {
@@ -113,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initView();
     }
 
+    //reset filters
     const filters = document.querySelector('.catalog__filters');
 
     if (filters) {
@@ -140,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    //basket checkboxes
     if (document.querySelector('.basket')) {
         Array.from(document.querySelectorAll('.basket__card-addiction-heading'), (button) => {
             button.addEventListener('click', () => {
@@ -181,6 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
+    //contacts y-map
     if (document.querySelector('.contacts')) {
         const maps = document.querySelectorAll('[data-coordinats]');
 
@@ -210,5 +214,28 @@ document.addEventListener('DOMContentLoaded', () => {
             map.addChild(new ymaps3.YMapDefaultFeaturesLayer({ zIndex: 1800 }));
             map.addChild(marker);
         });
+    }
+
+    //catalog filters mobile version
+    if (document.querySelector('.catalog__filters')) {
+        const filters = document.querySelector('.catalog__filters');
+        const stickyButton = document.querySelector('.catalog__sticky-button');
+        const backButton = filters.querySelector('.catalog__filters-back-button');
+
+        stickyButton.addEventListener('click', () => {
+            filters.classList.add('--active');
+            bodyLock();
+        });
+
+        backButton.addEventListener('click', () => {
+            filters.classList.remove('--active');
+            bodyUnlock();
+        });
+
+        Array.from(document.querySelectorAll('.catalog__filters-fields-content .catalog__filters-back-button'), (button) => {
+            button.addEventListener('click', () => {
+                (button.closest('.catalog__filters-block-nested') || button.closest('.catalog__filters-block')).classList.remove('--active');
+            })
+        })
     }
 });

@@ -15,77 +15,157 @@
         }
 
         &.--list {
-            flex-direction: row;
-            gap: 2.1rem;
+            .catalog-page & {
+                @media (min-width: 48em) {
+                    flex-direction: row;
+                    gap: 2.1rem;
 
-            .recommendations__card {
-                &-title {
-                    margin-bottom: 1.2rem;
-                }
-
-                &-image {
-                    max-width: 23rem;
-                    width: 100%;
-                    margin-bottom: 0;
-                    display: flex;
-                    height: auto;
-                }
-
-                &-middle {
-                    display: flex;
-                    flex-direction: column;
-                    max-width: 53.1rem;
-                    width: 100%;
-                    gap: 8rem;
-                }
-
-                &-info {
-                    display: flex;
-                    margin-top: auto;
-                }
-
-                &-groups {
-                    margin-left: auto;
-                    max-width: 27.9rem;
-                    width: 100%;
-                    margin-right: 10.8rem;
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                &-group {
-                    flex-direction: column;
-                    gap: 1.2rem;
-                    align-items: flex-start;
-                    background-color: transparent;
-                    margin: 0;
-
-                    &-button {
-                        max-width: 100%;
-                        width: fit-content;
-                        justify-content: flex-start;
-                        height: auto;
-
-                        &:first-child {
-                            padding: 1.2rem 1.6rem;
+                    .recommendations__card {
+                        &-title {
+                            margin-bottom: 1.2rem;
                         }
 
-                        &:last-child {
-                            margin-left: 1.2rem;
+                        &-image {
+                            max-width: 23rem;
+                            width: 100%;
+                            margin-bottom: 0;
+                            display: flex;
+                            height: auto;
+                        }
+
+                        &-middle {
+                            display: flex;
+                            flex-direction: column;
+                            max-width: 53.1rem;
+                            width: 100%;
+                            gap: 8rem;
+                        }
+
+                        &-info {
+                            display: flex;
+                            margin-top: auto;
+                        }
+
+                        &-groups {
+                            margin-left: auto;
+                            max-width: 27.9rem;
+                            width: 100%;
+                            margin-right: 10.8rem;
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        &-group {
+                            flex-direction: column;
+                            gap: 1.2rem;
+                            align-items: flex-start;
+                            background-color: transparent;
+                            margin: 0;
+
+                            &-button {
+                                max-width: 100%;
+                                width: fit-content;
+                                justify-content: flex-start;
+                                height: auto;
+
+                                &:first-child {
+                                    padding: 1.2rem 1.6rem;
+                                }
+
+                                &:last-child {
+                                    margin-left: 1.2rem;
+                                }
+                            }
+                        }
+
+                        &-button {
+                            margin-top: auto;
+                            max-width: 24rem;
+                            width: 100%;
+                        }
+
+                        &-favorite-button {
+                            display: block;
+                            right: 2rem;
+                            top: 2rem;
                         }
                     }
                 }
+            }
 
-                &-button {
-                    margin-top: auto;
-                    max-width: 24rem;
-                    width: 100%;
-                }
+            &:not(.catalog-page &) {
+                flex-direction: row;
+                gap: 2.1rem;
 
-                &-favorite-button {
-                    display: block;
-                    right: 2rem;
-                    top: 2rem;
+                .recommendations__card {
+                    &-title {
+                        margin-bottom: 1.2rem;
+                    }
+
+                    &-image {
+                        max-width: 23rem;
+                        width: 100%;
+                        margin-bottom: 0;
+                        display: flex;
+                        height: auto;
+                    }
+
+                    &-middle {
+                        display: flex;
+                        flex-direction: column;
+                        max-width: 53.1rem;
+                        width: 100%;
+                        gap: 8rem;
+                    }
+
+                    &-info {
+                        display: flex;
+                        margin-top: auto;
+                    }
+
+                    &-groups {
+                        margin-left: auto;
+                        max-width: 27.9rem;
+                        width: 100%;
+                        margin-right: 10.8rem;
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    &-group {
+                        flex-direction: column;
+                        gap: 1.2rem;
+                        align-items: flex-start;
+                        background-color: transparent;
+                        margin: 0;
+
+                        &-button {
+                            max-width: 100%;
+                            width: fit-content;
+                            justify-content: flex-start;
+                            height: auto;
+
+                            &:first-child {
+                                padding: 1.2rem 1.6rem;
+                            }
+
+                            &:last-child {
+                                margin-left: 1.2rem;
+                            }
+                        }
+                    }
+
+                    &-button {
+                        margin-top: auto;
+                        max-width: 24rem;
+                        width: 100%;
+                    }
+
+                    &-favorite-button {
+                        display: block;
+                        right: 2rem;
+                        top: 2rem;
+                    }
                 }
             }
         }
