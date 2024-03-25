@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://api-maps.yandex.ru/v3/?apikey=85d23f18-68b0-4dd3-8691-d4e1a7e577fe&lang=ru_RU"></script>
         <title>Главная</title>
-    <script defer src="main.js"></script></head>
+    <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
     <body>
         <div class="wrapper catalog-page">
             <header class="header">
@@ -1900,6 +1900,153 @@
                     </button>
 
                     <h3 class="catalog__filters-title">Фильтры и сортировка</h3>
+
+                    <ul class="catalog__filters-block-sorting-menu">
+                        <li class="catalog__filters-block">
+                            <div class="catalog__filters-block-heading">
+                                <span class="catalog__filters-block-heading-title h h_h4">
+                                    Сортировать по:
+                                </span>
+
+                                <figure class="catalog__filters-block-heading-icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 10.2495L3 10.2495" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M14.375 12.875L11.75 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M17 10.25L11.75 5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+
+                                    <figcaption>Алфавиту</figcaption>
+                                </figure>
+                            </div>
+
+                            <div class="catalog__filters-fields-wrapper">
+                                <div class="catalog__filters-fields-content">
+                                    <div class="catalog__filters-fields-content-mobile _mobile-only">
+                                        <button class="catalog__filters-back-button">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 10.2495L10 10.2495L17 10.2495" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M5.625 12.875L8.25 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M3 10.25L8.25 5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+
+                                            <span>Назад</span>
+                                        </button>
+
+                                        <p class="catalog__filters-fields-content-title">Сортировать по:</p>
+                                    </div>
+
+                                    <ul class="catalog__filters-block-sorting">
+                                        <li>
+                                            <label class="radio">
+                                                <input type="radio" checked="" name="radio" value="Алфавиту">
+
+                                                <span>Алфавиту</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="radio">
+                                                <input type="radio" name="radio" value="Популярности">
+
+                                                <span>Популярности</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="radio">
+                                                <input type="radio" name="radio" value="Сначала дешевле">
+
+                                                <span>Сначала дешевле</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="radio">
+                                                <input type="radio" name="radio" value="Сначала дороже">
+
+                                                <span>Сначала дороже</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="radio">
+                                                <input type="radio" name="radio" value="По размеру скидки">
+
+                                                <span>По размеру скидки</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="catalog__filters-block">
+                            <div class="catalog__filters-block-heading">
+                                <span class="catalog__filters-block-heading-title h h_h4"> Показывать </span>
+
+                                <figure class="catalog__filters-block-heading-icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 10.2495L3 10.2495" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M14.375 12.875L11.75 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M17 10.25L11.75 5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+
+                                    <figcaption>Все товары</figcaption>
+                                </figure>
+                            </div>
+
+                            <div class="catalog__filters-fields-wrapper">
+                                <div class="catalog__filters-fields-content">
+                                    <div class="catalog__filters-fields-content-mobile _mobile-only">
+                                        <button class="catalog__filters-back-button">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 10.2495L10 10.2495L17 10.2495" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M5.625 12.875L8.25 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M3 10.25L8.25 5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+
+                                            <span>Назад</span>
+                                        </button>
+
+                                        <p class="catalog__filters-fields-content-title">Сортировать по:</p>
+                                    </div>
+
+                                    <ul class="catalog__filters-block-sorting">
+                                        <li>
+                                            <label class="radio">
+                                                <input type="radio" name="radio">
+
+                                                <span>Алфавиту</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="radio">
+                                                <input type="radio" name="radio">
+
+                                                <span>Популярности</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="radio">
+                                                <input type="radio" name="radio">
+
+                                                <span>Сначала дешевле</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="radio">
+                                                <input type="radio" name="radio">
+
+                                                <span>Сначала дороже</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="radio">
+                                                <input type="radio" name="radio">
+
+                                                <span>По размеру скидки</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="catalog__filters-sample">
@@ -1962,9 +2109,7 @@
                                         <span>Назад</span>
                                     </button>
 
-                                    <p class="catalog__filters-fields-content-title">
-                                        Новогодние украшения
-                                    </p>
+                                    <p class="catalog__filters-fields-content-title">Новогодние украшения</p>
                                 </div>
 
                                 <div class="catalog__filters-block-nested">
@@ -2276,9 +2421,7 @@
                                         <span>Назад</span>
                                     </button>
 
-                                    <p class="catalog__filters-fields-content-title">
-                                        Новогодние украшения
-                                    </p>
+                                    <p class="catalog__filters-fields-content-title">Новогодние украшения</p>
                                 </div>
 
                                 <div class="catalog__filters-block-nested">
@@ -2590,9 +2733,7 @@
                                         <span>Назад</span>
                                     </button>
 
-                                    <p class="catalog__filters-fields-content-title">
-                                        Новогодние украшения
-                                    </p>
+                                    <p class="catalog__filters-fields-content-title">Новогодние украшения</p>
                                 </div>
 
                                 <div class="catalog__filters-block-nested">
@@ -2904,9 +3045,7 @@
                                         <span>Назад</span>
                                     </button>
 
-                                    <p class="catalog__filters-fields-content-title">
-                                        Новогодние украшения
-                                    </p>
+                                    <p class="catalog__filters-fields-content-title">Новогодние украшения</p>
                                 </div>
 
                                 <div class="catalog__filters-block-nested">
@@ -3218,9 +3357,7 @@
                                         <span>Назад</span>
                                     </button>
 
-                                    <p class="catalog__filters-fields-content-title">
-                                        Новогодние украшения
-                                    </p>
+                                    <p class="catalog__filters-fields-content-title">Новогодние украшения</p>
                                 </div>
 
                                 <div class="catalog__filters-block-nested">
@@ -3532,9 +3669,7 @@
                                         <span>Назад</span>
                                     </button>
 
-                                    <p class="catalog__filters-fields-content-title">
-                                        Новогодние украшения
-                                    </p>
+                                    <p class="catalog__filters-fields-content-title">Новогодние украшения</p>
                                 </div>
 
                                 <div class="catalog__filters-block-nested">
@@ -3846,9 +3981,7 @@
                                         <span>Назад</span>
                                     </button>
 
-                                    <p class="catalog__filters-fields-content-title">
-                                        Новогодние украшения
-                                    </p>
+                                    <p class="catalog__filters-fields-content-title">Новогодние украшения</p>
                                 </div>
 
                                 <div class="catalog__filters-block-nested">
@@ -4160,9 +4293,7 @@
                                         <span>Назад</span>
                                     </button>
 
-                                    <p class="catalog__filters-fields-content-title">
-                                        Новогодние украшения
-                                    </p>
+                                    <p class="catalog__filters-fields-content-title">Новогодние украшения</p>
                                 </div>
 
                                 <div class="catalog__filters-block-nested">
@@ -4474,9 +4605,7 @@
                                         <span>Назад</span>
                                     </button>
 
-                                    <p class="catalog__filters-fields-content-title">
-                                        Новогодние украшения
-                                    </p>
+                                    <p class="catalog__filters-fields-content-title">Новогодние украшения</p>
                                 </div>
 
                                 <div class="catalog__filters-block-nested">
@@ -4788,9 +4917,7 @@
                                         <span>Назад</span>
                                     </button>
 
-                                    <p class="catalog__filters-fields-content-title">
-                                        Новогодние украшения
-                                    </p>
+                                    <p class="catalog__filters-fields-content-title">Новогодние украшения</p>
                                 </div>
 
                                 <div class="catalog__filters-block-nested">

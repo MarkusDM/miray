@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     //catalog filters
+    const filters = document.querySelector('.catalog__filters');
     function toggleFilterActiveMenuClass(listClass, headingClass) {
         Array.from(document.querySelectorAll(listClass), (block) => {
             const heading = block.querySelector(headingClass);
@@ -44,6 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
            if (heading) {
                heading.addEventListener('click', () => {
                    block.classList.toggle('--active');
+
+                   if (listClass === '.catalog__filters-block' && window.innerWidth <= 768) {
+                       const height = calculateTotalHeightOfChildren(filters);
+
+                       block.querySelector('.catalog__filters-fields-wrapper').style.height = `${Math.ceil((height / 10))}rem`
+                   }
                });
            }
         });
@@ -51,6 +58,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     toggleFilterActiveMenuClass('.catalog__filters-block', '.catalog__filters-block-heading');
     toggleFilterActiveMenuClass('.catalog__filters-block-nested', '.catalog__filters-block-nested-heading');
+
+
+    function calculateTotalHeightOfChildren(parentElement) {
+        if (!(parentElement instanceof Element)) {
+            console.error('Переданный аргумент не является элементом DOM');
+            return null;
+        }
+
+        let totalHeight = 0;
+
+        const children = parentElement.children;
+
+        // Проходим по каждому дочернему элементу
+        for (let i = 0; i < children.length; i++) {
+            totalHeight += children[i].getBoundingClientRect().height;
+        }
+
+        return totalHeight + parentElement.scrollHeight + 30;
+    }
 
     //catalog change view
     const CLASSES = {
@@ -115,8 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //reset filters
-    const filters = document.querySelector('.catalog__filters');
-
     if (filters) {
         const resetButton = filters.querySelector('.--reset');
         const checkboxes = filters.querySelectorAll('input[type="checkbox"]');
@@ -138,6 +162,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 resetButton.classList.remove('--active');
 
                 rangeSlider.noUiSlider.set([20000, 100000]);
+
+                Array.from(document.querySelectorAll('.catalog__filters-block-sorting li input'), (radioButton, index) => {
+                    if (index === 0) {
+                        radioButton.checked = true;
+
+                        document.querySelector('.catalog__filters-block-sorting-menu .catalog__filters-block figcaption').textContent = radioButton.value;
+
+                        return;
+                    }
+
+                    radioButton.checked = false
+                })
             });
         });
     }
@@ -235,6 +271,14 @@ document.addEventListener('DOMContentLoaded', () => {
         Array.from(document.querySelectorAll('.catalog__filters-fields-content .catalog__filters-back-button'), (button) => {
             button.addEventListener('click', () => {
                 (button.closest('.catalog__filters-block-nested') || button.closest('.catalog__filters-block')).classList.remove('--active');
+            })
+        })
+
+        const sortingTitle = document.querySelector('.catalog__filters-block figcaption');
+
+        Array.from(document.querySelectorAll('.catalog__filters-block-sorting'), (radioButton) => {
+            radioButton.addEventListener('change', ({target: {value}}) => {
+                sortingTitle.textContent = value;
             })
         })
     }

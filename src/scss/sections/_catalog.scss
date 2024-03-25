@@ -178,8 +178,7 @@
             background-color: $white;
             z-index: 1001;
             padding: 6.4rem 2.2rem 0;
-            overflow-y: scroll;
-            overflow-x: hidden;
+            overflow: hidden scroll;
             @include hide-scrollbar();
             transition: 0.3s transform ease-out;
             transform: translateX(-100%);
@@ -191,6 +190,74 @@
             .checkbox {
                 span {
                     font-size: 3rem;
+                }
+            }
+
+            &-mobile {
+                margin-bottom: 8rem;
+
+                .catalog__filters-block-sorting-menu {
+                    .catalog__filters-block {
+                        border: 0;
+                        padding: 0;
+
+                        &:not(:last-of-type) {
+                            border-bottom: .1rem solid rgba($grey-text, .4);
+                            margin-bottom: 3.2rem;
+                            padding-bottom: 3.2rem;
+                        }
+
+                        .catalog__filters-block-heading {
+
+                           figure {
+                               display: flex;
+                               align-items: center;
+                               gap: 2.4rem;
+                               flex-direction: row-reverse;
+                               max-width: max-content;
+                               transform: none;
+                               white-space: nowrap;
+
+                               figcaption {
+                                   font-weight: 500;
+                                   font-size: 3rem;
+                                   line-height: 120%;
+                                   letter-spacing: 0.04em;
+                                   color: #3c3c3c;
+                               }
+                           }
+
+                            .catalog__filters-block-heading-title {
+                                font-weight: 400;
+                                font-size: 3rem;
+                                line-height: 130%;
+                                color: $grey-text;
+
+                                &::after{
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        &-sorting {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 3.2rem;
+
+                            li {
+                                display: flex;
+                                align-items: center;
+                                gap: 1.6rem;
+
+                                span {
+                                    font-weight: 400;
+                                    font-size: 3rem;
+                                    line-height: 130%;
+                                    color: #3c3c3c;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -479,7 +546,7 @@
                     }
 
                     .catalog__filters-block-nested-wrapper {
-             git            @media (min-width: 48em) {
+                        @media (min-width: 48em) {
                             padding-left: 2.2rem;
                         }
                     }
@@ -503,6 +570,9 @@
                 @include small-tablet {
                     height: 100%;
                     overflow: visible;
+                    max-height: 125rem;
+                    overflow-x: hidden;
+                    overflow-y: scroll;
 
                     .catalog__filters-block-nested {
                         border-bottom: 0.1rem solid $grey-text;
@@ -546,6 +616,8 @@
                     padding: 6.4rem 2.4rem;
                     background-color: $white;
                     z-index: 55;
+                    //height: 325rem;
+                    overflow: scroll hidden;
                 }
             }
         }
@@ -701,6 +773,7 @@
                 box-shadow: 0 -0.8rem 6.8rem 0 rgba(0, 0, 0, 0.08);
                 width: calc(100% + 4.8rem);
                 margin-left: -2.4rem;
+                z-index: 65;
             }
         }
 
