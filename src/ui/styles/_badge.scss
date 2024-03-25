@@ -1,16 +1,31 @@
 .badge {
-  padding: 0 3.2rem;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: 5.3rem;
-  border-radius: 10rem;
-  border: 1.5px solid $green;
-  color: $green;
-  transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 0 3.2rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 5.3rem;
+    border-radius: 10rem;
+    border: 1.5px solid $green;
+    color: $green;
+    white-space: nowrap;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 
-  &._is-active {
-    background-color: $green;
-    color: $white;
-  }
+    @media (max-width: 48em) {
+        padding: 0 4rem;
+        height: 8rem;
+        border-radius: 20rem;
+    }
+
+    &._is-active {
+        background-color: $green;
+        color: $white;
+    }
+    &._disabled {
+        color: $grey-text;
+    }
+    &._canceled {
+        color: #e88585;
+    }
 }

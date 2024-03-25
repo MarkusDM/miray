@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://api-maps.yandex.ru/v3/?apikey=85d23f18-68b0-4dd3-8691-d4e1a7e577fe&lang=ru_RU"></script>
     <title>Оформление заказа</title>
-<script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
+<script defer src="main.js"></script></head>
 <body>
 <header class="header">
     <div class="container">
@@ -1995,30 +1995,25 @@
     </div>
 </div>
 
-<div id="phone-figuration" aria-hidden="true" class="modal info-modal">
+<!-- отмена подписки -->
+<div id="cancelSubscriptionModal" aria-hidden="true" class="modal checkout-complete-modal checkout-complete-modal_sub">
     <div class="modal__wrapper">
         <div class="modal__content">
             <div class="modal__body">
-                <button data-close="" type="button" class="modal__close">
-                    <img src="./assets/images/icons/close.svg" alt="" class="modal__close-icon">
-                </button>
-
-                <ul class="header__phone-list">
-                    <li>
-                        <span>Оптовый отдел продаж:</span>
-                        <p><a href="#">8 800 600 28 20</a></p>
-                        <span>Пн - Пт: с 9:00 до 18:00 Сб, Вс: : выходные</span>
-                    </li>
-                    <li>
-                        <span>Оптово-розничный магазин:</span>
-                        <p><a href="#">8 800 600 28 20</a></p>
-                        <span>Пн - Вс: с 8:00 до 18:30 Без выходных </span>
-                    </li>
-                </ul>
-
-                <button class="header__phone-button btn">
-                    Заказать звонок
-                </button>
+                <div class="checkout-complete-modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="checkout-complete-modal__heading h h_h2">Вы действительно хотите отписаться?</span>
+                    <div class="checkout-complete-modal__actions">
+                        <button type="button" class="checkout-complete-modal__btn btn btn__white">
+                            Подтвердить
+                        </button>
+                        <button data-close="" type="button" class="checkout-complete-modal__btn btn btn_ghost">
+                            Отмена
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -54,6 +54,21 @@ section {
     margin: 0 auto;
     max-width: 1920px;
     margin-top: 21.4rem;
+    
+    @media (max-width: 48em) {
+        margin-top: 30.4rem;
+    }
+}
+
+._desktop-only {
+    @media (max-width: 48em) {
+        display: none;
+    }
+}
+._mobile-only {
+    @media (min-width: 48em) {
+        display: none;
+    }
 }
 
 ._desktop-only {

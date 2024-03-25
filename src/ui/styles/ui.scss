@@ -67,6 +67,9 @@
 // catalog-sticky-button
 @import 'catalog-sticky-button';
 
+// single link
+@import 'single-link';
+
 // ---------------------------- для демонстрации ---------------------------
 
 .form {
@@ -86,7 +89,7 @@
     }
 }
 
-.input{
+.input {
     &.textarea {
         textarea {
             height: 11.2rem;
@@ -102,7 +105,7 @@
     position: relative;
     width: fit-content;
 
-    @include hover{
+    @include hover {
         &:not(._no-hover) {
             &::after {
                 max-width: 100%;
@@ -121,7 +124,7 @@
         }
     }
 
-    @include small-tablet{
+    @include small-tablet {
         width: 100%;
         justify-content: center;
         gap: 3.2rem;
@@ -133,9 +136,9 @@
         font-size: 1.6rem;
         color: $green;
 
-        @include small-tablet{
+        @include small-tablet {
             font-weight: 400;
-            font-size: 3.6rem;
+            font-size: 3rem;
         }
     }
 
@@ -143,8 +146,8 @@
         width: 2.4rem;
         height: 2.4rem;
 
-        @include small-tablet{
-            @include sizes(4.8rem, 4.8rem)
+        @include small-tablet {
+            @include sizes(4.8rem, 4.8rem);
         }
     }
 }
@@ -155,14 +158,14 @@
     justify-content: space-between;
     margin-bottom: 4.8rem;
 
-    @include small-tablet{
+    @include small-tablet {
         margin-bottom: 8rem;
     }
 
     .link {
         gap: 1.6rem;
 
-        @include small-tablet{
+        @include small-tablet {
             gap: 3.2rem;
             width: 100%;
             justify-content: center;
@@ -181,7 +184,7 @@
                     gap: 2rem;
                     margin-top: -0.5rem;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         gap: 1.6rem;
                         margin-top: 0;
                     }

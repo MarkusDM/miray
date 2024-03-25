@@ -126,6 +126,7 @@ textarea {
 
         @media (max-width: 48em) {
             padding: 2.4rem 4rem;
+            padding-right: 10rem;
             border-radius: 6rem;
         }
     }
@@ -150,6 +151,26 @@ textarea {
         }
     }
     &._has-error {
+        .show-password {
+            display: none;
+        }
+        &::after {
+            content: attr(data-error);
+            position: absolute;
+            bottom: -1.6rem;
+            left: 2rem;
+            font-size: 1.2rem;
+            line-height: 120%;
+            color: #e29aa8;
+
+            @media (max-width: 48em) {
+                bottom: 3.2rem;
+                left: auto;
+                right: 4rem;
+                font-weight: 500;
+                font-size: 2rem;
+            }
+        }
         .input__label {
             color: transparent;
             &::after {
@@ -170,6 +191,36 @@ textarea {
             color: $pink;
             &::placeholder {
                 color: $pink;
+            }
+        }
+    }
+}
+
+.input {
+    .show-password {
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+        z-index: 1;
+        cursor: pointer;
+
+        @media (max-width: 48em) {
+            right: 4rem;
+        }
+
+        svg {
+            display: none;
+            width: 2.4rem;
+            height: 2.4rem;
+
+            &.active {
+                display: block;
+            }
+
+            @media (max-width: 48em) {
+                width: 4.8rem;
+                height: 4.8rem;
             }
         }
     }
