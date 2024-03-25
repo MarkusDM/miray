@@ -4,6 +4,10 @@
             display: grid;
             grid-template-columns: 40.4rem 1fr;
             column-gap: 16.9rem;
+
+            &_favorite {
+                column-gap: 2.6rem;
+            }
         }
     }
 
@@ -59,6 +63,10 @@
     &__body {
         @media (min-width: 48em) {
             padding-top: 2rem;
+
+            .account__container_favorite & {
+                padding-top: 11rem;
+            }
         }
     }
 }

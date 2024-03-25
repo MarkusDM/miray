@@ -139,6 +139,17 @@ body::after {
 .checkout-complete-modal {
     color: $white;
 
+    &_sub {
+        @media (min-width: 48em) {
+            .checkout-complete-modal__heading {
+                max-width: 67rem;
+            }
+            .checkout-complete-modal__actions {
+                width: 34rem;
+            }
+        }
+    }
+
     &__inner {
         display: flex;
         flex-direction: column;

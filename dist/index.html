@@ -108,7 +108,25 @@
                     <a target="_blank" href="account-orders-history.html">лк (заказы, история)</a>
                 </li>
                 <li>
-                    <a target="_blank" href="account-no-orders.html">лк (заказы, нет заказов)</a>
+                    <a target="_blank" href="account-no-orders.html">лк (заказы, пусто)</a>
+                </li>
+                <li>
+                    <a target="_blank" href="account-bills.html">лк (счета)</a>
+                </li>
+                <li>
+                    <a target="_blank" href="account-no-bills.html">лк (счета, пусто)</a>
+                </li>
+                <li>
+                    <a target="_blank" href="account-favorite.html">лк (избранное)</a>
+                </li>
+                <li>
+                    <a target="_blank" href="account-no-favorites.html">лк (избранное, пусто)</a>
+                </li>
+                <li>
+                    <a target="_blank" href="account-subscription.html">лк (подписка)</a>
+                </li>
+                <li>
+                    <a target="_blank" href="account-subscription-cancel.html">лк (подписка, отменить)</a>
                 </li>
             </ol>
         </div>
@@ -318,6 +336,30 @@
                 <button data-close="" type="button" class="modal__close">
                     <img src="./assets/images/icons/close.svg" alt="" class="modal__close-icon">
                 </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- отмена подписки -->
+<div id="cancelSubscriptionModal" aria-hidden="true" class="modal checkout-complete-modal checkout-complete-modal_sub">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <div class="checkout-complete-modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="checkout-complete-modal__heading h h_h2">Вы действительно хотите отписаться?</span>
+                    <div class="checkout-complete-modal__actions">
+                        <button type="button" class="checkout-complete-modal__btn btn btn__white">
+                            Подтвердить
+                        </button>
+                        <button data-close="" type="button" class="checkout-complete-modal__btn btn btn_ghost">
+                            Отмена
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
