@@ -1,144 +1,111 @@
+
 .option-item {
-    position: relative;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20.4rem;
+  border-radius: 2.4rem;
+  background-color: $white;
+  border: 1.5px solid transparent;
+  transition: border 0.3s ease;
+
+  &._is-active {
+    border: 1.5px solid $green;
+
+    .option-item__inner svg path {
+      fill: $light-green;
+    }
+  }
+
+  &__inner {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 20.4rem;
-    border-radius: 2.4rem;
-    background-color: $white;
-    border: 1.5px solid transparent;
-    transition: border 0.3s ease;
+    row-gap: 1.4rem;
 
-    @media (max-width: 48em) {
-        height: 41rem;
-        border-radius: 4.8rem;
+    svg {
+      width: 4rem;
+
+      path {
+        fill: $grey-text;
+        transition: fill 0.3s ease;
+      }
+    }
+  }
+
+  &__image-wrap {
+    width: 10rem;
+  }
+
+  &__image {
+    object-fit: contain;
+  }
+
+  &__radio-btn,
+  &__radio-btn input {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__txt {
+    max-width: 12.7rem;
+    text-align: center;
+    color: $grey-text;
+    transition: color 0.3s ease;
+
+    ._is-active & {
+      color: $green;
+    }
+  }
+
+  &__input {
+    width: 52.3rem;
+  }
+
+  &__radio-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input {
+      appearance: none;
+
+      &:checked {
+        + span {
+          transform: scale(1);
+        }
+      }
     }
 
-    &._is-active {
-        border: 1.5px solid $green;
-
-        .option-item__inner svg path {
-            fill: $light-green;
-        }
+    span {
+      top: 2rem;
+      left: 2rem;
+      width: 1.6rem;
+      height: 1.6rem;
+      background-color: $light-green;
+      transform: scale(0);
+      transition: transform 0.3s ease;
     }
 
-    &__inner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 1.4rem;
-
-        @media (max-width: 48em) {
-            row-gap: 2.4rem;
-        }
-
-        svg {
-            width: 4rem;
-
-            path {
-                fill: $grey-text;
-                transition: fill 0.3s ease;
-            }
-
-            @media (max-width: 48em) {
-                width: 8rem;
-            }
-        }
+    &::before,
+    span {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
     }
 
-    &__image-wrap {
-        width: 10rem;
-
-        @media (max-width: 48em) {
-            width: 18rem;
-        }
+    &::before {
+      top: 1.6rem;
+      left: 1.6rem;
+      width: 2.4rem;
+      height: 2.4rem;
+      border: 1.5px solid $light-green;
     }
+  }
 
-    &__image {
-        object-fit: contain;
-    }
-
-    &__radio-btn,
-    &__radio-btn input {
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    &__txt {
-        max-width: 12.7rem;
-        text-align: center;
-        color: $grey-text;
-        transition: color 0.3s ease;
-
-        ._is-active & {
-            color: $green;
-        }
-
-        @media (max-width: 48em) {
-            max-width: 35.7rem;
-        }
-    }
-
-    &__input {
-        width: 52.3rem;
-    }
-
-    &__radio-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        input {
-            appearance: none;
-
-            &:checked {
-                + span {
-                    transform: scale(1);
-                }
-            }
-        }
-
-        span {
-            top: 2rem;
-            left: 2rem;
-            width: 1.6rem;
-            height: 1.6rem;
-            background-color: $light-green;
-            transform: scale(0);
-            transition: transform 0.3s ease;
-
-            @media (max-width: 48em) {
-                top: 4rem;
-                left: 4rem;
-                width: 3.2rem;
-                height: 3.2rem;
-            }
-        }
-
-        &::before,
-        span {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-        }
-
-        &::before {
-            top: 1.6rem;
-            left: 1.6rem;
-            width: 2.4rem;
-            height: 2.4rem;
-            border: 1.5px solid $light-green;
-
-            @media (max-width: 48em) {
-                top: 3.2rem;
-                left: 3.2rem;
-                width: 4.8rem;
-                height: 4.8rem;
-            }
-        }
-    }
 }
