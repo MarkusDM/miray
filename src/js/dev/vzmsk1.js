@@ -1,45 +1,44 @@
-import { removeClasses, bodyLockStatus, bodyLock, bodyUnlock } from '../utils/utils';
+import {removeClasses} from "../utils/utils";
+
 
 document.addEventListener('DOMContentLoaded', function () {
-    const mm = window.matchMedia('(max-width: 768px)');
-
     if (document.querySelectorAll('.option-item__radio-btn input').length) {
-        const btns = document.querySelectorAll('.option-item__radio-btn input');
-        const input = document.querySelector('.companies-delivery-checkout__input');
+        const btns = document.querySelectorAll('.option-item__radio-btn input')
+    const input = document.querySelector('.companies-delivery-checkout__input')
 
         const setClass = (btn) => {
             if (btn.checked) {
-                removeClasses(btn.closest('section').querySelectorAll('.option-item'), '_is-active');
-                btn.closest('.option-item').classList.add('_is-active');
+                removeClasses(btn.closest('section').querySelectorAll('.option-item'), '_is-active')
+                btn.closest('.option-item').classList.add('_is-active')
 
                 if (btn.closest('.option-item__radio-btn_other')) {
-                    input ? input.classList.add('_is-visible') : null;
+                    input ? input.classList.add('_is-visible') : null
                 } else {
-                    input ? input.classList.remove('_is-visible') : null;
+                    input ? input.classList.remove('_is-visible') : null
                 }
             }
-        };
+        }
 
-        btns.forEach((btn) => {
+        btns.forEach(btn => {
             btn.addEventListener('input', function () {
-                setClass(btn);
-            });
-            setClass(btn);
-        });
+                setClass(btn)
+            })
+            setClass(btn)
+        })
     }
 
     if (document.querySelector('.data-checkout .input_file-input')) {
-        const input = document.querySelector('.data-checkout .input_file-input input');
-        const placeholder = input.parentElement.querySelector('.input__placeholder');
-        const requiredFields = input.closest('.data-checkout__fields').querySelectorAll('[data-validate]');
+        const input = document.querySelector('.data-checkout .input_file-input input')
+        const placeholder = input.parentElement.querySelector('.input__placeholder')
+        const requiredFields = input.closest('.data-checkout__fields').querySelectorAll('[data-validate]')
         const reader = new FileReader();
-        const placeholderData = placeholder.innerHTML;
+        const placeholderData = placeholder.innerHTML
 
         const readFile = (file) => {
             reader.onload = readSuccess;
             function readSuccess(e) {
                 if (file) {
-                    console.log(file);
+                    console.log(file)
                     const data = {
                         // name: file.name.split('.').slice(0, -1).join(''),
                         name: file.name,
@@ -59,9 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         // parent.classList.remove('_filled');
                         // ths.addError(formRequiredItem);
                     };
-                    placeholder
-                        ? (placeholder.innerHTML = data.name)
-                        : (placeholder.innerHTML = placeholderData);
+                    placeholder ? (placeholder.innerHTML = data.name) : placeholder.innerHTML = placeholderData;
 
                     // if ((data.size / 1048576).toFixed(2) > maxSize) {
                     //     text.innerHTML = 'Большой размер файла';
@@ -87,53 +84,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (file) reader.readAsDataURL(file);
-        };
+
+        }
 
         input.addEventListener('change', function (e) {
-            readFile(e.srcElement.files[0]);
-        });
+            readFile(e.srcElement.files[0])
+        })
     }
-
-    if (document.querySelector('.myprofile-account__title')) {
-        const heading = document.querySelector('.myprofile-account__title');
-        const menuItems = document.querySelectorAll('.menu-account');
-        const openSubmenuBtn = document.querySelector('.menu-account__open-submenu-btn');
-        const submenu = document.querySelector('.menu-account_account-type');
-        const mainMenu = document.querySelector('.menu-account_main');
-
-        heading.addEventListener('click', function () {
-            if (mainMenu && window.innerWidth <= 768 && bodyLockStatus) {
-                bodyLock();
-                mainMenu.classList.add('_is-active');
-            }
-        });
-        if (menuItems.length) {
-            menuItems.forEach((menuItem) => {
-                menuItem.addEventListener('click', function (e) {
-                    const target = e.target;
-
-                    if (
-                        target.closest('.menu-account__open-submenu-btn') &&
-                        window.innerWidth <= 768 &&
-                        bodyLockStatus
-                    ) {
-                        submenu.classList.add('_is-active');
-                    }
-                    if (target.closest('.menu-account__close-btn')) {
-                        target.closest('.menu-account').classList.remove('_is-active');
-                        if (target.closest('.menu-account_main')) bodyUnlock();
-                    }
-                });
-            });
-        }
-    }
-
-    mm.addEventListener('change', function () {
-        if (!mm.matches) {
-            if (document.querySelector('.menu-account._is-active') && bodyLockStatus) {
-                bodyUnlock();
-                removeClasses(document.querySelectorAll('.menu-account._is-active'), '_is-active');
-            }
-        }
-    });
-});
+})

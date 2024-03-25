@@ -12,7 +12,7 @@
         <div class="header__inner">
             <div class="header__top">
                 <div class="header__logo">
-                    <a href="/"><img src="../assets/images/miray-logo.svg" alt=""></a>
+                    <a href="/"><img src="./assets/images/miray-logo.svg" alt=""></a>
                 </div>
                 <button class="header__catalog-button">
                     <span>
@@ -177,7 +177,7 @@
                                         <div class="search-modal__slider-slide swiper-slide search-modal-slide">
                                             <a class="search-modal-slide__wrapper" href="#">
                                                 <div class="search-modal-slide__image">
-                                                    <img src="../assets/images/sections/catalog/catalog-image-1.webp" alt="">
+                                                    <img src="./assets/images/sections/catalog/catalog-image-1.webp" alt="">
                                                 </div>
                                                 <div class="search-modal-slide__content">
                                                     <p>
@@ -201,7 +201,7 @@
                                         <div class="search-modal__slider-slide swiper-slide search-modal-slide">
                                             <a class="search-modal-slide__wrapper" href="#">
                                                 <div class="search-modal-slide__image">
-                                                    <img src="../assets/images/sections/catalog/catalog-image-1.webp" alt="">
+                                                    <img src="./assets/images/sections/catalog/catalog-image-1.webp" alt="">
                                                 </div>
                                                 <div class="search-modal-slide__content">
                                                     <p>
@@ -225,7 +225,7 @@
                                         <div class="search-modal__slider-slide swiper-slide search-modal-slide">
                                             <a class="search-modal-slide__wrapper" href="#">
                                                 <div class="search-modal-slide__image">
-                                                    <img src="../assets/images/sections/catalog/catalog-image-1.webp" alt="">
+                                                    <img src="./assets/images/sections/catalog/catalog-image-1.webp" alt="">
                                                 </div>
                                                 <div class="search-modal-slide__content">
                                                     <p>
@@ -249,7 +249,7 @@
                                         <div class="search-modal__slider-slide swiper-slide search-modal-slide">
                                             <a class="search-modal-slide__wrapper" href="#">
                                                 <div class="search-modal-slide__image">
-                                                    <img src="../assets/images/sections/catalog/catalog-image-1.webp" alt="">
+                                                    <img src="./assets/images/sections/catalog/catalog-image-1.webp" alt="">
                                                 </div>
                                                 <div class="search-modal-slide__content">
                                                     <p>
@@ -402,7 +402,7 @@
                         <div class="header-catalog__item-links">
                             <a href="#" class="header-catalog__item-link">
                                 <div class="header-catalog__item-img">
-                                    <img src="../assets/images/sections/catalog/catalog-image-1.webp" alt="">
+                                    <img src="./assets/images/sections/catalog/catalog-image-1.webp" alt="">
                                 </div>
                                 <div class="header-catalog__item-text">
                                     <strong>Новогодние открытки</strong><span>22</span>
@@ -1653,38 +1653,35 @@
                 <a href="#" class="breadcrumbs__txt">Корзина</a>
                 <span class="breadcrumbs__txt">Оформление заказа</span>
             </nav>
-            <span class="checkout__heading h h_h1"> Оформление заказа </span>
+            <span class="checkout__heading h h_h1">
+            Оформление заказа
+        </span>
+
         </div>
         <form data-dev="" action="#" class="checkout__body">
             <div class="checkout__content">
                 <div class="checkout__steps">
-                    <div class="checkout__step tab">
-                        <span data-checkout-step="1" class="tab__txt text text__medium text__medium--18">
-                            <span>1: Ваши данные</span>
+                    <div class="checkout__step tab _is-active">
+                        <span class="tab__txt text text__medium text__medium--18">
+                            1: Ваши данные
                         </span>
                     </div>
                     <div class="checkout__step tab _is-active">
-                        <span data-checkout-step="2" class="tab__txt text text__medium text__medium--18">
-                            <span>2: Доставка</span>
+                        <span class="tab__txt text text__medium text__medium--18">
+                            2: Доставка
                         </span>
                     </div>
                     <div class="checkout__step tab">
-                        <span data-checkout-step="3" class="tab__txt text text__medium text__medium--18">
-                            <span>3: Оплата</span>
+                        <span class="tab__txt text text__medium text__medium--18">
+                            3: Оплата
                         </span>
                     </div>
                 </div>
                 <div class="checkout__delivery delivery-checkout">
                     <div class="delivery-checkout__badges">
-                        <button type="button" class="delivery-checkout__badge badge _is-active">
-                            Самовывоз
-                        </button>
-                        <button type="button" class="delivery-checkout__badge badge">
-                            По адресу в Москве
-                        </button>
-                        <button type="button" class="delivery-checkout__badge badge">
-                            До транспортной компании
-                        </button>
+                        <button type="button" class="delivery-checkout__badge badge _is-active">Самовывоз</button>
+                        <button type="button" class="delivery-checkout__badge badge">По адресу в Москве</button>
+                        <button type="button" class="delivery-checkout__badge badge">До транспортной компании</button>
                     </div>
                     <div class="delivery-checkout__label label">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1697,7 +1694,7 @@
                         <div class="map__content">
                             <div class="map__canvas" id="main-map"></div>
                             <div class="map__wrapper">
-                                <div data-da=".map__content,768,first" class="map__card map-card" id="map-card-1">
+                                <div class="map__card map-card" id="map-card-1">
                                     <div class="map-card__wrapper">
                                         <div class="map-card__header">
                                             <h6>Миррэй Cash&amp;Carry</h6>
@@ -1711,8 +1708,8 @@
                                                     </svg>
                                                 </div>
                                                 <p>
-                                                    г. Москва, поселение Сосенское, Калужское шоссе, 22-й
-                                                    километр, стр. 10
+                                                    г. Москва, поселение Сосенское, Калужское шоссе, 22-й километр, стр.
+                                                    10
                                                 </p>
                                             </div>
                                             <div class="map-card__content-item">
@@ -1836,12 +1833,13 @@
                         <span class="summary-checkout__total-price h h_h3"><span>41 540.20</span>₽</span>
                     </div>
                 </div>
-                <button type="submit" class="summary-checkout__btn btn">Далее</button>
+                <button disabled="" type="submit" class="summary-checkout__btn btn">
+                    Далее
+                </button>
             </div>
-        </form>
-    </div>
+            </form>
+        </div>
 </section>
-
 </main>
 <footer class="footer">
     <div class="container">
@@ -1849,11 +1847,11 @@
             <div class="footer__main">
                 <div class="footer__block footer__block--logo">
                     <div class="footer__logo">
-                        <a href="/"><img src="../assets/images/miray-logo.svg" alt=""></a>
+                        <a href="/"><img src="./assets/images/miray-logo.svg" alt=""></a>
                     </div>
                     <div class="footer__subscribe">
                         <a href="/" class="btn">
-                            <img src="../assets/images/telegram.gif" alt="">
+                            <img src="./assets/images/telegram.gif" alt="">
                             <span>Подписаться на новости</span>
                         </a>
                     </div>
@@ -2104,25 +2102,30 @@
     </div>
 </div>
 
-<!-- отмена подписки -->
-<div id="cancelSubscriptionModal" aria-hidden="true" class="modal checkout-complete-modal checkout-complete-modal_sub">
+<div id="phone-figuration" aria-hidden="true" class="modal info-modal">
     <div class="modal__wrapper">
         <div class="modal__content">
             <div class="modal__body">
-                <div class="checkout-complete-modal__inner">
-                    <button data-close="" type="button" class="modal__close">
-                        <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
-                    </button>
-                    <span class="checkout-complete-modal__heading h h_h2">Вы действительно хотите отписаться?</span>
-                    <div class="checkout-complete-modal__actions">
-                        <button type="button" class="checkout-complete-modal__btn btn btn__white">
-                            Подтвердить
-                        </button>
-                        <button data-close="" type="button" class="checkout-complete-modal__btn btn btn_ghost">
-                            Отмена
-                        </button>
-                    </div>
-                </div>
+                <button data-close="" type="button" class="modal__close">
+                    <img src="./assets/images/icons/close.svg" alt="" class="modal__close-icon">
+                </button>
+
+                <ul class="header__phone-list">
+                    <li>
+                        <span>Оптовый отдел продаж:</span>
+                        <p><a href="#">8 800 600 28 20</a></p>
+                        <span>Пн - Пт: с 9:00 до 18:00 Сб, Вс: : выходные</span>
+                    </li>
+                    <li>
+                        <span>Оптово-розничный магазин:</span>
+                        <p><a href="#">8 800 600 28 20</a></p>
+                        <span>Пн - Вс: с 8:00 до 18:30 Без выходных </span>
+                    </li>
+                </ul>
+
+                <button class="header__phone-button btn">
+                    Заказать звонок
+                </button>
             </div>
         </div>
     </div>

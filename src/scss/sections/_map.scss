@@ -12,11 +12,6 @@
         overflow: hidden;
         border-radius: 3rem;
         position: relative;
-
-        @media (max-width: 48em) {
-            border-radius: 4.8rem;
-            height: 70.2rem;
-        }
     }
     // .map__canvas
     &__canvas {
@@ -33,10 +28,6 @@
         display: flex;
         flex-direction: column;
         gap: 1.2rem;
-
-        @media (max-width: 48em) {
-            padding: 0;
-        }
     }
     // .map__card
     &__card {
@@ -77,12 +68,6 @@
         display: flex;
         flex-direction: column;
         gap: 2.4rem;
-
-        @media (max-width: 48em) {
-            padding: 4.8rem 3.2rem;
-            border-radius: 4.8rem;
-            gap: 3.2rem;
-        }
     }
     // .map-card__header
     &__header {
@@ -91,29 +76,17 @@
         gap: 0.4rem;
         line-height: 120%;
 
-        @media (max-width: 48em) {
-            gap: 0.8rem;
-        }
-
         h6 {
             font-weight: 600;
             font-size: 2rem;
             letter-spacing: 0.04em;
             color: $black-secondary;
-
-            @media (max-width: 48em) {
-                font-size: 3.6rem;
-            }
         }
 
         p {
             font-weight: 400;
             font-size: 1.6rem;
             color: $black-secondary;
-
-            @media (max-width: 48em) {
-                font-size: 3rem;
-            }
         }
     }
     // .map-card__content
@@ -137,20 +110,11 @@
         svg path {
             fill: $black-secondary;
         }
-
-        @media (max-width: 48em) {
-            width: 5.6rem;
-            height: 5.6rem;
-        }
     }
     // .map-card__footer
     &__footer {
         display: none;
         position: relative;
-
-        @media (max-width: 48em) {
-            display: block;
-        }
     }
     // .map-card__button
     &__button {
@@ -177,22 +141,6 @@
 
         .phone {
             margin-right: 1rem;
-        }
-
-        @media (max-width: 48em) {
-            padding: 1.6rem;
-            height: 8.8rem;
-            border-radius: 10rem;
-
-            .phone {
-                margin-right: 2rem;
-            }
-
-            svg {
-                flex: 0 0 5.6rem;
-                width: 5.6rem;
-                height: 5.6rem;
-            }
         }
     }
     // .map-card__list
@@ -232,20 +180,12 @@
                 font-size: 1.6rem;
                 line-height: 120%;
                 color: $grey-text;
-
-                @media (max-width: 48em) {
-                    font-size: 3.2rem;
-                }
             }
 
             a {
                 font-weight: 400;
                 font-size: 1.8rem;
                 color: $black-secondary;
-
-                @media (max-width: 48em) {
-                    font-size: 3.6rem;
-                }
             }
         }
     }

@@ -3,10 +3,20 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include small-tablet{
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4.8rem;
+        }
     }
 
     &__poster {
         @include sizes(67.7rem, 53.2rem);
+
+        @include small-tablet{
+            @include sizes(100%, 55.2rem);
+        }
 
         img {
             height: 100%;
@@ -17,14 +27,29 @@
         max-width: 67.7rem;
         width: 100%;
         margin-right: 14.3rem;
+
+        @include small-tablet{
+            max-width: 100%;
+            margin-right: 0;
+        }
     }
 
     &__title {
         margin-bottom: 6rem;
+
+        @include small-tablet{
+            margin-bottom: 4.8rem;
+        }
     }
 
     &__description {
         color: $grey-text;
+
+        @include small-tablet{
+            font-weight: 400;
+            font-size: 3rem;
+            line-height: 130%;
+        }
 
         span {
             color: $light-green;
@@ -37,10 +62,24 @@
 
         &:not(:last-child) {
             margin-bottom: 2rem;
+
+            @include small-tablet{
+                margin-bottom: 3.2rem;
+            }
         }
 
         &:last-of-type {
             margin-bottom: 6rem;
+
+            @include small-tablet{
+                margin-bottom: 1.2rem;
+            }
+        }
+    }
+
+    &__button {
+        @include small-tablet{
+            width: 100%;
         }
     }
 }

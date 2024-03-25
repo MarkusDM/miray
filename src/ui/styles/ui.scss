@@ -64,9 +64,6 @@
 // sticky-menu
 @import 'sticky-menu';
 
-// single link
-@import 'single-link';
-
 // ---------------------------- для демонстрации ---------------------------
 
 .form {
@@ -86,7 +83,7 @@
     }
 }
 
-.input {
+.input{
     &.textarea {
         textarea {
             height: 11.2rem;
@@ -102,7 +99,7 @@
     position: relative;
     width: fit-content;
 
-    @include hover {
+    @include hover{
         &:not(._no-hover) {
             &::after {
                 max-width: 100%;
@@ -121,7 +118,7 @@
         }
     }
 
-    @include small-tablet {
+    @include small-tablet{
         width: 100%;
         justify-content: center;
         gap: 3.2rem;
@@ -133,9 +130,9 @@
         font-size: 1.6rem;
         color: $green;
 
-        @include small-tablet {
+        @include small-tablet{
             font-weight: 400;
-            font-size: 3rem;
+            font-size: 3.6rem;
         }
     }
 
@@ -143,8 +140,8 @@
         width: 2.4rem;
         height: 2.4rem;
 
-        @include small-tablet {
-            @include sizes(4.8rem, 4.8rem);
+        @include small-tablet{
+            @include sizes(4.8rem, 4.8rem)
         }
     }
 }
@@ -155,14 +152,14 @@
     justify-content: space-between;
     margin-bottom: 4.8rem;
 
-    @include small-tablet {
+    @include small-tablet{
         margin-bottom: 8rem;
     }
 
     .link {
         gap: 1.6rem;
 
-        @include small-tablet {
+        @include small-tablet{
             gap: 3.2rem;
             width: 100%;
             justify-content: center;
@@ -181,7 +178,7 @@
                     gap: 2rem;
                     margin-top: -0.5rem;
 
-                    @include small-tablet {
+                    @include small-tablet{
                         gap: 1.6rem;
                         margin-top: 0;
                     }
@@ -189,7 +186,7 @@
                     span {
                         margin-left: 3rem;
 
-                        @include small-tablet {
+                        @include small-tablet{
                             margin-left: 0;
                         }
                     }
@@ -199,7 +196,7 @@
                         width: 100%;
                         display: block;
 
-                        @include small-tablet {
+                        @include small-tablet{
                             max-width: 100%;
                             font-weight: 400;
                             font-size: 2.6rem;
@@ -357,7 +354,7 @@
         padding: 0.8rem;
         border-radius: 6rem;
 
-        @include small-tablet {
+        @include small-tablet{
             gap: 4rem;
             border-radius: 12rem;
         }
@@ -370,7 +367,7 @@
             text-align: center;
             transition: 0.2s color ease;
 
-            @include small-tablet {
+            @include small-tablet{
                 font-weight: 400;
                 font-size: 3rem;
                 line-height: 130%;
@@ -380,7 +377,7 @@
         svg {
             @include sizes(6rem, 6rem);
 
-            @include small-tablet {
+            @include small-tablet{
                 @include sizes(8.8rem, 8.8rem);
             }
 
@@ -390,7 +387,7 @@
             }
         }
 
-        @include hover {
+        @include hover{
             background-color: $green;
 
             span {
@@ -433,7 +430,7 @@
         @media (any-hover: hover) {
             &:hover {
                 background-color: $bgFon;
-                color: #1d1d1b;
+                color: #1D1D1B;
                 border: 1.5px solid $bgFon;
             }
         }

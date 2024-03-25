@@ -75,58 +75,16 @@
                     <a target="_blank" href="checkout-payment.html">оформление (оплата)</a>
                 </li>
                 <li>
-                    <a target="_blank" href="account-registration.html">лк (Регистрация)</a>
+                    <a target="_blank" href="registration.html">Регистрация</a>
                 </li>
                 <li>
-                    <a target="_blank" href="account-authorization.html">лк (Авторизация)</a>
+                    <a target="_blank" href="authorization.html">Авторизация</a>
                 </li>
                 <li>
-                    <a target="_blank" href="account-password-recovery.html">лк (Восстановление пароля)</a>
+                    <a target="_blank" href="password-recovery.html">Восстановление пароля</a>
                 </li>
                 <li>
-                    <a target="_blank" href="account-myprofile.html">лк (мой аккаунт)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="account-data-profiles.html">лк (личные данные, профили)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="account-data-v1.html">лк (личные данные юр. лица)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="account-data-v2.html">лк (личные данные физ. лица)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="account-data-v3.html">лк (личные данные ип)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="account-orders.html">лк (заказы)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="account-orders-info.html">лк (заказы, подробности заказа)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="account-orders-history.html">лк (заказы, история)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="account-no-orders.html">лк (заказы, пусто)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="account-bills.html">лк (счета)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="account-no-bills.html">лк (счета, пусто)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="account-favorite.html">лк (избранное)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="account-no-favorites.html">лк (избранное, пусто)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="account-subscription.html">лк (подписка)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="account-subscription-cancel.html">лк (подписка, отменить)</a>
+                    <a target="_blank" href="shipping-and-payment.html">Доставка и оплата</a>
                 </li>
             </ol>
         </div>
@@ -341,25 +299,30 @@
     </div>
 </div>
 
-<!-- отмена подписки -->
-<div id="cancelSubscriptionModal" aria-hidden="true" class="modal checkout-complete-modal checkout-complete-modal_sub">
+<div id="phone-figuration" aria-hidden="true" class="modal info-modal">
     <div class="modal__wrapper">
         <div class="modal__content">
             <div class="modal__body">
-                <div class="checkout-complete-modal__inner">
-                    <button data-close="" type="button" class="modal__close">
-                        <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
-                    </button>
-                    <span class="checkout-complete-modal__heading h h_h2">Вы действительно хотите отписаться?</span>
-                    <div class="checkout-complete-modal__actions">
-                        <button type="button" class="checkout-complete-modal__btn btn btn__white">
-                            Подтвердить
-                        </button>
-                        <button data-close="" type="button" class="checkout-complete-modal__btn btn btn_ghost">
-                            Отмена
-                        </button>
-                    </div>
-                </div>
+                <button data-close="" type="button" class="modal__close">
+                    <img src="./assets/images/icons/close.svg" alt="" class="modal__close-icon">
+                </button>
+
+                <ul class="header__phone-list">
+                    <li>
+                        <span>Оптовый отдел продаж:</span>
+                        <p><a href="#">8 800 600 28 20</a></p>
+                        <span>Пн - Пт: с 9:00 до 18:00 Сб, Вс: : выходные</span>
+                    </li>
+                    <li>
+                        <span>Оптово-розничный магазин:</span>
+                        <p><a href="#">8 800 600 28 20</a></p>
+                        <span>Пн - Вс: с 8:00 до 18:30 Без выходных </span>
+                    </li>
+                </ul>
+
+                <button class="header__phone-button btn">
+                    Заказать звонок
+                </button>
             </div>
         </div>
     </div>

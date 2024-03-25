@@ -1,25 +1,22 @@
 .tab {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.2rem;
 
-    &:not(&._is-active, .checkout__steps &) {
-        .tab__txt {
-            color: $grey-text;
-        }
-        &::after {
-            background-color: $bgFon;
-        }
+  &:not(&._is-active) {
+    .tab__txt {
+      color: $grey-text;
     }
-
     &::after {
-        content: '';
-        width: 100%;
-        height: 0.4rem;
-        border-radius: 4rem;
-
-        &:not(.checkout__steps &) {
-            background-color: $green;
-        }
+      background-color: $bgFon;
     }
+  }
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 0.4rem;
+    border-radius: 4rem;
+    background-color: $green;
+  }
 }
