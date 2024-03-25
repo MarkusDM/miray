@@ -7,7 +7,8 @@
         <title>Главная</title>
     <script defer src="main.js"></script></head>
     <body>
-        <header class="header">
+        <div class="wrapper basket-page">
+            <header class="header">
     <div class="container">
         <div class="header__inner">
             <div class="header__top">
@@ -1644,8 +1645,8 @@
     </div>
 </header>
 
-        <main>
-            <section class="basket">
+            <main>
+                <section class="basket">
     <div class="container">
         <nav class="breadcrumbs">
             <a href="#" class="breadcrumbs__txt">Главная</a>
@@ -1664,7 +1665,7 @@
     </div>
 </section>
 
-            <section class="recommendations">
+                <section class="recommendations">
     <div class="container">
         <div class="recommendations__content">
             <div class="recommendations__heading section-heading subtitle">
@@ -1678,7 +1679,7 @@
                     </p>
                 </div>
 
-                <div class="recommendations__heading-navigation navigation-buttons">
+                <div data-da=".recommendations__content,768,last" class="recommendations__heading-navigation navigation-buttons">
                     <button type="button" class="swiper-button-prev">
                         <svg width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.37227 9.51401L24.0001 9.51401" stroke="#2B5644" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -1894,8 +1895,8 @@
     </div>
 </section>
 
-        </main>
-        <footer class="footer">
+            </main>
+            <footer class="footer">
     <div class="container">
         <div class="footer__inner">
             <div class="footer__main">
@@ -2038,21 +2039,34 @@
     </div>
 </footer>
 
-        <div id="checkoutComplete" aria-hidden="true" class="modal checkout-complete-modal">
+<div style="position: absolute; top: -110%; left: -110%; transform: translate(-100%, -100%)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" fill="none" preserveAspectRatio="none">
+        <clipPath id="banner-poster" clipPathUnits="objectBoundingBox">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0,0.862 C0,0.823,0,0.803,0,0.786 C0.01,0.36,0.206,0.018,0.451,0.001 C0.461,0,0.472,0,0.495,0 H0.862 C0.921,0,0.95,0,0.971,0.027 C0.976,0.034,0.98,0.042,0.984,0.051 C1,0.087,1,0.138,1,0.24 V0.738 C1,0.861,1,0.923,0.978,0.962 C0.956,1,0.92,1,0.85,1 H0.079 C0.076,1,0.074,1,0.072,1 C0.033,0.997,0.002,0.942,0,0.874 C0,0.872,0,0.868,0,0.862"></path>
+        </clipPath>
+    </svg>
+</div>
+
+
+
+            <div id="checkoutComplete" aria-hidden="true" class="modal checkout-complete-modal">
     <div class="modal__wrapper">
         <div class="modal__content">
             <div class="modal__body">
                 <div class="checkout-complete-modal__inner">
-                        <button data-close="" type="button" class="modal__close">
-                            <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
-                        </button>
-                        <span class="checkout-complete-modal__heading h h_h2">Ваш заказ <span>#123456</span> оформлен!</span>
-                        <p class="checkout-complete-modal__text">Спасибо за выбор компании Миррэй! В ближайшее время с Вами свяжется наш менеджер для уточнения деталей.</p>
-                        <div class="checkout-complete-modal__actions">
-                            <a href="#" class="checkout-complete-modal__btn btn btn__white">Перейти в личный кабинет</a>
-                            <a href="#" class="checkout-complete-modal__btn btn btn_ghost">Перейти в каталог</a>
-                        </div>
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="checkout-complete-modal__heading h h_h2">Ваш заказ <span>#123456</span> оформлен!</span>
+                    <p class="checkout-complete-modal__text">
+                        Спасибо за выбор компании Миррэй! В ближайшее время с Вами свяжется наш менеджер для
+                        уточнения деталей.
+                    </p>
+                    <div class="checkout-complete-modal__actions">
+                        <a href="#" class="checkout-complete-modal__btn btn btn__white">Перейти в личный кабинет</a>
+                        <a href="#" class="checkout-complete-modal__btn btn btn_ghost">Перейти в каталог</a>
                     </div>
+                </div>
             </div>
         </div>
     </div>
@@ -2068,7 +2082,10 @@
                         <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
                     </button>
                     <span class="checkout-complete-modal__heading h h_h2">Ваш заказ <span>#123456</span> оформлен!</span>
-                    <p class="checkout-complete-modal__text">Спасибо за выбор компании Миррэй! Данные для личного кабинета направлены на почту "farexampe@.com"</p>
+                    <p class="checkout-complete-modal__text">
+                        Спасибо за выбор компании Миррэй! Данные для личного кабинета направлены на почту
+                        "farexampe@.com"
+                    </p>
                     <div class="checkout-complete-modal__actions">
                         <a href="#" class="checkout-complete-modal__btn btn btn__white">Перейти к регистрации</a>
                         <a href="#" class="checkout-complete-modal__btn btn btn_ghost">Перейти в каталог</a>
@@ -2078,92 +2095,92 @@
         </div>
     </div>
 </div>
+
+<!-- информационное меню в мобильной версии -->
+<div id="basket-order-info" aria-hidden="true" class="modal info-modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <button data-close="" type="button" class="modal__close">
+                    <img src="./assets/images/icons/close.svg" alt="" class="modal__close-icon">
+                </button>
+
+                <ul class="modal__list">
+                    <li class="modal__item">
+                        <div class="modal__item-heading">
+                            <strong class="modal__item-title"> Розничная цена: </strong>
+
+                            <span class="modal__item-price"> 40.90₽ </span>
+                        </div>
+
+                        <p class="modal__item-description">
+                            При заказе на общую сумму от 15 000₽ применяется скидка 5%
+                        </p>
+                    </li>
+                    <li class="modal__item">
+                        <div class="modal__item-heading">
+                            <strong class="modal__item-title"> Оптовая цена: </strong>
+
+                            <span class="modal__item-price">
+                                40.90₽
+
+                                <sub> 40.90₽ </sub>
+                            </span>
+                        </div>
+
+                        <p class="modal__item-description">При заказе на общую сумму от 100 000 ₽</p>
+                    </li>
+                    <li class="modal__item">
+                        <div class="modal__item-heading">
+                            <strong class="modal__item-title"> Спеццена: </strong>
+
+                            <span class="modal__item-price"> 32.90₽ </span>
+                        </div>
+
+                        <p class="modal__item-description">Действует за заказ кратный коробу</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="basket-order-info-price" aria-hidden="true" class="modal info-modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <button data-close="" type="button" class="modal__close">
+                    <img src="./assets/images/icons/close.svg" alt="" class="modal__close-icon">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- отмена подписки -->
+<div id="cancelSubscriptionModal" aria-hidden="true" class="modal checkout-complete-modal checkout-complete-modal_sub">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <div class="checkout-complete-modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="checkout-complete-modal__heading h h_h2">Вы действительно хотите отписаться?</span>
+                    <div class="checkout-complete-modal__actions">
+                        <button type="button" class="checkout-complete-modal__btn btn btn__white">
+                            Подтвердить
+                        </button>
+                        <button data-close="" type="button" class="checkout-complete-modal__btn btn btn_ghost">
+                            Отмена
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
     </body>
 </html>
-<script>
-    const markers = [
-        {
-            tag: 'Главный офис',
-            coordinate: [37.539626, 55.65015],
-            active: false,
-            card: 'map-card-1'
-        },
-        {
-            tag: 'Оптово-розничный магазин',
-            coordinate: [37.471102, 55.60101],
-            active: false,
-            card: 'map-card-2'
-        },
-        {
-            tag: 'Склад',
-            coordinate: [37.26184, 55.658317],
-            active: false,
-            card: 'map-card-3'
-        }
-    ];
-
-    async function initMap() {
-        await ymaps3.ready;
-        const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
-        const map = new YMap(document.getElementById('main-map'), {
-            location: {
-                center: [37.47971415087885, 55.621295640143664],
-                zoom: 12
-            }
-        });
-
-        map.addChild(new YMapDefaultSchemeLayer());
-        map.addChild(new YMapDefaultFeaturesLayer({ zIndex: 1800 }));
-
-        markers.forEach((el, i) => {
-            let content = document.createElement('div');
-            content.classList.add('marker', el.card);
-            content.insertAdjacentHTML(
-                'beforeend',
-                `
-                <div class="marker__content">
-                    <div class="marker__svg">
-                     <img src="./assets/images/marker-logo.svg" alt="" />
-                    </div>
-                    <div class="marker__text">${el.tag}</div>
-                </div>
-			    `
-            );
-            el.active ? content.classList.add('hover') : null;
-            clickMarker(content, el);
-
-            const marker = new YMapMarker({ coordinates: el.coordinate, draggable: false }, content);
-            map.addChild(marker);
-        });
-    }
-
-    function clickMarker(content, marker) {
-        content.addEventListener('mouseenter', function () {
-            changeMarkers(content, marker);
-            document.getElementById(marker.card).classList.add('hover');
-        });
-    }
-
-    function changeMarkers(content, marker) {
-        document.querySelectorAll('.marker').forEach((el) => el.classList.remove('hover'));
-        document.querySelectorAll('.map-card').forEach((el) => el.classList.remove('hover'));
-        markers.forEach((el) => (el.active = false));
-        marker.active = true;
-        content.classList.add('hover');
-    }
-
-    initMap();
-
-    document.querySelectorAll('.map-card').forEach((el) => {
-        el.addEventListener('mouseenter', () => {
-            document.querySelectorAll('.map-card').forEach((el) => el.classList.remove('hover'));
-            document.querySelectorAll('.marker').forEach((el) => el.classList.remove('hover'));
-
-            el.classList.add('hover');
-
-            document.querySelectorAll('.marker').forEach((marker) => {
-                marker.classList.contains(el.id) && marker.classList.add('hover');
-            });
-        });
-    });
-</script>

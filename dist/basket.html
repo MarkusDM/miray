@@ -7,7 +7,8 @@
         <title>Главная</title>
     <script defer src="main.js"></script></head>
     <body>
-        <header class="header">
+        <div class="wrapper basket-page">
+            <header class="header">
     <div class="container">
         <div class="header__inner">
             <div class="header__top">
@@ -1644,8 +1645,8 @@
     </div>
 </header>
 
-        <main>
-            <section class="basket">
+            <main>
+                <section class="basket">
     <div class="container">
         <nav class="breadcrumbs">
             <a href="#" class="breadcrumbs__txt">Главная</a>
@@ -1747,7 +1748,7 @@
                                                             </svg>
                                                         </button>
 
-                                                        <input type="number" readonly="" value="200" min="1">
+                                                        <input type="number" value="200" min="1">
 
                                                         <button class="basket__card-info-top-counter-field-button">
                                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1769,12 +1770,12 @@
                                             <div class="basket__card-info-top-price">
                                                 <strong class="h h h_h4"> 7 416.00₽ </strong>
 
-                                                <span class="text__regular-16"> 45.90₽/от 100 тыс. </span>
+                                                <span class="text__regular-16"> 95.90₽/шт </span>
                                             </div>
                                         </div>
 
                                         <div class="basket__card-info-bottom">
-                                            <div class="basket__card-info-bottom-warning">
+                                            <div class="basket__card-info-bottom-warning _desktop-only">
                                                 <figure class="basket__card-info-bottom-warning-icon">
                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M9.99935 18.9577C5.05768 18.9577 1.04102 14.941 1.04102 9.99935C1.04102 5.05768 5.05768 1.04102 9.99935 1.04102C14.941 1.04102 18.9577 5.05768 18.9577 9.99935C18.9577 14.941 14.941 18.9577 9.99935 18.9577ZM9.99935 2.29102C5.74935 2.29102 2.29102 5.74935 2.29102 9.99935C2.29102 14.2493 5.74935 17.7077 9.99935 17.7077C14.2493 17.7077 17.7077 14.2493 17.7077 9.99935C17.7077 5.74935 14.2493 2.29102 9.99935 2.29102Z" fill="#E29AA8"></path>
@@ -1806,6 +1807,20 @@
                                             </ul>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="basket__card-info-bottom-warning _mobile-only">
+                                    <figure class="basket__card-info-bottom-warning-icon">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.99935 18.9577C5.05768 18.9577 1.04102 14.941 1.04102 9.99935C1.04102 5.05768 5.05768 1.04102 9.99935 1.04102C14.941 1.04102 18.9577 5.05768 18.9577 9.99935C18.9577 14.941 14.941 18.9577 9.99935 18.9577ZM9.99935 2.29102C5.74935 2.29102 2.29102 5.74935 2.29102 9.99935C2.29102 14.2493 5.74935 17.7077 9.99935 17.7077C14.2493 17.7077 17.7077 14.2493 17.7077 9.99935C17.7077 5.74935 14.2493 2.29102 9.99935 2.29102Z" fill="#E29AA8"></path>
+                                            <path d="M10 11.4577C9.65833 11.4577 9.375 11.1743 9.375 10.8327V6.66602C9.375 6.32435 9.65833 6.04102 10 6.04102C10.3417 6.04102 10.625 6.32435 10.625 6.66602V10.8327C10.625 11.1743 10.3417 11.4577 10 11.4577Z" fill="#E29AA8"></path>
+                                            <path d="M9.99935 14.1664C9.89102 14.1664 9.78268 14.1414 9.68268 14.0997C9.58268 14.0581 9.49102 13.9997 9.40768 13.9247C9.33268 13.8414 9.27435 13.7581 9.23268 13.6497C9.19102 13.5497 9.16602 13.4414 9.16602 13.3331C9.16602 13.2247 9.19102 13.1164 9.23268 13.0164C9.27435 12.9164 9.33268 12.8247 9.40768 12.7414C9.49102 12.6664 9.58268 12.6081 9.68268 12.5664C9.88268 12.4831 10.116 12.4831 10.316 12.5664C10.416 12.6081 10.5077 12.6664 10.591 12.7414C10.666 12.8247 10.7243 12.9164 10.766 13.0164C10.8077 13.1164 10.8327 13.2247 10.8327 13.3331C10.8327 13.4414 10.8077 13.5497 10.766 13.6497C10.7243 13.7581 10.666 13.8414 10.591 13.9247C10.5077 13.9997 10.416 14.0581 10.316 14.0997C10.216 14.1414 10.1077 14.1664 9.99935 14.1664Z" fill="#E29AA8"></path>
+                                        </svg>
+                                    </figure>
+
+                                    <p class="text__regular-16">
+                                        Получите дополнительную выгоду
+                                    </p>
                                 </div>
 
                                 <div class="basket__card-addiction">
@@ -1942,6 +1957,16 @@
                                                         </a>
                                                     </li>
                                                 </ul>
+
+                                                <div class="basket__card-addiction-navigation">
+                                                    <button type="button" class="swiper-button-next">
+                                                        <svg width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M23.6279 9.51367L1 9.51367" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M19.3833 13.7573L15.1406 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M23.63 9.51562L15.1445 1.03018" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1983,7 +2008,7 @@
                                                             </svg>
                                                         </button>
 
-                                                        <input type="number" readonly="" value="200" min="1">
+                                                        <input type="number" value="200" min="1">
 
                                                         <button class="basket__card-info-top-counter-field-button">
                                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2005,12 +2030,12 @@
                                             <div class="basket__card-info-top-price">
                                                 <strong class="h h h_h4"> 7 416.00₽ </strong>
 
-                                                <span class="text__regular-16"> 45.90₽/от 100 тыс. </span>
+                                                <span class="text__regular-16"> 95.90₽/шт </span>
                                             </div>
                                         </div>
 
                                         <div class="basket__card-info-bottom">
-                                            <div class="basket__card-info-bottom-warning">
+                                            <div class="basket__card-info-bottom-warning _desktop-only">
                                                 <figure class="basket__card-info-bottom-warning-icon">
                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M9.99935 18.9577C5.05768 18.9577 1.04102 14.941 1.04102 9.99935C1.04102 5.05768 5.05768 1.04102 9.99935 1.04102C14.941 1.04102 18.9577 5.05768 18.9577 9.99935C18.9577 14.941 14.941 18.9577 9.99935 18.9577ZM9.99935 2.29102C5.74935 2.29102 2.29102 5.74935 2.29102 9.99935C2.29102 14.2493 5.74935 17.7077 9.99935 17.7077C14.2493 17.7077 17.7077 14.2493 17.7077 9.99935C17.7077 5.74935 14.2493 2.29102 9.99935 2.29102Z" fill="#E29AA8"></path>
@@ -2042,6 +2067,20 @@
                                             </ul>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="basket__card-info-bottom-warning _mobile-only">
+                                    <figure class="basket__card-info-bottom-warning-icon">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.99935 18.9577C5.05768 18.9577 1.04102 14.941 1.04102 9.99935C1.04102 5.05768 5.05768 1.04102 9.99935 1.04102C14.941 1.04102 18.9577 5.05768 18.9577 9.99935C18.9577 14.941 14.941 18.9577 9.99935 18.9577ZM9.99935 2.29102C5.74935 2.29102 2.29102 5.74935 2.29102 9.99935C2.29102 14.2493 5.74935 17.7077 9.99935 17.7077C14.2493 17.7077 17.7077 14.2493 17.7077 9.99935C17.7077 5.74935 14.2493 2.29102 9.99935 2.29102Z" fill="#E29AA8"></path>
+                                            <path d="M10 11.4577C9.65833 11.4577 9.375 11.1743 9.375 10.8327V6.66602C9.375 6.32435 9.65833 6.04102 10 6.04102C10.3417 6.04102 10.625 6.32435 10.625 6.66602V10.8327C10.625 11.1743 10.3417 11.4577 10 11.4577Z" fill="#E29AA8"></path>
+                                            <path d="M9.99935 14.1664C9.89102 14.1664 9.78268 14.1414 9.68268 14.0997C9.58268 14.0581 9.49102 13.9997 9.40768 13.9247C9.33268 13.8414 9.27435 13.7581 9.23268 13.6497C9.19102 13.5497 9.16602 13.4414 9.16602 13.3331C9.16602 13.2247 9.19102 13.1164 9.23268 13.0164C9.27435 12.9164 9.33268 12.8247 9.40768 12.7414C9.49102 12.6664 9.58268 12.6081 9.68268 12.5664C9.88268 12.4831 10.116 12.4831 10.316 12.5664C10.416 12.6081 10.5077 12.6664 10.591 12.7414C10.666 12.8247 10.7243 12.9164 10.766 13.0164C10.8077 13.1164 10.8327 13.2247 10.8327 13.3331C10.8327 13.4414 10.8077 13.5497 10.766 13.6497C10.7243 13.7581 10.666 13.8414 10.591 13.9247C10.5077 13.9997 10.416 14.0581 10.316 14.0997C10.216 14.1414 10.1077 14.1664 9.99935 14.1664Z" fill="#E29AA8"></path>
+                                        </svg>
+                                    </figure>
+
+                                    <p class="text__regular-16">
+                                        Получите дополнительную выгоду
+                                    </p>
                                 </div>
 
                                 <div class="basket__card-addiction">
@@ -2178,6 +2217,16 @@
                                                         </a>
                                                     </li>
                                                 </ul>
+
+                                                <div class="basket__card-addiction-navigation">
+                                                    <button type="button" class="swiper-button-next">
+                                                        <svg width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M23.6279 9.51367L1 9.51367" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M19.3833 13.7573L15.1406 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M23.63 9.51562L15.1445 1.03018" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -2219,7 +2268,7 @@
                                                             </svg>
                                                         </button>
 
-                                                        <input type="number" readonly="" value="200" min="1">
+                                                        <input type="number" value="200" min="1">
 
                                                         <button class="basket__card-info-top-counter-field-button">
                                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2241,12 +2290,12 @@
                                             <div class="basket__card-info-top-price">
                                                 <strong class="h h h_h4"> 7 416.00₽ </strong>
 
-                                                <span class="text__regular-16"> 45.90₽/от 100 тыс. </span>
+                                                <span class="text__regular-16"> 95.90₽/шт </span>
                                             </div>
                                         </div>
 
                                         <div class="basket__card-info-bottom">
-                                            <div class="basket__card-info-bottom-warning">
+                                            <div class="basket__card-info-bottom-warning _desktop-only">
                                                 <figure class="basket__card-info-bottom-warning-icon">
                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M9.99935 18.9577C5.05768 18.9577 1.04102 14.941 1.04102 9.99935C1.04102 5.05768 5.05768 1.04102 9.99935 1.04102C14.941 1.04102 18.9577 5.05768 18.9577 9.99935C18.9577 14.941 14.941 18.9577 9.99935 18.9577ZM9.99935 2.29102C5.74935 2.29102 2.29102 5.74935 2.29102 9.99935C2.29102 14.2493 5.74935 17.7077 9.99935 17.7077C14.2493 17.7077 17.7077 14.2493 17.7077 9.99935C17.7077 5.74935 14.2493 2.29102 9.99935 2.29102Z" fill="#E29AA8"></path>
@@ -2278,6 +2327,20 @@
                                             </ul>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="basket__card-info-bottom-warning _mobile-only">
+                                    <figure class="basket__card-info-bottom-warning-icon">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.99935 18.9577C5.05768 18.9577 1.04102 14.941 1.04102 9.99935C1.04102 5.05768 5.05768 1.04102 9.99935 1.04102C14.941 1.04102 18.9577 5.05768 18.9577 9.99935C18.9577 14.941 14.941 18.9577 9.99935 18.9577ZM9.99935 2.29102C5.74935 2.29102 2.29102 5.74935 2.29102 9.99935C2.29102 14.2493 5.74935 17.7077 9.99935 17.7077C14.2493 17.7077 17.7077 14.2493 17.7077 9.99935C17.7077 5.74935 14.2493 2.29102 9.99935 2.29102Z" fill="#E29AA8"></path>
+                                            <path d="M10 11.4577C9.65833 11.4577 9.375 11.1743 9.375 10.8327V6.66602C9.375 6.32435 9.65833 6.04102 10 6.04102C10.3417 6.04102 10.625 6.32435 10.625 6.66602V10.8327C10.625 11.1743 10.3417 11.4577 10 11.4577Z" fill="#E29AA8"></path>
+                                            <path d="M9.99935 14.1664C9.89102 14.1664 9.78268 14.1414 9.68268 14.0997C9.58268 14.0581 9.49102 13.9997 9.40768 13.9247C9.33268 13.8414 9.27435 13.7581 9.23268 13.6497C9.19102 13.5497 9.16602 13.4414 9.16602 13.3331C9.16602 13.2247 9.19102 13.1164 9.23268 13.0164C9.27435 12.9164 9.33268 12.8247 9.40768 12.7414C9.49102 12.6664 9.58268 12.6081 9.68268 12.5664C9.88268 12.4831 10.116 12.4831 10.316 12.5664C10.416 12.6081 10.5077 12.6664 10.591 12.7414C10.666 12.8247 10.7243 12.9164 10.766 13.0164C10.8077 13.1164 10.8327 13.2247 10.8327 13.3331C10.8327 13.4414 10.8077 13.5497 10.766 13.6497C10.7243 13.7581 10.666 13.8414 10.591 13.9247C10.5077 13.9997 10.416 14.0581 10.316 14.0997C10.216 14.1414 10.1077 14.1664 9.99935 14.1664Z" fill="#E29AA8"></path>
+                                        </svg>
+                                    </figure>
+
+                                    <p class="text__regular-16">
+                                        Получите дополнительную выгоду
+                                    </p>
                                 </div>
 
                                 <div class="basket__card-addiction">
@@ -2414,6 +2477,16 @@
                                                         </a>
                                                     </li>
                                                 </ul>
+
+                                                <div class="basket__card-addiction-navigation">
+                                                    <button type="button" class="swiper-button-next">
+                                                        <svg width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M23.6279 9.51367L1 9.51367" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M19.3833 13.7573L15.1406 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M23.63 9.51562L15.1445 1.03018" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -2425,19 +2498,19 @@
 
                 <div class="basket__detailed-order">
                     <div class="basket__detailed-order-warning">
-                        <figure class="basket__detailed-order-warning-icon">
+                        <button data-modal="#basket-order-info-price" class="basket__detailed-order-warning-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                 <path d="M12 7V12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                 <circle cx="12" cy="16" r="1" fill="white"></circle>
                             </svg>
-                        </figure>
+                        </button>
 
                         <p class="basket__detailed-order-warning-text text__regular-18">
-                            Получайте выгоду от объема заказа до 10%
+                            Получайте выгоду от объема заказа
                         </p>
 
-                        <div class="basket__detailed-order-warning-info">
+                        <div data-da="#basket-order-info-price .modal__body,768,last" class="basket__detailed-order-warning-info">
                             <ul class="basket__detailed-order-warning-list">
                                 <li class="basket__detailed-order-warning-item">
                                     от 15 000 до 30 000 рублей предоставляется скидка <span>5%</span>
@@ -2452,7 +2525,14 @@
                                     от 50 000 до 100 000 рублей предоставляется скидка <span>8%</span>
                                 </li>
                                 <li class="basket__detailed-order-warning-item">
-                                    от 1 000 000 рублей и выше предоставляется скидка <span>10%</span>
+                                    от 100 000 рублей дополнительная выгода по <span>оптовой цене</span>
+                                </li>
+                                <li class="basket__detailed-order-warning-item">
+                                    от 100 000 рублей, если количество товаров кратно коробу, дополнительная
+                                    выгода по <span>спеццене</span>
+                                </li>
+                                <li class="basket__detailed-order-warning-item">
+                                    от 1 000 000 рублей предоставляется <span>индивидуальная скидка</span>
                                 </li>
                             </ul>
                         </div>
@@ -2470,22 +2550,22 @@
                                 <span class="text__regular-18"> 41 540.20₽ </span>
                             </li>
                             <li class="basket__detailed-order-content-item">
-                               <div class="basket__detailed-order-content-item-heading">
-                                   <p class="basket__detailed-order-content-item-title text__regular-18">
-                                       Выгода
+                                <div class="basket__detailed-order-content-item-heading">
+                                    <p class="basket__detailed-order-content-item-title text__regular-18">
+                                        Выгода
 
-                                       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                           <mask id="mask0_1421_41711" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="28">
-                                               <rect width="28" height="28" fill="#D9D9D9"></rect>
-                                           </mask>
-                                           <g mask="url(#mask0_1421_41711)">
-                                               <path d="M13.4414 16.5365L9.76513 12.8602C9.71442 12.8095 9.67448 12.7529 9.64531 12.6903C9.61615 12.6278 9.60156 12.5607 9.60156 12.4893C9.60156 12.3463 9.6499 12.2221 9.74658 12.1167C9.84324 12.0112 9.97065 11.9585 10.1288 11.9585H17.8736C18.0318 11.9585 18.1592 12.0117 18.2558 12.1182C18.3525 12.2247 18.4009 12.3489 18.4009 12.4908C18.4009 12.5263 18.3463 12.6495 18.2371 12.8604L14.561 16.5365C14.4765 16.621 14.3891 16.6827 14.2989 16.7216C14.2087 16.7605 14.1095 16.7799 14.0012 16.7799C13.893 16.7799 13.7937 16.7605 13.7035 16.7216C13.6133 16.6827 13.5259 16.621 13.4414 16.5365Z" fill="#1D1D1B"></path>
-                                           </g>
-                                       </svg>
-                                   </p>
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask0_1421_41711" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="28">
+                                                <rect width="28" height="28" fill="#D9D9D9"></rect>
+                                            </mask>
+                                            <g mask="url(#mask0_1421_41711)">
+                                                <path d="M13.4414 16.5365L9.76513 12.8602C9.71442 12.8095 9.67448 12.7529 9.64531 12.6903C9.61615 12.6278 9.60156 12.5607 9.60156 12.4893C9.60156 12.3463 9.6499 12.2221 9.74658 12.1167C9.84324 12.0112 9.97065 11.9585 10.1288 11.9585H17.8736C18.0318 11.9585 18.1592 12.0117 18.2558 12.1182C18.3525 12.2247 18.4009 12.3489 18.4009 12.4908C18.4009 12.5263 18.3463 12.6495 18.2371 12.8604L14.561 16.5365C14.4765 16.621 14.3891 16.6827 14.2989 16.7216C14.2087 16.7605 14.1095 16.7799 14.0012 16.7799C13.893 16.7799 13.7937 16.7605 13.7035 16.7216C13.6133 16.6827 13.5259 16.621 13.4414 16.5365Z" fill="#1D1D1B"></path>
+                                            </g>
+                                        </svg>
+                                    </p>
 
-                                   <span class="text__regular-18"> 41 540.20₽ </span>
-                               </div>
+                                    <span class="text__regular-18"> 41 540.20₽ </span>
+                                </div>
 
                                 <div class="basket__detailed-order-content-item-wrapper">
                                     <ul class="basket__detailed-order-content-item-addictions">
@@ -2523,7 +2603,7 @@
     </div>
 </section>
 
-            <section class="recommendations">
+                <section class="recommendations">
     <div class="container">
         <div class="recommendations__content">
             <div class="recommendations__heading section-heading subtitle">
@@ -2537,7 +2617,7 @@
                     </p>
                 </div>
 
-                <div class="recommendations__heading-navigation navigation-buttons">
+                <div data-da=".recommendations__content,768,last" class="recommendations__heading-navigation navigation-buttons">
                     <button type="button" class="swiper-button-prev">
                         <svg width="25" height="19" viewBox="0 0 25 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.37227 9.51401L24.0001 9.51401" stroke="#2B5644" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -2753,8 +2833,38 @@
     </div>
 </section>
 
-        </main>
-        <footer class="footer">
+                <section class="sticky-menu">
+    <div class="container">
+        <div class="sticky-menu__content">
+            <div class="basket__sticky-menu-info">
+                <span class="basket__sticky-menu-title">
+                    Розничная цена:
+                </span>
+
+                <div class="basket__sticky-menu-bottom">
+                    <button data-modal="#basket-order-info" class="basket__sticky-menu-bottom-button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="#898485" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M12 7V12" stroke="#898485" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <circle cx="12" cy="16" r="1" fill="#898485"></circle>
+                        </svg>
+                    </button>
+
+                    <strong class="basket__sticky-menu-bottom-price">
+                        41 540.20₽
+                    </strong>
+                </div>
+            </div>
+
+            <button class="basket__sticky-menu-button btn">
+                Оформить заказ
+            </button>
+        </div>
+    </div>
+</section>
+
+            </main>
+            <footer class="footer">
     <div class="container">
         <div class="footer__inner">
             <div class="footer__main">
@@ -2897,21 +3007,34 @@
     </div>
 </footer>
 
-        <div id="checkoutComplete" aria-hidden="true" class="modal checkout-complete-modal">
+<div style="position: absolute; top: -110%; left: -110%; transform: translate(-100%, -100%)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" fill="none" preserveAspectRatio="none">
+        <clipPath id="banner-poster" clipPathUnits="objectBoundingBox">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0,0.862 C0,0.823,0,0.803,0,0.786 C0.01,0.36,0.206,0.018,0.451,0.001 C0.461,0,0.472,0,0.495,0 H0.862 C0.921,0,0.95,0,0.971,0.027 C0.976,0.034,0.98,0.042,0.984,0.051 C1,0.087,1,0.138,1,0.24 V0.738 C1,0.861,1,0.923,0.978,0.962 C0.956,1,0.92,1,0.85,1 H0.079 C0.076,1,0.074,1,0.072,1 C0.033,0.997,0.002,0.942,0,0.874 C0,0.872,0,0.868,0,0.862"></path>
+        </clipPath>
+    </svg>
+</div>
+
+
+
+            <div id="checkoutComplete" aria-hidden="true" class="modal checkout-complete-modal">
     <div class="modal__wrapper">
         <div class="modal__content">
             <div class="modal__body">
                 <div class="checkout-complete-modal__inner">
-                        <button data-close="" type="button" class="modal__close">
-                            <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
-                        </button>
-                        <span class="checkout-complete-modal__heading h h_h2">Ваш заказ <span>#123456</span> оформлен!</span>
-                        <p class="checkout-complete-modal__text">Спасибо за выбор компании Миррэй! В ближайшее время с Вами свяжется наш менеджер для уточнения деталей.</p>
-                        <div class="checkout-complete-modal__actions">
-                            <a href="#" class="checkout-complete-modal__btn btn btn__white">Перейти в личный кабинет</a>
-                            <a href="#" class="checkout-complete-modal__btn btn btn_ghost">Перейти в каталог</a>
-                        </div>
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="checkout-complete-modal__heading h h_h2">Ваш заказ <span>#123456</span> оформлен!</span>
+                    <p class="checkout-complete-modal__text">
+                        Спасибо за выбор компании Миррэй! В ближайшее время с Вами свяжется наш менеджер для
+                        уточнения деталей.
+                    </p>
+                    <div class="checkout-complete-modal__actions">
+                        <a href="#" class="checkout-complete-modal__btn btn btn__white">Перейти в личный кабинет</a>
+                        <a href="#" class="checkout-complete-modal__btn btn btn_ghost">Перейти в каталог</a>
                     </div>
+                </div>
             </div>
         </div>
     </div>
@@ -2927,7 +3050,10 @@
                         <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
                     </button>
                     <span class="checkout-complete-modal__heading h h_h2">Ваш заказ <span>#123456</span> оформлен!</span>
-                    <p class="checkout-complete-modal__text">Спасибо за выбор компании Миррэй! Данные для личного кабинета направлены на почту "farexampe@.com"</p>
+                    <p class="checkout-complete-modal__text">
+                        Спасибо за выбор компании Миррэй! Данные для личного кабинета направлены на почту
+                        "farexampe@.com"
+                    </p>
                     <div class="checkout-complete-modal__actions">
                         <a href="#" class="checkout-complete-modal__btn btn btn__white">Перейти к регистрации</a>
                         <a href="#" class="checkout-complete-modal__btn btn btn_ghost">Перейти в каталог</a>
@@ -2937,92 +3063,92 @@
         </div>
     </div>
 </div>
+
+<!-- информационное меню в мобильной версии -->
+<div id="basket-order-info" aria-hidden="true" class="modal info-modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <button data-close="" type="button" class="modal__close">
+                    <img src="./assets/images/icons/close.svg" alt="" class="modal__close-icon">
+                </button>
+
+                <ul class="modal__list">
+                    <li class="modal__item">
+                        <div class="modal__item-heading">
+                            <strong class="modal__item-title"> Розничная цена: </strong>
+
+                            <span class="modal__item-price"> 40.90₽ </span>
+                        </div>
+
+                        <p class="modal__item-description">
+                            При заказе на общую сумму от 15 000₽ применяется скидка 5%
+                        </p>
+                    </li>
+                    <li class="modal__item">
+                        <div class="modal__item-heading">
+                            <strong class="modal__item-title"> Оптовая цена: </strong>
+
+                            <span class="modal__item-price">
+                                40.90₽
+
+                                <sub> 40.90₽ </sub>
+                            </span>
+                        </div>
+
+                        <p class="modal__item-description">При заказе на общую сумму от 100 000 ₽</p>
+                    </li>
+                    <li class="modal__item">
+                        <div class="modal__item-heading">
+                            <strong class="modal__item-title"> Спеццена: </strong>
+
+                            <span class="modal__item-price"> 32.90₽ </span>
+                        </div>
+
+                        <p class="modal__item-description">Действует за заказ кратный коробу</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="basket-order-info-price" aria-hidden="true" class="modal info-modal">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <button data-close="" type="button" class="modal__close">
+                    <img src="./assets/images/icons/close.svg" alt="" class="modal__close-icon">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- отмена подписки -->
+<div id="cancelSubscriptionModal" aria-hidden="true" class="modal checkout-complete-modal checkout-complete-modal_sub">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__body">
+                <div class="checkout-complete-modal__inner">
+                    <button data-close="" type="button" class="modal__close">
+                        <img src="./assets/images/icons/cross-white.svg" alt="" class="modal__close-icon">
+                    </button>
+                    <span class="checkout-complete-modal__heading h h_h2">Вы действительно хотите отписаться?</span>
+                    <div class="checkout-complete-modal__actions">
+                        <button type="button" class="checkout-complete-modal__btn btn btn__white">
+                            Подтвердить
+                        </button>
+                        <button data-close="" type="button" class="checkout-complete-modal__btn btn btn_ghost">
+                            Отмена
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
     </body>
 </html>
-<script>
-    const markers = [
-        {
-            tag: 'Главный офис',
-            coordinate: [37.539626, 55.65015],
-            active: false,
-            card: 'map-card-1'
-        },
-        {
-            tag: 'Оптово-розничный магазин',
-            coordinate: [37.471102, 55.60101],
-            active: false,
-            card: 'map-card-2'
-        },
-        {
-            tag: 'Склад',
-            coordinate: [37.26184, 55.658317],
-            active: false,
-            card: 'map-card-3'
-        }
-    ];
-
-    async function initMap() {
-        await ymaps3.ready;
-        const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
-        const map = new YMap(document.getElementById('main-map'), {
-            location: {
-                center: [37.47971415087885, 55.621295640143664],
-                zoom: 12
-            }
-        });
-
-        map.addChild(new YMapDefaultSchemeLayer());
-        map.addChild(new YMapDefaultFeaturesLayer({ zIndex: 1800 }));
-
-        markers.forEach((el, i) => {
-            let content = document.createElement('div');
-            content.classList.add('marker', el.card);
-            content.insertAdjacentHTML(
-                'beforeend',
-                `
-                <div class="marker__content">
-                    <div class="marker__svg">
-                     <img src="./assets/images/marker-logo.svg" alt="" />
-                    </div>
-                    <div class="marker__text">${el.tag}</div>
-                </div>
-			    `
-            );
-            el.active ? content.classList.add('hover') : null;
-            clickMarker(content, el);
-
-            const marker = new YMapMarker({ coordinates: el.coordinate, draggable: false }, content);
-            map.addChild(marker);
-        });
-    }
-
-    function clickMarker(content, marker) {
-        content.addEventListener('mouseenter', function () {
-            changeMarkers(content, marker);
-            document.getElementById(marker.card).classList.add('hover');
-        });
-    }
-
-    function changeMarkers(content, marker) {
-        document.querySelectorAll('.marker').forEach((el) => el.classList.remove('hover'));
-        document.querySelectorAll('.map-card').forEach((el) => el.classList.remove('hover'));
-        markers.forEach((el) => (el.active = false));
-        marker.active = true;
-        content.classList.add('hover');
-    }
-
-    initMap();
-
-    document.querySelectorAll('.map-card').forEach((el) => {
-        el.addEventListener('mouseenter', () => {
-            document.querySelectorAll('.map-card').forEach((el) => el.classList.remove('hover'));
-            document.querySelectorAll('.marker').forEach((el) => el.classList.remove('hover'));
-
-            el.classList.add('hover');
-
-            document.querySelectorAll('.marker').forEach((marker) => {
-                marker.classList.contains(el.id) && marker.classList.add('hover');
-            });
-        });
-    });
-</script>

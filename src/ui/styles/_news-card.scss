@@ -7,10 +7,20 @@
         flex-direction: column;
         height: 100%;
 
+        @include small-tablet {
+            border-radius: 4.8rem;
+        }
+
         &-image {
             border-radius: 2rem;
             height: 38rem;
             margin-bottom: 2.4rem;
+
+            @include small-tablet {
+                margin-bottom: 3.2rem;
+                border-radius: 3.2rem;
+                height: 54rem;
+            }
 
             img {
                 height: 100%;
@@ -26,17 +36,47 @@
             margin-bottom: 0.6rem;
             gap: 1rem;
 
+            @include small-tablet {
+                margin-bottom: 3.2rem;
+            }
+
             svg {
                 @include sizes(3.2rem, 3.2rem);
+
+                @include small-tablet {
+                    @include sizes(4.8rem, 4.8rem);
+                }
+            }
+
+            &-date {
+                @include small-tablet{
+                    font-weight: 400;
+                    font-size: 3rem;
+                    line-height: 130%;
+                }
             }
         }
 
         &-title {
             margin-bottom: 0.8rem;
+
+            @include small-tablet {
+                margin-bottom: 1.6rem;
+                font-weight: 500;
+                font-size: 3.6rem;
+                line-height: 120%;
+                letter-spacing: 0.04em;
+            }
         }
 
         &-description {
             @include clamp-text(3);
+
+            @include small-tablet{
+                font-weight: 400;
+                font-size: 3rem;
+                line-height: 130%;
+            }
         }
     }
 }
