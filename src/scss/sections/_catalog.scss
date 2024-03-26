@@ -1,4 +1,19 @@
 .catalog {
+    &__card {
+        .recommendations__card {
+            &-favorite-button {
+                opacity: 0;
+                transition: .3s opacity ease-out;
+            }
+
+            @include hover{
+                .recommendations__card-favorite-button {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
     &__heading {
         margin-bottom: 7rem;
 
