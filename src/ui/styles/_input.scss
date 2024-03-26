@@ -116,8 +116,12 @@ textarea {
         &::placeholder {
             color: $grey-text;
             transition: color 0.3s ease;
-            font-size: 3.2rem;
+            font-size: 1.6rem;
             line-height: 120%;
+
+            @include small-tablet{
+                font-size: 3.2rem;
+            }
         }
 
         @media (max-width: 48em) {
