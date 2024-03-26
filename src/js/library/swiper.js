@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             breakpoints: {
                 0: {
                     slidesPerView: 1,
-                    spaceBetween: remToPx(2.4),
+                    spaceBetween: remToPx(2.4)
                 },
                 768: {
                     slidesPerView: 4
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     header &&
         new Swiper('.search-modal__slider', {
             modules: [Navigation],
-            spaceBetween: `${remToPx(0.8)}rem`,
+            spaceBetween: `${remToPx(4)}rem`,
             slidesPerView: 'auto',
             speed: 800,
             navigation: {
@@ -85,7 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidesPerView: 1
             },
             768: {
-                slidesPerView: 3
+                slidesPerView: 3,
+
+                spaceBetween: `${remToPx(0.8)}rem`
             }
         }
     });

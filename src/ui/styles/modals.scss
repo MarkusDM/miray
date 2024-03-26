@@ -1,7 +1,7 @@
 body::after {
     content: '';
     position: fixed;
-    z-index: 149;
+    z-index: 1400;
     top: 0;
     left: 0;
     width: 100%;
@@ -25,8 +25,13 @@ body::after {
     visibility: hidden;
     pointer-events: none;
     transition: visibility 0.8s ease 0s;
+    &_mb {
+        @media (min-width: 48em) {
+            display: none;
+        }
+    }
     &.modal_show {
-        z-index: 150;
+        z-index: 1500;
         visibility: visible;
         overflow: auto;
         pointer-events: auto;
@@ -72,6 +77,20 @@ body::after {
         border-radius: 3rem;
         overflow: hidden;
 
+        @media (max-width: 48em) {
+            border-radius: 4.8rem;
+        }
+
+        .contacts-modal & {
+            padding: 4rem;
+            background-color: $white;
+
+            &::before,
+            &::after {
+                content: none;
+            }
+        }
+
         &::before,
         &::after {
             content: '';
@@ -105,6 +124,10 @@ body::after {
         width: 2.4rem;
         img {
             object-fit: contain;
+        }
+
+        .contacts-modal & {
+            display: none;
         }
 
         @include small-tablet {
@@ -247,12 +270,10 @@ body::after {
                             font-size: 3.6rem;
                         }
                     }
-
-
                 }
 
                 &-button {
-                    @include small-tablet{
+                    @include small-tablet {
                         width: 100%;
                         padding: 3rem;
                     }
@@ -318,5 +339,41 @@ body::after {
                 line-height: 130%;
             }
         }
+    }
+}
+
+.contacts-modal {
+    display: flex;
+    flex-direction: column;
+
+    &__inner,
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 6.4rem;
+    }
+
+    &__list {
+        align-items: flex-start;
+    }
+
+    &__list-item {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.4rem;
+    }
+
+    &__subtitle,
+    &__text {
+        color: $grey-text;
+    }
+
+    &__text {
+        max-width: 33rem;
+    }
+
+    &__btn {
+        width: 100%;
+        height: 10rem;
     }
 }

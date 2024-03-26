@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { bodyLock, bodyUnlock } from '../utils/utils';
 
 $(document).ready(() => {
     //header ==================================================================
@@ -6,8 +7,12 @@ $(document).ready(() => {
         window.scrollY > 0 ? $('.header').addClass('scroll') : $('.header').removeClass('scroll');
     });
 
-    $('.header .search').focusin((evt) => {
+    $('.header__search-input').on('focusin', function (evt) {
         $('.header__search-modal').addClass('show');
+
+        if (window.innerWidth <= 768) {
+            bodyLock();
+        }
     });
 
     $('.header .search').on('input', (evt) => {
@@ -23,6 +28,13 @@ $(document).ready(() => {
     $('.header__catalog-button').on('click', function () {
         $(this).toggleClass('show');
         $('.header-catalog').toggleClass('show');
+    });
+
+    $('.header__close-search-btn').on('click', function (e) {
+        e.preventDefault();
+        $('.header__search-modal').removeClass('show');
+        $('.header .search').removeClass('show');
+        bodyUnlock();
     });
 
     clickOutsidePopup($('.header__search-modal'), $('.header .search'));
@@ -109,6 +121,13 @@ function clickOutsidePopup(popup, button = null) {
             if (!popup.is(e.target) && popup.has(e.target).length === 0 && checkButton) {
                 popup.removeClass('show');
                 button.removeClass('show');
+                if (
+                    popup[0].classList.contains('show') &&
+                    popup.closest('.header__search') &&
+                    !e.target.closest('.search-modal')
+                ) {
+                    bodyUnlock();
+                }
             }
         } else {
             if (!popup.is(e.target) && popup.has(e.target).length === 0) {

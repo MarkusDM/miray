@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="container">
-        <div class="footer__inner">
+        <div data-accordion="768,max" data-accordion-single class="footer__inner">
             <div class="footer__main">
                 <div class="footer__block footer__block--logo">
                     <div class="footer__logo">
@@ -12,7 +12,7 @@
                             <span>Подписаться на новости</span>
                         </a>
                     </div>
-                    <ul class="footer__pay">
+                    <ul data-da=".footer__inner,768,last" class="footer__pay">
                         <li>
                             <svg
                                 width="32"
@@ -230,7 +230,7 @@
                     </ul>
                 </div>
                 <div class="footer__block">
-                    <h6 class="text__regular-18">О компании</h6>
+                    <h6 data-accordion-item class="text__regular-18 _is-active">О компании</h6>
                     <ul class="footer__nav-list text__regular-16">
                         <li><a href="#">Сотрудничество</a></li>
                         <li><a href="#">Акции</a></li>
@@ -242,7 +242,7 @@
                     </ul>
                 </div>
                 <div class="footer__block">
-                    <h6 class="text__regular-18">Каталог</h6>
+                    <h6 data-accordion-item class="text__regular-18">Каталог</h6>
                     <ul class="footer__nav-list text__regular-16">
                         <li><a href="#">Товары со скидкой</a></li>
                         <li><a href="#">Новинки</a></li>
@@ -265,4 +265,3 @@
 </footer>
 
 <include src="./components/_svg.html"></include>
-
