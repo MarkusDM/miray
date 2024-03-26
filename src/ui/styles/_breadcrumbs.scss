@@ -31,7 +31,7 @@
                 transform: translateX(100%);
 
                 @include small-tablet {
-                    right: 2.4rem;
+                    right: -2.4rem;
                 }
             }
         }

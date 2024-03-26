@@ -19,11 +19,16 @@
     width: 100%;
     height: 100%;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 
 .noUi-base {
     height: 0.4rem;
+
+    @include small-tablet{
+        height: .8rem;
+        width: 96%;
+    }
 }
 /* Wrapper for all connect elements.
  */
@@ -91,6 +96,10 @@
     right: -1.5rem;
     top: 50%;
     transform: translateY(-50%);
+
+    @include small-tablet{
+        right: -3.5rem;
+    }
 }
 .noUi-vertical {
     width: 18px;
@@ -140,6 +149,12 @@
             background-color: $light-green;
             border-color: $light-green;
         }
+    }
+
+    @include small-tablet{
+        width: 4rem;
+        height: 4rem;
+        border-width: .6rem;
     }
 }
 .noUi-active {

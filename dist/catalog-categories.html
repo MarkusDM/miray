@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://api-maps.yandex.ru/v3/?apikey=85d23f18-68b0-4dd3-8691-d4e1a7e577fe&lang=ru_RU"></script>
         <title>Главная</title>
-    <script defer src="main.js"></script></head>
+    <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
     <body>
-        <div class="wrapper catalog-catagories">
+        <div class="wrapper catalog-catagories-page">
             <header class="header">
     <div class="container">
         <div class="header__inner">
@@ -1654,7 +1654,6 @@
         </nav>
 
         <div class="categories__content">
-
             <h1 class="categories__title h h_h1">Каталог</h1>
 
             <div class="categories__banner">
@@ -1674,95 +1673,107 @@
             </div>
 
             <ul class="categories__cards">
-                <li class="categories__card-detailed">
-                    <a href="#" class="categories__card-detailed-heading">
-                        <span class="categories__card-detailed-heading-title">
-                            Новогодние украшения
-                        </span>
+                <li class="categories__card">
+                    <figure class="categories__card-image">
+                        <img src="./assets/images/sections/catalog/catalog-image-1.webp" alt="">
+                    </figure>
 
-                        <figure class="categories__card-detailed-heading-icon">
+                    <div class="categories__card-content">
+                        <p class="categories__card-title">Корзины и плетеные изделия</p>
+
+                        <div class="categories__card-info">
+                            <span class="categories__card-info-text text__regular-16">
+                                Более 100 товаров
+                            </span>
+
+                            <div class="categories__card-info-link link">
+                                <span>Смотреть все</span>
+
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.0002 4.99981L5 15" stroke="#2B5644" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M15 8.74993V12.5" stroke="#2B5644" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M15.0001 4.99993H7.49993" stroke="#2B5644" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="categories__card-detailed">
+                        <button class="categories__card-detailed-back-button _mobile-only">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17 10.2496L3 10.2496" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                <path d="M14.3745 12.875L11.7495 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                <path d="M17 10.2501L11.75 5.00012" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3 10.2495L10 10.2495L17 10.2495" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M5.62598 12.875L8.25098 15.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3 10.25L8.25 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
-                        </figure>
-                    </a>
 
-                    <ul class="categories__card-detailed-list">
-                        <li class="categories__card-detailed-item">
-                            <a href="#" class="link text__regular-18">
-                                Новогодние открытки
-                            </a>
-                        </li>
-                        <li class="categories__card-detailed-item">
-                            <a href="#" class="link text__regular-18">
-                                Ветки, вставки (топперы)
-                            </a>
-                        </li>
-                        <li class="categories__card-detailed-item">
-                            <a href="#" class="link text__regular-18">
-                                Гирлянды
-                            </a>
-                        </li>
-                        <li class="categories__card-detailed-item">
-                            <a href="#" class="link text__regular-18">
-                                Новогодний декор
-                            </a>
-                        </li>
-                        <li class="categories__card-detailed-item">
-                            <a href="#" class="link text__regular-18">
-                                Изделия из перьев
-                            </a>
-                        </li>
-                        <li class="categories__card-detailed-item">
-                            <a href="#" class="link text__regular-18">
-                                Искусственные ёлки
-                            </a>
-                        </li>
-                        <li class="categories__card-detailed-item">
-                            <a href="#" class="link text__regular-18">
-                                Новогодние цветы
-                            </a>
-                        </li>
-                        <li class="categories__card-detailed-item">
-                            <a href="#" class="link text__regular-18">
-                                Хрустальные подвески
-                            </a>
-                        </li>
-                        <li class="categories__card-detailed-item">
-                            <a href="#" class="link text__regular-18">
-                                Декоративные подвески
-                            </a>
-                        </li>
-                        <li class="categories__card-detailed-item">
-                            <a href="#" class="link text__regular-18">
-                                Ёлочные игрушки
-                            </a>
-                        </li>
-                        <li class="categories__card-detailed-item">
-                            <a href="#" class="link text__regular-18">
-                                Новогодние пакеты
-                            </a>
-                        </li>
-                        <li class="categories__card-detailed-item">
-                            <a href="#" class="link text__regular-18">
-                                Новогодняя лента, банты
-                            </a>
-                        </li>
-                    </ul>
+                            <span>Назад</span>
+                        </button>
+
+                        <a href="#" class="categories__card-detailed-heading">
+                            <span class="categories__card-detailed-heading-title">
+                                Новогодние украшения
+                            </span>
+
+                            <figure class="categories__card-detailed-heading-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 10.2496L3 10.2496" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M14.3745 12.875L11.7495 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17 10.2501L11.75 5.00012" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </figure>
+                        </a>
+
+                        <ul class="categories__card-detailed-list">
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние открытки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ветки, вставки (топперы) </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Гирлянды </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодний декор </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Изделия из перьев </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Искусственные ёлки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние цветы </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Хрустальные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Декоративные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ёлочные игрушки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние пакеты </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодняя лента, банты </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-
-                <li>
-                    <a class="categories__card" href="#">
-                        <figure class="categories__card-image">
-                            <img src="./assets/images/sections/catalog/catalog-image-1.webp" alt="">
-                        </figure>
-
+                <li class="categories__card">
+                    <figure class="categories__card-image">
+                        <img src="./assets/images/sections/catalog/catalog-image-1.webp" alt="">
+                    </figure>
+                    <div class="categories__card-content">
                         <p class="categories__card-title">Корзины и плетеные изделия</p>
 
                         <div class="categories__card-info">
-                            <span class="categories__card-info-text text__regular-16"> Более 100 товаров </span>
+                            <span class="categories__card-info-text text__regular-16">
+                                Более 100 товаров
+                            </span>
 
                             <div class="categories__card-info-link link">
                                 <span>Смотреть все</span>
@@ -1774,18 +1785,85 @@
                                 </svg>
                             </div>
                         </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="categories__card" href="#">
-                        <figure class="categories__card-image">
-                            <img src="../assets/images/sections/catalog/catalog-image-2.webp" alt="">
-                        </figure>
+                    </div>
 
-                        <p class="categories__card-title">Корзины и плетеные изделия</p>
+                    <div class="categories__card-detailed">
+                        <button class="categories__card-detailed-back-button _mobile-only">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 10.2495L10 10.2495L17 10.2495" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M5.62598 12.875L8.25098 15.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3 10.25L8.25 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <span>Назад</span>
+                        </button>
+
+                        <a href="#" class="categories__card-detailed-heading">
+                            <span class="categories__card-detailed-heading-title">
+                                Новогодние украшения
+                            </span>
+
+                            <figure class="categories__card-detailed-heading-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 10.2496L3 10.2496" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M14.3745 12.875L11.7495 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17 10.2501L11.75 5.00012" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </figure>
+                        </a>
+
+                        <ul class="categories__card-detailed-list">
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние открытки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ветки, вставки (топперы) </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Гирлянды </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодний декор </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Изделия из перьев </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Искусственные ёлки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние цветы </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Хрустальные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Декоративные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ёлочные игрушки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние пакеты </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодняя лента, банты </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="categories__card">
+                    <figure class="categories__card-image">
+                        <img src="./assets/images/sections/catalog/catalog-image-2.webp" alt="">
+                    </figure>
+
+                    <div class="categories__card-content">
+                        <p class="categories__card-title">Упаковка для цветов и подарков</p>
 
                         <div class="categories__card-info">
-                            <span class="categories__card-info-text text__regular-16"> Более 100 товаров </span>
+                            <span class="categories__card-info-text text__regular-16">
+                                Более 100 товаров
+                            </span>
 
                             <div class="categories__card-info-link link">
                                 <span>Смотреть все</span>
@@ -1797,18 +1875,85 @@
                                 </svg>
                             </div>
                         </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="categories__card" href="#">
-                        <figure class="categories__card-image">
-                            <img src="../assets/images/sections/catalog/catalog-image-3.webp" alt="">
-                        </figure>
+                    </div>
 
-                        <p class="categories__card-title">Корзины и плетеные изделия</p>
+                    <div class="categories__card-detailed">
+                        <button class="categories__card-detailed-back-button _mobile-only">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 10.2495L10 10.2495L17 10.2495" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M5.62598 12.875L8.25098 15.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3 10.25L8.25 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <span>Назад</span>
+                        </button>
+
+                        <a href="#" class="categories__card-detailed-heading">
+                            <span class="categories__card-detailed-heading-title">
+                                Новогодние украшения
+                            </span>
+
+                            <figure class="categories__card-detailed-heading-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 10.2496L3 10.2496" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M14.3745 12.875L11.7495 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17 10.2501L11.75 5.00012" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </figure>
+                        </a>
+
+                        <ul class="categories__card-detailed-list">
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние открытки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ветки, вставки (топперы) </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Гирлянды </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодний декор </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Изделия из перьев </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Искусственные ёлки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние цветы </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Хрустальные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Декоративные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ёлочные игрушки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние пакеты </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодняя лента, банты </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="categories__card">
+                    <figure class="categories__card-image">
+                        <img src="./assets/images/sections/catalog/catalog-image-3.webp" alt="">
+                    </figure>
+
+                    <div class="categories__card-content">
+                        <p class="categories__card-title">Лента</p>
 
                         <div class="categories__card-info">
-                            <span class="categories__card-info-text text__regular-16"> Более 100 товаров </span>
+                            <span class="categories__card-info-text text__regular-16">
+                                Более 100 товаров
+                            </span>
 
                             <div class="categories__card-info-link link">
                                 <span>Смотреть все</span>
@@ -1820,18 +1965,85 @@
                                 </svg>
                             </div>
                         </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="categories__card" href="#">
-                        <figure class="categories__card-image">
-                            <img src="../assets/images/sections/catalog/catalog-image-4.webp" alt="">
-                        </figure>
+                    </div>
 
-                        <p class="categories__card-title">Корзины и плетеные изделия</p>
+                    <div class="categories__card-detailed">
+                        <button class="categories__card-detailed-back-button _mobile-only">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 10.2495L10 10.2495L17 10.2495" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M5.62598 12.875L8.25098 15.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3 10.25L8.25 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <span>Назад</span>
+                        </button>
+
+                        <a href="#" class="categories__card-detailed-heading">
+                            <span class="categories__card-detailed-heading-title">
+                                Новогодние украшения
+                            </span>
+
+                            <figure class="categories__card-detailed-heading-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 10.2496L3 10.2496" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M14.3745 12.875L11.7495 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17 10.2501L11.75 5.00012" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </figure>
+                        </a>
+
+                        <ul class="categories__card-detailed-list">
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние открытки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ветки, вставки (топперы) </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Гирлянды </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодний декор </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Изделия из перьев </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Искусственные ёлки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние цветы </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Хрустальные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Декоративные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ёлочные игрушки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние пакеты </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодняя лента, банты </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="categories__card">
+                    <figure class="categories__card-image">
+                        <img src="./assets/images/sections/catalog/catalog-image-4.webp" alt="">
+                    </figure>
+
+                    <div class="categories__card-content">
+                        <p class="categories__card-title">Коробки для цветов</p>
 
                         <div class="categories__card-info">
-                            <span class="categories__card-info-text text__regular-16"> Более 100 товаров </span>
+                            <span class="categories__card-info-text text__regular-16">
+                                Более 100 товаров
+                            </span>
 
                             <div class="categories__card-info-link link">
                                 <span>Смотреть все</span>
@@ -1843,18 +2055,85 @@
                                 </svg>
                             </div>
                         </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="categories__card" href="#">
-                        <figure class="categories__card-image">
-                            <img src="../assets/images/sections/catalog/catalog-image-5.webp" alt="">
-                        </figure>
+                    </div>
 
-                        <p class="categories__card-title">Корзины и плетеные изделия</p>
+                    <div class="categories__card-detailed">
+                        <button class="categories__card-detailed-back-button _mobile-only">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 10.2495L10 10.2495L17 10.2495" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M5.62598 12.875L8.25098 15.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3 10.25L8.25 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <span>Назад</span>
+                        </button>
+
+                        <a href="#" class="categories__card-detailed-heading">
+                            <span class="categories__card-detailed-heading-title">
+                                Новогодние украшения
+                            </span>
+
+                            <figure class="categories__card-detailed-heading-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 10.2496L3 10.2496" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M14.3745 12.875L11.7495 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17 10.2501L11.75 5.00012" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </figure>
+                        </a>
+
+                        <ul class="categories__card-detailed-list">
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние открытки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ветки, вставки (топперы) </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Гирлянды </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодний декор </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Изделия из перьев </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Искусственные ёлки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние цветы </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Хрустальные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Декоративные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ёлочные игрушки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние пакеты </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодняя лента, банты </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="categories__card">
+                    <figure class="categories__card-image">
+                        <img src="./assets/images/sections/catalog/catalog-image-5.webp" alt="">
+                    </figure>
+
+                    <div class="categories__card-content">
+                        <p class="categories__card-title">Пакеты для цветов и подарков</p>
 
                         <div class="categories__card-info">
-                            <span class="categories__card-info-text text__regular-16"> Более 100 товаров </span>
+                            <span class="categories__card-info-text text__regular-16">
+                                Более 100 товаров
+                            </span>
 
                             <div class="categories__card-info-link link">
                                 <span>Смотреть все</span>
@@ -1866,18 +2145,84 @@
                                 </svg>
                             </div>
                         </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="categories__card" href="#">
-                        <figure class="categories__card-image">
-                            <img src="../assets/images/sections/catalog/catalog-image-6.webp" alt="">
-                        </figure>
+                    </div>
 
-                        <p class="categories__card-title">Корзины и плетеные изделия</p>
+                    <div class="categories__card-detailed">
+                        <button class="categories__card-detailed-back-button _mobile-only">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 10.2495L10 10.2495L17 10.2495" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M5.62598 12.875L8.25098 15.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3 10.25L8.25 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <span>Назад</span>
+                        </button>
+
+                        <a href="#" class="categories__card-detailed-heading">
+                            <span class="categories__card-detailed-heading-title">
+                                Новогодние украшения
+                            </span>
+
+                            <figure class="categories__card-detailed-heading-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 10.2496L3 10.2496" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M14.3745 12.875L11.7495 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17 10.2501L11.75 5.00012" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </figure>
+                        </a>
+
+                        <ul class="categories__card-detailed-list">
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние открытки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ветки, вставки (топперы) </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Гирлянды </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодний декор </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Изделия из перьев </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Искусственные ёлки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние цветы </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Хрустальные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Декоративные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ёлочные игрушки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние пакеты </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодняя лента, банты </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="categories__card">
+                    <figure class="categories__card-image">
+                        <img src="./assets/images/sections/catalog/catalog-image-6.webp" alt="">
+                    </figure>
+                    <div class="categories__card-content">
+                        <p class="categories__card-title">Фоамиран</p>
 
                         <div class="categories__card-info">
-                            <span class="categories__card-info-text text__regular-16"> Более 100 товаров </span>
+                            <span class="categories__card-info-text text__regular-16">
+                                Более 100 товаров
+                            </span>
 
                             <div class="categories__card-info-link link">
                                 <span>Смотреть все</span>
@@ -1889,18 +2234,84 @@
                                 </svg>
                             </div>
                         </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="categories__card" href="#">
-                        <figure class="categories__card-image">
-                            <img src="../assets/images/sections/catalog/catalog-image-7.webp" alt="">
-                        </figure>
+                    </div>
 
-                        <p class="categories__card-title">Корзины и плетеные изделия</p>
+                    <div class="categories__card-detailed">
+                        <button class="categories__card-detailed-back-button _mobile-only">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 10.2495L10 10.2495L17 10.2495" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M5.62598 12.875L8.25098 15.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3 10.25L8.25 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <span>Назад</span>
+                        </button>
+
+                        <a href="#" class="categories__card-detailed-heading">
+                            <span class="categories__card-detailed-heading-title">
+                                Новогодние украшения
+                            </span>
+
+                            <figure class="categories__card-detailed-heading-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 10.2496L3 10.2496" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M14.3745 12.875L11.7495 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17 10.2501L11.75 5.00012" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </figure>
+                        </a>
+
+                        <ul class="categories__card-detailed-list">
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние открытки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ветки, вставки (топперы) </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Гирлянды </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодний декор </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Изделия из перьев </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Искусственные ёлки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние цветы </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Хрустальные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Декоративные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ёлочные игрушки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние пакеты </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодняя лента, банты </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="categories__card">
+                    <figure class="categories__card-image">
+                        <img src="./assets/images/sections/catalog/catalog-image-7.webp" alt="">
+                    </figure>
+                    <div class="categories__card-content">
+                        <p class="categories__card-title">Сухоцветы</p>
 
                         <div class="categories__card-info">
-                            <span class="categories__card-info-text text__regular-16"> Более 100 товаров </span>
+                            <span class="categories__card-info-text text__regular-16">
+                                Более 100 товаров
+                            </span>
 
                             <div class="categories__card-info-link link">
                                 <span>Смотреть все</span>
@@ -1912,18 +2323,85 @@
                                 </svg>
                             </div>
                         </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="categories__card" href="#">
-                        <figure class="categories__card-image">
-                            <img src="../assets/images/sections/catalog/catalog-image-8.webp" alt="">
-                        </figure>
+                    </div>
 
-                        <p class="categories__card-title">Корзины и плетеные изделия</p>
+                    <div class="categories__card-detailed">
+                        <button class="categories__card-detailed-back-button _mobile-only">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 10.2495L10 10.2495L17 10.2495" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M5.62598 12.875L8.25098 15.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3 10.25L8.25 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <span>Назад</span>
+                        </button>
+
+                        <a href="#" class="categories__card-detailed-heading">
+                            <span class="categories__card-detailed-heading-title">
+                                Новогодние украшения
+                            </span>
+
+                            <figure class="categories__card-detailed-heading-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 10.2496L3 10.2496" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M14.3745 12.875L11.7495 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17 10.2501L11.75 5.00012" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </figure>
+                        </a>
+
+                        <ul class="categories__card-detailed-list">
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние открытки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ветки, вставки (топперы) </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Гирлянды </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодний декор </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Изделия из перьев </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Искусственные ёлки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние цветы </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Хрустальные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Декоративные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ёлочные игрушки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние пакеты </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодняя лента, банты </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="categories__card">
+                    <figure class="categories__card-image">
+                        <img src="./assets/images/sections/catalog/catalog-image-8.webp" alt="">
+                    </figure>
+
+                    <div class="categories__card-content">
+                        <p class="categories__card-title">Декоративные вазы, кашпо</p>
 
                         <div class="categories__card-info">
-                            <span class="categories__card-info-text text__regular-16"> Более 100 товаров </span>
+                            <span class="categories__card-info-text text__regular-16">
+                                Более 100 товаров
+                            </span>
 
                             <div class="categories__card-info-link link">
                                 <span>Смотреть все</span>
@@ -1935,18 +2413,84 @@
                                 </svg>
                             </div>
                         </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="categories__card" href="#">
-                        <figure class="categories__card-image">
-                            <img src="../assets/images/sections/catalog/catalog-image-9.webp" alt="">
-                        </figure>
+                    </div>
 
-                        <p class="categories__card-title">Корзины и плетеные изделия</p>
+                    <div class="categories__card-detailed">
+                        <button class="categories__card-detailed-back-button _mobile-only">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 10.2495L10 10.2495L17 10.2495" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M5.62598 12.875L8.25098 15.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3 10.25L8.25 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <span>Назад</span>
+                        </button>
+
+                        <a href="#" class="categories__card-detailed-heading">
+                            <span class="categories__card-detailed-heading-title">
+                                Новогодние украшения
+                            </span>
+
+                            <figure class="categories__card-detailed-heading-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 10.2496L3 10.2496" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M14.3745 12.875L11.7495 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17 10.2501L11.75 5.00012" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </figure>
+                        </a>
+
+                        <ul class="categories__card-detailed-list">
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние открытки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ветки, вставки (топперы) </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Гирлянды </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодний декор </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Изделия из перьев </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Искусственные ёлки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние цветы </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Хрустальные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Декоративные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ёлочные игрушки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние пакеты </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодняя лента, банты </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="categories__card">
+                    <figure class="categories__card-image">
+                        <img src="./assets/images/sections/catalog/catalog-image-9.webp" alt="">
+                    </figure>
+                    <div class="categories__card-content">
+                        <p class="categories__card-title">Товары для флористов</p>
 
                         <div class="categories__card-info">
-                            <span class="categories__card-info-text text__regular-16"> Более 100 товаров </span>
+                            <span class="categories__card-info-text text__regular-16">
+                                Более 100 товаров
+                            </span>
 
                             <div class="categories__card-info-link link">
                                 <span>Смотреть все</span>
@@ -1958,18 +2502,84 @@
                                 </svg>
                             </div>
                         </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="categories__card" href="#">
-                        <figure class="categories__card-image">
-                            <img src="../assets/images/sections/catalog/catalog-image-10.webp" alt="">
-                        </figure>
+                    </div>
 
-                        <p class="categories__card-title">Корзины и плетеные изделия</p>
+                    <div class="categories__card-detailed">
+                        <button class="categories__card-detailed-back-button _mobile-only">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 10.2495L10 10.2495L17 10.2495" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M5.62598 12.875L8.25098 15.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3 10.25L8.25 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <span>Назад</span>
+                        </button>
+
+                        <a href="#" class="categories__card-detailed-heading">
+                            <span class="categories__card-detailed-heading-title">
+                                Новогодние украшения
+                            </span>
+
+                            <figure class="categories__card-detailed-heading-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 10.2496L3 10.2496" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M14.3745 12.875L11.7495 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17 10.2501L11.75 5.00012" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </figure>
+                        </a>
+
+                        <ul class="categories__card-detailed-list">
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние открытки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ветки, вставки (топперы) </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Гирлянды </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодний декор </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Изделия из перьев </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Искусственные ёлки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние цветы </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Хрустальные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Декоративные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ёлочные игрушки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние пакеты </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодняя лента, банты </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="categories__card">
+                    <figure class="categories__card-image">
+                        <img src="./assets/images/sections/catalog/catalog-image-10.webp" alt="">
+                    </figure>
+                    <div class="categories__card-content">
+                        <p class="categories__card-title">Изделия из металла</p>
 
                         <div class="categories__card-info">
-                            <span class="categories__card-info-text text__regular-16"> Более 100 товаров </span>
+                            <span class="categories__card-info-text text__regular-16">
+                                Более 100 товаров
+                            </span>
 
                             <div class="categories__card-info-link link">
                                 <span>Смотреть все</span>
@@ -1981,18 +2591,84 @@
                                 </svg>
                             </div>
                         </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="categories__card" href="#">
-                        <figure class="categories__card-image">
-                            <img src="../assets/images/sections/catalog/catalog-image-11.webp" alt="">
-                        </figure>
+                    </div>
 
-                        <p class="categories__card-title">Корзины и плетеные изделия</p>
+                    <div class="categories__card-detailed">
+                        <button class="categories__card-detailed-back-button _mobile-only">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 10.2495L10 10.2495L17 10.2495" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M5.62598 12.875L8.25098 15.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3 10.25L8.25 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <span>Назад</span>
+                        </button>
+
+                        <a href="#" class="categories__card-detailed-heading">
+                            <span class="categories__card-detailed-heading-title">
+                                Новогодние украшения
+                            </span>
+
+                            <figure class="categories__card-detailed-heading-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 10.2496L3 10.2496" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M14.3745 12.875L11.7495 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17 10.2501L11.75 5.00012" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </figure>
+                        </a>
+
+                        <ul class="categories__card-detailed-list">
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние открытки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ветки, вставки (топперы) </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Гирлянды </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодний декор </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Изделия из перьев </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Искусственные ёлки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние цветы </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Хрустальные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Декоративные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ёлочные игрушки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние пакеты </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодняя лента, банты </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="categories__card">
+                    <figure class="categories__card-image">
+                        <img src="./assets/images/sections/catalog/catalog-image-11.webp" alt="">
+                    </figure>
+                    <div class="categories__card-content">
+                        <p class="categories__card-title">Сумки текстильные</p>
 
                         <div class="categories__card-info">
-                            <span class="categories__card-info-text text__regular-16"> Более 100 товаров </span>
+                            <span class="categories__card-info-text text__regular-16">
+                                Более 100 товаров
+                            </span>
 
                             <div class="categories__card-info-link link">
                                 <span>Смотреть все</span>
@@ -2004,7 +2680,72 @@
                                 </svg>
                             </div>
                         </div>
-                    </a>
+                    </div>
+
+                    <div class="categories__card-detailed">
+                        <button class="categories__card-detailed-back-button _mobile-only">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 10.2495L10 10.2495L17 10.2495" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M5.62598 12.875L8.25098 15.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M3 10.25L8.25 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                            <span>Назад</span>
+                        </button>
+
+                        <a href="#" class="categories__card-detailed-heading">
+                            <span class="categories__card-detailed-heading-title">
+                                Новогодние украшения
+                            </span>
+
+                            <figure class="categories__card-detailed-heading-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 10.2496L3 10.2496" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M14.3745 12.875L11.7495 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17 10.2501L11.75 5.00012" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </figure>
+                        </a>
+
+                        <ul class="categories__card-detailed-list">
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние открытки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ветки, вставки (топперы) </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Гирлянды </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодний декор </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Изделия из перьев </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Искусственные ёлки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние цветы </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Хрустальные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Декоративные подвески </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Ёлочные игрушки </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодние пакеты </a>
+                            </li>
+                            <li class="categories__card-detailed-item">
+                                <a href="#" class="link text__regular-18"> Новогодняя лента, банты </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
         </div>
