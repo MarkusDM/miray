@@ -1,4 +1,5 @@
 import { modules } from '../modules.js';
+import { bodyLock, bodyUnlock } from './utils';
 
 // --------------------------------------------------------------------------
 

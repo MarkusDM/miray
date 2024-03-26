@@ -3,6 +3,25 @@ import { removeClasses, bodyLockStatus, bodyLock, bodyUnlock } from '../utils/ut
 document.addEventListener('DOMContentLoaded', function () {
     const mm = window.matchMedia('(max-width: 768px)');
 
+    if (document.querySelector('.header__mm-link_hamburger')) {
+        document.querySelector('.header__mm-link_hamburger').addEventListener('click', function () {
+            document.documentElement.classList.add('_show-menu');
+            bodyLock();
+        });
+    }
+
+    if (document.querySelector('.menu-header')) {
+        document.querySelector('.menu-header').addEventListener('click', function (e) {
+            if (
+                document.documentElement.classList.contains('_show-menu') &&
+                !e.target.closest('.menu-header__inner')
+            ) {
+                document.documentElement.classList.remove('_show-menu');
+                bodyUnlock();
+            }
+        });
+    }
+
     if (document.querySelectorAll('.option-item__radio-btn input').length) {
         const btns = document.querySelectorAll('.option-item__radio-btn input');
         const input = document.querySelector('.companies-delivery-checkout__input');
@@ -128,12 +147,40 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    if (document.querySelector('.header-catalog')) {
+        document.querySelector('.header-catalog').addEventListener('mouseover', function (e) {
+            if (e.target.closest('.header-catalog__item')) {
+                removeClasses(document.querySelectorAll('.header-catalog__item'), '_active');
+                e.target.closest('.header-catalog__item').classList.add('_active');
+            }
+        });
+    }
+
+    const handleMouseover = (e) => {
+        const target = e.target;
+
+        if (target.closest('[data-nav-sublink-index]')) {
+            const el = target.closest('[data-nav-sublink-index]');
+            const subnav = document.querySelector(`[data-subnav-index="${el.dataset.navSublinkIndex}"]`);
+
+            removeClasses(document.querySelectorAll('[data-nav-sublink-index]'), '_is-active');
+            removeClasses(document.querySelectorAll('[data-subnav-index]'), '_is-active');
+            el.classList.add('_is-active');
+            if (subnav) subnav.classList.add('_is-active');
+        }
+    };
+
     mm.addEventListener('change', function () {
         if (!mm.matches) {
             if (document.querySelector('.menu-account._is-active') && bodyLockStatus) {
                 bodyUnlock();
                 removeClasses(document.querySelectorAll('.menu-account._is-active'), '_is-active');
             }
+            if (document.documentElement.classList.contains('_show-menu')) {
+                bodyUnlock();
+                document.documentElement.classList.remove('_show-menu');
+            }
         }
     });
+    document.addEventListener('mouseover', handleMouseover);
 });
