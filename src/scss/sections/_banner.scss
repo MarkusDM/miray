@@ -7,7 +7,7 @@
         overflow: hidden;
         color: $white;
 
-        @include small-tablet{
+        @include small-tablet {
             display: flex;
             flex-direction: column;
             gap: 10.2rem;
@@ -23,7 +23,7 @@
                 background-color: rgba($white, 0.2);
                 border-radius: 50%;
 
-                @include small-tablet{
+                @include small-tablet {
                     left: -19rem;
                     bottom: -10rem;
                 }
@@ -38,7 +38,7 @@
                 background-color: rgba($white, 0.2);
                 border-radius: 50%;
 
-                @include small-tablet{
+                @include small-tablet {
                     left: 39rem;
                     top: -48rem;
                 }
@@ -49,7 +49,7 @@
     &__title {
         margin-bottom: 2rem;
 
-        @include small-tablet{
+        @include small-tablet {
             margin-bottom: 3.2rem;
         }
     }
@@ -59,7 +59,7 @@
         max-width: 65rem;
         width: 100%;
 
-        @include small-tablet{
+        @include small-tablet {
             max-width: 100%;
             margin-bottom: 4.8rem;
             font-weight: 400;
@@ -73,7 +73,7 @@
         max-width: 96.6rem;
         z-index: 1;
 
-        @include small-tablet{
+        @include small-tablet {
             max-width: 100%;
         }
 
@@ -81,7 +81,7 @@
             max-width: 71.5rem;
             width: 100%;
 
-            @include small-tablet{
+            @include small-tablet {
                 max-width: 100%;
             }
         }
@@ -100,15 +100,15 @@
             @include sizes(17rem, 17rem);
             z-index: 1;
 
-            @include small-tablet{
+            @include small-tablet {
                 @include sizes(24rem, 24rem);
                 padding: 5.6rem 4.4rem;
                 left: -0.8rem;
-                bottom: -28.2rem
+                bottom: -28.2rem;
             }
 
             &-subtitle {
-                @include small-tablet{
+                @include small-tablet {
                     font-size: 3rem;
                     line-height: 130%;
                 }
@@ -125,12 +125,12 @@
         transform: translateY(-50%);
         @include sizes(80.4rem, 80.4rem);
 
-        @include small-tablet{
+        @include small-tablet {
+            overflow: hidden;
             position: initial;
             @include sizes(100%, 36.6rem);
             transform: translateY(0);
             border-radius: 30rem 4.8rem 4.8rem 4.8rem;
-
         }
 
         img {
@@ -138,14 +138,15 @@
             object-fit: contain;
             height: 100%;
 
-            @include small-tablet{
+            @include small-tablet {
                 object-fit: cover;
+                height: 107%;
             }
         }
     }
 
     &__button {
-        @include small-tablet{
+        @include small-tablet {
             width: 100%;
         }
     }

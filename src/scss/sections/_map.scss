@@ -10,28 +10,60 @@
         width: 100%;
         height: 81.2rem;
         overflow: hidden;
-        border-radius: 3rem;
         position: relative;
+
+        @media (max-width: 48em) {
+            height: auto;
+            border-radius: 0;
+            display: flex;
+            flex-direction: column;
+            row-gap: 1.6rem;
+            overflow: visible;
+        }
     }
     // .map__canvas
     &__canvas {
         width: 100%;
         height: 100%;
+        border-radius: 6rem;
+        overflow: hidden;
+
+        @media (max-width: 48em) {
+            margin-bottom: 1.6rem;
+            height: 70.2rem;
+            border-radius: 4.8rem;
+        }
     }
     // .map__wrapper
     &__wrapper {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 3.2rem;
-
         display: flex;
         flex-direction: column;
-        gap: 1.2rem;
+        gap: 1.6rem;
+
+        @media (min-width: 48em) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 3.2rem;
+            gap: 1.2rem;
+        }
     }
     // .map__card
     &__card {
         width: 40rem;
+
+        @media (max-width: 48em) {
+            min-height: auto;
+            border-radius: 4.8rem;
+            flex: 1 1 auto;
+            width: 100%;
+
+            &:not(&.hover) {
+                .map-card__content {
+                    display: none;
+                }
+            }
+        }
     }
 }
 .ymaps3x0--map-copyrights {
@@ -68,6 +100,13 @@
         display: flex;
         flex-direction: column;
         gap: 2.4rem;
+
+        @media (max-width: 48em) {
+            padding: 4.8rem 3.2rem;
+            gap: 3.2rem;
+            border-radius: 4.8rem;
+            box-shadow: 0 0 2.2rem rgba(1, 28, 3, 0.12);
+        }
     }
     // .map-card__header
     &__header {
@@ -76,17 +115,30 @@
         gap: 0.4rem;
         line-height: 120%;
 
+        @media (max-width: 48em) {
+            gap: 0.8rem;
+        }
+
         h6 {
             font-weight: 600;
             font-size: 2rem;
             letter-spacing: 0.04em;
             color: $black-secondary;
+
+            @media (max-width: 48em) {
+                font-size: 3.6rem;
+                font-weight: 500;
+            }
         }
 
         p {
             font-weight: 400;
             font-size: 1.6rem;
             color: $black-secondary;
+
+            @media (max-width: 48em) {
+                font-size: 3rem;
+            }
         }
     }
     // .map-card__content
@@ -94,12 +146,20 @@
         display: flex;
         flex-direction: column;
         gap: 1.2rem;
+
+        @media (max-width: 48em) {
+            gap: 1.6rem;
+        }
     }
     // .map-card__content-item
     &__content-item {
         display: flex;
         align-items: center;
         gap: 1.7rem;
+
+        @media (max-width: 48em) {
+            gap: 3.6rem;
+        }
     }
     // .map-card__content-icon
     &__content-icon {
@@ -109,6 +169,11 @@
 
         svg path {
             fill: $black-secondary;
+        }
+
+        @media (max-width: 48em) {
+            width: 6rem;
+            height: 6rem;
         }
     }
     // .map-card__footer
@@ -142,6 +207,17 @@
         .phone {
             margin-right: 1rem;
         }
+
+        @media (max-width: 48em) {
+            padding: 1.6rem 4rem;
+            height: 8.8rem;
+            border-radius: 10rem;
+
+            svg {
+                width: 6rem;
+                height: 6rem;
+            }
+        }
     }
     // .map-card__list
     &__list {
@@ -150,13 +226,8 @@
         left: 0;
         z-index: 1;
         display: none;
-        &.last {
-            top: unset;
-            bottom: 50%;
-
-            &.show {
-                padding: 2rem 2rem 4.8rem 2rem;
-            }
+        @media (max-width: 48em) {
+            top: 102%;
         }
         &.show {
             display: flex;
@@ -169,6 +240,10 @@
             padding: 4.8rem 2rem 2rem 2rem;
             width: 100%;
 
+            @media (max-width: 48em) {
+                padding: 3.2rem 2.4rem;
+            }
+
             li {
                 display: flex;
                 flex-direction: column;
@@ -177,7 +252,7 @@
 
             span {
                 font-weight: 400;
-                font-size: 1.6rem;
+                font-size: 3.2rem;
                 line-height: 120%;
                 color: $grey-text;
             }
@@ -186,6 +261,10 @@
                 font-weight: 400;
                 font-size: 1.8rem;
                 color: $black-secondary;
+
+                @media (max-width: 48em) {
+                    font-size: 3rem;
+                }
             }
         }
     }
@@ -200,13 +279,22 @@
         width: fit-content;
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 1rem;
-        width: 100%;
         overflow: hidden;
         transition: all 0.4s ease-in-out;
         background-color: #fff;
-        border-radius: 10rem;
-        padding-right: 1.6rem;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+
+        @media (min-width: 48em) {
+            border-radius: 10rem;
+            padding-right: 1.6rem;
+            justify-content: stretch;
+            width: 100%;
+            height: auto;
+        }
     }
     &__text {
         width: 100%;
@@ -217,6 +305,10 @@
         white-space: nowrap;
         overflow: hidden;
         transition: all 0.4s ease-in-out;
+
+        @media (max-width: 48em) {
+            display: none;
+        }
     }
     &__svg {
         display: flex;
@@ -230,14 +322,25 @@
             width: 3.5rem;
             height: 3rem;
             transition: all 0.4s ease-in-out;
+
+            @media (max-width: 48em) {
+                width: 5rem;
+                height: 5rem;
+            }
         }
     }
     &.hover {
         .marker__content {
-            width: 8rem;
-            gap: 0;
-            justify-content: center;
-            padding: 1.6rem 0;
+            width: 12rem;
+            height: 12rem;
+
+            @media (min-width: 48em) {
+                width: 8rem;
+                height: auto;
+                gap: 0;
+                justify-content: center;
+                padding: 1.6rem 0;
+            }
         }
         .marker__svg {
             width: 5.653rem;
@@ -245,6 +348,10 @@
             img {
                 width: 100%;
                 height: 100%;
+            }
+            @media (max-width: 48em) {
+                width: 8rem;
+                height: 8rem;
             }
         }
         .marker__text {

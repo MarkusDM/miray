@@ -1,4 +1,6 @@
 .footer {
+    position: relative;
+    z-index: 5;
     background-color: $grey-bg;
     // .footer__inner
     &__inner {
@@ -208,7 +210,7 @@
                     margin-bottom: 2.4rem;
                 }
                 &:first-child {
-                    margin-top: 4rem;
+                    padding-top: 4rem;
                 }
             }
         }

@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://api-maps.yandex.ru/v3/?apikey=85d23f18-68b0-4dd3-8691-d4e1a7e577fe&lang=ru_RU"></script>
-    <title>Оформление заказа</title>
-<script defer src="main.js"></script></head>
-<body>
-<header class="header">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://api-maps.yandex.ru/v3/?apikey=85d23f18-68b0-4dd3-8691-d4e1a7e577fe&lang=ru_RU"></script>
+        <title>Оформление заказа</title>
+    <script defer src="main.js"></script></head>
+    <body>
+        <div class="wrapper">
+            <header class="header">
     <div class="container">
         <div class="header__inner">
             <div class="header__top">
@@ -1775,8 +1776,8 @@
     </div>
 </header>
 
-<main>
-    <section class="checkout">
+            <main>
+                <section class="checkout">
     <div class="checkout__container container">
         <div class="checkout__head">
             <nav class="checkout__breadcrumbs breadcrumbs">
@@ -1784,27 +1785,24 @@
                 <a href="#" class="breadcrumbs__txt">Корзина</a>
                 <span class="breadcrumbs__txt">Оформление заказа</span>
             </nav>
-            <span class="checkout__heading h h_h1">
-            Оформление заказа
-        </span>
-
+            <span class="checkout__heading h h_h1"> Оформление заказа </span>
         </div>
         <form data-dev="" action="#" class="checkout__body">
             <div class="checkout__content">
                 <div class="checkout__steps">
                     <div class="checkout__step tab _is-active">
                         <span class="tab__txt text text__medium text__medium--18">
-                            1: Ваши данные
+                            1: <span>Ваши данные</span>
                         </span>
                     </div>
                     <div class="checkout__step tab">
                         <span class="tab__txt text text__medium text__medium--18">
-                            2: Доставка
+                            2: <span>Доставка</span>
                         </span>
                     </div>
                     <div class="checkout__step tab">
                         <span class="tab__txt text text__medium text__medium--18">
-                            3: Оплата
+                            3: <span>Оплата</span>
                         </span>
                     </div>
                 </div>
@@ -1864,7 +1862,9 @@
                         <div class="data-checkout__group">
                             <div class="data-checkout__group-head">
                                 <span class="data-checkout__group-heading h h_h4">Банковские реквизиты</span>
-                                <p class="data-checkout__group-txt">Введите банковские реквизиты или прикрепите файл с ними</p>
+                                <p class="data-checkout__group-txt">
+                                    Введите банковские реквизиты или прикрепите файл с ними
+                                </p>
                             </div>
                             <div class="data-checkout__fields">
                                 <div class="data-checkout__input input">
@@ -1909,15 +1909,14 @@
                         <span class="summary-checkout__total-price h h_h3"><span>41 540.20</span>₽</span>
                     </div>
                 </div>
-                <button disabled="" type="submit" class="summary-checkout__btn btn">
-                    Далее
-                </button>
+                <button type="submit" class="summary-checkout__btn btn">Далее</button>
             </div>
-            </form>
-        </div>
+        </form>
+    </div>
 </section>
-</main>
-<footer class="footer">
+
+            </main>
+            <footer class="footer">
     <div class="container">
         <div data-accordion="768,max" data-accordion-single="" class="footer__inner">
             <div class="footer__main">
@@ -2069,7 +2068,7 @@
 </div>
 
 
-<div id="checkoutComplete" aria-hidden="true" class="modal checkout-complete-modal">
+            <div id="checkoutComplete" aria-hidden="true" class="modal checkout-complete-modal">
     <div class="modal__wrapper">
         <div class="modal__content">
             <div class="modal__body">
@@ -2230,5 +2229,6 @@
     </div>
 </div>
 
-</body>
+        </div>
+    </body>
 </html>

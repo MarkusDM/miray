@@ -116,7 +116,7 @@ $(document).ready(() => {
 
 function clickOutsidePopup(popup, button = null) {
     $(document).on('click', function (e) {
-        if (button) {
+        if (button && popup[0]) {
             const checkButton = !button.children().is(e.target) && !button.is(e.target);
             if (!popup.is(e.target) && popup.has(e.target).length === 0 && checkButton) {
                 popup.removeClass('show');

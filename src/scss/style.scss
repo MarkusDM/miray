@@ -16,7 +16,7 @@ $light-pink: #eec2cb;
 $grey-text: #898485;
 $grey-bg: #f4f4f4;
 $bgFon: rgb(244, 244, 244);
-$bgFonElement: #E6E6E6;
+$bgFonElement: #e6e6e6;
 
 // ---------------------------------- fonts ---------------------------------
 
@@ -48,13 +48,17 @@ main {
 
 section {
     margin-bottom: 12rem;
+
+    @media (max-width: 48em) {
+        margin-bottom: 20rem;
+    }
 }
 
 .wrapper {
     margin: 0 auto;
     max-width: 1920px;
     margin-top: 21.4rem;
-    
+
     @media (max-width: 48em) {
         margin-top: 30.4rem;
     }
@@ -82,6 +86,16 @@ section {
     }
 }
 
+.swiper-grid > .swiper-wrapper {
+    @media (max-width: 48em) {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        .swiper-slide {
+            height: calc((100% - 30px) / 2) !important;
+        }
+    }
+}
+
 .swiper-button-next,
 .swiper-button-prev {
     border-radius: 50%;
@@ -92,7 +106,7 @@ section {
     margin: 0 !important;
     border: 0.1rem solid $green;
 
-    @include small-tablet{
+    @include small-tablet {
         width: 8.8rem !important;
         height: 8.8rem !important;
     }
@@ -106,11 +120,10 @@ section {
         width: 2.5rem !important;
         height: 1.9rem !important;
 
-        @include small-tablet{
+        @include small-tablet {
             width: 3.4rem !important;
             height: 2.6rem !important;
         }
-
     }
 }
 
