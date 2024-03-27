@@ -156,6 +156,24 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    if (document.querySelector('.consultation__poster')) {
+        const container = document.querySelector('.consultation__poster');
+        const duration = 1000;
+        let step = 0;
+
+        container.addEventListener('click', function (e) {
+            if (e.target.closest('.consultation__poster-img')) {
+                step = step >= 3 ? 0 : ++step;
+                container.dataset.step = step;
+                container.classList.add('_is-animating');
+
+                setTimeout(() => {
+                    container.classList.remove('_is-animating');
+                }, duration);
+            }
+        });
+    }
+
     const handleMouseover = (e) => {
         const target = e.target;
 

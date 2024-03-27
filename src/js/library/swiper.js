@@ -1,5 +1,6 @@
+import window from 'inputmask/lib/global/window';
 import Swiper from 'swiper';
-import { EffectFade, Navigation, Pagination, Thumbs } from 'swiper/modules';
+import { EffectFade, Navigation, Pagination, Thumbs, Grid } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -40,6 +41,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    const popularItemsWrapper = document.querySelector('.popular__wrapper');
+    if (popularItemsWrapper && window.innerWidth <= 768) {
+        // Initialize Swiper inside the DOMContentLoaded event listener
+        new Swiper(popularItemsWrapper, {
+            modules: [Pagination, Grid],
+            spaceBetween: 8,
+            slidesPerView: 1,
+            speed: 500,
+            pagination: {
+                el: '.popular__pagination',
+                clickable: true
+            },
+            grid: {
+                rows: 3,
+                fill: 'row'
+            }
+        });
+    }
+
     const saleSwiper = document.querySelector('.sale__swiper');
     if (saleSwiper) {
         // Initialize Swiper inside the DOMContentLoaded event listener
@@ -61,6 +81,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 clickable: true
             },
             grabCursor: true
+        });
+    }
+
+    const saleCardsSwiper = document.querySelector('.sale__sale-cards');
+    if (saleCardsSwiper && window.innerWidth <= 768) {
+        // Initialize Swiper inside the DOMContentLoaded event listener
+        new Swiper(saleCardsSwiper, {
+            modules: [],
+            slidesPerView: 'auto',
+            spaceBetween: 8,
+            speed: 500,
+            loop: true,
+            mousewheel: {
+                invert: false
+            }
         });
     }
 
@@ -148,6 +183,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    const mm = window.matchMedia('max-width: 768px');
+    mm.addEventListener('change', function () {
+        if (!mm.matches) {
+            if (saleCardsSwiper) saleCardsSwiper.destroy();
+            if (popularItemsWrapper) popularItemsWrapper.destroy();
+        }
+    });
 });
 
 if (document.querySelector('.card__left')) {
