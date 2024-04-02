@@ -1,0 +1,62 @@
+.products {
+    &__title {
+        margin-bottom: 4.8rem;
+    }
+
+    &__navigation {
+        margin-bottom: 4.8rem;
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+
+        @include small-tablet {
+            gap: 1.6rem;
+            margin-bottom: 4.8rem;
+        }
+
+        &-button {
+            width: fit-content;
+            padding: 1.5rem 3.2rem;
+            background-color: transparent;
+            border: 0.1rem solid $green;
+            border-radius: 10rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition:
+                0.3s background-color ease-out,
+                0.3s color ease-out;
+
+            @include small-tablet {
+                padding: 2rem 4rem;
+                border-radius: 20rem;
+                font-weight: 400;
+                font-size: 3rem;
+                line-height: 130%;
+            }
+
+            &.--active {
+                background-color: $green;
+                color: $white;
+            }
+
+            @include hover {
+                background-color: $green;
+                color: $white;
+            }
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4rem;
+
+        @include small-tablet {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+    }
+}

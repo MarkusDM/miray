@@ -294,9 +294,91 @@ document.addEventListener('DOMContentLoaded', () => {
             backButton.addEventListener('click', () => {
                 setTimeout(() => {
                     detailedMenu.classList.remove('--active');
-                }, 0)
+                }, 0);
                 bodyUnlock();
-            })
+            });
         });
     }
+
+    //products countdown
+
+    if (document.querySelector('.recommendations__card-countdown')) {
+        function startCountdown(element) {
+            let seconds = parseInt(element.dataset.seconds);
+
+            const [days, hours, minutes] = element.querySelectorAll(
+                '.recommendations__card-countdown-item strong'
+            );
+
+            const updateCountdown = () => {
+                seconds--;
+
+                if (seconds < 0) {
+                    clearInterval(interval);
+
+                    days.textContent = '00';
+                    hours.textContent = '00';
+                    minutes.textContent = '00';
+
+                    return;
+                }
+
+                const timer = {
+                    days: Math.floor(seconds / (60 * 60 * 24)),
+                    hours: Math.floor((seconds % (60 * 60 * 24)) / (60 * 60)),
+                    minutes: Math.floor((seconds % (60 * 60)) / 60)
+                };
+
+                days.textContent = timer.days.toString().padStart(2, '0');
+                hours.textContent = timer.hours.toString().padStart(2, '0');
+                minutes.textContent = timer.minutes.toString().padStart(2, '0');
+            };
+
+            updateCountdown();
+
+            const interval = setInterval(updateCountdown, 1000);
+        }
+
+        Array.from(document.querySelectorAll('.recommendations__card-countdown-list'), (element) => {
+            startCountdown(element);
+        });
+    }
+
+    //quantity
+    const initQuantityInputs = () => {
+        if (document.querySelectorAll('.quantity').length) {
+            const min = 1;
+            const step = 1;
+
+            document.querySelectorAll('.quantity').forEach((input) => {
+                const inp = input.querySelector('input');
+                const btnminus = input.querySelector('.quantity__button_minus');
+                const btnplus = input.querySelector('.quantity__button_plus');
+
+                const qtyminus = (e) => {
+                    const current = Number(inp.value);
+                    let newval = current - step;
+
+                    if (newval < min) {
+                        newval = min;
+                    }
+
+                    inp.value = Number(newval);
+                    e.preventDefault();
+                };
+
+                const qtyplus = (e) => {
+                    const current = Number(inp.value);
+                    const newval = current + step;
+
+                    inp.value = Number(newval);
+                    e.preventDefault();
+                };
+
+                btnminus.addEventListener('click', qtyminus);
+                btnplus.addEventListener('click', qtyplus);
+            });
+        }
+    };
+    initQuantityInputs();
 });
