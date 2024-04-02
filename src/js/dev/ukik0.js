@@ -343,4 +343,42 @@ document.addEventListener('DOMContentLoaded', () => {
             startCountdown(element);
         });
     }
+
+    //quantity
+    const initQuantityInputs = () => {
+        if (document.querySelectorAll('.quantity').length) {
+            const min = 1;
+            const step = 1;
+
+            document.querySelectorAll('.quantity').forEach((input) => {
+                const inp = input.querySelector('input');
+                const btnminus = input.querySelector('.quantity__button_minus');
+                const btnplus = input.querySelector('.quantity__button_plus');
+
+                const qtyminus = (e) => {
+                    const current = Number(inp.value);
+                    let newval = current - step;
+
+                    if (newval < min) {
+                        newval = min;
+                    }
+
+                    inp.value = Number(newval);
+                    e.preventDefault();
+                };
+
+                const qtyplus = (e) => {
+                    const current = Number(inp.value);
+                    const newval = current + step;
+
+                    inp.value = Number(newval);
+                    e.preventDefault();
+                };
+
+                btnminus.addEventListener('click', qtyminus);
+                btnplus.addEventListener('click', qtyplus);
+            });
+        }
+    };
+    initQuantityInputs();
 });
