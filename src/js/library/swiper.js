@@ -170,6 +170,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    swiperSettings('.latest', {
+        breakpoints: {
+            0: {
+                slidesPerView: 1
+            },
+            768: {
+                slidesPerView: 2
+            }
+        }
+    });
+
     if (document.querySelector('.addiction-swiper')) {
         const sliders = document.querySelectorAll('.addiction-swiper');
 

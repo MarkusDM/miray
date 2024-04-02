@@ -5,7 +5,8 @@
     margin-bottom: 2.4rem;
 
     @include small-tablet {
-        gap: 6.4rem;
+        gap: 2rem 6.4rem;
+        flex-wrap: wrap;
     }
 
     a {
@@ -41,6 +42,7 @@
         font-size: 1.6rem;
         line-height: 120%;
         color: $fontColor;
+        font-weight: 500;
 
         @include small-tablet {
             font-size: 3rem;
