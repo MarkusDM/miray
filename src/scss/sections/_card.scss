@@ -2,6 +2,7 @@
     padding-top: 20rem;
     &__wrapper {
         display: flex;
+        position: relative;
     }
 
     &__left {
@@ -38,12 +39,104 @@
             background-color: $pink;
             font-size: 1.6rem;
             padding: 1.25rem 2rem;
-            position: absolute;
             max-width: fit-content;
             color: $white;
             font-weight: 400;
+            margin-bottom: 0.8rem;
+        }
+
+        &-slide-hit {
+            background-color: #559479;
+            padding: 1.45rem 2rem;
+            display: block;
+            width: fit-content;
+            margin-bottom: 0.8rem;
+            border-radius: 10rem;
+            span {
+                position: relative;
+                font-size: 1.6rem;
+                line-height: 120%;
+                font-weight: 400;
+                color: $white;
+                padding-left: 2.8rem;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    background-image: url(../assets/images/sections/card/like.svg);
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    left: 0;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                }
+            }
+        }
+
+        &-slide-new {
+            background-color: #8bbb74;
+            padding: 1.45rem 2rem;
+            display: block;
+            width: fit-content;
+            margin-bottom: 0.8rem;
+            border-radius: 10rem;
+            span {
+                position: relative;
+                font-size: 1.6rem;
+                line-height: 120%;
+                font-weight: 400;
+                color: $white;
+                padding-left: 2.8rem;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    background-image: url(../assets/images/sections/card/birka.svg);
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    left: 0;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                }
+            }
+        }
+
+        &-slide-padding {
+            background-color: rgb(137, 132, 133);
+            padding: 1.45rem 2rem;
+            display: block;
+            width: fit-content;
+            border-radius: 10rem;
+            span {
+                position: relative;
+                font-size: 1.6rem;
+                line-height: 120%;
+                font-weight: 400;
+                color: $white;
+                padding-left: 2.8rem;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    background-image: url(../assets/images/sections/card/clock.svg);
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    left: 0;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                }
+            }
+        }
+
+        &-slide-block {
             left: 2rem;
             top: 2.8rem;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
         }
 
         &-slide-like {
@@ -72,7 +165,11 @@
 
     &__thumb {
         width: 47rem;
-
+        .swiper-slide-thumb-active {
+            .card__thumb-slide-image {
+                border: 0.1rem solid rgb(43, 86, 68);
+            }
+        }
         &-slide-image {
             width: 14.6rem;
             height: 14.6rem;
@@ -256,7 +353,7 @@
             margin-left: 0.4rem;
             display: flex;
             justify-content: center;
-            align-items:center;
+            align-items: center;
             min-width: 9.3rem;
             height: 6.3rem;
             border-radius: 10rem;
@@ -290,7 +387,6 @@
                 line-height: 120%;
                 display: block;
                 color: $fontColor;
-                
             }
 
             .points {
@@ -332,7 +428,7 @@
             background-color: $bgFon;
             display: flex;
             justify-content: center;
-            align-items:center;
+            align-items: center;
             font-size: 1.8rem;
             font-weight: 400;
 
@@ -343,7 +439,6 @@
         }
 
         &-quantity {
-           
             font-size: 1.8rem;
             font-weight: 400;
             text-align: center;
@@ -366,7 +461,7 @@
                 padding-left: 3.2rem;
                 &::before {
                     position: absolute;
-                    content:'';
+                    content: "";
                     width: 2.4rem;
                     height: 2.4rem;
                     left: 0;
@@ -382,8 +477,6 @@
                 line-height: 120%;
             }
         }
-
-        
     }
     &__wholesale {
         padding: 3.2rem;
@@ -407,7 +500,6 @@
                 line-height: 120%;
                 display: block;
                 color: $fontColor;
-                
             }
 
             .points {
@@ -439,7 +531,6 @@
             background-color: $bgFonElement;
             padding: 1.2rem;
             border-radius: 1.6rem;
-           
 
             &-text {
                 font-size: 1.8rem;
@@ -449,7 +540,7 @@
                 padding-left: 3.2rem;
                 &::before {
                     position: absolute;
-                    content:'';
+                    content: "";
                     width: 2.4rem;
                     height: 2.4rem;
                     left: 0;
@@ -457,11 +548,9 @@
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                 }
-                
             }
         }
     }
-
 
     &__special-price {
         width: 39rem;
@@ -517,14 +606,13 @@
             margin-bottom: 2.2rem;
             &::before {
                 position: absolute;
-                content:'';
+                content: "";
                 width: 4.4rem;
                 height: 4.4rem;
                 background-image: url(../assets/images/sections/card/car.svg);
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
                 left: 0;
-               
             }
         }
 
@@ -535,7 +623,7 @@
             font-weight: 400;
             &::before {
                 position: absolute;
-                content:'';
+                content: "";
                 width: 4.4rem;
                 height: 4.4rem;
                 background-image: url(../assets/images/sections/card/geo.svg);
@@ -563,7 +651,7 @@
             display: block;
             &::before {
                 position: absolute;
-                content:'';
+                content: "";
                 width: 3.2rem;
                 height: 3.2rem;
                 background-image: url(../assets/images/sections/card/arrow.svg);
@@ -574,7 +662,6 @@
                 transform: translate(0, -50%);
             }
         }
-        
     }
 
     &__description {
@@ -590,7 +677,6 @@
     &__description-tabs {
         display: flex;
         margin-bottom: 4rem;
-
     }
 
     &__description-tabs-item {
@@ -600,7 +686,7 @@
         border: 0.15rem solid $green;
         display: flex;
         justify-content: center;
-        align-items:center;
+        align-items: center;
         font-size: 1.8rem;
         font-weight: 400;
         color: $green;
@@ -643,9 +729,6 @@
         display: block;
     }
 
-
-
-
     &__form {
         width: 53.3rem;
         height: 59.3rem;
@@ -682,5 +765,503 @@
         }
     }
 
-    
+    &__center {
+        background-color: $bgFon;
+        width: 125rem;
+        display: flex;
+        justify-content: space-between;
+        padding: 3.2rem 8.2rem;
+        position: absolute;
+        top: 79rem;
+        left: 0;
+        border-radius: 2rem;
+    }
+
+    &__prices {
+        width: 28.4rem;
+
+        &-span {
+            font-weight: 500;
+            font-size: 1.8rem;
+            line-height: 120%;
+            margin-bottom: 0.8rem;
+        }
+
+        &-price {
+            width: 100%;
+            padding-bottom: 1.6rem;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 110%;
+            border-bottom: 0.1rem solid rgb(29, 29, 27);
+            margin-bottom: 1.6rem;
+        }
+
+        &-text {
+            font-weight: 400;
+            font-size: 1.6rem;
+            line-height: 120%;
+        }
+    }
+
+    .mob {
+        display: none;
+    }
+}
+
+@media (max-width: 48em) {
+    .card {
+        &__wrapper {
+            flex-direction: column;
+        }
+
+        &__left {
+            width: 100%;
+            margin-bottom: 4rem;
+            margin-right: 0;
+            padding: 2rem;
+            border-radius: 4.8rem;
+            height: auto;
+            max-height: initial;
+        }
+
+        &__center {
+            width: 100%;
+            position: initial;
+            background-color: initial;
+            border-radius: initial;
+            padding: 0;
+            justify-content: initial;
+            align-items: initial;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 4rem;
+        }
+
+        &__prices {
+            width: 60rem;
+            min-width: 60rem;
+            background-color: $bgFon;
+            border-radius: 4.8rem;
+            padding: 3.2rem;
+            margin-right: 1.6rem;
+            &-inner {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 0.1rem solid rgb(29, 29, 27);
+                padding-bottom: 1.6rem;
+                margin-bottom: 1.6rem;
+            }
+
+            &-price {
+                width: fit-content;
+                border-bottom: none;
+                margin-bottom: initial;
+            }
+
+            &-span {
+                margin-bottom: 0;
+                font-size: 3rem;
+                font-weight: 500;
+            }
+
+            &-price {
+                font-size: 3.6rem;
+            }
+
+            &-text {
+                font-size: 3rem;
+                line-height: 120%;
+                white-space: initial;
+            }
+            
+        }
+
+        &__center::-webkit-scrollbar {
+            display: none;
+        }
+
+        &__right {
+            display: flex;
+            flex-direction: column;
+
+            &-wrapper {
+                flex-direction: column;
+            }
+
+            &-block {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+
+        &__swiper-slide-image {
+            width: 100%;
+            height: 64.6rem;
+            border-radius: 4.8rem;
+        }
+
+        &__swiper-slide-like {
+            width: 8rem;
+            height: 8rem;
+            top: 2.4rem;
+            right: 2.4rem;
+
+            svg {
+                width: 3.2rem;
+                height: 3.2rem;
+            }
+        }
+
+        &__swiper-slide-category {
+            padding: 1.2rem 2.8rem;
+            font-size: 2.4rem;
+        }
+
+        &__swiper-slide-hit {
+            padding: 1.2rem 2.8rem;
+            padding-left: 0;
+            span {
+                font-size: 2.4rem;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        &__swiper-slide-new {
+            padding: 1.2rem 2.8rem;
+            padding-left: 0;
+            span {
+                font-size: 2.4rem;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        &__swiper-slide-padding {
+            padding: 1.2rem 2.8rem;
+            padding-left: 0;
+            span {
+                font-size: 2.4rem;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            display: none;
+        }
+
+        &__thumb {
+            width: 100%;
+
+            &-slide-image {
+                width: 21.2rem;
+                height: 20.8rem;
+            }
+        }
+
+        &__swiper-slide-like {
+            padding: 1.2rem 2.8rem;
+            font-size: 2.4rem;
+        }
+
+        &__description {
+            flex-direction: column;
+
+            &-left {
+                width: 100%;
+            }
+        }
+
+        .desk {
+            display: none;
+        }
+
+        .mob {
+            display: flex;
+        }
+
+        &__title {
+            font-size: 4.2rem;
+            margin-bottom: 4rem;
+        }
+
+        &__right-block-inner {
+            margin-bottom: 4rem;
+            
+        }
+
+        &__article {
+            font-size: 3rem;
+            line-height: 130%;
+            padding-right: 6rem;
+            &::before {
+                width: 4.8rem;
+                height: 4.8rem;
+            }
+        }
+
+        &__article-sum {
+            font-size: 3rem;
+            line-height: 130%;
+        }
+
+
+        &__title-characteristic {
+            margin-bottom: 3.2rem;
+            font-size: 3.6rem;
+            line-height: 4.6rem;
+            margin-bottom: 3.2rem;
+        }
+
+        &__characteristic-lists {
+            width: 100%;
+        }
+
+        &__characteristic-item {
+            span {
+                font-size: 3.2rem;
+            }
+
+            .points {
+                bottom: 1rem;
+            }
+
+            strong {
+                font-size: 3.2rem;
+                width: auto;
+            }
+        }
+
+        &__title-colors {
+            font-size: 3.6rem;
+            margin-bottom: 3.2rem;
+        }
+
+        .dropdowns {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .catalog__sorting-field {
+
+            margin-bottom: 4.8rem;
+            font-size: 3rem;
+        }
+
+        .catalog__sorting-field .select__value .select__content {
+            font-size: 3rem;
+        }
+
+        .select__value {
+            padding: 2.1rem 4rem;
+            height: 8rem;
+
+        }
+
+        .catalog__sorting-field .select__options .select__option {
+            font-size: 2rem;
+            padding: 0 0 2.4rem;
+        }
+
+        &__right-sidebar {
+            width: 100%;
+        }
+
+        &__retail {
+            padding: 3.2rem;
+            background-color: rgb(244, 244, 244);
+            border-radius: 4.8rem;
+            margin-bottom: 4rem;
+
+            &-title {
+                font-size: 3.6rem;
+                margin-bottom: 3.2rem;
+            }
+
+            &-price {
+                margin-bottom: 2.4rem;
+
+                strong {
+                    font-size: 4.2rem;
+                }
+
+                span {
+                    font-size: 3rem;
+                }
+            }
+
+            &-attention {
+                margin-bottom: 4rem;
+                padding: 2.4rem;
+                border-radius: 3.2rem;
+
+                &-text {
+                    font-size: 3rem;
+                    line-height: 120%;
+                    padding-left: 6.2rem;
+                    &::before {
+                        width: 4.8rem;
+                        height: 4.8rem;
+                    }
+                }
+
+                &-hide {
+                    font-size: 3rem;
+                    line-height: 120%;
+                }
+            }
+
+            
+        }
+
+        &__wholesale {
+            padding: 3.2rem;
+            border-radius: 4.8rem;
+            margin-bottom: 4rem;
+
+            &-title {
+                font-size: 3.6rem;
+                margin-bottom: 3.2rem;
+            }
+
+            &-price {
+                margin-bottom: 2.4rem;
+
+                strong {
+                    font-size: 4.2rem;
+                }
+
+                span {
+                    font-size: 3rem;
+                }
+
+                small {
+                    font-size: 2.6rem;
+                }
+            }
+        }
+
+        &__wholesale-attention {
+            margin-bottom: 4rem;
+            padding: 2.4rem;
+            border-radius: 3.2rem;
+
+            &-text {
+                font-size: 3rem;
+                line-height: 120%;
+                padding-left: 6.2rem;
+                &::before {
+                    width: 4.8rem;
+                    height: 4.8rem;
+                }
+            }
+        }
+
+        &__special-price {
+            width: 100%;
+            height: 26.9rem;
+            border-radius: 4.8rem;
+
+            &-title {
+                strong {
+                    font-size: 4rem;
+                }
+
+                span {
+                    font-size: 2.8rem;
+                }
+            }
+        }
+
+        &__receiving {
+            margin-bottom: 4rem;
+            border-radius: 4.8rem;
+            padding-bottom: 5rem;
+            &-title {
+                margin-bottom: 3.2rem;
+                font-size: 3.6rem;
+            }
+
+            &-delivery {
+                margin-bottom: 5.2rem;
+            }
+            
+
+            &-delivery,
+            &-myself {
+                font-size: 3.6rem;
+                padding-left: 11.2rem;
+                &::before {
+                    width: 8.2rem;
+                    height: 8.2rem;
+                }
+            }
+        }
+
+        &__link {
+            border-radius: 4.8rem;
+            padding: 3.2rem;
+            span {
+                font-size: 3.6rem;
+                padding-right: 12.8rem;
+                &::before {
+                    width: 4.8rem;
+                    height: 4.8rem;
+                }
+            }
+        }
+
+        &__description {
+            margin-top: 8rem;
+            &-tabs-item {
+                margin-right: 1.6rem;
+                padding: 2rem 4rem;
+                font-size: 3rem;
+            }
+
+            &-text {
+               p {
+                font-size: 3rem;
+                margin-bottom: 3rem;
+               }
+
+               ul {
+                margin-bottom: 3rem;
+                padding-left: 3.2rem;
+               }
+
+               li {
+                font-size: 3rem;
+                margin-bottom: 2rem;
+               }
+            }
+        }
+
+        &__form  {
+            width: 100%;
+            height: 85.8rem;
+            margin-top: 4rem;
+            &-title {
+                strong {
+                    font-size: 4.2rem;
+                    margin-bottom: 4rem;
+                }
+
+                span {
+                    font-size: 3rem;
+                    line-height: 130%;
+                }
+            }
+        }
+
+       
+    }
 }

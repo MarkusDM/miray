@@ -50,3 +50,48 @@
         }
     }
 }
+
+
+
+@media (max-width: 48em) {
+
+    .flower-recom  {
+
+
+        &__wrapper   {
+            flex-direction: column;
+        }
+
+        &__box {
+            width: 70rem;
+            border-radius: 4.8rem;
+
+            &-icon {
+                width: 8.8rem;
+                height: 8.8rem;
+                margin-bottom: 3.2rem;
+            }
+
+            &-title {
+                font-size: 3.6rem;
+            }
+
+            &-text {
+                font-size: 3rem;
+                line-height: 130%;
+                width: 46.2rem;
+            }
+        }
+
+        &__image {
+           width: 48.2rem;
+           height: 41.2rem;
+           margin-bottom: 6rem;
+            margin-top: 5rem;
+            img {
+                object-fit: initial;
+            }
+        }
+    }
+
+}
