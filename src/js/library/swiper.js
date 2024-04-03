@@ -1,5 +1,6 @@
+import window from 'inputmask/lib/global/window';
 import Swiper from 'swiper';
-import { EffectFade, Navigation, Pagination, Thumbs } from 'swiper/modules';
+import { EffectFade, Navigation, Pagination, Thumbs, Grid } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             breakpoints: {
                 0: {
                     slidesPerView: 1,
-                    spaceBetween: remToPx(2.4),
+                    spaceBetween: remToPx(2.4)
                 },
                 768: {
                     slidesPerView: 4
@@ -39,6 +40,25 @@ document.addEventListener('DOMContentLoaded', () => {
             ...payload
         });
     };
+
+    const popularItemsWrapper = document.querySelector('.popular__wrapper');
+    if (popularItemsWrapper && window.innerWidth <= 768) {
+        // Initialize Swiper inside the DOMContentLoaded event listener
+        new Swiper(popularItemsWrapper, {
+            modules: [Pagination, Grid],
+            spaceBetween: 8,
+            slidesPerView: 1,
+            speed: 500,
+            pagination: {
+                el: '.popular__pagination',
+                clickable: true
+            },
+            grid: {
+                rows: 3,
+                fill: 'row'
+            }
+        });
+    }
 
     const saleSwiper = document.querySelector('.sale__swiper');
     if (saleSwiper) {
@@ -60,7 +80,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 el: '.sale__pagination-bullets',
                 clickable: true
             },
-            grabCursor: true
+            grabCursor: true,
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 1
+                },
+                768: {
+                    slidesPerView: 1,
+    
+                    spaceBetween: `${remToPx(0.8)}rem`
+                }
+            }
+        });
+    }
+
+    const saleCardsSwiper = document.querySelector('.sale__sale-cards');
+    if (saleCardsSwiper && window.innerWidth <= 768) {
+        // Initialize Swiper inside the DOMContentLoaded event listener
+        new Swiper(saleCardsSwiper, {
+            modules: [],
+            slidesPerView: 'auto',
+            spaceBetween: 8,
+            speed: 500,
+            loop: true,
+            mousewheel: {
+                invert: false
+            }
         });
     }
 
@@ -68,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     header &&
         new Swiper('.search-modal__slider', {
             modules: [Navigation],
-            spaceBetween: `${remToPx(0.8)}rem`,
+            spaceBetween: `${remToPx(4)}rem`,
             slidesPerView: 'auto',
             speed: 800,
             navigation: {
@@ -85,7 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidesPerView: 1
             },
             768: {
-                slidesPerView: 3
+                slidesPerView: 3,
+
+                spaceBetween: `${remToPx(0.8)}rem`
             }
         }
     });
@@ -122,6 +170,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    swiperSettings('.latest', {
+        breakpoints: {
+            0: {
+                slidesPerView: 1
+            },
+            768: {
+                slidesPerView: 2
+            }
+        }
+    });
+
     if (document.querySelector('.addiction-swiper')) {
         const sliders = document.querySelectorAll('.addiction-swiper');
 
@@ -146,12 +205,21 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    const mm = window.matchMedia('max-width: 768px');
+    mm.addEventListener('change', function () {
+        if (!mm.matches) {
+            if (saleCardsSwiper) saleCardsSwiper.destroy();
+            if (popularItemsWrapper) popularItemsWrapper.destroy();
+        }
+    });
 });
 
 if (document.querySelector('.card__left')) {
     const cardThumb = new Swiper('.card__thumb', {
         slidesPerView: 3,
         freeMode: true,
+        watchSlidesVisibility: true,
         watchSlidesProgress: true,
         spaceBetween: remToPx(1.6),
         speed: 1200,
@@ -170,7 +238,7 @@ if (document.querySelector('.card__left')) {
             prevEl: '.card__swiper-button-prev',
             nextEl: '.card__swiper-button-next'
         },
-        slidesPerView: 1,
+        
 
         breakpoints: {
             0: {
@@ -181,4 +249,10 @@ if (document.querySelector('.card__left')) {
             }
         }
     });
+
+  
+    
 }
+
+
+

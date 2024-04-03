@@ -70,6 +70,9 @@
 // single link
 @import 'single-link';
 
+// menu bar
+@import 'menu-bar';
+
 // ---------------------------- для демонстрации ---------------------------
 
 .form {
@@ -127,7 +130,7 @@
     @include small-tablet {
         width: 100%;
         justify-content: center;
-        gap: .8rem;
+        gap: 0.8rem;
         margin-top: 4.8rem;
     }
 
@@ -145,6 +148,10 @@
     svg {
         width: 2.4rem;
         height: 2.4rem;
+
+        path {
+            stroke: $green;
+        }
 
         @include small-tablet {
             @include sizes(4.8rem, 4.8rem);
@@ -192,7 +199,7 @@
                     span {
                         margin-left: 3rem;
 
-                        @include small-tablet{
+                        @include small-tablet {
                             margin-left: 0;
                         }
                     }
@@ -202,7 +209,7 @@
                         width: 100%;
                         display: block;
 
-                        @include small-tablet{
+                        @include small-tablet {
                             max-width: 100%;
                             font-weight: 400;
                             font-size: 2.6rem;
@@ -360,7 +367,7 @@
         padding: 0.8rem;
         border-radius: 6rem;
 
-        @include small-tablet{
+        @include small-tablet {
             gap: 4rem;
             border-radius: 12rem;
         }
@@ -373,7 +380,7 @@
             text-align: center;
             transition: 0.2s color ease;
 
-            @include small-tablet{
+            @include small-tablet {
                 font-weight: 400;
                 font-size: 3rem;
                 line-height: 130%;
@@ -383,7 +390,7 @@
         svg {
             @include sizes(6rem, 6rem);
 
-            @include small-tablet{
+            @include small-tablet {
                 @include sizes(8.8rem, 8.8rem);
             }
 
@@ -393,7 +400,7 @@
             }
         }
 
-        @include hover{
+        @include hover {
             background-color: $green;
 
             span {
@@ -436,7 +443,7 @@
         @media (any-hover: hover) {
             &:hover {
                 background-color: $bgFon;
-                color: #1D1D1B;
+                color: #1d1d1b;
                 border: 1.5px solid $bgFon;
             }
         }

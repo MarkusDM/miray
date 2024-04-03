@@ -9,9 +9,222 @@
         height: 100%;
         position: relative;
 
-        @include small-tablet{
+        @include small-tablet {
             padding: 3.2rem;
             border-radius: 4.8rem;
+        }
+
+        &-promotions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            position: absolute;
+            left: 3.2rem;
+            top: 3.2rem;
+
+            @include small-tablet {
+                top: 4.8rem;
+                left: 5.7rem;
+                gap: 1.6rem;
+            }
+        }
+
+        &-discard {
+            padding: 1rem 2rem;
+            background: $pink;
+            border-radius: 10rem;
+            width: fit-content;
+            font-weight: 700;
+            font-size: 1.8rem;
+            line-height: 120%;
+            color: $white;
+
+            @include small-tablet {
+                padding: 1.2rem 2.8rem;
+                font-weight: 500;
+                font-size: 3rem;
+                line-height: 120%;
+                letter-spacing: 0.04em;
+                border-radius: 20rem;
+            }
+        }
+
+        &-hit {
+            padding: 1.25rem 2rem;
+            width: fit-content;
+            border-radius: 10rem;
+            background-color: $green;
+            font-size: 1.6rem;
+            line-height: 120%;
+            color: $white;
+
+            @include small-tablet {
+                border-radius: 20rem;
+                padding: 1.2rem 2.8rem;
+                font-weight: 400;
+                font-size: 2.4rem;
+                line-height: 130%;
+            }
+        }
+
+        &-promotion {
+            position: absolute;
+            top: 26.5rem;
+            left: 2rem;
+            right: 2rem;
+            padding: 1.2rem 2rem 0.8rem 2rem;
+            backdrop-filter: blur(4.8rem);
+            background: rgba(244, 244, 244, 0.4);
+            border-radius: 0 0 2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include small-tablet {
+                top: 43.6rem;
+                left: 3.2rem;
+                right: 3.2rem;
+                padding: 3.2rem 8.3rem;
+                border-radius: 0 0 4rem 4rem;
+            }
+
+            &-counter {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+
+                @include small-tablet {
+                    gap: 0.4rem;
+                }
+
+                strong {
+                    font-weight: 600;
+                    font-size: 2rem;
+                    line-height: 120%;
+                    letter-spacing: 0.04em;
+                    color: #1d1d1b;
+
+                    @include small-tablet {
+                        font-weight: 500;
+                        font-size: 3rem;
+                        line-height: 120%;
+                        letter-spacing: 0.04em;
+                    }
+                }
+
+                span {
+                    font-size: 1.6rem;
+                    line-height: 120%;
+                    color: #1d1d1b;
+
+                    @include small-tablet {
+                        font-weight: 400;
+                        font-size: 2.4rem;
+                        line-height: 130%;
+                    }
+                }
+            }
+        }
+
+        &-countdown {
+            max-width: 21.8rem;
+            width: 100%;
+            position: relative;
+
+            @include small-tablet {
+                max-width: 35rem;
+            }
+
+            &::after {
+                @include pseudo {
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: calc(100% - 1.1rem);
+                    right: -2.6rem;
+                    width: 0.1rem;
+                    background-color: $black;
+
+                    @include small-tablet {
+                        height: 100%;
+                        right: -3.2rem;
+                        transform: none;
+                        top: 0;
+                    }
+                }
+            }
+
+            &-list {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            &-item {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                position: relative;
+
+                @include small-tablet {
+                    gap: 0.4rem;
+                }
+
+                &:not(:last-child) {
+                    &::after {
+                        @include pseudo {
+                            content: ':';
+                            right: -2.3rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            font-weight: 600;
+                            font-size: 2rem;
+                            line-height: 120%;
+                            letter-spacing: 0.04em;
+                            color: #000;
+
+                            @include small-tablet {
+                                right: -5.2rem;
+                                font-weight: 600;
+                                font-size: 5.6rem;
+                                line-height: 110%;
+                                letter-spacing: 0.04em;
+                                color: #1d1d1b;
+                            }
+                        }
+                    }
+                }
+
+                strong {
+                    font-weight: 600;
+                    font-size: 2rem;
+                    line-height: 120%;
+                    letter-spacing: 0.04em;
+                    color: #1d1d1b;
+
+                    @include small-tablet {
+                        font-weight: 500;
+                        font-size: 3rem;
+                        line-height: 120%;
+                        letter-spacing: 0.04em;
+                    }
+                }
+
+                span {
+                    font-weight: 400;
+                    font-size: 1.6rem;
+                    line-height: 120%;
+                    color: #1d1d1b;
+
+                    @include small-tablet {
+                        font-weight: 400;
+                        font-size: 2.4rem;
+                        line-height: 130%;
+                    }
+                }
+            }
         }
 
         &-latest {
@@ -213,7 +426,7 @@
             @include sizes(100%, 30.8rem);
             margin-bottom: 1.6rem;
 
-            @include small-tablet{
+            @include small-tablet {
                 height: 54rem;
                 margin-bottom: 3.2rem;
                 border-radius: 4rem;
@@ -230,7 +443,7 @@
             margin-bottom: 0.8rem;
             @include clamp-text(2);
 
-            @include small-tablet{
+            @include small-tablet {
                 margin-bottom: 1.6rem;
                 font-weight: 400;
                 font-size: 3rem;
@@ -242,7 +455,7 @@
             display: block;
             margin-bottom: 2rem;
 
-            @include small-tablet{
+            @include small-tablet {
                 font-weight: 400;
                 font-size: 3rem;
                 line-height: 130%;
@@ -260,7 +473,7 @@
             border-radius: 10rem;
             margin-top: auto;
 
-            @include small-tablet{
+            @include small-tablet {
                 border-radius: 20rem;
                 margin-bottom: 3.2rem;
             }
@@ -277,7 +490,7 @@
                 white-space: nowrap;
                 justify-content: center;
 
-                @include small-tablet{
+                @include small-tablet {
                     border-radius: 20rem;
                     font-weight: 400;
                     font-size: 3rem;
@@ -295,7 +508,7 @@
                     max-width: 58%;
                     width: 100%;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         max-width: 60%;
                     }
 
@@ -403,7 +616,7 @@
             border-radius: 50%;
             @include sizes(2.4rem, 2.4rem);
 
-            @include small-tablet{
+            @include small-tablet {
                 @include sizes(6.4rem, 6.4rem);
                 padding: 1.6rem;
                 top: 4.8rem;

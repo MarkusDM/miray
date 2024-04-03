@@ -1,5 +1,4 @@
 .checkout {
-
     &__container {
         display: flex;
         flex-direction: column;
@@ -46,8 +45,9 @@
         grid-template-columns: repeat(3, 1fr);
         column-gap: 2.4rem;
 
-        .tab {
+        .checkout__step.tab {
             .tab__txt {
+                color: #1d1d1b;
                 white-space: nowrap;
 
                 span {
@@ -79,6 +79,7 @@
             }
             &._is-active ~ .tab {
                 .tab__txt {
+                    color: #898485;
                     &::after {
                         color: #898485;
                     }
@@ -95,7 +96,7 @@
             display: flex;
             column-gap: 1.6rem;
 
-            .tab {
+            .checkout__step.tab {
                 &._is-active {
                     flex: 1 1 auto;
                 }
@@ -476,58 +477,32 @@
             height: auto;
             border-radius: 0;
             overflow: visible;
-
-            @media (max-width: 48em) {
-                > .map__card {
-                    margin-bottom: 1.6rem;
-                    .map-card__wrapper {
-                        background-color: #559479;
-                        color: #ffffff;
-                    }
-                    .map-card__header h6,
-                    .map-card__header p {
-                        color: #ffffff;
-                    }
-                    .map-card__content svg path {
-                        fill: #ffffff;
-                    }
-                }
-            }
         }
         &__canvas {
             margin-bottom: 1.2rem;
             height: 60rem;
             overflow: hidden;
-            border-radius: 3rem;
 
             @media (max-width: 48em) {
-                margin-bottom: 1.6rem;
-                height: 70.2rem;
-                border-radius: 4.8rem;
+                height: 70rem;
             }
         }
         &__wrapper {
             position: static;
             padding: 0;
-            display: grid;
-            grid-template-columns: repeat(2, 50%);
 
-            @media (max-width: 48em) {
-                display: flex;
+            @media (min-width: 48em) {
+                display: grid;
+                grid-template-columns: repeat(2, 50%);
             }
         }
         &__card {
-            min-height: 30rem;
-            flex: 1 1 auto;
-            border-radius: 2.4rem;
-            overflow: hidden;
-            box-shadow: 0 0 2.2rem rgba(1, 28, 3, 0.12);
             width: 100%;
 
-            @media (max-width: 48em) {
-                min-height: auto;
-                border-radius: 4.8rem;
-                width: 100%;
+            @media (min-width: 48em) {
+                min-height: 30rem;
+                overflow: hidden;
+                border-radius: 2.4rem;
             }
         }
         .map-card__wrapper {
