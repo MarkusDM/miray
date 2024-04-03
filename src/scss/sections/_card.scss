@@ -475,6 +475,21 @@
                 font-size: 1.8rem;
                 font-weight: 500;
                 line-height: 120%;
+
+                ul {
+                   padding-top: 1rem; 
+                   padding-left: 4rem;
+                }
+
+                li {
+                    font-size: 1.6rem;
+                    margin-bottom: 0.8rem;
+                    list-style-type: disc;
+                }
+
+                li:last-child {
+                    margin-bottom: 0;
+                }
             }
         }
     }
@@ -667,7 +682,7 @@
     &__description {
         display: flex;
         justify-content: space-between;
-        margin-top: 12rem;
+        margin-top: 26rem;
     }
 
     &__description-left {
@@ -806,6 +821,88 @@
 
     .mob {
         display: none;
+    }
+
+
+    &__scale {
+        display: flex;
+        margin-bottom: 3.2rem;
+        &-block {
+            display: flex;
+            align-items:center;
+        }
+
+        &-line {
+            background-color: $white;
+        }
+
+        &-line-one {
+            width: 2.6rem;
+            height: 0.6rem;
+            border-radius: 2rem 2rem 0 0;
+        }
+
+        &-line-two {
+            width: 2.6rem;
+            height: 0.6rem;
+        }
+
+        &-line-three {
+            width: 2.6rem;
+            height: 0.6rem;
+        }
+
+        &-line-four {
+            width: 4.8rem;
+            height: 0.6rem;
+        }
+        &-line-five {
+            width: 4.8rem;
+            height: 0.6rem;
+        }
+        &-line-six {
+            width: 4.8rem;
+            height: 0.6rem;
+        }
+
+        &-circle {
+            background-color: $white;
+            width: 1.3rem;
+            height: 1.3rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            cursor: pointer;
+            &:hover {
+                box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+                transition: 0.2s ease-in-out;
+            }
+            &::after {
+                width: auto;
+                height: auto;
+                background: $white;
+                white-space: initial!important;
+               
+                
+            }
+            .card__scale-circle-c {
+                width: 0.8rem;
+                height: 0.8rem;
+                border-radius: 50%;
+                background-color: $green;
+            }
+           
+
+        }
+
+
+        &-circle-four,
+        &-circle-five,
+        &-circle-six {
+            width: 2rem;
+            height: 2rem;
+        }
     }
 }
 
@@ -1099,7 +1196,7 @@
             }
 
             &-attention {
-                margin-bottom: 4rem;
+                margin-bottom: 5rem;
                 padding: 2.4rem;
                 border-radius: 3.2rem;
 
@@ -1259,6 +1356,88 @@
                     font-size: 3rem;
                     line-height: 130%;
                 }
+            }
+        }
+
+
+        &__scale {
+            display: flex;
+            margin-bottom: 5.2rem;
+            &-block {
+                display: flex;
+                align-items:center;
+            }
+    
+            &-line {
+                background-color: $white;
+            }
+    
+            &-line-one {
+                width: 5.2rem;
+                height: 1.2rem;
+                border-radius: 4rem 0 0 4rem;
+            }
+    
+            &-line-two {
+                width: 5.2rem;
+                height: 1.2rem;
+            }
+    
+            &-line-three {
+                width: 5.2rem;
+                height: 1.2rem;
+            }
+    
+            &-line-four {
+                width: 9.6rem;
+                height: 1.2rem;
+            }
+            &-line-five {
+                width: 9.6rem;
+                height: 1.2rem;
+            }
+            &-line-six {
+                width: 9.6rem;
+                height: 1.2rem;
+            }
+    
+            &-circle {
+                background-color: $white;
+                width: 2.6rem;
+                height: 2.6rem;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items:center;
+                cursor: pointer;
+                &:hover {
+                    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+                    transition: 0.2s ease-in-out;
+                }
+                &::after {
+                    width: auto;
+                    height: auto;
+                    background: $white;
+                    white-space: initial!important;
+                   
+                    
+                }
+                .card__scale-circle-c {
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    border-radius: 50%;
+                    background-color: $green;
+                }
+               
+    
+            }
+    
+    
+            &-circle-four,
+            &-circle-five,
+            &-circle-six {
+                width: 4rem;
+                height: 4rem;
             }
         }
 
