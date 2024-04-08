@@ -54,6 +54,7 @@
     "microtip": "^0.2.2",
     "nouislider": "^15.7.1",
     "simplebar": "^6.2.5",
-    "swiper": "^11.0.7"
+    "swiper": "^11.0.7",
+    "tippy.js": "^6.3.7"
   }
 }

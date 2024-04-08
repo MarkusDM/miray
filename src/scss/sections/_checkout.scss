@@ -507,6 +507,14 @@
                 border-radius: 2.4rem;
             }
         }
+
+        .map-card-two {
+            overflow: initial;
+
+            .map-card__list {
+                top: 100%;
+            }
+        }
         .map-card__wrapper {
             height: 100%;
         }

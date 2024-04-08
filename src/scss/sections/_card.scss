@@ -836,10 +836,14 @@
             background-color: $white;
         }
 
+        &-line.active {
+            background-color: rgb(85, 148, 121);
+        }
+
         &-line-one {
             width: 2.6rem;
             height: 0.6rem;
-            border-radius: 2rem 2rem 0 0;
+            border-radius: 2rem 0 0 2rem;
         }
 
         &-line-two {
@@ -887,13 +891,21 @@
                 
             }
             .card__scale-circle-c {
-                width: 0.8rem;
-                height: 0.8rem;
+                width: 0.6rem;
+                height: 0.6rem;
                 border-radius: 50%;
-                background-color: $green;
+                background-color: rgb(85, 148, 121);
             }
            
 
+        }
+
+        &-circle.active {
+            background-color: rgb(85, 148, 121);
+            .card__scale-circle-c {
+                background-color: $white;
+            }
+            
         }
 
 

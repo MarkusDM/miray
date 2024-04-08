@@ -1,5 +1,6 @@
 import $ from 'jquery';
-
+import tippy from 'tippy.js';
+import {roundArrow} from 'tippy.js';
 
 export const rem = function (rem) {
   if ($(window).width() > 768) {
@@ -49,4 +50,13 @@ $('.card__retail-quantity').bind("change keyup input click", function() {
   }    
 });   
 
+tippy('[data-tippy-content]', {
+  arrow: roundArrow,
+  
+});
 
+tippy('[data-tippy-content-bottom]', {
+  arrow: roundArrow,
+  placement: 'bottom',
+  
+});

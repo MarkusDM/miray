@@ -207,4 +207,139 @@
             transform: translateY(-2rem);
         }
     }
+
+    &__data {
+        width: 86rem;
+        border-radius: 0 6rem 6rem 0;
+        overflow: hidden;
+        background-color: #559479;
+        position: relative;
+        @media (max-width: 48em) {
+            width: 100%;
+            border-radius: 4.8rem;
+
+            &-content {
+                padding: 4.8rem 3.2rem;
+            }
+
+            &-bf {
+                display: none;
+            }
+
+            &-bf-two {
+                display: none;
+            }
+
+            &-content-title {
+                margin-bottom: 6.4rem;
+                font-size: 4.8rem;
+            }
+
+            &-content-lists {
+                li {
+                    font-size: 3.6rem;
+                    line-height: 120%;
+                    margin-bottom: 3.2rem;
+                    span {
+                        display: block;
+                    }
+                }
+            }
+
+            &-image {
+                img {
+                    width: 43rem;
+                    height: 47rem;
+                    top: initial;
+                    bottom: -2rem;
+                    right: -12rem;
+                }
+            }
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            width: 48.3rem;
+            height: 48.3rem;
+            background-color: rgb(244, 244, 244);
+            opacity: 0.2;
+            z-index: 1;
+            right: -8rem;
+            bottom: -24rem;
+            border-radius: 50%;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 39.7rem;
+            height: 39.7rem;
+            background-color: rgb(244, 244, 244);
+            opacity: 0.2;
+            z-index: 1;
+            left: -10rem;
+            top: -23rem;
+            border-radius: 50%;
+        }
+        &-bf {
+            position: absolute;
+            width: 48.9rem;
+            height: 22.5rem;
+            top: -10rem;
+            right: -14rem;
+        }
+
+        &-bf-two {
+            width: 27.7rem;
+            height: 14.5rem;
+            position: absolute;
+            bottom: -2rem;
+            left: 15.4rem;
+        }
+
+        &-content {
+            padding-top: 5.2rem;
+            padding-left: 7.2rem;
+        }
+
+        &-content-title {
+            font-size: 4.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: $white;
+        }
+
+        &-content-lists {
+            li {
+                margin-bottom: 3.6rem;
+                font-size: 2rem;
+                font-weight: 600;
+                line-height: 120%;
+                color: $white;
+                list-style-type: none;
+            }
+
+            span {
+                color: #F4F4F4;
+                font-weight: 400;
+                padding-right: 0.2rem;
+            }
+
+            li:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &-image {
+          
+            
+            img {
+                position: absolute;
+                width: 43rem;
+                height: 45rem;
+                z-index: 2;
+                top: 27rem;
+                right: 0;
+            }
+        }
+    }
 }

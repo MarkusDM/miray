@@ -73,6 +73,10 @@
 // menu bar
 @import 'menu-bar';
 
+
+@import 'tippy.js/dist/tippy.css'; 
+@import 'tippy.js/dist/svg-arrow.css';
+
 // ---------------------------- для демонстрации ---------------------------
 
 .form {
@@ -489,5 +493,25 @@
     flex-direction: column;
     row-gap: 1rem;
 }
+
+
+
+.tippy-box {
+    background-color: $white;
+    color: $black-secondary;
+    max-width: 34.2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.08);
+  
+    
+  }
+
+
+  .tippy-svg-arrow {
+    fill: $white;
+    
+  }
+
+
 
 // -------------------------------------------------------------------------
