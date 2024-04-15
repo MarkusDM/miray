@@ -60,3 +60,12 @@ tippy('[data-tippy-content-bottom]', {
   placement: 'bottom',
   
 });
+
+
+$('.modal-profile-open').click(function() {
+  $('.modal-profile').addClass('active');
+});
+
+$('.modal-profile__close').click(function() {
+  $('.modal-profile').removeClass('active');
+});
