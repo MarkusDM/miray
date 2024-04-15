@@ -69,3 +69,20 @@ $('.modal-profile-open').click(function() {
 $('.modal-profile__close').click(function() {
   $('.modal-profile').removeClass('active');
 });
+
+
+$('.modal-global-email-open').click(function() {
+  $('.modal-global-email').addClass('active');
+});
+
+
+
+$('.modal-global-phone-open').click(function() {
+  $('.modal-global-email').addClass('active');
+});
+
+
+$('.modal-global__close').click(function() {
+  $('.modal-global-email').removeClass('active');
+  $('.modal-global-phone').removeClass('active');
+});

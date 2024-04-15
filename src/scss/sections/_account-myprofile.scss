@@ -239,6 +239,23 @@
         }
     }
 
+    &__group-subtitle {
+        padding-right: 2.8rem;
+        position: relative;
+        cursor: pointer;
+        width: fit-content;
+        &::after {
+            position: absolute;
+            content:'';
+            width: 2rem;
+            height: 2rem;
+            background-image: url(../assets/images/sections/placing-an/caran.svg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            right: 0;
+        }
+    }
+
     &__group {
         display: flex;
         flex-direction: column;
