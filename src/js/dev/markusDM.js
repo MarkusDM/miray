@@ -86,3 +86,21 @@ $('.modal-global__close').click(function() {
   $('.modal-global-email').removeClass('active');
   $('.modal-global-phone').removeClass('active');
 });
+
+
+
+$('.card-modal-open').click(function() {
+  $('.card-modal').addClass('active');
+});
+
+$(document).on('mouseup', function(e){
+  let s = $('.card-modal.active'); 
+  if(!s.is(e.target) && s.has(e.target).length === 0) {
+  
+    s.removeClass('active');
+  }
+});
+
+$('.card-modal__close').click(function() {
+  $('.card-modal').removeClass('active');
+});
