@@ -13,6 +13,23 @@
         width: 2rem;
         height: 2rem;
 
+        transition: transform 0.5s ease;
+
+        &:first-child {
+            @media (any-hover: hover) {
+                &:hover {
+                    transform: translateX(-0.3rem);
+                }
+            }
+        }
+        &:last-child {
+            @media (any-hover: hover) {
+                &:hover {
+                    transform: translateX(0.3rem);
+                }
+            }
+        }
+
         @include small-tablet {
             width: 4rem;
             height: 4rem;

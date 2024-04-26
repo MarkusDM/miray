@@ -132,6 +132,18 @@
                 color: $grey-text;
             }
 
+            .text__regular-16 a {
+                display: block;
+
+                @media (min-width: 48em) {
+                    transition: transform 0.5s ease;
+
+                    &:hover {
+                        transform: translateX(0.5rem);
+                    }
+                }
+            }
+
             @media (max-width: 48em) {
                 gap: 2.4rem;
 
@@ -213,6 +225,15 @@
                     padding-top: 4rem;
                 }
             }
+            @media (min-width: 48em) {
+                transition: transform 0.5s ease;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        transform: translateX(0.5rem);
+                    }
+                }
+            }
         }
         @media (max-width: 48em) {
             line-height: 1;
@@ -249,11 +270,71 @@
     margin-bottom: 8rem;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     gap: 1.6rem;
+
+    &__icon {
+        border-radius: 50%;
+        transition:
+            transform 0.5s ease,
+            box-shadow 0.5s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                transform: scale(1.05);
+
+                &.social-list__icon_whatsapp {
+                    box-shadow:
+                        0 1rem 4rem rgba(37, 211, 102, 0.3),
+                        inset 0 0 0 1px #25d366;
+                    rect {
+                        fill: #25d366;
+                    }
+                }
+                &.social-list__icon_viber {
+                    box-shadow:
+                        0 1rem 4rem rgba(115, 96, 242, 0.3),
+                        inset 0 0 0 1px #7360f2;
+                    rect {
+                        fill: #7360f2;
+                    }
+                }
+                &.social-list__icon_skype {
+                    box-shadow:
+                        0 1rem 4rem rgba(0, 175, 240, 0.3),
+                        inset 0 0 0 1px #00aff0;
+                    rect {
+                        fill: #00aff0;
+                    }
+                }
+                &.social-list__icon_telegram {
+                    box-shadow:
+                        0 2rem 4rem rgba(0, 83, 151, 0.3),
+                        inset 0 0 0 1px #005397;
+                    rect {
+                        fill: #005397;
+                    }
+                }
+            }
+        }
+    }
+
+    svg {
+        rect {
+            transition: fill 0.5s ease;
+        }
+    }
 
     @media (min-width: 48em) {
         margin-top: 0.8rem;
         margin-bottom: 0;
+        justify-content: stretch;
         gap: 0.8rem;
+    }
+    @media (max-width: 48em) {
+        svg {
+            width: 10rem;
+            height: 10rem;
+        }
     }
 }

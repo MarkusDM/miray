@@ -73,8 +73,7 @@
 // menu bar
 @import 'menu-bar';
 
-
-@import 'tippy.js/dist/tippy.css'; 
+@import 'tippy.js/dist/tippy.css';
 @import 'tippy.js/dist/svg-arrow.css';
 
 // ---------------------------- для демонстрации ---------------------------
@@ -112,10 +111,35 @@
     position: relative;
     width: fit-content;
 
-    @include hover {
-        &:not(._no-hover) {
-            &::after {
-                max-width: 100%;
+    svg {
+        transition: transform 0.5s ease;
+    }
+
+    &:not(&._no-hover, &_reversed) {
+        @media (any-hover: hover) {
+            &:hover {
+                &::after {
+                    max-width: 100%;
+                }
+                svg {
+                    transform: translateX(0.3rem);
+                }
+            }
+        }
+    }
+
+    &_reversed {
+        svg {
+            transform: rotate(180deg);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::after {
+                    max-width: 100%;
+                }
+                svg {
+                    transform: translateX(-0.3rem) rotate(180deg);
+                }
             }
         }
     }
@@ -454,6 +478,39 @@
     }
 }
 
+[data-three-card] {
+    user-select: none;
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.05s ease;
+    transform-style: preserve-3d;
+    @media (any-hover: hover) {
+        &:hover {
+            box-shadow:
+                0 2rem 4rem rgba(23, 38, 47, 0.3),
+                inset 0 0 0 1px #d7e5f4;
+        }
+    }
+}
+
+main {
+    &:not(.--disabled, &[disabled], &_ghost) {
+        .btn {
+            transition:
+                transform 0.5s ease,
+                box-shadow 0.5s ease,
+                background-color 0.5s ease,
+                color 0.5s ease;
+            @media (any-hover: hover) {
+                &:hover {
+                    transform: translateY(-0.2rem);
+                    box-shadow: 0 1.5rem 1.5rem -1rem rgba(34, 60, 80, 0.3);
+                }
+            }
+        }
+    }
+}
+
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -494,24 +551,43 @@
     row-gap: 1rem;
 }
 
-
-
 .tippy-box {
     background-color: $white;
     color: $black-secondary;
     max-width: 34.2rem;
     border-radius: 0.8rem;
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.08);
-  
-    
-  }
+}
 
-
-  .tippy-svg-arrow {
+.tippy-svg-arrow {
     fill: $white;
-    
-  }
+}
 
-
+.navigation-buttons {
+    .swiper-button-prev,
+    .swiper-button-next {
+        svg {
+            transition: transform 0.5s ease;
+        }
+    }
+    .swiper-button-prev {
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    transform: translateX(-0.3rem);
+                }
+            }
+        }
+    }
+    .swiper-button-next {
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    transform: translateX(0.3rem);
+                }
+            }
+        }
+    }
+}
 
 // -------------------------------------------------------------------------

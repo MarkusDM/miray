@@ -2,6 +2,17 @@
     &__cards {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-
+    }
+    .swiper-slide {
+        .receipts__card-bottom-icon {
+            transition: transform 0.5s ease;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                .receipts__card-bottom-icon {
+                    transform: translate(0.3rem, -0.3rem);
+                }
+            }
+        }
     }
 }

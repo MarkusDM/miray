@@ -101,6 +101,14 @@
             svg {
                 width: 5rem;
                 height: 5rem;
+                transition: transform 0.5s ease;
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    svg {
+                        transform: translate(0.3rem, -0.3rem);
+                    }
+                }
             }
         }
     }

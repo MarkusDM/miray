@@ -4,6 +4,19 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .swiper-slide {
+        .news__card-publication-icon {
+            transition: transform 0.5s ease;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                .news__card-publication-icon {
+                    transform: translate(0.3rem, -0.3rem);
+                }
+            }
+        }
+    }
+
     .link {
         @media (max-width: 48em) {
             margin: 0;
