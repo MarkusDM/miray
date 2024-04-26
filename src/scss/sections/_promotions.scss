@@ -27,6 +27,18 @@
         background-color: $grey-bg;
         height: 100%;
 
+        .promotions__card-icon {
+            transition: transform 0.5s ease;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                .promotions__card-icon {
+                    transform: translate(0.4rem, -0.4rem);
+                }
+            }
+        }
+
         @include small-tablet {
             flex-direction: column;
             padding: 3.2rem;

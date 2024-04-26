@@ -52,6 +52,18 @@
         background-color: $white;
         cursor: pointer;
 
+        .select__value::after {
+            transition: transform 0.5s ease;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                .select__value::after {
+                    transform: translateY(0.2rem);
+                }
+            }
+        }
+
         @media (max-width: 48em) {
             border-radius: 3.2rem;
         }

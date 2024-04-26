@@ -1,4 +1,17 @@
 .profiles-account {
+    .profiles-account__list-item-btn {
+        @media (any-hover: hover) {
+            &:hover {
+                &::after {
+                    max-width: 100%;
+                }
+                svg {
+                    transform: translateX(0.3rem);
+                }
+            }
+        }
+    }
+
     display: flex;
     flex-direction: column;
 
@@ -209,6 +222,19 @@
                 flex: 0 0 4.8rem;
                 width: 4.8rem;
                 height: 4.8rem;
+            }
+        }
+    }
+}
+
+.sidebar-account__link {
+    @media (any-hover: hover) {
+        &:hover {
+            &::after {
+                max-width: 100%;
+            }
+            svg {
+                transform: translateX(0.3rem);
             }
         }
     }

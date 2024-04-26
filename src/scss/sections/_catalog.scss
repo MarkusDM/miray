@@ -3,10 +3,10 @@
         .recommendations__card {
             &-favorite-button {
                 opacity: 0;
-                transition: .3s opacity ease-out;
+                transition: 0.3s opacity ease-out;
             }
 
-            @include hover{
+            @include hover {
                 .recommendations__card-favorite-button {
                     opacity: 1;
                 }
@@ -217,30 +217,29 @@
                         padding: 0;
 
                         &:not(:last-of-type) {
-                            border-bottom: .1rem solid rgba($grey-text, .4);
+                            border-bottom: 0.1rem solid rgba($grey-text, 0.4);
                             margin-bottom: 3.2rem;
                             padding-bottom: 3.2rem;
                         }
 
                         .catalog__filters-block-heading {
+                            figure {
+                                display: flex;
+                                align-items: center;
+                                gap: 2.4rem;
+                                flex-direction: row-reverse;
+                                max-width: max-content;
+                                transform: none;
+                                white-space: nowrap;
 
-                           figure {
-                               display: flex;
-                               align-items: center;
-                               gap: 2.4rem;
-                               flex-direction: row-reverse;
-                               max-width: max-content;
-                               transform: none;
-                               white-space: nowrap;
-
-                               figcaption {
-                                   font-weight: 500;
-                                   font-size: 3rem;
-                                   line-height: 120%;
-                                   letter-spacing: 0.04em;
-                                   color: #3c3c3c;
-                               }
-                           }
+                                figcaption {
+                                    font-weight: 500;
+                                    font-size: 3rem;
+                                    line-height: 120%;
+                                    letter-spacing: 0.04em;
+                                    color: #3c3c3c;
+                                }
+                            }
 
                             .catalog__filters-block-heading-title {
                                 font-weight: 400;
@@ -248,7 +247,7 @@
                                 line-height: 130%;
                                 color: $grey-text;
 
-                                &::after{
+                                &::after {
                                     display: none;
                                 }
                             }
@@ -1027,6 +1026,20 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 4rem;
         margin-bottom: 4rem;
+
+        .--grid {
+            @media (any-hover: hover) {
+                &:hover {
+                    .catalog__promotion-card-heading-icon {
+                        transform: translate(0.5rem, -0.5rem);
+                    }
+                }
+            }
+
+            .catalog__promotion-card-heading-icon {
+                transition: transform 0.5s ease;
+            }
+        }
 
         @include small-tablet {
             display: flex;

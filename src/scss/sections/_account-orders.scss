@@ -568,6 +568,10 @@
         @media (min-width: 48em) {
             max-width: 32.9rem;
             font-size: 3rem;
+
+            &_sm {
+                font-size: 1.8rem;
+            }
         }
     }
 

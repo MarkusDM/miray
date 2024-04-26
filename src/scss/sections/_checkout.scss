@@ -503,18 +503,18 @@
 
             @media (min-width: 48em) {
                 min-height: 30rem;
-                overflow: hidden;
                 border-radius: 2.4rem;
             }
         }
 
-        .map-card-two {
-            overflow: initial;
+        .map-card__list {
+            top: 100%;
 
-            .map-card__list {
-                top: 100%;
+            @media (min-width: 48em) {
+                padding: 2rem;
             }
         }
+
         .map-card__wrapper {
             height: 100%;
         }
@@ -592,32 +592,15 @@
     }
 
     &__item {
-        &:first-child {
-            .option-item__image-wrap {
-                width: 11.3rem;
-            }
-        }
         @media (min-width: 48em) {
+            &:first-child {
+                .option-item__image-wrap {
+                    width: 11.3rem;
+                }
+            }
             &:nth-child(2) {
                 .option-item__image-wrap {
                     width: 14.4rem;
-                }
-            }
-        }
-        @media (max-width: 48em) {
-            &:first-child {
-                .option-item__image-wrap {
-                    width: 22.6rem;
-                }
-            }
-            &:nth-child(2) {
-                .option-item__image-wrap {
-                    width: 100%;
-                }
-            }
-            &:nth-child(3) {
-                .option-item__image-wrap {
-                    width: 28.8rem;
                 }
             }
         }

@@ -1,7 +1,46 @@
 import { removeClasses, bodyLockStatus, bodyLock, bodyUnlock } from '../utils/utils';
 
+import gsap from 'gsap';
+
 document.addEventListener('DOMContentLoaded', function () {
     const mm = window.matchMedia('(max-width: 768px)');
+
+    if (document.querySelectorAll('.map-card__button').length) {
+        document.addEventListener('click', function (e) {
+            if (e.target.closest('.map-card__button') && !e.target.closest('.map-card__footer._is-active')) {
+                e.target.closest('.map-card__footer').classList.add('_is-active');
+            } else if (
+                document.querySelector('.map-card__footer._is-active') &&
+                (e.target.closest('.map-card__button') || !e.target.closest('.map-card__footer'))
+            ) {
+                document.querySelector('.map-card__footer._is-active').classList.remove('_is-active');
+            }
+        });
+    }
+
+    if (document.querySelectorAll('[data-three-card]').length) {
+        document.querySelectorAll('[data-three-card]').forEach((card) => {
+            card.addEventListener('mousemove', function (e) {
+                const xPos = e.clientX / window.innerWidth - 0.5;
+                const yPos = e.clientY / window.innerHeight - 0.5;
+
+                gsap.to(card, {
+                    duration: 0.5,
+                    rotationY: xPos * 50,
+                    rotationX: yPos * 50,
+                    ease: 'power2.out'
+                });
+            });
+            card.addEventListener('mouseleave', function (e) {
+                gsap.to(card, {
+                    duration: 0.5,
+                    rotationY: 0,
+                    rotationX: 0,
+                    ease: 'power2.out'
+                });
+            });
+        });
+    }
 
     if (document.querySelector('.header__mm-link_hamburger')) {
         document.querySelector('.header__mm-link_hamburger').addEventListener('click', function () {
@@ -145,6 +184,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             });
         }
+    }
+
+    if (document.querySelector('.header__mm-link_search')) {
+        document.querySelector('.header__mm-link_search').addEventListener('click', function () {
+            document.querySelector('.header').classList.toggle('_show-search');
+        });
     }
 
     if (document.querySelector('.header-catalog')) {

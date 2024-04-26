@@ -194,6 +194,10 @@
         position: relative;
         z-index: 2;
 
+        @media (min-width: 48em) {
+            column-gap: 1rem;
+        }
+
         span {
             color: $black-secondary;
             flex-shrink: 0;
@@ -229,7 +233,7 @@
         @media (max-width: 48em) {
             top: 102%;
         }
-        &.show {
+        ._is-active & {
             display: flex;
             flex-direction: column;
             gap: 4rem;
@@ -252,9 +256,12 @@
 
             span {
                 font-weight: 400;
-                font-size: 3.2rem;
                 line-height: 120%;
                 color: $grey-text;
+
+                @media (max-width: 48em) {
+                    font-size: 3.2rem;
+                }
             }
 
             a {
@@ -359,5 +366,3 @@
         }
     }
 }
-
-

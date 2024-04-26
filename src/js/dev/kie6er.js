@@ -4,7 +4,12 @@ import { bodyLock, bodyUnlock } from '../utils/utils';
 $(document).ready(() => {
     //header ==================================================================
     $(window).scroll(function () {
-        window.scrollY > 0 ? $('.header').addClass('scroll') : $('.header').removeClass('scroll');
+        if (window.scrollY > 0) {
+            $('.header').addClass('scroll');
+        } else {
+            $('.header').removeClass('scroll');
+            $('.header').removeClass('_show-search');
+        }
     });
 
     $('.header__search-input').on('focusin', function (evt) {
@@ -47,7 +52,11 @@ $(document).ready(() => {
     function openMiniModal(buttons) {
         buttons.each(function (i, el) {
             $(el).on('click', function (e) {
-                $(this).siblings().toggleClass('show');
+                if ($(this).closest('.header__phone').hasClass('_is-active')) {
+                    $(this).closest('.header__phone').removeClass('_is-active');
+                } else {
+                    $(this).closest('.header__phone').addClass('_is-active');
+                }
             });
             clickOutsidePopup($(el.nextElementSibling), $(el));
         });
@@ -119,13 +128,13 @@ function clickOutsidePopup(popup, button = null) {
         if (button && popup[0]) {
             const checkButton = !button.children().is(e.target) && !button.is(e.target);
             if (!popup.is(e.target) && popup.has(e.target).length === 0 && checkButton) {
-                popup.removeClass('show');
-                button.removeClass('show');
                 if (
                     popup[0].classList.contains('show') &&
                     popup.closest('.header__search') &&
                     !e.target.closest('.search-modal')
                 ) {
+                    popup.removeClass('show');
+                    button.removeClass('show');
                     bodyUnlock();
                 }
             }
