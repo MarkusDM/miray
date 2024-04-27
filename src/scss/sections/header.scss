@@ -158,7 +158,12 @@
         position: relative;
 
         .left-icon {
-            -webkit-transform: translate3d(0, -50%, 0);
+            top: 1.4rem;
+            transform: none;
+
+            @media (max-width: 48em) {
+                top: 1.6rem;
+            }
         }
 
         svg,
