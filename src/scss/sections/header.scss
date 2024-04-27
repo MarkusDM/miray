@@ -157,6 +157,10 @@
     &__search-input {
         position: relative;
 
+        .left-icon {
+            -webkit-transform: translate3d(0, -50%, 0);
+        }
+
         svg,
         button {
             position: absolute;
