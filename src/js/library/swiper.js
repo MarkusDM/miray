@@ -80,6 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 el: '.sale__pagination-bullets',
                 clickable: true
             },
+            navigation: {
+                nextEl: '.sale__swiper .swiper-button-next',
+                prevEl: '.sale__swiper .swiper-button-prev'
+            },
             grabCursor: true,
 
             breakpoints: {
@@ -88,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 768: {
                     slidesPerView: 1,
-    
+
                     spaceBetween: `${remToPx(0.8)}rem`
                 }
             }
@@ -238,7 +242,6 @@ if (document.querySelector('.card__left')) {
             prevEl: '.card__swiper-button-prev',
             nextEl: '.card__swiper-button-next'
         },
-        
 
         breakpoints: {
             0: {
@@ -249,10 +252,4 @@ if (document.querySelector('.card__left')) {
             }
         }
     });
-
-  
-    
 }
-
-
-

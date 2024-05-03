@@ -3,6 +3,25 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
     }
+    &__card {
+        .receipts__card-top-image {
+            overflow: hidden;
+            img {
+                transform: scale(1.01);
+                transition: transform 1s ease;
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                .receipts__card-top-image {
+                    img {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+    }
     .swiper-slide {
         .receipts__card-bottom-icon {
             transition: transform 0.5s ease;

@@ -2,6 +2,17 @@
     position: relative;
     z-index: 5;
     background-color: $grey-bg;
+
+    &__nav-subtitle {
+        transition: color 0.5s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: #2b5644;
+            }
+        }
+    }
+
     // .footer__inner
     &__inner {
         display: flex;
@@ -33,6 +44,7 @@
     &__block {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         gap: 4.8rem;
 
         &:last-child {
@@ -62,11 +74,6 @@
         }
 
         &:not(&.footer__block--info) {
-            @media (min-width: 48em) {
-                .text__regular-18 {
-                    pointer-events: none;
-                }
-            }
             @media (max-width: 48em) {
                 display: block;
                 .footer__nav-list li {
@@ -274,45 +281,78 @@
     gap: 1.6rem;
 
     &__icon {
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+
         border-radius: 50%;
         transition:
             transform 0.5s ease,
             box-shadow 0.5s ease;
 
+        &::after {
+            content: '';
+
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+
+            width: 5.2rem;
+            height: 5.1rem;
+            border-radius: 50%;
+
+            transform: translate(-50%, -50%);
+
+            transition: box-shadow 0.5s ease;
+        }
+
         @media (any-hover: hover) {
             &:hover {
                 transform: scale(1.05);
-
                 &.social-list__icon_whatsapp {
                     box-shadow:
-                        0 1rem 4rem rgba(37, 211, 102, 0.3),
-                        inset 0 0 0 1px #25d366;
+                        0 1rem 4rem rgba(72, 201, 95, 0.3),
+                        inset 0 0 0 1px #48c95f;
                     rect {
-                        fill: #25d366;
+                        fill: #48c95f;
+                    }
+
+                    &::after {
+                        box-shadow: inset -0.4rem -1.9rem 2rem -1.8rem #3db352;
                     }
                 }
                 &.social-list__icon_viber {
                     box-shadow:
-                        0 1rem 4rem rgba(115, 96, 242, 0.3),
-                        inset 0 0 0 1px #7360f2;
+                        0 1rem 4rem rgba(124, 80, 154, 0.3),
+                        inset 0 0 0 1px #7c509a;
                     rect {
-                        fill: #7360f2;
+                        fill: #7c509a;
+                    }
+                    &::after {
+                        box-shadow: inset -0.4rem -1.9rem 2rem -1.8rem #64417c;
                     }
                 }
                 &.social-list__icon_skype {
                     box-shadow:
-                        0 1rem 4rem rgba(0, 175, 240, 0.3),
-                        inset 0 0 0 1px #00aff0;
+                        0 1rem 4rem rgba(0, 169, 231, 0.3),
+                        inset 0 0 0 1px #00a9e7;
                     rect {
-                        fill: #00aff0;
+                        fill: #00a9e7;
+                    }
+                    &::after {
+                        box-shadow: inset -0.4rem -1.9rem 2rem -1.8rem #028dc0;
                     }
                 }
                 &.social-list__icon_telegram {
                     box-shadow:
-                        0 2rem 4rem rgba(0, 83, 151, 0.3),
-                        inset 0 0 0 1px #005397;
+                        0 2rem 4rem rgba(39, 166, 229, 0.3),
+                        inset 0 0 0 1px #27a6e5;
                     rect {
-                        fill: #005397;
+                        fill: #27a6e5;
+                    }
+                    &::after {
+                        box-shadow: inset -0.4rem -1.9rem 2rem -1.8rem #1c91ca;
                     }
                 }
             }

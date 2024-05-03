@@ -162,6 +162,38 @@
                     </li>
                 </ul>
             </div>
+            <button type="button" class="scroll-btn">
+                <svg
+                    class="scroll-btn__icon"
+                    width="25"
+                    height="19"
+                    viewBox="0 0 25 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M1.37227 9.51401L24.0001 9.51401"
+                        stroke="#2B5644"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    ></path>
+                    <path
+                        d="M5.61555 13.7573L9.85828 18"
+                        stroke="#2B5644"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    ></path>
+                    <path
+                        d="M1.3721 9.51474L9.85754 1.02929"
+                        stroke="#2B5644"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    ></path>
+                </svg>
+            </button>
             <include src="./components/footer.html"></include>
             <include src="./components/modals.html"></include>
         </div>
@@ -172,19 +204,19 @@
     const markers = [
         {
             tag: 'Главный офис',
-            coordinate: [37.539626, 55.65015],
+            coordinate: [37.655638103307474, 55.90191522732211],
             active: false,
             card: 'map-card-1'
         },
         {
             tag: 'Оптово-розничный магазин',
-            coordinate: [37.471102, 55.60101],
+            coordinate: [37.32467496854185, 55.80380871922761],
             active: false,
             card: 'map-card-2'
         },
         {
             tag: 'Склад',
-            coordinate: [37.26184, 55.658317],
+            coordinate: [37.842515254335, 55.72777967346755],
             active: false,
             card: 'map-card-3'
         }
@@ -195,12 +227,13 @@
         const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
         const map = new YMap(document.getElementById('main-map'), {
             location: {
-                center: [37.47971415087885, 55.621295640143664],
-                zoom: 12
-            }
+                center: [37.72141548461014, 55.81616961643056],
+                zoom: 10
+            },
+            behaviors: ['drag']
         });
-				
-				console.log(map)
+
+        console.log(map);
 
         map.addChild(new YMapDefaultSchemeLayer());
         map.addChild(new YMapDefaultFeaturesLayer({ zIndex: 1800 }));
