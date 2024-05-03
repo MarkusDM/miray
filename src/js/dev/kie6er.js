@@ -30,10 +30,19 @@ $(document).ready(() => {
         }
     });
 
-    $('.header__catalog-button').on('click', function () {
-        $(this).toggleClass('show');
-        $('.header-catalog').toggleClass('show');
-    });
+    if (window.innerWidth > 768) {
+        $(document).on('mouseover', function (e) {
+            const target = e.target;
+
+            if (target.closest('.header__catalog-button')) {
+                $('.header__catalog-button').addClass('show');
+                $('.header-catalog').addClass('show');
+            } else if (!target.closest('.header__catalog')) {
+                $('.header__catalog-button').removeClass('show');
+                $('.header-catalog').removeClass('show');
+            }
+        });
+    }
 
     $('.header__close-search-btn').on('click', function (e) {
         e.preventDefault();

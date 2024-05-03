@@ -1,6 +1,9 @@
 import { removeClasses, bodyLockStatus, bodyLock, bodyUnlock } from '../utils/utils';
 
 import gsap from 'gsap';
+import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 document.addEventListener('DOMContentLoaded', function () {
     const mm = window.matchMedia('(max-width: 768px)');
@@ -216,6 +219,23 @@ document.addEventListener('DOMContentLoaded', function () {
                     container.classList.remove('_is-animating');
                 }, duration);
             }
+        });
+    }
+
+    if (document.querySelector('.scroll-btn')) {
+        const btn = document.querySelector('.scroll-btn');
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: '.map',
+                onToggle: () => {
+                    btn.classList.toggle('_is-visible');
+                }
+            }
+        });
+
+        btn.addEventListener('click', function () {
+            gsap.to(window, { duration: 1.5, scrollTo: 0 });
         });
     }
 

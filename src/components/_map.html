@@ -355,16 +355,22 @@
 <script>
     const markers = [
         {
-            tag: 'Оптово-розничный магазин',
-            coordinate: [37.471102, 55.60101],
-            active: true,
+            tag: 'Главный офис',
+            coordinate: [37.655638103307474, 55.90191522732211],
+            active: false,
             card: 'map-card-1'
         },
         {
-            tag: 'Склад',
-            coordinate: [37.26184, 55.658317],
+            tag: 'Оптово-розничный магазин',
+            coordinate: [37.32467496854185, 55.80380871922761],
             active: false,
             card: 'map-card-2'
+        },
+        {
+            tag: 'Склад',
+            coordinate: [37.842515254335, 55.72777967346755],
+            active: false,
+            card: 'map-card-3'
         }
     ];
 
@@ -373,9 +379,10 @@
         const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
         const map = new YMap(document.getElementById('main-map'), {
             location: {
-                center: [37.47971415087885, 55.621295640143664],
-                zoom: 12
-            }
+                center: [37.72141548461014, 55.81616961643056],
+                zoom: 10
+            },
+            behaviors: ['drag']
         });
 
         document.querySelector('.map__card').classList.add('hover');

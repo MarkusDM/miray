@@ -1,4 +1,35 @@
 .sale {
+    &__navigation-btn {
+        position: absolute !important;
+        z-index: 2;
+        top: 50%;
+
+        border: 1px solid $white;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            opacity 0.5s ease,
+            visibility 0.5s ease;
+
+        svg {
+            transition: transform 0.5s ease;
+
+            path {
+                stroke: $white;
+            }
+        }
+
+        &.swiper-button-prev {
+            left: 2rem;
+        }
+
+        &.swiper-button-next {
+            right: 2rem;
+        }
+    }
+
     &__sale-cards {
         @media (max-width: 48em) {
             margin-bottom: 4.8rem;
@@ -120,6 +151,15 @@
     &__swiper {
         position: relative;
         margin-bottom: 4rem;
+
+        @media (any-hover: hover) {
+            &:hover {
+                .sale__navigation-btn {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
 
         @media (max-width: 48em) {
             margin-bottom: 4.8rem;

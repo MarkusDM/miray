@@ -472,6 +472,7 @@
             background-color: $white;
             border-radius: 10rem;
             margin-top: auto;
+            overflow: hidden;
 
             @include small-tablet {
                 border-radius: 20rem;
@@ -489,6 +490,7 @@
                 height: 4.4rem;
                 white-space: nowrap;
                 justify-content: center;
+                overflow: hidden;
 
                 @include small-tablet {
                     border-radius: 20rem;
@@ -499,47 +501,73 @@
                 }
 
                 span {
-                    display: none;
+                    width: 0;
+                    opacity: 0;
+                    transition:
+                        width 0.5s ease 0.3s,
+                        opacity 0.3s ease 0s;
                 }
 
                 &.--primary {
+                    position: relative;
+                    z-index: 2;
                     background-color: $green;
                     color: $white;
-                    max-width: 58%;
-                    width: 100%;
+                    flex: 1 1 auto;
+                    width: 11rem;
 
-                    @include small-tablet {
-                        max-width: 60%;
+                    &.--hovered {
+                        span:last-child {
+                            width: 0;
+                            opacity: 0;
+                        }
                     }
 
                     span {
                         &:last-child {
                             display: block;
+                            width: auto;
+                            opacity: 1;
                         }
                     }
 
-                    @include hover {
-                        &:not(.--selected-value) {
-                            max-width: 100%;
-                            max-height: 100%;
-                            width: 100%;
-
+                    @media (any-hover: hover) {
+                        &:hover {
                             span {
-                                &:first-child {
-                                    display: block;
-                                }
+                                width: auto;
+                                opacity: 1;
+                                transition:
+                                    width 0.5s ease,
+                                    opacity 0.5s ease 0.3s;
                             }
-
-                            &:not(.--list &) {
-                                ~ button {
-                                    display: none;
-                                }
+                            + .recommendations__card-group-button {
+                                opacity: 0;
+                                width: 0;
                             }
                         }
                     }
+
+                    //                    @include hover {
+                    //                        &:not(.--selected-value) {
+                    //                            max-width: 100%;
+                    //                            max-height: 100%;
+                    //                            width: 100%;
+                    //
+                    //                            span {
+                    //                                &:first-child {
+                    //                                    display: block;
+                    //                                }
+                    //                            }
+                    //
+                    //                            &:not(.--list &) {
+                    //                                ~ button {
+                    //                                    display: none;
+                    //                                }
+                    //                            }
+                    //                        }
+                    //                    }
 
                     &.--selected {
-                        max-width: 100%;
                         max-height: 100%;
                         width: 100%;
 
@@ -556,17 +584,17 @@
                         }
                     }
 
-                    &:not(.--list &) {
-                        &.--hovered {
-                            max-width: max-content;
-                            gap: 0;
-                            padding: 1.25rem 2rem;
-
-                            span {
-                                display: none;
-                            }
-                        }
-                    }
+                    //                                        &:not(.--list &) {
+                    //                                            &.--hovered {
+                    //                                                max-width: max-content;
+                    //                                                gap: 0;
+                    //                                                padding: 1.25rem 2rem;
+                    //
+                    //                                                span {
+                    //                                                    display: none;
+                    //                                                }
+                    //                                            }
+                    //                                        }
 
                     &.--selected-value {
                         &:not(.--list &) {
@@ -582,25 +610,41 @@
                 }
 
                 &.--secondary {
-                    max-width: 40%;
-                    width: 100%;
+                    width: 40%;
+                    transition:
+                        width 0.5s ease,
+                        opacity 0.3s ease;
 
-                    span {
-                        display: none;
-                    }
+                    @media (any-hover: hover) {
+                        &:hover {
+                            width: 70%;
 
-                    &.--active,
-                    &.--selected {
-                        max-width: 100%;
-                        max-height: 100%;
-                        width: 100%;
-
-                        span {
-                            &:first-child {
-                                display: block;
+                            span {
+                                width: 55%;
+                                opacity: 1;
+                                transition:
+                                    width 0.5s ease,
+                                    opacity 0.5s ease 0.3s;
                             }
                         }
                     }
+
+                    //                    span {
+                    //                        display: none;
+                    //                    }
+
+                    //                    &.--active,
+                    //                    &.--selected {
+                    //                        max-width: 100%;
+                    //                        max-height: 100%;
+                    //                        width: 100%;
+                    //
+                    //                        span {
+                    //                            &:first-child {
+                    //                                display: block;
+                    //                            }
+                    //                        }
+                    //                    }
                 }
             }
         }

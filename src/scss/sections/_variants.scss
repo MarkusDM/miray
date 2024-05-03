@@ -18,9 +18,5 @@
     &__list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-
-        @media (min-width: 48em) {
-            perspective: 1000px;
-        }
     }
 }
