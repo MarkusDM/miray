@@ -209,17 +209,44 @@ document.addEventListener('DOMContentLoaded', function () {
         const duration = 1000;
         let step = 0;
 
-        container.addEventListener('click', function (e) {
-            if (e.target.closest('.consultation__poster-img')) {
-                step = step >= 3 ? 0 : ++step;
+        const form = document.querySelector('.consultation__info-form');
+        const inputs = Array.from(form.querySelectorAll('.input'));
+
+        if (inputs.length) {
+            form.addEventListener('reset', function () {
+                step = 0;
+
                 container.dataset.step = step;
                 container.classList.add('_is-animating');
 
                 setTimeout(() => {
                     container.classList.remove('_is-animating');
                 }, duration);
-            }
-        });
+
+                removeClasses(inputs, '_done');
+            });
+            inputs.forEach((input) => {
+                input.addEventListener('focusout', function () {
+                    if (
+                        input.querySelector('.input__field').value.length &&
+                        !input.classList.contains('_done') &&
+                        !input.classList.contains('_has-error') &&
+                        step <= 3
+                    ) {
+                        ++step;
+
+                        input.classList.add('_done');
+
+                        container.dataset.step = step;
+                        container.classList.add('_is-animating');
+
+                        setTimeout(() => {
+                            container.classList.remove('_is-animating');
+                        }, duration);
+                    }
+                });
+            });
+        }
     }
 
     if (document.querySelector('.scroll-btn')) {

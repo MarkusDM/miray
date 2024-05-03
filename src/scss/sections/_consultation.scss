@@ -199,7 +199,6 @@
         width: 49.4rem;
         height: 76.2rem;
         transition: transform 1s ease;
-        cursor: pointer;
 
         @media (max-width: 48em) {
             width: 42rem;
@@ -258,7 +257,7 @@
         }
         &::after {
             position: absolute;
-            content: "";
+            content: '';
             width: 48.3rem;
             height: 48.3rem;
             background-color: rgb(244, 244, 244);
@@ -271,7 +270,7 @@
 
         &::before {
             position: absolute;
-            content: "";
+            content: '';
             width: 39.7rem;
             height: 39.7rem;
             background-color: rgb(244, 244, 244);
@@ -320,7 +319,7 @@
             }
 
             span {
-                color: #F4F4F4;
+                color: #f4f4f4;
                 font-weight: 400;
                 padding-right: 0.2rem;
             }
@@ -330,8 +329,6 @@
             }
         }
         &-image {
-          
-            
             img {
                 position: absolute;
                 width: 43rem;

@@ -1,5 +1,4 @@
 import { modules } from '../modules.js';
-import { bodyLock, bodyUnlock } from './utils';
 
 // --------------------------------------------------------------------------
 
@@ -16,7 +15,9 @@ class Validation {
         };
         this.classes = {
             HAS_ERROR: '_has-error',
-            HAS_FOCUS: '_has-focus'
+            HAS_FOCUS: '_has-focus',
+            IS_FILLED: '_is-filled',
+            IS_REVEALED: '_is-revealed'
         };
     }
 
@@ -39,6 +40,7 @@ class Validation {
 
     addError(requiredField) {
         requiredField.classList.add(this.classes.HAS_ERROR);
+        requiredField.parentElement.classList.remove(this.classes.IS_FILLED);
         requiredField.parentElement.classList.add(this.classes.HAS_ERROR);
     }
 
@@ -172,6 +174,7 @@ class FormSubmition extends Validation {
 
     init() {
         const _this = this;
+        const passwordFields = document.querySelectorAll('[data-required="pass"]');
 
         if (this.forms.length) {
             this.forms.forEach((form) => {
@@ -181,6 +184,22 @@ class FormSubmition extends Validation {
                 form.addEventListener('reset', function (e) {
                     _this.clearFields(e.target);
                 });
+            });
+        }
+
+        if (passwordFields.length) {
+            passwordFields.forEach((field) => {
+                const btn = field.nextElementSibling;
+
+                if (btn) {
+                    btn.addEventListener('click', function () {
+                        const type = field.parentElement.classList.contains(_this.classes.IS_REVEALED)
+                            ? 'password'
+                            : 'text';
+                        field.setAttribute('type', type);
+                        field.parentElement.classList.toggle(_this.classes.IS_REVEALED);
+                    });
+                }
             });
         }
     }
@@ -215,6 +234,14 @@ class FormFields extends Validation {
                 target.parentElement.classList.remove(this.classes.HAS_ERROR);
             }
 
+            if (
+                target.type !== 'file' &&
+                target.type !== 'checkbox' &&
+                target.type !== 'radio' &&
+                !target.closest('.quantity')
+            ) {
+                target.closest('.input').classList.remove(this.classes.IS_FILLED);
+            }
             this.removeError(target);
         }
     }
@@ -232,6 +259,19 @@ class FormFields extends Validation {
             }
             if (target.hasAttribute(this.attrs.VALIDATE)) {
                 this.validateField(target);
+            }
+
+            if (
+                target.type !== 'file' &&
+                target.type !== 'checkbox' &&
+                target.type !== 'radio' &&
+                !target.closest('.quantity')
+            ) {
+                if (!target.classList.contains(this.classes.HAS_ERROR) && target.value.trim()) {
+                    target.closest('.input').classList.add(this.classes.IS_FILLED);
+                } else {
+                    target.closest('.input').classList.remove(this.classes.IS_FILLED);
+                }
             }
         }
     }
