@@ -20,9 +20,7 @@
         @media (any-hover: hover) {
             &:hover {
                 transform: translateY(-1rem);
-                box-shadow:
-                    0 2rem 4rem rgba(23, 38, 47, 0.3),
-                    inset 0 0 0 1px #d7e5f4;
+                box-shadow: 0 2rem 4rem rgba(23, 38, 47, 0.3);
             }
         }
 
@@ -46,6 +44,7 @@
         &-image {
             border-radius: 2rem;
             background-color: $white;
+            overflow: hidden;
 
             @include sizes(100%, 26.5rem);
             margin-bottom: 2.4rem;

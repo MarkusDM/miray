@@ -1,4 +1,8 @@
 .sale {
+    .container {
+        padding-bottom: 5rem;
+        overflow: hidden;
+    }
     &__navigation-btn {
         position: absolute !important;
         z-index: 2;
@@ -31,6 +35,30 @@
     }
 
     &__sale-cards {
+        @media (any-hover: hover) {
+            &:hover {
+                .sale__pagination {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        &.swiper {
+            overflow: visible;
+        }
+
+        .sale__pagination {
+            bottom: -4rem;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition:
+                opacity 0.5s ease,
+                visibility 0.5s ease;
+        }
+
         @media (max-width: 48em) {
             margin-bottom: 4.8rem;
         }
@@ -133,6 +161,10 @@
             position: relative;
             z-index: 2;
             width: fit-content;
+
+            @media (max-width: 48em) {
+                display: none;
+            }
         }
 
         &-title {

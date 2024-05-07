@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
-import { remToPx } from '../utils/utils';
+import { removeClasses, remToPx } from '../utils/utils';
 
 document.addEventListener('DOMContentLoaded', () => {
     const swiperSettings = (initializer, payload) => {
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 invert: false
             },
             pagination: {
-                el: '.sale__pagination-bullets',
+                el: '.sale__swiper .sale__pagination-bullets',
                 clickable: true
             },
             navigation: {
@@ -100,16 +100,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const saleCardsSwiper = document.querySelector('.sale__sale-cards');
-    if (saleCardsSwiper && window.innerWidth <= 768) {
+    if (saleCardsSwiper) {
         // Initialize Swiper inside the DOMContentLoaded event listener
         new Swiper(saleCardsSwiper, {
-            modules: [],
-            slidesPerView: 'auto',
-            spaceBetween: 8,
+            modules: [Pagination],
+            slidesPerView: window.innerWidth > 768 ? 3 : 'auto',
+            spaceBetween: window.innerWidth > 768 ? remToPx(4) : 8,
             speed: 500,
-            loop: true,
             mousewheel: {
                 invert: false
+            },
+            pagination: {
+                el: '.sale__sale-cards .sale__pagination-bullets',
+                clickable: true
             }
         });
     }
@@ -127,7 +130,63 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-    swiperSettings('.recommendations', {});
+    swiperSettings('.recommendations', {
+        on: {
+            afterInit: (swiper) => {
+                swiper.slides.forEach((slide) => {
+                    const imagesContainer = slide.querySelector('.recommendations__card-image');
+                    const images = imagesContainer.querySelectorAll('img');
+                    const row = slide.querySelector('.recommendations__card-row');
+
+                    const bullets = document.createElement('div');
+                    bullets.classList.add('slide-hover-pag-bullets');
+                    slide.querySelector('.recommendations__card-image').append(bullets);
+
+                    images[0].classList.add('_is-active');
+
+                    if (images.length > 1) {
+                        for (let i = 1; i <= images.length; i++) {
+                            const div = document.createElement('div');
+                            div.classList.add('slide-hover-pag');
+                            row.append(div);
+
+                            const bullet = document.createElement('div');
+                            bullet.classList.add('slide-hover-pag-bullet');
+                            bullets.append(bullet);
+                        }
+
+                        imagesContainer.addEventListener('mouseover', function (e) {
+                            if (e.target.closest('.slide-hover-pag')) {
+                                const target = e.target.closest('.slide-hover-pag');
+                                const idx = Array.from(slide.querySelectorAll('.slide-hover-pag')).indexOf(
+                                    target
+                                );
+
+                                removeClasses(images, '_is-active');
+                                images[idx].classList.add('_is-active');
+
+                                removeClasses(
+                                    slide.querySelectorAll('.slide-hover-pag-bullet'),
+                                    '_is-active'
+                                );
+                                slide
+                                    .querySelectorAll('.slide-hover-pag-bullet')
+                                    [idx].classList.add('_is-active');
+                            }
+                        });
+
+                        imagesContainer.addEventListener('mouseleave', function () {
+                            removeClasses(images, '_is-active');
+                            images[0].classList.add('_is-active');
+
+                            removeClasses(slide.querySelectorAll('.slide-hover-pag-bullet'), '_is-active');
+                            slide.querySelectorAll('.slide-hover-pag-bullet')[0].classList.add('_is-active');
+                        });
+                    }
+                });
+            }
+        }
+    });
     swiperSettings('.watched-b', {});
     swiperSettings('.variants', {
         breakpoints: {

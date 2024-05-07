@@ -193,6 +193,13 @@
         background-color: $white;
         position: relative;
         z-index: 2;
+        visibility: hidden;
+
+        transition: visibility 0s ease 1s;
+
+        .hover & {
+            visibility: visible;
+        }
 
         @media (min-width: 48em) {
             column-gap: 1rem;
