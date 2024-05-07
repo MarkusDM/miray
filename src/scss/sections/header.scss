@@ -520,6 +520,16 @@
         background-color: $green;
         position: relative;
         z-index: 2;
+        transition:
+            transform 0.5s ease,
+            box-shadow 0.5s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                transform: translateY(-0.2rem);
+                box-shadow: 0 1.5rem 1.5rem -1rem rgba(34, 60, 80, 0.3);
+            }
+        }
 
         span {
             color: $white;

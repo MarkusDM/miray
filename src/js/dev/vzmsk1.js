@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         gsap.timeline({
             scrollTrigger: {
-                trigger: '.map',
+                trigger: '.popular',
                 onToggle: () => {
                     btn.classList.toggle('_is-visible');
                 }

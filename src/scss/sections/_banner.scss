@@ -90,6 +90,7 @@
             position: absolute;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             padding: 4.4rem 3.9rem;
             border-radius: 50%;
             background-color: $pink;
@@ -97,8 +98,12 @@
             bottom: -2.8rem;
             text-align: center;
             align-items: center;
-            @include sizes(17rem, 17rem);
+            @include sizes(23.8rem, 23.8rem);
             z-index: 1;
+
+            &-title {
+                white-space: nowrap;
+            }
 
             @include small-tablet {
                 @include sizes(24rem, 24rem);
@@ -108,6 +113,8 @@
             }
 
             &-subtitle {
+                font-size: 1.7rem;
+
                 @include small-tablet {
                     font-size: 3rem;
                     line-height: 130%;
