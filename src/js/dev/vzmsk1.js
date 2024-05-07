@@ -255,8 +255,15 @@ document.addEventListener('DOMContentLoaded', function () {
         gsap.timeline({
             scrollTrigger: {
                 trigger: '.popular',
-                onToggle: () => {
-                    btn.classList.toggle('_is-visible');
+                start: 'top center',
+                onEnter: () => {
+                    btn.classList.add('_is-visible');
+                },
+                onEnterBack: () => {
+                    btn.classList.add('_is-visible');
+                },
+                onLeaveBack: () => {
+                    btn.classList.remove('_is-visible');
                 }
             }
         });
