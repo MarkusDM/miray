@@ -9,7 +9,6 @@
     &__content {
         width: 100%;
         height: 81.2rem;
-        overflow: hidden;
         position: relative;
 
         @media (max-width: 48em) {
@@ -193,7 +192,7 @@
         width: 100%;
         background-color: $white;
         position: relative;
-        z-index: 2;
+        z-index: 8;
         visibility: hidden;
 
         transition: visibility 0s ease 1s;
@@ -230,10 +229,13 @@
     // .map-card__list
     &__list {
         position: absolute;
-        top: 102%;
+        top: 50%;
         left: 0;
-        z-index: 1;
+        z-index: 8;
         display: none;
+        @media (max-width: 48em) {
+            top: 102%;
+        }
         ._is-active & {
             display: flex;
             flex-direction: column;
@@ -289,7 +291,6 @@
         align-items: center;
         justify-content: center;
         gap: 1rem;
-        overflow: hidden;
         transition: all 0.4s ease-in-out;
         background-color: #fff;
         width: 8rem;
