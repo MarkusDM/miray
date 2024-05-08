@@ -442,6 +442,11 @@
         display: flex;
         align-items: center;
         gap: 1.2rem;
+
+        .btn {
+            height: 5.6rem;
+        }
+
         @media (max-width: 48em) {
             display: none;
         }
