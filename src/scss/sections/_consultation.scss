@@ -1,4 +1,30 @@
 .consultation {
+    &_cp {
+        .consultation {
+            &__poster-img {
+                bottom: -17rem;
+                width: 57.4rem;
+
+                @media (max-width: 48em) {
+                    bottom: -19rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+        @media (min-width: 48em) {
+            .consultation__poster[data-step='1'] .consultation__poster-img {
+                transform: translateY(-4rem) rotate(-8deg);
+            }
+            .consultation__poster[data-step='2'] .consultation__poster-img {
+                transform: translateY(-7rem) rotate(4deg);
+            }
+            .consultation__poster[data-step='3'] .consultation__poster-img {
+                transform: translateY(-15rem) rotate(-3deg);
+            }
+        }
+    }
+
     + section {
         position: relative;
         z-index: 5;
