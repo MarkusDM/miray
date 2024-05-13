@@ -27,10 +27,20 @@
             display: flex;
             align-items: center;
             gap: 2.4rem;
+            transition:
+                box-shadow 0.5s ease,
+                transform 1s ease;
 
             @include small-tablet {
                 padding: 3.2rem;
                 border-radius: 4.8rem;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    transform: translateY(-0.3rem);
+                    box-shadow: 0 1.5rem 2rem rgba(23, 38, 47, 0.2);
+                }
             }
         }
 

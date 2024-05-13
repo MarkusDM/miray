@@ -140,7 +140,7 @@
                         color: $grey-text;
                         transition: 0.3s color ease;
 
-                        @include small-tablet{
+                        @include small-tablet {
                             font-weight: 400;
                             font-size: 3rem;
                             line-height: 130%;
@@ -175,6 +175,11 @@
             }
 
             &-item {
+                border-radius: 50%;
+                transition:
+                    box-shadow 0.5s ease,
+                    transform 1s ease;
+
                 @include sizes(5.2rem, 5.2rem);
 
                 @include small-tablet {
@@ -184,6 +189,13 @@
                 svg {
                     height: 100%;
                     width: 100%;
+                }
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        transform: translateY(-0.3rem);
+                        box-shadow: 0 1.5rem 2rem rgba(23, 38, 47, 0.2);
+                    }
                 }
             }
         }

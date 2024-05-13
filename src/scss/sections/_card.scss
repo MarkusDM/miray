@@ -1,5 +1,24 @@
 .card {
     padding-top: 20rem;
+
+    .btn__card {
+        transition: background-color 0.5s ease;
+
+        span {
+            transition: color 0.5s ease;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $green;
+
+                span {
+                    color: $white;
+                }
+            }
+        }
+    }
+
     &__wrapper {
         display: flex;
         position: relative;

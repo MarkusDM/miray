@@ -482,7 +482,7 @@
         }
         &__canvas {
             margin-bottom: 1.2rem;
-            height: 60rem;
+            height: 50rem;
             overflow: hidden;
 
             @media (max-width: 48em) {
@@ -500,6 +500,11 @@
         }
         &__card {
             width: 100%;
+            box-shadow: 0 0 2.2rem rgba(1, 28, 3, 0.12);
+
+            .map-card__button span {
+                margin-right: -0.6rem;
+            }
 
             @media (min-width: 48em) {
                 min-height: 30rem;

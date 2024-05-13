@@ -1,7 +1,8 @@
 .sale {
     .container {
-        padding-bottom: 5rem;
-        overflow: hidden;
+        @media (min-width: 48em) {
+            padding-bottom: 5rem;
+        }
     }
     &__navigation-btn {
         position: absolute !important;
@@ -35,14 +36,15 @@
     }
 
     &__sale-cards {
+        .sale__pagination .swiper-pagination-bullet {
+            background-color: rgb(224, 223, 223);
+        }
+
         @media (any-hover: hover) {
             &:hover {
                 .sale__pagination {
                     opacity: 1;
                     visibility: visible;
-                }
-                .swiper-pagination-bullet {
-                    background-color: rgb(224, 223, 223);
                 }
             }
         }

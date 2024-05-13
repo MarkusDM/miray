@@ -26,6 +26,9 @@
         gap: 2rem;
         background-color: $grey-bg;
         height: 100%;
+        transition:
+            box-shadow 0.5s ease,
+            transform 1s ease;
 
         .promotions__card-icon {
             transition: transform 0.5s ease;
@@ -33,6 +36,11 @@
 
         @media (any-hover: hover) {
             &:hover {
+                &:not(&.--large) {
+                    transform: translateY(-0.5rem);
+                    box-shadow: 0 2rem 2rem rgba(23, 38, 47, 0.2);
+                }
+
                 .promotions__card-icon {
                     transform: translate(0.4rem, -0.4rem);
                 }

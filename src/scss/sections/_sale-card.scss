@@ -6,6 +6,21 @@
     &.swiper-slide {
         width: 53rem;
         height: auto;
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            box-shadow 0.5s ease,
+            transform 1s ease,
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        &.swiper-slide-active,
+        &.swiper-slide-next,
+        &.swiper-slide-next + .swiper-slide {
+            opacity: 1;
+            visibility: visible;
+        }
     }
     &:after {
         opacity: 0;
@@ -27,6 +42,11 @@
 
     @media (any-hover: hover) {
         &:hover {
+            &.swiper-slide {
+                transform: translateY(-0.5rem);
+                box-shadow: 0 2rem 2rem rgba(23, 38, 47, 0.2);
+            }
+
             &:after {
                 opacity: 1;
                 background-color: #ffcc00;
