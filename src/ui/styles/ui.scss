@@ -230,12 +230,14 @@
                         max-width: 7.3rem;
                         width: 100%;
                         display: block;
+                        color: #898485;
 
                         @include small-tablet {
                             max-width: 100%;
                             font-weight: 400;
                             font-size: 2.6rem;
                             line-height: 120%;
+                            transform: translateY(-0.5rem);
                         }
                     }
                 }
