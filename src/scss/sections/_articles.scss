@@ -1,9 +1,0 @@
-.articles {
-    &__title {
-        margin-bottom: 6rem;
-
-        @include small-tablet {
-            margin-bottom: 8rem;
-        }
-    }
-}
