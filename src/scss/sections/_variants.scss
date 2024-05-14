@@ -1,0 +1,22 @@
+.variants {
+    &__title {
+        margin-bottom: 4.8rem;
+
+        @include small-tablet {
+            margin-bottom: 8rem;
+        }
+    }
+
+    &__slider {
+        @media (min-width: 48em) {
+            &.swiper {
+                overflow: visible;
+            }
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

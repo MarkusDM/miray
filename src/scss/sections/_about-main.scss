@@ -1,0 +1,68 @@
+.about {
+    margin-bottom: 6.8rem;
+
+    @include small-tablet{
+        margin-bottom: 42.8rem;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        @include small-tablet {
+            flex-direction: column-reverse;
+            gap: 4.8rem;
+        }
+    }
+
+    &__text {
+        max-width: 80rem;
+        width: 100%;
+        margin-top: 4.8rem;
+
+        @include small-tablet {
+            max-width: 100%;
+            margin-top: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 4rem;
+
+        @include small-tablet {
+            margin-bottom: 4.8rem;
+        }
+    }
+
+    &__description {
+        font-weight: 400;
+        font-size: 2rem;
+        color: $grey-text;
+
+        @include small-tablet {
+            font-size: 3rem;
+            line-height: 130%;
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__image {
+        max-width: 82rem;
+        width: 100%;
+        border-radius: 2.4rem;
+
+        @include small-tablet {
+            max-width: 100%;
+            border-radius: 4.8rem;
+            height: 58.2rem;
+        }
+
+        img {
+            border-radius: inherit;
+            object-fit: cover;
+        }
+    }
+}

@@ -1,0 +1,179 @@
+.sale-card {
+    border-radius: 2.4rem;
+    background-color: $bgFon;
+    overflow: hidden;
+    position: relative;
+    &.swiper-slide {
+        width: 53rem;
+        height: auto;
+
+        @media (min-width: 48em) {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        transition:
+            box-shadow 0.5s ease,
+            transform 1s ease,
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        &.swiper-slide-active,
+        &.swiper-slide-next,
+        &.swiper-slide-next + .swiper-slide {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &:after {
+        opacity: 0;
+        content: '';
+        position: absolute;
+        z-index: 1;
+        border-radius: 50%;
+        right: 12rem;
+        top: 10rem;
+        height: 2rem;
+        width: 2rem;
+        transition: all 2s cubic-bezier(0.25, 0.19, 0.64, 1.36);
+        background-color: $bgFon;
+    }
+
+    .sale-card__percent span {
+        transition: transform 0.5s ease;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            &.swiper-slide {
+                transform: translateY(-0.5rem);
+                box-shadow: 0 2rem 2rem rgba(23, 38, 47, 0.2);
+            }
+
+            &:after {
+                opacity: 1;
+                background-color: #ffcc00;
+            }
+            .sale-card__percent span {
+                transform: translate(0.3rem, calc((50% + 0.3rem) * -1));
+            }
+        }
+    }
+
+    @media (max-width: 48em) {
+        border-radius: 4.8rem;
+        &.swiper-slide {
+            width: 52rem;
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 23.6rem;
+        column-gap: 2rem;
+        padding: 2rem;
+        position: relative;
+        z-index: 3;
+
+        @media (max-width: 48em) {
+            padding-top: 3.2rem;
+            grid-template-columns: 1fr;
+            justify-content: stretch;
+        }
+    }
+    &__image {
+        width: 23.6rem;
+        height: 20rem;
+        grid-row: 1 / 4;
+        grid-column: 2 / 3;
+        border-radius: 1.6rem;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1.6rem;
+        }
+        @media (max-width: 48em) {
+            margin-bottom: 4rem;
+            grid-row: 3 / 4;
+            grid-column: 1 / 2;
+            width: 100%;
+            height: 38.8rem;
+            border-radius: 3.2rem;
+
+            img {
+                border-radius: 3.2rem;
+            }
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: 48em) {
+            width: 23.6rem;
+        }
+    }
+
+    &__percent {
+        width: 100%;
+        font-size: 4.8rem;
+        font-weight: 600;
+        color: $pink;
+        line-height: 110%;
+        letter-spacing: 4%;
+        position: relative;
+        border-bottom: 1.5px solid rgb(43, 86, 68);
+        padding-bottom: 0.4rem;
+        margin-bottom: 1.2rem;
+        span {
+            position: absolute;
+            content: '';
+            width: 3.2rem;
+            height: 3.2rem;
+            background-image: url(./assets/images/sale/arrow.svg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+        @media (max-width: 48em) {
+            margin-bottom: 2.4rem;
+            padding-bottom: 0.8rem;
+            font-size: 4.8rem;
+            &::before {
+                top: 0;
+                width: 4.8rem;
+                height: 4.8rem;
+                transform: none;
+            }
+        }
+    }
+
+    &__date {
+        margin-bottom: 4rem;
+        color: $grey-text;
+        font-size: 1.6rem;
+        font-weight: 400;
+
+        @media (max-width: 48em) {
+            font-size: 3rem;
+            grid-row: 2 / 3;
+        }
+    }
+
+    &__text {
+        margin-top: auto;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 120%;
+
+        @media (max-width: 48em) {
+            margin-top: 0;
+            font-size: 3.6rem;
+            font-weight: 500;
+        }
+    }
+}

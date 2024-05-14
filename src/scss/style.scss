@@ -1,0 +1,145 @@
+// --------------------------------- mixins ---------------------------------
+
+@import './mixins';
+
+// -------------------------------- variables -------------------------------
+
+// colors
+$white: #ffffff;
+$black: #000000;
+$black-secondary: #1d1d1b;
+$fontColor: #1d1d1b;
+$green: #2b5644;
+$light-green: #559479;
+$pink: #e29aa8;
+$light-pink: #eec2cb;
+$grey-text: #898485;
+$grey-bg: #f4f4f4;
+$bgFon: rgb(244, 244, 244);
+$bgFonElement: #e6e6e6;
+
+// ---------------------------------- fonts ---------------------------------
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,regular,700&display=swap);
+
+// local fonts
+@import './fonts';
+
+// ------------------------------- base styles ------------------------------
+
+// base scss file
+@import './set';
+
+// html
+html.lock,
+html.lock body {
+    overflow: hidden;
+    touch-action: none;
+}
+html,
+body {
+    overflow-x: clip;
+}
+
+// main
+main {
+    position: relative;
+}
+
+section {
+    margin-bottom: 12rem;
+
+    @media (max-width: 48em) {
+        margin-bottom: 20rem;
+    }
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1920px;
+    margin-top: 21.4rem;
+
+    @media (max-width: 48em) {
+        margin-top: 30.4rem;
+    }
+}
+
+._desktop-only {
+    @media (max-width: 48em) {
+        display: none;
+    }
+}
+._mobile-only {
+    @media (min-width: 48em) {
+        display: none;
+    }
+}
+
+._desktop-only {
+    @media (max-width: 48em) {
+        display: none;
+    }
+}
+._mobile-only {
+    @media (min-width: 48em) {
+        display: none;
+    }
+}
+
+.swiper-grid > .swiper-wrapper {
+    @media (max-width: 48em) {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        .swiper-slide {
+            height: calc((100% - 30px) / 2) !important;
+        }
+    }
+}
+
+.swiper-button-next,
+.swiper-button-prev,
+.scroll-btn {
+    border-radius: 50%;
+    background: transparent;
+    width: 5.6rem !important;
+    height: 5.6rem !important;
+    position: initial !important;
+    margin: 0 !important;
+    border: 0.1rem solid $green;
+
+    @include small-tablet {
+        width: 8.8rem !important;
+        height: 8.8rem !important;
+    }
+
+    &::after {
+        display: none;
+        visibility: hidden;
+    }
+
+    svg {
+        width: 2.5rem !important;
+        height: 1.9rem !important;
+
+        @include small-tablet {
+            width: 3.4rem !important;
+            height: 2.6rem !important;
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+
+// header / footer
+@import './sections/header';
+@import './sections/footer';
+
+// ui
+@import '../ui/styles/ui.scss';
+
+// --------------------------------------------------------------------------
+
+@import './dev/vzmsk1.scss';
+@import './dev/markusDM.scss';
+@import './dev/ukik0.scss';
+@import './dev/kie6er.scss';

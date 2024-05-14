@@ -1,0 +1,243 @@
+.figuration {
+    &__slider {
+        overflow: visible !important;
+
+        .swiper-slide {
+            height: unset;
+        }
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+
+        @include small-tablet{
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &__subtitle {
+        display: block;
+        margin-bottom: 4.8rem;
+
+        @include small-tablet{
+            margin-bottom: 8rem;
+            font-weight: 400;
+            font-size: 3rem;
+            line-height: 130%;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__item {
+        border-radius: 3.2rem;
+        background-color: $grey-bg;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+        height: 100%;
+
+        @include small-tablet{
+            border-radius: 4.8rem;
+        }
+
+        &:not(:has(.figuration__item-wrapper)) {
+            overflow: hidden;
+            padding: 3.2rem;
+
+            &::after {
+                @include pseudo {
+                    background-color: $white;
+                    width: 79.2rem;
+                    height: 64.4rem;
+                    z-index: -1;
+                    border-radius: 50%;
+                    opacity: 0.7;
+                }
+            }
+        }
+
+        &-wrapper {
+            overflow: hidden;
+            position: relative;
+            padding: 3.2rem;
+            padding-bottom: 9.4rem;
+            height: 100%;
+
+            &::after {
+                @include pseudo {
+                    width: 79.2rem;
+                    height: 64.4rem;
+                    background-color: $white;
+                    z-index: -1;
+                    border-radius: 50%;
+                    opacity: 0.7;
+                    bottom: -30rem;
+                    right: -40.6rem;
+                }
+            }
+        }
+
+        .header__phone {
+            width: fit-content;
+            position: absolute;
+            bottom: 3.2rem;
+            left: 3.2rem;
+
+            @include small-tablet{
+                width: calc(100% - 3.2rem);
+            }
+
+            &-btn {
+                background-color: $pink;
+
+                @include small-tablet{
+                    padding: 1.6rem;
+                    border-radius: 10rem;
+                    height: 8.8rem;
+
+                    .phone {
+                        width: 5.6rem;
+                        height: 5.6rem;
+                        margin-right: 2rem;
+                    }
+
+                    span {
+                        font-weight: 400;
+                        font-size: 3rem;
+                        line-height: 130%;
+                    }
+
+                    svg {
+                        width: 5.6rem;
+                        height: 5.6rem;
+                    }
+                }
+            }
+
+            &-list {
+                &.show {
+                    border-color: $pink;
+                }
+
+                @include small-tablet{
+                    display: none;
+                }
+            }
+        }
+
+        &:nth-child(1) {
+            &::after {
+                left: -36.4rem;
+                top: -39.3rem;
+            }
+        }
+
+        &:nth-child(3) {
+            &::after {
+                top: -35.7rem;
+                right: -37.4rem;
+            }
+        }
+
+        &-icon {
+            display: block;
+            margin-left: auto;
+            @include sizes(6rem, 6rem);
+            margin-bottom: 2rem;
+
+            @include small-tablet{
+                @include sizes(8rem, 8rem);
+                margin-bottom: 0;
+            }
+        }
+
+        &-counter {
+            display: block;
+            padding-bottom: 1.2rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 0.1rem solid $fontColor;
+
+            @include small-tablet{
+                font-weight: 600;
+                font-size: 4.8rem;
+                line-height: 110%;
+                letter-spacing: 0.04em;
+                padding-bottom: 3.8rem;
+                margin-bottom: 2.4rem;
+                transform: translateY(-7rem);
+                margin-bottom: -4.6rem;
+            }
+        }
+
+        &-description {
+            margin-bottom: 4rem;
+
+            @include small-tablet{
+                font-weight: 400;
+                font-size: 3rem;
+                line-height: 130%;
+                margin-bottom: 8rem;
+            }
+        }
+
+        &-bottom {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+
+            @include small-tablet{
+                gap: 2.4rem;
+            }
+
+            &-icon {
+                @include sizes(5.6rem, 5.6rem);
+
+                @include small-tablet{
+                    @include sizes(8.8rem, 8.8rem);
+                }
+
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $pink;
+
+                img {
+                    width: 2.8rem;
+                    height: 2.8rem;
+
+                    @include small-tablet{
+                        width: 5.6rem;
+                        height: 5.6rem;
+                    }
+                }
+            }
+
+            &-text {
+                @include small-tablet{
+                    font-weight: 400;
+                    font-size: 3rem;
+                    line-height: 130%;
+                }
+            }
+        }
+
+        &-link {
+            width: fit-content;
+            padding: 1.65rem 9.1rem;
+            margin-top: auto;
+
+            @include small-tablet{
+                @include small-tablet{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

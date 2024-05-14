@@ -1,0 +1,148 @@
+.news {
+    &__card {
+        position: relative;
+        padding: 3.2rem;
+        background-color: $grey-bg;
+        border-radius: 3rem;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 50rem;
+
+        transition:
+            background-color 0.5s ease,
+            border-radius 0.5s ease;
+
+        .popular__btn-arrow {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition:
+                opacity 0.5s ease,
+                visibility 0.5s ease;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $light-green;
+                border-radius: 3rem 22rem 3rem 3rem;
+
+                .news__card-publication-icon {
+                    opacity: 0;
+                }
+
+                .popular__btn-arrow {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                .news {
+                    &__card-image {
+                        border-radius: 2rem 22rem 2rem 2rem;
+                    }
+                    &__card-publication-date,
+                    &__card-title,
+                    &__card-description {
+                        color: $white;
+                    }
+                    &__card-publication-icon {
+                        svg path {
+                            stroke: $white;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include small-tablet {
+            border-radius: 4.8rem;
+        }
+
+        &-image {
+            border-radius: 2rem;
+            height: 38rem;
+            margin-bottom: 2.4rem;
+
+            transition: border-radius 0.5s ease;
+
+            @include small-tablet {
+                margin-bottom: 3.2rem;
+                border-radius: 3.2rem;
+                height: 54rem;
+            }
+
+            img {
+                height: 100%;
+                object-fit: cover;
+                border-radius: inherit;
+            }
+        }
+
+        &-publication {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.6rem;
+            gap: 1rem;
+
+            &-icon {
+                transition: opacity 0.5s ease;
+            }
+
+            @include small-tablet {
+                margin-bottom: 3.2rem;
+            }
+
+            svg {
+                @include sizes(3.2rem, 3.2rem);
+
+                @include small-tablet {
+                    @include sizes(4.8rem, 4.8rem);
+                }
+
+                path {
+                    transition: stroke 0.5s ease;
+                }
+            }
+
+            &-date {
+                transition: color 0.5s ease;
+
+                @include small-tablet {
+                    font-weight: 400;
+                    font-size: 3rem;
+                    line-height: 130%;
+                }
+            }
+        }
+
+        &-title {
+            margin-bottom: 0.8rem;
+            transition: color 0.5s ease;
+
+            @include small-tablet {
+                margin-bottom: 1.6rem;
+                font-weight: 500;
+                font-size: 3.6rem;
+                line-height: 120%;
+                letter-spacing: 0.04em;
+            }
+        }
+
+        &-description {
+            transition: color 0.5s ease;
+
+            @include clamp-text(3);
+
+            @include small-tablet {
+                font-weight: 400;
+                font-size: 3rem;
+                line-height: 130%;
+            }
+        }
+    }
+}
