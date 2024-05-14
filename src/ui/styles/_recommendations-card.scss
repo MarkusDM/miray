@@ -39,7 +39,10 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                display: none;
+
+                ._hover-init & {
+                    display: none;
+                }
                 &._is-active {
                     display: block;
                 }
@@ -314,6 +317,7 @@
 
         &-latest {
             position: absolute;
+            z-index: 2;
             top: 3.2rem;
             left: 3.2rem;
             padding: 1.25rem 2rem;
@@ -324,6 +328,15 @@
             color: $white;
             display: block;
             width: fit-content;
+
+            @media (max-width: 48em) {
+                top: 6rem;
+                left: 6rem;
+
+                padding: 1.2rem 2.8rem;
+
+                font-size: 2.4rem;
+            }
         }
 
         &.--list {
@@ -771,6 +784,16 @@
                 background: rgba(244, 244, 244, 0.4);
                 @include sizes(4.4rem, 4.4rem);
 
+                @media (max-width: 48em) {
+                    max-width: 8.8rem;
+                    height: 8.8rem;
+
+                    svg {
+                        width: 3rem;
+                        height: 3rem;
+                    }
+                }
+
                 svg {
                     width: 2rem;
                     height: 2rem;
@@ -826,5 +849,32 @@
                 }
             }
         }
+    }
+}
+
+.recommendations__card-group-button .cr {
+    position: relative;
+
+    margin-right: 0.5rem;
+
+    color: #e3e3e3;
+
+    @media (max-width: 48em) {
+        margin-right: 1rem;
+    }
+
+    &::before {
+        content: '';
+
+        position: absolute;
+        top: 50%;
+        left: 0;
+
+        width: 100%;
+        height: 1.5px;
+
+        background-color: $white;
+
+        transform: translateY(-50%);
     }
 }

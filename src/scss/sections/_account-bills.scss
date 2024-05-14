@@ -161,5 +161,10 @@
     &__price {
         color: $green;
         line-height: 1;
+
+        @media (max-width: 48em) {
+            font-size: 3.6rem;
+            font-weight: 500;
+        }
     }
 }

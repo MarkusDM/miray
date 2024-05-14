@@ -13,7 +13,7 @@ utils.showmore();
 // ------------------------------- components -------------------------------
 
 // forms
-import './utils/forms';
+// import './utils/forms';
 
 // tabs
 import './utils/tabs.js';
@@ -29,7 +29,6 @@ import './utils/modals.js';
 
 // modals
 import './utils/modals.js';
-
 
 // ---------------------------------- libs ----------------------------------
 

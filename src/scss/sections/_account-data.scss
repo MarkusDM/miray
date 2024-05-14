@@ -27,6 +27,13 @@
         }
     }
 
+    &__list-item-heading {
+        @media (max-width: 48em) {
+            font-size: 3.6rem;
+            font-weight: 500;
+        }
+    }
+
     &__list-item {
         display: block;
         width: 100%;

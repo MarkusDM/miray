@@ -482,7 +482,7 @@
         }
         &__canvas {
             margin-bottom: 1.2rem;
-            height: 50rem;
+            height: 50vh;
             overflow: hidden;
 
             @media (max-width: 48em) {
@@ -543,6 +543,8 @@
 
         @media (max-width: 48em) {
             margin-bottom: 1.6rem;
+
+            font-size: 3.6rem;
         }
     }
 

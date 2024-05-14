@@ -107,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slidesPerView: window.innerWidth > 768 ? 3 : 'auto',
             spaceBetween: window.innerWidth > 768 ? remToPx(4) : 8,
             speed: 500,
+            loop: true,
             mousewheel: {
                 invert: false
             },
@@ -145,6 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     images[0].classList.add('_is-active');
 
                     if (images.length > 1) {
+                        slide.classList.add('_hover-init');
+
                         for (let i = 1; i <= images.length; i++) {
                             const div = document.createElement('div');
                             div.classList.add('slide-hover-pag');

@@ -69,6 +69,12 @@
 }
 
 .badge-myprofile-account {
+    &__heading {
+        @media (max-width: 48em) {
+            font-size: 3.6rem;
+            font-weight: 500;
+        }
+    }
     &__inner {
         padding: 1.2rem 4rem;
         display: inline-flex;
@@ -106,6 +112,18 @@
     flex-direction: column;
     border-radius: 4.8rem;
     background-color: $bgFon;
+
+    &__subtitle {
+        .card-myprofile-account_green & {
+            color: $white;
+        }
+
+        @media (max-width: 48em) {
+            font-size: 3.6rem;
+            font-weight: 500;
+            color: #898485;
+        }
+    }
 
     @media (min-width: 48em) {
         padding: 3.2rem;
@@ -212,6 +230,10 @@
         @media (max-width: 48em) {
             flex-direction: column;
             row-gap: 4.8rem;
+
+            .card-myprofile-account__txt {
+                font-size: 3rem;
+            }
         }
     }
 
@@ -246,13 +268,18 @@
         width: fit-content;
         &::after {
             position: absolute;
-            content:'';
+            content: '';
             width: 2rem;
             height: 2rem;
             background-image: url(../assets/images/sections/placing-an/caran.svg);
             background-repeat: no-repeat;
             background-size: 100% 100%;
             right: 0;
+        }
+
+        @media (max-width: 48em) {
+            font-size: 3rem;
+            font-weight: 500;
         }
     }
 
@@ -295,10 +322,14 @@
     }
 
     &__single-link {
-        align-self: flex-start;
+        align-self: flex-end;
 
-        @media (min-width: 48em) {
-            align-self: flex-end;
+        @media (max-width: 48em) {
+            align-self: flex-start;
+
+            .text {
+                font-size: 3rem;
+            }
         }
     }
 }

@@ -6,8 +6,11 @@
     &.swiper-slide {
         width: 53rem;
         height: auto;
-        opacity: 0;
-        visibility: hidden;
+
+        @media (min-width: 48em) {
+            opacity: 0;
+            visibility: hidden;
+        }
 
         transition:
             box-shadow 0.5s ease,

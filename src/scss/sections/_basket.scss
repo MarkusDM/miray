@@ -518,6 +518,7 @@
                     font-size: 1.6rem;
                     line-height: 120%;
                     color: $fontColor;
+                    white-space: nowrap;
 
                     @include small-tablet {
                         font-size: 3rem;
@@ -794,13 +795,13 @@
                         width: 100%;
                         opacity: 0;
                         transition:
-                                0.3s visibility ease-out,
-                                0.3s opacity ease;
+                            0.3s visibility ease-out,
+                            0.3s opacity ease;
                         visibility: hidden;
                         cursor: initial;
                     }
 
-                    @include small-tablet{
+                    @include small-tablet {
                     }
                 }
 
@@ -809,7 +810,7 @@
                     flex-direction: column;
                     gap: 1.6rem;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         gap: 3rem;
                     }
                 }
@@ -820,7 +821,7 @@
                     position: relative;
                     padding-left: 1.5rem;
 
-                    @include small-tablet{
+                    @include small-tablet {
                         padding-left: 4rem;
                         font-weight: 400;
                         font-size: 3rem;
@@ -836,9 +837,9 @@
                             height: 0.4rem;
                             background-color: $fontColor;
 
-                            @include small-tablet{
-                                width: .8rem;
-                                height: .8rem;
+                            @include small-tablet {
+                                width: 0.8rem;
+                                height: 0.8rem;
                                 top: 1.5rem;
                                 left: 2rem;
                             }

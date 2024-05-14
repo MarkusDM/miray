@@ -1,6 +1,10 @@
 .card {
     padding-top: 20rem;
 
+    @media (max-width: 48em) {
+        padding-top: 29rem;
+    }
+
     .btn__card {
         transition: background-color 0.5s ease;
 
@@ -403,15 +407,31 @@
             border-radius: 10rem;
             background-color: $green;
             cursor: pointer;
+
+            @media (max-width: 48em) {
+                width: 23.8rem;
+                height: 10.4rem;
+            }
+
             &-plus {
                 width: 2.4rem;
                 height: 2.4rem;
                 margin-right: 0.4rem;
+
+                @media (max-width: 48em) {
+                    width: 3rem;
+                    height: 3rem;
+                }
             }
 
             &-box {
                 width: 2.4rem;
                 height: 2.4rem;
+
+                @media (max-width: 48em) {
+                    width: 4rem;
+                    height: 4rem;
+                }
             }
         }
 
@@ -453,6 +473,10 @@
         &-inner {
             display: flex;
             margin-bottom: 0.8rem;
+
+            @media (max-width: 48em) {
+                margin-bottom: 1.6rem;
+            }
         }
 
         &-inner-block {
@@ -462,6 +486,10 @@
             background-color: $white;
             justify-content: space-between;
             width: 100%;
+
+            @media (max-width: 48em) {
+                padding: 1rem;
+            }
         }
 
         &-plus,
@@ -476,6 +504,11 @@
             font-size: 1.8rem;
             font-weight: 400;
 
+            @media (max-width: 48em) {
+                width: 8.8rem;
+                height: 8.8rem;
+            }
+
             svg {
                 width: 2.4rem;
                 height: 2.4rem;
@@ -488,6 +521,10 @@
             text-align: center;
             display: block;
             width: 12rem;
+
+            @media (max-width: 48em) {
+                font-size: 3rem;
+            }
         }
 
         &-attention {
@@ -529,6 +566,13 @@
                     font-size: 1.6rem;
                     margin-bottom: 0.8rem;
                     list-style-type: disc;
+
+                    @media (max-width: 48em) {
+                        margin-bottom: 1.6rem;
+
+                        font-size: 3rem;
+                        font-weight: 400;
+                    }
                 }
 
                 li:last-child {
@@ -735,7 +779,13 @@
     &__description {
         display: flex;
         justify-content: space-between;
-        margin-top: 26rem;
+        margin-top: 12rem;
+
+        @media (min-width: 48em) {
+            &.mt24 {
+                margin-top: 24rem;
+            }
+        }
     }
 
     &__description-left {
@@ -1219,6 +1269,10 @@
         .catalog__sorting-field .select__options .select__option {
             font-size: 2rem;
             padding: 0 0 2.4rem;
+
+            @media (max-width: 48em) {
+                font-size: 3rem;
+            }
         }
 
         &__right-sidebar {
@@ -1266,6 +1320,16 @@
                 &-hide {
                     font-size: 3rem;
                     line-height: 120%;
+
+                    @media (max-width: 48em) {
+                        padding-left: 5.6rem;
+                    }
+                }
+
+                &-btn {
+                    @media (max-width: 48em) {
+                        padding-left: 6rem;
+                    }
                 }
             }
         }
@@ -1484,5 +1548,13 @@
                 height: 4rem;
             }
         }
+    }
+}
+
+.card__retail-desk {
+    margin-bottom: 2.1rem;
+
+    @media (max-width: 48em) {
+        margin-bottom: 3.2rem;
     }
 }
