@@ -8,7 +8,10 @@
         overflow: hidden;
         height: 100%;
         position: relative;
-
+        max-width: 39rem;
+        @media (max-width: 48em) {
+            max-width: 100%;
+        }
         &-row {
             position: absolute;
             top: 0;
@@ -315,11 +318,19 @@
             }
         }
 
-        &-latest {
+        &-wrap {
             position: absolute;
             z-index: 2;
             top: 3.2rem;
             left: 3.2rem;
+            @media (max-width: 48em) {
+                top: 6rem;
+                left: 6rem;
+            }
+        }
+
+        &-latest {
+           
             padding: 1.25rem 2rem;
             border-radius: 10rem;
             background: $light-green;
@@ -328,13 +339,59 @@
             color: $white;
             display: block;
             width: fit-content;
-
+            margin-bottom: 0.8rem;
             @media (max-width: 48em) {
-                top: 6rem;
-                left: 6rem;
-
                 padding: 1.2rem 2.8rem;
+                font-size: 2.4rem;
+            }
+        }
 
+        &-hit {
+            padding: 1.25rem 2rem;
+            border-radius: 10rem;
+            background: #2B5644;
+            font-size: 1.6rem;
+            line-height: 120%;
+            color: $white;
+            display: block;
+            width: fit-content;
+            margin-bottom: 0.8rem;
+            @media (max-width: 48em) {
+                padding: 1.2rem 2.8rem;
+                font-size: 2.4rem;
+            }
+        }
+
+        &-sale {
+            padding: 1.25rem 2rem;
+            border-radius: 10rem;
+            background: #E29AA8;
+            font-size: 1.6rem;
+            line-height: 120%;
+            color: $white;
+            display: block;
+            font-weight: bold;
+            width: fit-content;
+            min-width: 8.4rem;
+            margin-bottom: 0.8rem;
+            @media (max-width: 48em) {
+                padding: 1.2rem 2.8rem;
+                font-size: 2.4rem;
+            }
+        }
+
+        &-expectation {
+            padding: 1.25rem 2rem;
+            border-radius: 10rem;
+            background: #898485;
+            font-size: 1.6rem;
+            line-height: 120%;
+            color: $white;
+            display: block;
+            width: fit-content;
+            margin-bottom: 0.8rem;
+            @media (max-width: 48em) {
+                padding: 1.2rem 2.8rem;
                 font-size: 2.4rem;
             }
         }
