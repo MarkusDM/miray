@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const inputFrom = document.getElementById('from');
     const inputTo = document.getElementById('to');
-    const elementsStart = document.querySelector('[data-value-start]');
-    const elementsEnd = document.querySelector('[data-value-end]');
     const attributeValuesRange = []; 
 
     if (rangeSlider) {
@@ -32,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return Math.round(value).toLocaleString('ru-RU') + '₽';
                 },
                 from: function (value) {
-                    return value.replace(' ₽', '').replace(/\s/g, '');
+                    return value.replace('₽', '').replace(/\s/g, '');
                 }
             }
         });
@@ -47,12 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
             input.addEventListener('click', () => {
                 input.value = "";
             });
+
             input.addEventListener('change', (event) => {
                 const value = event.currentTarget.value.replace('₽', '').replace(/\s/g, '');
                 const range = [null, null];
                 range[index] = value;
 
                 rangeSlider.noUiSlider.set(range);
+
+                // Принудительно вызвать событие обновления для ползунка
+                const changeEvent = new Event('change');
+                rangeSlider.dispatchEvent(changeEvent);
             });
         });
     }
