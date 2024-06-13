@@ -397,10 +397,15 @@
         }
 
         &.--list {
+            max-width: 100%;
             .catalog-page & {
                 @media (min-width: 48em) {
                     flex-direction: row;
                     gap: 2.1rem;
+
+                    .recommendations__card-wrap {
+                        display: none;
+                    }
 
                     .recommendations__card {
                         &-title {
@@ -432,7 +437,7 @@
                             margin-left: auto;
                             max-width: 27.9rem;
                             width: 100%;
-                            margin-right: 10.8rem;
+                           
                             display: flex;
                             flex-direction: column;
                         }
