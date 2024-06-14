@@ -2,25 +2,17 @@ import noUiSlider from 'nouislider';
 
 export const rangeSlider = document.querySelector('.range-slider');
 document.addEventListener('DOMContentLoaded', () => {
-
     const inputFrom = document.getElementById('from');
     const inputTo = document.getElementById('to');
-    const attributeValuesRange = []; 
-
+    const attributeValuesRange = [];
     if (rangeSlider) {
-        console.log(typeof inputFrom.dataset.fromMin);
-        console.log(typeof inputTo.dataset.toMax);
-        console.log(typeof inputFrom.dataset.startNumber);
-        console.log(typeof inputTo.dataset.endNumber);
-
-        const startValue = parseInt(inputFrom.dataset.startNumber, 10);
-        const endValue = parseInt(inputTo.dataset.endNumber, 10);
+        const startValue = Math.floor(parseInt(inputFrom.dataset.startNumber, 10));
+        const endValue =  Math.ceil(parseInt(inputTo.dataset.endNumber, 10));
         attributeValuesRange.push(startValue, endValue);
-
-        noUiSlider.create(rangeSlider, {
+        nouislider.create(rangeSlider, {
             range: {
-                min: Number(inputFrom.dataset.fromMin),
-                max: Number(inputTo.dataset.toMax)
+                min: Math.floor(Number(inputFrom.dataset.fromMin)),
+                max:  Math.ceil(Number(inputTo.dataset.toMax))
             },
             step: 1,
             start: attributeValuesRange,
@@ -34,29 +26,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
-
         const inputs = [inputFrom, inputTo];
-
         rangeSlider.noUiSlider.on('update', (values, handle) => {
             inputs[handle].value = values[handle];
-        });
 
+        });
+        rangeSlider.noUiSlider.on('set', (values, handle) => {
+            const event = new Event('input', { bubbles: true });
+            inputs[handle].dispatchEvent(event);
+        });
         inputs.forEach((input, index) => {
             input.addEventListener('click', () => {
                 input.value = "";
             });
 
-            input.addEventListener('change', (event) => {
+            input.addEventListener('change', event => {
                 const value = event.currentTarget.value.replace('₽', '').replace(/\s/g, '');
                 const range = [null, null];
                 range[index] = value;
-
                 rangeSlider.noUiSlider.set(range);
-
-                // Принудительно вызвать событие обновления для ползунка
-                const changeEvent = new Event('change');
-                rangeSlider.dispatchEvent(changeEvent);
             });
         });
+        const attributeChangeCallback = function(mutationsList, observer) {
+            for(let mutation of mutationsList) {
+                if (mutation.type === 'attributes' && (mutation.attributeName === 'data-from-min' || mutation.attributeName === 'data-to-max')) {
+                    const newValue = mutation.target.getAttribute(mutation.attributeName);
+                    const parsedValue = Number(newValue);
+                    if (mutation.attributeName === 'data-from-min') {
+                        rangeSlider.noUiSlider.set([parsedValue, rangeSlider.noUiSlider.get()[1]],true, true);
+                        rangeSlider.noUiSlider.updateOptions({
+                            range: {
+                                'min': parsedValue,
+                                'max': Number(inputTo.dataset.toMax)
+                            }
+                        });
+                    } else if (mutation.attributeName === 'data-to-max') {
+                        rangeSlider.noUiSlider.set([rangeSlider.noUiSlider.get()[0], parsedValue],true, true);
+                        rangeSlider.noUiSlider.updateOptions({
+                            range: {
+                                'min': Number(inputFrom.dataset.fromMin),
+                                'max': parsedValue
+                            }
+                        });
+                    }
+                }
+            }
+        };
+        const observer = new MutationObserver(attributeChangeCallback);
+        observer.observe(inputFrom, { attributes: true });
+        observer.observe(inputTo, { attributes: true });
     }
 });
