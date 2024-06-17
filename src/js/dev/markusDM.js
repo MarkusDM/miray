@@ -123,4 +123,39 @@ $(document).on('mouseup', function(e){
   }
 });
 
+$(document).ready(function() {
+  const minValue = 1;
 
+  $('#increase').click(function() {
+      let currentValue = parseInt($('#number').val());
+      $('#number').val(currentValue + 1);
+  });
+
+  $('#decrease').click(function() {
+      let currentValue = parseInt($('#number').val());
+      if (currentValue > minValue) {
+          $('#number').val(currentValue - 1);
+      }
+  });
+});
+
+
+$(document).ready(function() {
+  const minValue = 1;
+
+  $('.card__calc').each(function() {
+      const $calculator = $(this);
+
+      $calculator.find('.card__calc-plus').click(function() {
+          let currentValue = parseInt($calculator.find('.card__calc-input').val());
+          $calculator.find('.card__calc-input').val(currentValue + 1);
+      });
+
+      $calculator.find('.card__calc-minus').click(function() {
+          let currentValue = parseInt($calculator.find('.card__calc-input').val());
+          if (currentValue > minValue) {
+              $calculator.find('.card__calc-input').val(currentValue - 1);
+          }
+      });
+  });
+});
