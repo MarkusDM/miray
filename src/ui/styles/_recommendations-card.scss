@@ -1,942 +1,1042 @@
+.recommendations__card._is-active .recommendations__card-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 7.8rem;
+  background-color: #ffffff;
+  padding: 0.8rem;
+  border-radius: 6rem;
+
+  @media (max-width: 48em) {
+    padding: 1.2rem;
+
+    height: 10rem;
+    border-radius: 20rem;
+  }
+}
+
+.recommendations__card .recommendations__card-cart-btn {
+  display: none;
+}
+
+.recommendations__card._is-active .recommendations__card-button {
+  display: none;
+}
+
 .recommendations {
-    &__card {
+  .quantity__button_plus.basket__card-info-top-counter-field-button {
+    order: 1;
+  }
+  .basket__card-info-top-counter-field input {
+    margin-right: 0.5rem;
+
+    width: 2.2rem;
+
+    @media (max-width: 48em) {
+      margin-right: 4rem;
+
+      width: 18rem;
+    }
+  }
+  .quantity {
+    column-gap: normal;
+
+    &::after {
+      margin-right: 2rem;
+
+      @media (max-width: 48em) {
+        display: none;
+      }
+    }
+  }
+  .basket__card-info-top-counter-button {
+    width: 9rem;
+    height: 6rem;
+    flex: 0 0 9rem;
+
+    @media (max-width: 48em) {
+      display: inline-flex;
+      flex: 0 0 18.8rem;
+      width: 18.8rem;
+      height: 8rem;
+    }
+  }
+  .basket__card-info-top-counter-field-button {
+    &:first-child {
+      margin-right: 4rem;
+    }
+
+    @media (min-width: 48em) {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 4.4rem;
+      max-width: none;
+      width: 4.4rem;
+      height: 4.4rem;
+      border-radius: 50%;
+
+      background-color: #f4f4f4;
+
+      &:first-child {
+        margin-right: 2rem;
+      }
+    }
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+
+      @media (max-width: 48em) {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+  }
+
+  .quantity {
+    &::after {
+      content: attr(data-text);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: $grey-bg;
+    border-radius: 3rem;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    max-width: 39rem;
+    @media (max-width: 48em) {
+      max-width: 100%;
+    }
+    &-row {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      display: flex;
+      width: 100%;
+      height: 100%;
+
+      .slide-hover-pag {
+        flex: 1 1 auto;
+      }
+    }
+
+    &-image {
+      position: relative;
+
+      @media (any-hover: hover) {
+        &:hover {
+          .slide-hover-pag-bullets {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        ._hover-init & {
+          display: none;
+        }
+        &._is-active {
+          display: block;
+        }
+      }
+
+      .slide-hover-pag-bullets {
+        position: absolute;
+        right: 2rem;
+        bottom: 1rem;
+
+        display: flex;
+        justify-content: center;
+        column-gap: 0.4rem;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease;
+      }
+
+      .slide-hover-pag-bullet {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        opacity: 1;
+        border: 1px solid $green;
+        transition: background-color 0.3s ease;
+
+        &._is-active {
+          background-color: rgb(43, 86, 68);
+        }
+      }
+    }
+
+    .btn__card {
+      transition: background-color 0.5s ease;
+
+      span {
+        transition: color 0.5s ease;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: $green;
+
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    @include small-tablet {
+      padding: 3.2rem;
+      border-radius: 4.8rem;
+    }
+
+    &-promotions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      position: absolute;
+      left: 3.2rem;
+      top: 3.2rem;
+
+      @include small-tablet {
+        top: 4.8rem;
+        left: 5.7rem;
+        gap: 1.6rem;
+      }
+    }
+
+    &-discard {
+      padding: 1rem 2rem;
+      background: $pink;
+      border-radius: 10rem;
+      width: fit-content;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 120%;
+      color: $white;
+
+      @include small-tablet {
+        padding: 1.2rem 2.8rem;
+        font-weight: 500;
+        font-size: 3rem;
+        line-height: 120%;
+        letter-spacing: 0.04em;
+        border-radius: 20rem;
+      }
+    }
+
+    &-hit {
+      padding: 1.25rem 2rem;
+      width: fit-content;
+      border-radius: 10rem;
+      background-color: $green;
+      font-size: 1.6rem;
+      line-height: 120%;
+      color: $white;
+
+      @include small-tablet {
+        border-radius: 20rem;
+        padding: 1.2rem 2.8rem;
+        font-weight: 400;
+        font-size: 2.4rem;
+        line-height: 130%;
+      }
+    }
+
+    &-promotion {
+      position: absolute;
+      top: 26.5rem;
+      left: 2rem;
+      right: 2rem;
+      padding: 1.2rem 2rem 0.8rem 2rem;
+      backdrop-filter: blur(4.8rem);
+      background: rgba(244, 244, 244, 0.4);
+      border-radius: 0 0 2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include small-tablet {
+        top: 43.6rem;
+        left: 3.2rem;
+        right: 3.2rem;
+        padding: 3.2rem 8.3rem;
+        border-radius: 0 0 4rem 4rem;
+      }
+
+      &-counter {
         display: flex;
         flex-direction: column;
-        padding: 2rem;
-        background: $grey-bg;
-        border-radius: 3rem;
-        overflow: hidden;
-        height: 100%;
-        position: relative;
-        max-width: 39rem;
-        @media (max-width: 48em) {
-            max-width: 100%;
-        }
-        &-row {
-            position: absolute;
-            top: 0;
-            left: 0;
-
-            display: flex;
-            width: 100%;
-            height: 100%;
-
-            .slide-hover-pag {
-                flex: 1 1 auto;
-            }
-        }
-
-        &-image {
-            position: relative;
-
-            @media (any-hover: hover) {
-                &:hover {
-                    .slide-hover-pag-bullets {
-                        opacity: 1;
-                        visibility: visible;
-                    }
-                }
-            }
-
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-
-                ._hover-init & {
-                    display: none;
-                }
-                &._is-active {
-                    display: block;
-                }
-            }
-
-            .slide-hover-pag-bullets {
-                position: absolute;
-                right: 2rem;
-                bottom: 1rem;
-
-                display: flex;
-                justify-content: center;
-                column-gap: 0.4rem;
-
-                opacity: 0;
-                visibility: hidden;
-
-                transition:
-                    opacity 0.3s ease,
-                    visibility 0.3s ease;
-            }
-
-            .slide-hover-pag-bullet {
-                width: 0.8rem;
-                height: 0.8rem;
-                border-radius: 50%;
-                opacity: 1;
-                border: 1px solid $green;
-                transition: background-color 0.3s ease;
-
-                &._is-active {
-                    background-color: rgb(43, 86, 68);
-                }
-            }
-        }
-
-        .btn__card {
-            transition: background-color 0.5s ease;
-
-            span {
-                transition: color 0.5s ease;
-            }
-
-            @media (any-hover: hover) {
-                &:hover {
-                    background-color: $green;
-
-                    span {
-                        color: $white;
-                    }
-                }
-            }
-        }
+        align-items: center;
+        text-align: center;
 
         @include small-tablet {
-            padding: 3.2rem;
-            border-radius: 4.8rem;
+          gap: 0.4rem;
         }
 
-        &-promotions {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            position: absolute;
-            left: 3.2rem;
-            top: 3.2rem;
+        strong {
+          font-weight: 600;
+          font-size: 2rem;
+          line-height: 120%;
+          letter-spacing: 0.04em;
+          color: #1d1d1b;
 
-            @include small-tablet {
-                top: 4.8rem;
-                left: 5.7rem;
-                gap: 1.6rem;
-            }
-        }
-
-        &-discard {
-            padding: 1rem 2rem;
-            background: $pink;
-            border-radius: 10rem;
-            width: fit-content;
-            font-weight: 700;
-            font-size: 1.8rem;
+          @include small-tablet {
+            font-weight: 500;
+            font-size: 3rem;
             line-height: 120%;
-            color: $white;
+            letter-spacing: 0.04em;
+          }
+        }
 
-            @include small-tablet {
-                padding: 1.2rem 2.8rem;
-                font-weight: 500;
-                font-size: 3rem;
-                line-height: 120%;
+        span {
+          font-size: 1.6rem;
+          line-height: 120%;
+          color: #1d1d1b;
+
+          @include small-tablet {
+            font-weight: 400;
+            font-size: 2.4rem;
+            line-height: 130%;
+          }
+        }
+      }
+    }
+
+    &-countdown {
+      max-width: 21.8rem;
+      width: 100%;
+      position: relative;
+
+      @include small-tablet {
+        max-width: 35rem;
+      }
+
+      &::after {
+        @include pseudo {
+          top: 50%;
+          transform: translateY(-50%);
+          height: calc(100% - 1.1rem);
+          right: -2.6rem;
+          width: 0.1rem;
+          background-color: $black;
+
+          @include small-tablet {
+            height: 100%;
+            right: -3.2rem;
+            transform: none;
+            top: 0;
+          }
+        }
+      }
+
+      &-list {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        position: relative;
+
+        @include small-tablet {
+          gap: 0.4rem;
+        }
+
+        &:not(:last-child) {
+          &::after {
+            @include pseudo {
+              content: ":";
+              right: -2.3rem;
+              top: 50%;
+              transform: translateY(-50%);
+              font-weight: 600;
+              font-size: 2rem;
+              line-height: 120%;
+              letter-spacing: 0.04em;
+              color: #000;
+
+              @include small-tablet {
+                right: -5.2rem;
+                font-weight: 600;
+                font-size: 5.6rem;
+                line-height: 110%;
                 letter-spacing: 0.04em;
-                border-radius: 20rem;
+                color: #1d1d1b;
+              }
             }
+          }
         }
 
-        &-hit {
-            padding: 1.25rem 2rem;
-            width: fit-content;
-            border-radius: 10rem;
-            background-color: $green;
-            font-size: 1.6rem;
+        strong {
+          font-weight: 600;
+          font-size: 2rem;
+          line-height: 120%;
+          letter-spacing: 0.04em;
+          color: #1d1d1b;
+
+          @include small-tablet {
+            font-weight: 500;
+            font-size: 3rem;
             line-height: 120%;
-            color: $white;
-
-            @include small-tablet {
-                border-radius: 20rem;
-                padding: 1.2rem 2.8rem;
-                font-weight: 400;
-                font-size: 2.4rem;
-                line-height: 130%;
-            }
+            letter-spacing: 0.04em;
+          }
         }
 
-        &-promotion {
-            position: absolute;
-            top: 26.5rem;
-            left: 2rem;
-            right: 2rem;
-            padding: 1.2rem 2rem 0.8rem 2rem;
-            backdrop-filter: blur(4.8rem);
-            background: rgba(244, 244, 244, 0.4);
-            border-radius: 0 0 2rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        span {
+          font-weight: 400;
+          font-size: 1.6rem;
+          line-height: 120%;
+          color: #1d1d1b;
 
-            @include small-tablet {
-                top: 43.6rem;
-                left: 3.2rem;
-                right: 3.2rem;
-                padding: 3.2rem 8.3rem;
-                border-radius: 0 0 4rem 4rem;
-            }
-
-            &-counter {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-
-                @include small-tablet {
-                    gap: 0.4rem;
-                }
-
-                strong {
-                    font-weight: 600;
-                    font-size: 2rem;
-                    line-height: 120%;
-                    letter-spacing: 0.04em;
-                    color: #1d1d1b;
-
-                    @include small-tablet {
-                        font-weight: 500;
-                        font-size: 3rem;
-                        line-height: 120%;
-                        letter-spacing: 0.04em;
-                    }
-                }
-
-                span {
-                    font-size: 1.6rem;
-                    line-height: 120%;
-                    color: #1d1d1b;
-
-                    @include small-tablet {
-                        font-weight: 400;
-                        font-size: 2.4rem;
-                        line-height: 130%;
-                    }
-                }
-            }
+          @include small-tablet {
+            font-weight: 400;
+            font-size: 2.4rem;
+            line-height: 130%;
+          }
         }
+      }
+    }
 
-        &-countdown {
-            max-width: 21.8rem;
-            width: 100%;
-            position: relative;
+    &-wrap {
+      position: absolute;
+      z-index: 2;
+      top: 3.2rem;
+      left: 3.2rem;
+      @media (max-width: 48em) {
+        top: 6rem;
+        left: 6rem;
+      }
+    }
 
-            @include small-tablet {
-                max-width: 35rem;
-            }
+    &-latest {
+      padding: 1.25rem 2rem;
+      border-radius: 10rem;
+      background: $light-green;
+      font-size: 1.6rem;
+      line-height: 120%;
+      color: $white;
+      display: block;
+      width: fit-content;
+      margin-bottom: 0.8rem;
+      @media (max-width: 48em) {
+        padding: 1.2rem 2.8rem;
+        font-size: 2.4rem;
+      }
+    }
 
-            &::after {
-                @include pseudo {
-                    top: 50%;
-                    transform: translateY(-50%);
-                    height: calc(100% - 1.1rem);
-                    right: -2.6rem;
-                    width: 0.1rem;
-                    background-color: $black;
+    &-hit {
+      padding: 1.25rem 2rem;
+      border-radius: 10rem;
+      background: #2b5644;
+      font-size: 1.6rem;
+      line-height: 120%;
+      color: $white;
+      display: block;
+      width: fit-content;
+      margin-bottom: 0.8rem;
+      @media (max-width: 48em) {
+        padding: 1.2rem 2.8rem;
+        font-size: 2.4rem;
+      }
+    }
 
-                    @include small-tablet {
-                        height: 100%;
-                        right: -3.2rem;
-                        transform: none;
-                        top: 0;
-                    }
-                }
-            }
+    &-sale {
+      padding: 1.25rem 2rem;
+      border-radius: 10rem;
+      background: #e29aa8;
+      font-size: 1.6rem;
+      line-height: 120%;
+      color: $white;
+      display: block;
+      font-weight: bold;
+      width: fit-content;
+      min-width: 8.4rem;
+      margin-bottom: 0.8rem;
+      @media (max-width: 48em) {
+        padding: 1.2rem 2.8rem;
+        font-size: 2.4rem;
+      }
+    }
 
-            &-list {
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
+    &-expectation {
+      padding: 1.25rem 2rem;
+      border-radius: 10rem;
+      background: #898485;
+      font-size: 1.6rem;
+      line-height: 120%;
+      color: $white;
+      display: block;
+      width: fit-content;
+      margin-bottom: 0.8rem;
+      @media (max-width: 48em) {
+        padding: 1.2rem 2.8rem;
+        font-size: 2.4rem;
+      }
+    }
 
-            &-item {
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                align-items: center;
-                position: relative;
+    &.--list {
+      max-width: 100%;
+      .catalog-page & {
+        @media (min-width: 48em) {
+          flex-direction: row;
+          gap: 2.1rem;
 
-                @include small-tablet {
-                    gap: 0.4rem;
-                }
-
-                &:not(:last-child) {
-                    &::after {
-                        @include pseudo {
-                            content: ':';
-                            right: -2.3rem;
-                            top: 50%;
-                            transform: translateY(-50%);
-                            font-weight: 600;
-                            font-size: 2rem;
-                            line-height: 120%;
-                            letter-spacing: 0.04em;
-                            color: #000;
-
-                            @include small-tablet {
-                                right: -5.2rem;
-                                font-weight: 600;
-                                font-size: 5.6rem;
-                                line-height: 110%;
-                                letter-spacing: 0.04em;
-                                color: #1d1d1b;
-                            }
-                        }
-                    }
-                }
-
-                strong {
-                    font-weight: 600;
-                    font-size: 2rem;
-                    line-height: 120%;
-                    letter-spacing: 0.04em;
-                    color: #1d1d1b;
-
-                    @include small-tablet {
-                        font-weight: 500;
-                        font-size: 3rem;
-                        line-height: 120%;
-                        letter-spacing: 0.04em;
-                    }
-                }
-
-                span {
-                    font-weight: 400;
-                    font-size: 1.6rem;
-                    line-height: 120%;
-                    color: #1d1d1b;
-
-                    @include small-tablet {
-                        font-weight: 400;
-                        font-size: 2.4rem;
-                        line-height: 130%;
-                    }
-                }
-            }
-        }
-
-        &-wrap {
-            position: absolute;
-            z-index: 2;
-            top: 3.2rem;
-            left: 3.2rem;
-            @media (max-width: 48em) {
-                top: 6rem;
-                left: 6rem;
-            }
-        }
-
-        &-latest {
-           
-            padding: 1.25rem 2rem;
-            border-radius: 10rem;
-            background: $light-green;
-            font-size: 1.6rem;
-            line-height: 120%;
-            color: $white;
-            display: block;
-            width: fit-content;
-            margin-bottom: 0.8rem;
-            @media (max-width: 48em) {
-                padding: 1.2rem 2.8rem;
-                font-size: 2.4rem;
-            }
-        }
-
-        &-hit {
-            padding: 1.25rem 2rem;
-            border-radius: 10rem;
-            background: #2B5644;
-            font-size: 1.6rem;
-            line-height: 120%;
-            color: $white;
-            display: block;
-            width: fit-content;
-            margin-bottom: 0.8rem;
-            @media (max-width: 48em) {
-                padding: 1.2rem 2.8rem;
-                font-size: 2.4rem;
-            }
-        }
-
-        &-sale {
-            padding: 1.25rem 2rem;
-            border-radius: 10rem;
-            background: #E29AA8;
-            font-size: 1.6rem;
-            line-height: 120%;
-            color: $white;
-            display: block;
-            font-weight: bold;
-            width: fit-content;
-            min-width: 8.4rem;
-            margin-bottom: 0.8rem;
-            @media (max-width: 48em) {
-                padding: 1.2rem 2.8rem;
-                font-size: 2.4rem;
-            }
-        }
-
-        &-expectation {
-            padding: 1.25rem 2rem;
-            border-radius: 10rem;
-            background: #898485;
-            font-size: 1.6rem;
-            line-height: 120%;
-            color: $white;
-            display: block;
-            width: fit-content;
-            margin-bottom: 0.8rem;
-            @media (max-width: 48em) {
-                padding: 1.2rem 2.8rem;
-                font-size: 2.4rem;
-            }
-        }
-
-        &.--list {
-            max-width: 100%;
-            .catalog-page & {
-                @media (min-width: 48em) {
-                    flex-direction: row;
-                    gap: 2.1rem;
-
-                    .recommendations__card-wrap {
-                        display: none;
-                    }
-
-                    .recommendations__card {
-                        &-title {
-                            margin-bottom: 1.2rem;
-                        }
-
-                        &-image {
-                            max-width: 23rem;
-                            width: 100%;
-                            margin-bottom: 0;
-                            display: flex;
-                            height: auto;
-                        }
-
-                        &-middle {
-                            display: flex;
-                            flex-direction: column;
-                            max-width: 53.1rem;
-                            width: 100%;
-                            gap: 8rem;
-                        }
-
-                        &-info {
-                            display: flex;
-                            margin-top: auto;
-                        }
-
-                        &-groups {
-                            margin-left: auto;
-                            max-width: 27.9rem;
-                            width: 100%;
-                           
-                            display: flex;
-                            flex-direction: column;
-                        }
-
-                        &-group {
-                            flex-direction: column;
-                            gap: 1.2rem;
-                            align-items: flex-start;
-                            background-color: transparent;
-                            margin: 0;
-
-                            &-button {
-                                max-width: 100%;
-                                width: fit-content;
-                                justify-content: flex-start;
-                                height: auto;
-
-                                &:first-child {
-                                    padding: 1.2rem 1.6rem;
-                                }
-
-                                &:last-child {
-                                    margin-left: 1.2rem;
-                                }
-                            }
-                        }
-
-                        &-button {
-                            margin-top: auto;
-                            max-width: 24rem;
-                            width: 100%;
-                        }
-
-                        &-favorite-button {
-                            display: block;
-                            right: 2rem;
-                            top: 2rem;
-                        }
-                    }
-                }
-            }
-
-            &:not(.catalog-page &) {
-                flex-direction: row;
-                gap: 2.1rem;
-
-                .recommendations__card {
-                    &-title {
-                        margin-bottom: 1.2rem;
-                    }
-
-                    &-image {
-                        max-width: 23rem;
-                        width: 100%;
-                        margin-bottom: 0;
-                        display: flex;
-                        height: auto;
-                    }
-
-                    &-middle {
-                        display: flex;
-                        flex-direction: column;
-                        max-width: 53.1rem;
-                        width: 100%;
-                        gap: 8rem;
-                    }
-
-                    &-info {
-                        display: flex;
-                        margin-top: auto;
-                    }
-
-                    &-groups {
-                        margin-left: auto;
-                        max-width: 27.9rem;
-                        width: 100%;
-                        margin-right: 10.8rem;
-                        display: flex;
-                        flex-direction: column;
-                    }
-
-                    &-group {
-                        flex-direction: column;
-                        gap: 1.2rem;
-                        align-items: flex-start;
-                        background-color: transparent;
-                        margin: 0;
-
-                        &-button {
-                            max-width: 100%;
-                            width: fit-content;
-                            justify-content: flex-start;
-                            height: auto;
-
-                            &:first-child {
-                                padding: 1.2rem 1.6rem;
-                            }
-
-                            &:last-child {
-                                margin-left: 1.2rem;
-                            }
-                        }
-                    }
-
-                    &-button {
-                        margin-top: auto;
-                        max-width: 24rem;
-                        width: 100%;
-                    }
-
-                    &-favorite-button {
-                        display: block;
-                        right: 2rem;
-                        top: 2rem;
-                    }
-                }
-            }
-        }
-
-        &-info {
+          .recommendations__card-wrap {
             display: none;
-            flex-direction: column;
-            gap: 1.6rem;
+          }
 
-            &-item {
-                display: flex;
-                align-items: center;
-                gap: 0.8rem;
+          .recommendations__card {
+            &-title {
+              margin-bottom: 1.2rem;
+            }
 
-                &-icon {
-                    @include sizes(2rem, 2rem);
+            &-image {
+              max-width: 23rem;
+              width: 100%;
+              margin-bottom: 0;
+              display: flex;
+              height: auto;
+            }
+
+            &-middle {
+              display: flex;
+              flex-direction: column;
+              max-width: 53.1rem;
+              width: 100%;
+              gap: 8rem;
+            }
+
+            &-info {
+              display: flex;
+              margin-top: auto;
+            }
+
+            &-groups {
+              margin-left: auto;
+              max-width: 27.9rem;
+              width: 100%;
+
+              display: flex;
+              flex-direction: column;
+            }
+
+            &-group {
+              flex-direction: column;
+              gap: 1.2rem;
+              align-items: flex-start;
+              background-color: transparent;
+              margin: 0;
+
+              &-button {
+                max-width: 100%;
+                width: fit-content;
+                justify-content: flex-start;
+                height: auto;
+
+                &:first-child {
+                  padding: 1.2rem 1.6rem;
                 }
 
-                &-text {
-                    color: $grey-text;
-
-                    span {
-                        color: $fontColor;
-                    }
+                &:last-child {
+                  margin-left: 1.2rem;
                 }
-            }
-        }
-
-        &-image {
-            border-radius: 2rem;
-            @include sizes(100%, 30.8rem);
-            margin-bottom: 1.6rem;
-
-            @include small-tablet {
-                height: 54rem;
-                margin-bottom: 3.2rem;
-                border-radius: 4rem;
-            }
-
-            img {
-                border-radius: inherit;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        &-title {
-            margin-bottom: 0.8rem;
-
-            transition: text-shadow 0.5s ease;
-
-            @include clamp-text(2);
-
-            @include small-tablet {
-                margin-bottom: 1.6rem;
-                font-weight: 400;
-                font-size: 3rem;
-                line-height: 130%;
-            }
-
-            @media (any-hover: hover) {
-                &:hover {
-                    text-shadow:
-                        -0.005rem -0.005rem 0 rgba(29, 29, 27, 0.3),
-                        0.005rem -0.005rem 0 rgba(29, 29, 27, 0.3),
-                        -0.005rem 0.005rem 0 rgba(29, 29, 27, 0.3),
-                        0.005rem 0.005rem 0 rgba(29, 29, 27, 0.3);
-                }
-            }
-        }
-
-        &-articul {
-            display: block;
-            margin-bottom: 2rem;
-            color: #898485;
-
-            @include small-tablet {
-                font-weight: 400;
-                font-size: 3rem;
-                line-height: 130%;
-                margin-bottom: 3.2rem;
-            }
-        }
-
-        &-group {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            justify-content: space-between;
-            margin-bottom: 1.6rem;
-            background-color: $white;
-            border-radius: 10rem;
-            margin-top: auto;
-            overflow: hidden;
-
-            @include small-tablet {
-                border-radius: 20rem;
-                margin-bottom: 3.2rem;
+              }
             }
 
             &-button {
-                border-radius: 10rem;
-                color: $green;
-                font-size: 1.6rem;
-                line-height: 120%;
-                text-align: center;
-                display: flex;
-                align-items: center;
-                height: 4.4rem;
-                white-space: nowrap;
-                justify-content: center;
-                overflow: hidden;
-
-                @include small-tablet {
-                    border-radius: 20rem;
-                    font-weight: 400;
-                    font-size: 3rem;
-                    line-height: 130%;
-                    height: 8rem;
-                }
-
-                span {
-                    width: 0;
-                    opacity: 0;
-                    transition:
-                        width 0.5s ease 0.3s,
-                        opacity 0.3s ease 0s;
-                }
-
-                &.--primary {
-                    position: relative;
-                    z-index: 2;
-                    background-color: $green;
-                    color: $white;
-                    flex: 1 1 auto;
-                    width: 11rem;
-
-                    &.--hovered {
-                        span:last-child {
-                            width: 0;
-                            opacity: 0;
-                        }
-                    }
-
-                    span {
-                        &:last-child {
-                            display: block;
-                            width: auto;
-                            opacity: 1;
-                        }
-                    }
-
-                    @media (any-hover: hover) {
-                        &:hover {
-                            span {
-                                width: auto;
-                                opacity: 1;
-                                transition:
-                                    width 0.5s ease,
-                                    opacity 0.5s ease 0.3s;
-                            }
-                            + .recommendations__card-group-button {
-                                opacity: 0;
-                                width: 0;
-                            }
-                        }
-                    }
-
-                    //                    @include hover {
-                    //                        &:not(.--selected-value) {
-                    //                            max-width: 100%;
-                    //                            max-height: 100%;
-                    //                            width: 100%;
-                    //
-                    //                            span {
-                    //                                &:first-child {
-                    //                                    display: block;
-                    //                                }
-                    //                            }
-                    //
-                    //                            &:not(.--list &) {
-                    //                                ~ button {
-                    //                                    display: none;
-                    //                                }
-                    //                            }
-                    //                        }
-                    //                    }
-
-                    &.--selected {
-                        max-height: 100%;
-                        width: 100%;
-
-                        span {
-                            &:first-child {
-                                display: block;
-                            }
-                        }
-
-                        &:not(.--list &) {
-                            ~ button {
-                                display: none;
-                            }
-                        }
-                    }
-
-                    //                                        &:not(.--list &) {
-                    //                                            &.--hovered {
-                    //                                                max-width: max-content;
-                    //                                                gap: 0;
-                    //                                                padding: 1.25rem 2rem;
-                    //
-                    //                                                span {
-                    //                                                    display: none;
-                    //                                                }
-                    //                                            }
-                    //                                        }
-
-                    &.--selected-value {
-                        &:not(.--list &) {
-                            max-width: max-content;
-                            gap: 0;
-                            padding: 1.25rem 2rem;
-
-                            span {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-
-                &.--secondary {
-                    width: 40%;
-                    transition:
-                        width 0.5s ease,
-                        opacity 0.3s ease;
-
-                    @media (any-hover: hover) {
-                        &:hover {
-                            width: 70%;
-
-                            span {
-                                width: 55%;
-                                opacity: 1;
-                                transition:
-                                    width 0.5s ease,
-                                    opacity 0.5s ease 0.3s;
-                            }
-                        }
-                    }
-
-                    //                    span {
-                    //                        display: none;
-                    //                    }
-
-                    //                    &.--active,
-                    //                    &.--selected {
-                    //                        max-width: 100%;
-                    //                        max-height: 100%;
-                    //                        width: 100%;
-                    //
-                    //                        span {
-                    //                            &:first-child {
-                    //                                display: block;
-                    //                            }
-                    //                        }
-                    //                    }
-                }
+              margin-top: auto;
+              max-width: 24rem;
+              width: 100%;
             }
-        }
 
-        &-favorite-button {
+            &-favorite-button {
+              display: block;
+              right: 2rem;
+              top: 2rem;
+            }
+          }
+        }
+      }
+
+      &:not(.catalog-page &) {
+        flex-direction: row;
+        gap: 2.1rem;
+
+        .recommendations__card {
+          &-title {
+            margin-bottom: 1.2rem;
+          }
+
+          &-image {
+            max-width: 23rem;
+            width: 100%;
+            margin-bottom: 0;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            z-index: 3;
-            right: 3.2rem;
-            top: 3.2rem;
-            border-radius: 50%;
-            @include sizes(2.4rem, 2.4rem);
+            height: auto;
+          }
 
-            @include small-tablet {
-                @include sizes(6.4rem, 6.4rem);
-                padding: 1.6rem;
-                top: 4.8rem;
-                right: 4.8rem;
+          &-middle {
+            display: flex;
+            flex-direction: column;
+            max-width: 53.1rem;
+            width: 100%;
+            gap: 8rem;
+          }
+
+          &-info {
+            display: flex;
+            margin-top: auto;
+          }
+
+          &-groups {
+            margin-left: auto;
+            max-width: 27.9rem;
+            width: 100%;
+            margin-right: 10.8rem;
+            display: flex;
+            flex-direction: column;
+          }
+
+          &-group {
+            flex-direction: column;
+            gap: 1.2rem;
+            align-items: flex-start;
+            background-color: transparent;
+            margin: 0;
+
+            &-button {
+              max-width: 100%;
+              width: fit-content;
+              justify-content: flex-start;
+              height: auto;
+
+              &:first-child {
+                padding: 1.2rem 1.6rem;
+              }
+
+              &:last-child {
+                margin-left: 1.2rem;
+              }
             }
+          }
 
-            .favorites-page & {
-                backdrop-filter: blur(4.8rem);
-                background: rgba(244, 244, 244, 0.4);
-                @include sizes(4.4rem, 4.4rem);
+          &-button {
+            margin-top: auto;
+            max-width: 24rem;
+            width: 100%;
+          }
 
-                @media (max-width: 48em) {
-                    max-width: 8.8rem;
-                    height: 8.8rem;
-
-                    svg {
-                        width: 3rem;
-                        height: 3rem;
-                    }
-                }
-
-                svg {
-                    width: 2rem;
-                    height: 2rem;
-                }
-            }
-
-            &.--active {
-                svg {
-                    path {
-                        &:first-child {
-                            fill: $pink;
-                            stroke: $pink;
-                        }
-
-                        &:last-child {
-                            fill: $pink;
-                        }
-                    }
-                }
-            }
-
-            svg {
-                width: 2.4rem;
-                height: 2.4rem;
-                transition: 0.3s all ease;
-
-                path {
-                    transition: 0.3s all ease;
-
-                    &:first-child {
-                        fill: $grey-text;
-                        stroke: $grey-text;
-                    }
-
-                    &:last-child {
-                        fill: transparent;
-                    }
-                }
-            }
-
-            @include hover {
-                svg {
-                    path {
-                        &:first-child {
-                            fill: $pink;
-                            stroke: $pink;
-                        }
-
-                        &:last-child {
-                            fill: $pink;
-                        }
-                    }
-                }
-            }
+          &-favorite-button {
+            display: block;
+            right: 2rem;
+            top: 2rem;
+          }
         }
+      }
     }
+
+    &-info {
+      display: none;
+      flex-direction: column;
+      gap: 1.6rem;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+
+        &-icon {
+          @include sizes(2rem, 2rem);
+        }
+
+        &-text {
+          color: $grey-text;
+
+          span {
+            color: $fontColor;
+          }
+        }
+      }
+    }
+
+    &-image {
+      border-radius: 2rem;
+      @include sizes(100%, 30.8rem);
+      margin-bottom: 1.6rem;
+
+      @include small-tablet {
+        height: 54rem;
+        margin-bottom: 3.2rem;
+        border-radius: 4rem;
+      }
+
+      img {
+        border-radius: inherit;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-title {
+      margin-bottom: 0.8rem;
+
+      transition: text-shadow 0.5s ease;
+
+      @include clamp-text(2);
+
+      @include small-tablet {
+        margin-bottom: 1.6rem;
+        font-weight: 400;
+        font-size: 3rem;
+        line-height: 130%;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          text-shadow:
+            -0.005rem -0.005rem 0 rgba(29, 29, 27, 0.3),
+            0.005rem -0.005rem 0 rgba(29, 29, 27, 0.3),
+            -0.005rem 0.005rem 0 rgba(29, 29, 27, 0.3),
+            0.005rem 0.005rem 0 rgba(29, 29, 27, 0.3);
+        }
+      }
+    }
+
+    &-articul {
+      display: block;
+      margin-bottom: 2rem;
+      color: #898485;
+
+      @include small-tablet {
+        font-weight: 400;
+        font-size: 3rem;
+        line-height: 130%;
+        margin-bottom: 3.2rem;
+      }
+    }
+
+    &-group {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 1.6rem;
+      background-color: $white;
+      border-radius: 10rem;
+      margin-top: auto;
+      overflow: hidden;
+
+      @include small-tablet {
+        border-radius: 20rem;
+        margin-bottom: 3.2rem;
+      }
+
+      &-button {
+        border-radius: 10rem;
+        color: $green;
+        font-size: 1.6rem;
+        line-height: 120%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        height: 4.4rem;
+        white-space: nowrap;
+        justify-content: center;
+        overflow: hidden;
+
+        @include small-tablet {
+          border-radius: 20rem;
+          font-weight: 400;
+          font-size: 3rem;
+          line-height: 130%;
+          height: 8rem;
+        }
+
+        span {
+          width: 0;
+          opacity: 0;
+          transition:
+            width 0.5s ease 0.3s,
+            opacity 0.3s ease 0s;
+        }
+
+        &.--primary {
+          position: relative;
+          z-index: 2;
+          background-color: $green;
+          color: $white;
+          flex: 1 1 auto;
+          width: 11rem;
+
+          &.--hovered {
+            span:last-child {
+              width: 0;
+              opacity: 0;
+            }
+          }
+
+          span {
+            &:last-child {
+              display: block;
+              width: auto;
+              opacity: 1;
+            }
+          }
+
+          @media (any-hover: hover) {
+            &:hover {
+              span {
+                width: auto;
+                opacity: 1;
+                transition:
+                  width 0.5s ease,
+                  opacity 0.5s ease 0.3s;
+              }
+              + .recommendations__card-group-button {
+                opacity: 0;
+                width: 0;
+              }
+            }
+          }
+
+          //                    @include hover {
+          //                        &:not(.--selected-value) {
+          //                            max-width: 100%;
+          //                            max-height: 100%;
+          //                            width: 100%;
+          //
+          //                            span {
+          //                                &:first-child {
+          //                                    display: block;
+          //                                }
+          //                            }
+          //
+          //                            &:not(.--list &) {
+          //                                ~ button {
+          //                                    display: none;
+          //                                }
+          //                            }
+          //                        }
+          //                    }
+
+          &.--selected {
+            max-height: 100%;
+            width: 100%;
+
+            span {
+              &:first-child {
+                display: block;
+              }
+            }
+
+            &:not(.--list &) {
+              ~ button {
+                display: none;
+              }
+            }
+          }
+
+          //                                        &:not(.--list &) {
+          //                                            &.--hovered {
+          //                                                max-width: max-content;
+          //                                                gap: 0;
+          //                                                padding: 1.25rem 2rem;
+          //
+          //                                                span {
+          //                                                    display: none;
+          //                                                }
+          //                                            }
+          //                                        }
+
+          &.--selected-value {
+            &:not(.--list &) {
+              max-width: max-content;
+              gap: 0;
+              padding: 1.25rem 2rem;
+
+              span {
+                display: none;
+              }
+            }
+          }
+        }
+
+        &.--secondary {
+          width: 40%;
+          transition:
+            width 0.5s ease,
+            opacity 0.3s ease;
+
+          @media (any-hover: hover) {
+            &:hover {
+              width: 70%;
+
+              span {
+                width: 55%;
+                opacity: 1;
+                transition:
+                  width 0.5s ease,
+                  opacity 0.5s ease 0.3s;
+              }
+            }
+          }
+
+          //                    span {
+          //                        display: none;
+          //                    }
+
+          //                    &.--active,
+          //                    &.--selected {
+          //                        max-width: 100%;
+          //                        max-height: 100%;
+          //                        width: 100%;
+          //
+          //                        span {
+          //                            &:first-child {
+          //                                display: block;
+          //                            }
+          //                        }
+          //                    }
+        }
+      }
+    }
+
+    &-favorite-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      z-index: 3;
+      right: 3.2rem;
+      top: 3.2rem;
+      border-radius: 50%;
+      @include sizes(2.4rem, 2.4rem);
+
+      @include small-tablet {
+        @include sizes(6.4rem, 6.4rem);
+        padding: 1.6rem;
+        top: 4.8rem;
+        right: 4.8rem;
+      }
+
+      .favorites-page & {
+        backdrop-filter: blur(4.8rem);
+        background: rgba(244, 244, 244, 0.4);
+        @include sizes(4.4rem, 4.4rem);
+
+        @media (max-width: 48em) {
+          max-width: 8.8rem;
+          height: 8.8rem;
+
+          svg {
+            width: 3rem;
+            height: 3rem;
+          }
+        }
+
+        svg {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+
+      &.--active {
+        svg {
+          path {
+            &:first-child {
+              fill: $pink;
+              stroke: $pink;
+            }
+
+            &:last-child {
+              fill: $pink;
+            }
+          }
+        }
+      }
+
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+        transition: 0.3s all ease;
+
+        path {
+          transition: 0.3s all ease;
+
+          &:first-child {
+            fill: $grey-text;
+            stroke: $grey-text;
+          }
+
+          &:last-child {
+            fill: transparent;
+          }
+        }
+      }
+
+      @include hover {
+        svg {
+          path {
+            &:first-child {
+              fill: $pink;
+              stroke: $pink;
+            }
+
+            &:last-child {
+              fill: $pink;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .recommendations__card-group-button .cr {
-    position: relative;
+  position: relative;
 
-    margin-right: 0.5rem;
+  margin-right: 0.5rem;
 
-    color: #e3e3e3;
+  color: #e3e3e3;
 
-    @media (max-width: 48em) {
-        margin-right: 1rem;
-    }
+  @media (max-width: 48em) {
+    margin-right: 1rem;
+  }
 
-    &::before {
-        content: '';
+  &::before {
+    content: "";
 
-        position: absolute;
-        top: 50%;
-        left: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
 
-        width: 100%;
-        height: 1.5px;
+    width: 100%;
+    height: 1.5px;
 
-        background-color: $white;
+    background-color: $white;
 
-        transform: translateY(-50%);
-    }
+    transform: translateY(-50%);
+  }
 }
