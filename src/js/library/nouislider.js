@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const startValue = Math.floor(parseInt(inputFrom.dataset.startNumber, 10));
         const endValue =  Math.ceil(parseInt(inputTo.dataset.endNumber, 10));
         attributeValuesRange.push(startValue, endValue);
-        nouislider.create(rangeSlider, {
+        noUiSlider.create(rangeSlider, {
             range: {
                 min: Math.floor(Number(inputFrom.dataset.fromMin)),
                 max:  Math.ceil(Number(inputTo.dataset.toMax))

@@ -52,7 +52,7 @@
     "jquery": "^3.7.1",
     "jsdom": "^22.1.0",
     "microtip": "^0.2.2",
-    "nouislider": "^15.7.1",
+    "nouislider": "^15.8.0",
     "simplebar": "^6.2.5",
     "swiper": "^11.0.7",
     "tippy.js": "^6.3.7"
