@@ -104,3 +104,23 @@ $(document).on('mouseup', function(e){
 $('.card-modal__close').click(function() {
   $('.card-modal').removeClass('active');
 });
+
+$('.pagination').each(function () {
+  let more = $(this).find('.pagination__dots');
+  let hide = $(this).find('.pagination__input');
+  hide.hide(300);
+  more.click(function () {
+      hide.toggleClass('active');
+      more.toggleClass('active');
+  });
+});
+
+$(document).on('mouseup', function(e){
+  let s = $('.pagination__input.active'); 
+  if(!s.is(e.target) && s.has(e.target).length === 0) {
+  
+    s.removeClass('active');
+  }
+});
+
+

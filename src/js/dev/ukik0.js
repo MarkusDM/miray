@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 resetButton.classList.remove('--active');
 
-                rangeSlider.noUiSlider.set([20000, 100000]);
+                // rangeSlider.noUiSlider.set([20000, 100000]);
 
                 Array.from(
                     document.querySelectorAll('.catalog__filters-block-sorting li input'),

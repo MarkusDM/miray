@@ -4,6 +4,33 @@
     align-items: center;
     gap: 2.4rem;
     width: 100%;
+    position: relative;
+    &__input {
+        position: absolute;
+        background-color: #f4f4f4;
+        border-radius: 4rem;
+        left: 50%;
+        width: 20rem;
+        display: none;
+        top: 7rem;
+        height: 4rem;
+        transform: translate(-50%, 0);
+        @media (max-width: 48em) {
+            width: 34rem;
+            top: 11rem;
+            height: 8rem;
+        }
+        input {
+            font-size: 2rem;
+            @media (max-width: 48em) {
+               font-size: 3rem;
+            }
+        }
+    }
+
+    &__input.active {
+        display: block;
+    }
 
     @include small-tablet {
         gap: 3.2rem;
