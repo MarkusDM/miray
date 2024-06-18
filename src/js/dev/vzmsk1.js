@@ -348,13 +348,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   document.addEventListener("mouseover", handleMouseover);
 });
-document.addEventListener("click", function (e) {
-  if (e.target.closest(".recommendations__card-button")) {
-    e.preventDefault();
+// document.addEventListener("click", function (e) {
+//   if (e.target.closest(".recommendations__card-button")) {
+//     e.preventDefault();
 
-    e.target.closest(".recommendations__card").classList.add("_is-active");
-  }
-  if (e.target.closest(".recommendations__card-cart-btn")) {
-    e.preventDefault();
-  }
-});
+//     e.target.closest(".recommendations__card").classList.add("_is-active");
+//   }
+//   if (e.target.closest(".recommendations__card-cart-btn")) {
+//     e.preventDefault();
+//   }
+// });

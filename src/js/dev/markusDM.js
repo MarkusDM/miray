@@ -159,3 +159,7 @@ $(document).ready(function() {
       });
   });
 });
+
+$('.card__swiper-slide-like').on('click', function() {
+  $(this).toggleClass('active');
+});

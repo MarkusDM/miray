@@ -377,6 +377,18 @@
         }
     }
 
+    &__swiper-slide-like.active {
+        svg {
+            .color-like {
+                fill: #292D32;
+            }
+        }
+           
+           
+       
+    }
+
+
     &__color:last-child {
         margin-right: 0;
     }
@@ -1116,8 +1128,24 @@
             svg {
                 width: 3.2rem;
                 height: 3.2rem;
+
+              
+              
             }
         }
+
+        &__swiper-slide-like.active {
+            svg {
+                .color-like {
+                    fill: #292D32;
+                }
+            }
+               
+               
+           
+        }
+
+    
 
         &__swiper-slide-category {
             padding: 1.2rem 2.8rem;
