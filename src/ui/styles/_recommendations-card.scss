@@ -503,8 +503,18 @@
           flex-direction: row;
           gap: 2.1rem;
 
+
+
+          .recommendations__card-group-button span {
+            margin-right: 1rem;
+          }
+
           .recommendations__card-wrap {
             display: none;
+          }
+
+          .recommendations__card-inner {
+            display: flex;
           }
 
           .recommendations__card {
@@ -518,7 +528,10 @@
               margin-bottom: 0;
               display: flex;
               height: auto;
+              margin-right: 3rem;
             }
+
+            
 
             &-middle {
               display: flex;
