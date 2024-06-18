@@ -30,6 +30,9 @@
        
     }
 
+
+  
+
     &__box {
         display: flex;
         background-color: $bgFon;
@@ -104,9 +107,40 @@
         }
     }
 
+    &__price-inner {
+        display: flex;
+        align-items:center;
+        font-size: 2.8rem;
+        font-weight: 600;
+        line-height: 3rem;
+        letter-spacing: 0.04em;
+        text-align: left;
+        @media (max-width: 48em) {
+            font-size: 3.2rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__price {
+        margin-left: 2rem;
+    }
+
+    &__btns {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3.2rem;
+        @media (max-width: 48em) {
+            margin-top: 6rem;
+            flex-direction: column-reverse;
+        }
+    }
+
     .btn__card {
-        width: 15.9rem;
+      
         height: 4rem;
+        border: 0.1rem solid #2B5644;
+        padding-left: 1.2rem;
+        width: 16rem;
         @media (max-width: 48em) {
             width: 100%;
             height: 6rem;
