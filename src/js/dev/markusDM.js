@@ -89,8 +89,28 @@ $('.modal-global__close').click(function() {
 
 
 
-$('.card-modal-open').click(function() {
-  $('.card-modal').addClass('active');
+$(document).ready(function() {
+  // Устанавливаем минимальную ширину для десктопной версии
+  const desktopMinWidth = 768;
+
+  // Функция для проверки ширины окна и установки обработчика событий
+  function handleHover() {
+    if (window.innerWidth >= desktopMinWidth) {
+      // Добавляем обработчик hover для десктопной версии
+      $('.has-hover-modal-card').hover(function() {
+        $('.card-modal').toggleClass('active');
+      });
+    } else {
+      // Удаляем обработчик hover для мобильной версии
+      $('.has-hover-modal-card').off('hover');
+    }
+  }
+
+  // Выполняем проверку при загрузке страницы
+  handleHover();
+
+  // Выполняем проверку при изменении размера окна
+  $(window).resize(handleHover);
 });
 
 $(document).on('mouseup', function(e){
