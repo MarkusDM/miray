@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://api-maps.yandex.ru/v3/?apikey=85d23f18-68b0-4dd3-8691-d4e1a7e577fe&lang=ru_RU"></script>
+        <title>Оформление заказа</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <include src="./components/header.html"></include>
+            <main>
+                <section class="checkout">
+                    <div class="checkout__container container">
+                        <div class="checkout__head">
+                            <nav class="checkout__breadcrumbs breadcrumbs">
+                                <a href="#" class="breadcrumbs__txt">Главная</a>
+                                <a href="#" class="breadcrumbs__txt">Корзина</a>
+                                <span class="breadcrumbs__txt">Оформление заказа</span>
+                            </nav>
+                            <span class="checkout__heading h h_h1"> Оформление заказа </span>
+                        </div>
+                        <form data-dev action="#" class="checkout__body">
+                            <div class="checkout__content">
+                                <div class="checkout__steps">
+                                    <div class="checkout__step tab  _is-active">
+                                        <span class="tab__txt text text__medium text__medium--18">
+                                            1: <span>Ваши данные</span>
+                                        </span>
+                                    </div>
+                                    <div class="checkout__step tab _is-active">
+                                        <span class="tab__txt text text__medium text__medium--18">
+                                            2: <span>Доставка</span>
+                                        </span>
+                                    </div>
+                                    <div class="checkout__step tab">
+                                        <span class="tab__txt text text__medium text__medium--18">
+                                            3: <span>Оплата</span>
+                                        </span>
+                                    </div>
+                                </div> 
+                                <div class="person-profile">
+                                    <div class="person-profile__inner">
+                                        <div class="person-profile__title">Выбрать профиль</div>
+                                        <button class="person-profile__plus">Создать новый</button>
+                                    </div>
+                                    <div class="person-profile__wrap">
+                                        <div class="person-profile__box">
+                                            <div class="person-profile__box-edit">
+                                                Екатерина Сергеевна
+                                            </div>
+                                            <div class="person-profile__box__link">
+                                                <span>Выбрать</span>
+                                                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 10.25L3 10.25" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M14.375 12.875L11.75 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M17 10.25L11.75 5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                    
+                                            </div>
+                                        </div>
+                                        <div class="person-profile__box">
+                                            <div class="person-profile__box-edit">
+                                                Иванов Иван Иванович
+                                            </div>
+                                            <div class="person-profile__box__link">
+                                                <span>Выбрать</span>
+                                                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 10.25L3 10.25" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M14.375 12.875L11.75 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M17 10.25L11.75 5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                    
+                                            </div>
+                                        </div>
+                                        <div class="person-profile__box">
+                                            <div class="person-profile__box-edit">
+                                                Юрий Васильевич
+                                            </div>
+                                            <div class="person-profile__box__link">
+                                                <span>Выбрать</span>
+                                                <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 10.25L3 10.25" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M14.375 12.875L11.75 15.5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M17 10.25L11.75 5" stroke="#1D1D1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout__summary summary-checkout">
+                                <div class="summary-checkout__content">
+                                    <span class="summary-checkout__heading h h_h3">Детали заказа</span>
+                                    <ul data-accordion class="summary-checkout__list list-summary-checkout">
+                                        <li class="list-summary-checkout__item">
+                                            <span class="list-summary-checkout__label">Товары (6) — 0,123 м3</span>
+                                            <span class="list-summary-checkout__value text text__medium text__medium-18"
+                                                >41 540.20₽</span
+                                            >
+                                        </li>
+                                        <li class="list-summary-checkout__item list-summary-checkout__item_benefit">
+                                            <div data-accordion-item class="list-summary-checkout__inner">
+                                                <span class="list-summary-checkout__label">Выгода</span>
+                                                <span class="list-summary-checkout__value text text__medium text__medium-18"
+                                                    >12 540.20₽</span
+                                                >
+                                            </div>
+                                            <div class="list-summary-checkout__item-content">
+                                                <p>Lorem ipsum dolor sit amet.</p>
+                                            </div>
+                                        </li>
+                                        <li class="list-summary-checkout__item">
+                                            <span class="list-summary-checkout__label">Общее кол-во единиц:</span>
+                                            <span class="list-summary-checkout__value text text__medium text__medium-18"
+                                                >500 шт</span
+                                            >
+                                        </li>
+                                    </ul>
+                                    <div class="summary-checkout__total">
+                                        <span class="summary-checkout__total-heading h h_h3">Итог:</span>
+                                        <span class="summary-checkout__total-price h h_h3"><span>41 540.20</span>₽</span>
+                                    </div>
+                                </div>
+                                <button type="submit" class="summary-checkout__btn btn">Далее</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                
+            </main>
+            <include src="./components/footer.html"></include>
+            <include src="./components/modals.html"></include>
+        </div>
+    </body>
+</html>
