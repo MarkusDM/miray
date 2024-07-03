@@ -265,6 +265,7 @@
       left: 2rem;
       right: 2rem;
       padding: 1.2rem 2rem 0.8rem 2rem;
+      -webkit-backdrop-filter: blur(4.8rem);
       backdrop-filter: blur(4.8rem);
       background: rgba(244, 244, 244, 0.4);
       border-radius: 0 0 2rem 2rem;
@@ -503,8 +504,6 @@
           flex-direction: row;
           gap: 2.1rem;
 
-
-
           .recommendations__card-group-button span {
             margin-right: 1rem;
           }
@@ -530,8 +529,6 @@
               height: auto;
               margin-right: 3rem;
             }
-
-            
 
             &-middle {
               display: flex;

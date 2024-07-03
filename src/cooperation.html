@@ -1,126 +1,130 @@
 <!doctype html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://api-maps.yandex.ru/v3/?apikey=85d23f18-68b0-4dd3-8691-d4e1a7e577fe&lang=ru_RU"></script>
-        <title>Главная</title>
-    </head>
-    <body>
-        <div class="wrapper cooperation-page">
-            <include src="./components/header.html"></include>
-            <main>
-                <include src="./components/_cooperation.html"></include>
-                <include src="./components/_pricing.html"></include>
-                <include src="./components/_benefits.html"></include>
-                <include src="./components/_feature.html"></include>
-                <include src="./components/_figuration.html"></include>
-                <section class="consultation consultation_cp">
-                    <div class="container">
-                        <div class="consultation__content">
-                            <div class="consultation__info">
-                                <h2 class="consultation__info-title h h_h1">
-                                    Хотите стать оптовым партнером?
-                                </h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,  maximum-scale=1"
+    />
+    <script src="https://api-maps.yandex.ru/v3/?apikey=85d23f18-68b0-4dd3-8691-d4e1a7e577fe&lang=ru_RU"></script>
+    <title>Главная</title>
+  </head>
+  <body>
+    <div class="wrapper cooperation-page">
+      <include src="./components/header.html"></include>
+      <main>
+        <include src="./components/_cooperation.html"></include>
+        <include src="./components/_pricing.html"></include>
+        <include src="./components/_benefits.html"></include>
+        <include src="./components/_feature.html"></include>
+        <include src="./components/_figuration.html"></include>
+        <section class="consultation consultation_cp">
+          <div class="container">
+            <div class="consultation__content">
+              <div class="consultation__info">
+                <h2 class="consultation__info-title h h_h1">
+                  Хотите стать оптовым партнером?
+                </h2>
 
-                                <p class="consultation__info-text text__regular-18">
-                                    Оставьте свои данные, и наш менеджер перезвонит вам в ближайшее время
-                                </p>
+                <p class="consultation__info-text text__regular-18">
+                  Оставьте свои данные, и наш менеджер перезвонит вам в
+                  ближайшее время
+                </p>
 
-                                <form data-dev action="#" class="consultation__info-form">
-                                    <div class="input text__regular-16">
-                                        <input
-                                            id="email"
-                                            data-validate
-                                            data-required
-                                            autocomplete="off"
-                                            type="email"
-                                            name="form[]"
-                                            placeholder="Почта"
-                                            class="input__field"
-                                        />
-                                        <label
-                                            for="email"
-                                            class="input__label"
-                                            data-hint="*Заполните поле"
-                                        ></label>
-                                    </div>
-                                    <div class="input text__regular-16">
-                                        <input
-                                            id="phone"
-                                            data-tel-mask
-                                            data-validate
-                                            data-required
-                                            autocomplete="off"
-                                            type="tel"
-                                            name="form[]"
-                                            placeholder="Ваш телефон"
-                                            class="input__field"
-                                        />
-                                        <label
-                                            for="phone"
-                                            class="input__label"
-                                            data-hint="*Заполните поле"
-                                        ></label>
-                                    </div>
-                                    <div class="input text__regular-16">
-                                        <input
-                                            id="fio"
-                                            data-validate
-                                            data-required
-                                            autocomplete="off"
-                                            type="text"
-                                            name="form[]"
-                                            placeholder="ФИО"
-                                            class="input__field"
-                                        />
-                                        <label
-                                            for="fio"
-                                            class="input__label"
-                                            data-hint="*Заполните поле"
-                                        ></label>
-                                    </div>
-                                    <div class="input text__regular-16">
-                                        <input
-                                            id="organization"
-                                            data-validate
-                                            data-required
-                                            autocomplete="off"
-                                            type="text"
-                                            name="form[]"
-                                            placeholder="Название вашей организации"
-                                            class="input__field"
-                                        />
-                                        <label
-                                            for="organization"
-                                            class="input__label"
-                                            data-hint="*Заполните поле"
-                                        ></label>
-                                    </div>
+                <form data-dev action="#" class="consultation__info-form">
+                  <div class="input text__regular-16">
+                    <input
+                      id="email"
+                      data-validate
+                      data-required
+                      autocomplete="off"
+                      type="email"
+                      name="form[]"
+                      placeholder="Почта"
+                      class="input__field"
+                    />
+                    <label
+                      for="email"
+                      class="input__label"
+                      data-hint="*Заполните поле"
+                    ></label>
+                  </div>
+                  <div class="input text__regular-16">
+                    <input
+                      id="phone"
+                      data-tel-mask
+                      data-validate
+                      data-required
+                      autocomplete="off"
+                      type="tel"
+                      name="form[]"
+                      placeholder="Ваш телефон"
+                      class="input__field"
+                    />
+                    <label
+                      for="phone"
+                      class="input__label"
+                      data-hint="*Заполните поле"
+                    ></label>
+                  </div>
+                  <div class="input text__regular-16">
+                    <input
+                      id="fio"
+                      data-validate
+                      data-required
+                      autocomplete="off"
+                      type="text"
+                      name="form[]"
+                      placeholder="ФИО"
+                      class="input__field"
+                    />
+                    <label
+                      for="fio"
+                      class="input__label"
+                      data-hint="*Заполните поле"
+                    ></label>
+                  </div>
+                  <div class="input text__regular-16">
+                    <input
+                      id="organization"
+                      data-validate
+                      data-required
+                      autocomplete="off"
+                      type="text"
+                      name="form[]"
+                      placeholder="Название вашей организации"
+                      class="input__field"
+                    />
+                    <label
+                      for="organization"
+                      class="input__label"
+                      data-hint="*Заполните поле"
+                    ></label>
+                  </div>
 
-                                    <button
-                                        type="submit"
-                                        class="consultation__info-form-button form__btn btn"
-                                    >
-                                        Отправить
-                                    </button>
-                                </form>
-                            </div>
+                  <button
+                    type="submit"
+                    class="consultation__info-form-button form__btn btn"
+                  >
+                    Отправить
+                  </button>
+                </form>
+              </div>
 
-                            <div class="consultation__poster">
-                                <img
-                                    class="consultation__poster-img"
-                                    src="./assets/images/bg/hand-holding-elegant-flower 1.webp"
-                                    alt=""
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <include src="./components/_map.html"></include>
-            </main>
-        </div>
-        <include src="./components/footer.html"></include>
-        <include src="./components/modals.html"></include>
-    </body>
+              <div class="consultation__poster">
+                <img
+                  class="consultation__poster-img"
+                  src="./assets/images/bg/hand-holding-elegant-flower 1.webp"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <include src="./components/_map.html"></include>
+      </main>
+    </div>
+    <include src="./components/footer.html"></include>
+    <include src="./components/modals.html"></include>
+  </body>
 </html>
