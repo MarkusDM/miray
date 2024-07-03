@@ -8,6 +8,7 @@ $(document).ready(() => {
             $('.header').addClass('scroll');
         } else {
             $('.header').removeClass('scroll');
+            $('.header__phone').removeClass('_is-active');
             $('.header').removeClass('_show-search');
         }
     });
@@ -65,6 +66,7 @@ $(document).ready(() => {
                     $(this).closest('.header__phone').removeClass('_is-active');
                 } else {
                     $(this).closest('.header__phone').addClass('_is-active');
+                    
                 }
             });
             clickOutsidePopup($(el.nextElementSibling), $(el));

@@ -1025,6 +1025,80 @@
       }
     }
   }
+
+
+  &__card-calc {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    width: 35rem;
+    background-color: #fff;
+    border: 0.1rem solid #2B5644;
+    border-radius: 6rem;
+    padding: 0.8rem;
+    &-inner {
+      display: flex;
+      align-items:center;
+      justify-content: space-between;
+      width: 22rem;
+    }
+
+    &-minus {
+      width: 4.4rem;
+      min-width: 4.4rem;
+      height: 4.4rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #F4F4F4;
+      padding: 1rem;
+    }
+
+    &-quantity {
+      max-width: 10rem;
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 2.1rem;
+      text-align: center;
+
+    }
+
+    &-box {
+      display: flex;
+      align-items:center;
+      width: 9.3rem;
+      min-width: 9.3rem;
+      height: 6rem;
+      background-color: #2B5644;
+      border-radius: 6rem;
+      margin-left: 0.7rem;
+      padding: 1.8rem;
+    }
+
+    &-box-plus {
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-right: 0.8rem;
+    }
+
+    &-box-b {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    &-plus {
+      width: 4.4rem;
+      min-width: 4.4rem;
+      height: 4.4rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #F4F4F4;
+      padding: 1rem;
+    }
+  }
 }
 
 .recommendations__card-group-button .cr {

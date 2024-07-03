@@ -269,10 +269,10 @@
             @media (any-hover: hover) {
                 &:hover {
                     transform: scale(1.05);
-                    span {
+                    .has-hover-span {
                         color: #e29aa8;
                     }
-                    svg path {
+                  .header__icon  svg path {
                         fill: #e29aa8;
                     }
                 }
@@ -458,12 +458,7 @@
 
         &_icon {
             margin-right: 2.4rem;
-            &._is-active {
-                .header__phone-list {
-                    left: -1rem;
-                    width: 26rem;
-                }
-            }
+            
             .header__phone-list li {
                 align-items: flex-start;
             }
@@ -502,6 +497,14 @@
                         transform: scale(1);
                     }
                 }
+            }
+        }
+
+
+        &_icon._is-active {
+            .header__phone-list {
+                left: -1rem;
+                width: 26rem;
             }
         }
 
