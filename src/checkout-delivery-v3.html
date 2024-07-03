@@ -1,102 +1,121 @@
 <!doctype html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://api-maps.yandex.ru/v3/?apikey=85d23f18-68b0-4dd3-8691-d4e1a7e577fe&lang=ru_RU"></script>
-        <title>Оформление заказа</title>
-    </head>
-    <body>
-        <div class="wrapper">
-            <include src="./components/header.html"></include>
-            <main>
-                <include src="./components/_checkout-delivery-v3.html"></include>
-            </main>
-            <include src="./components/footer.html"></include>
-            <include src="./components/modals.html"></include>
-        </div>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,  maximum-scale=1"
+    />
+    <script src="https://api-maps.yandex.ru/v3/?apikey=85d23f18-68b0-4dd3-8691-d4e1a7e577fe&lang=ru_RU"></script>
+    <title>Оформление заказа</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <include src="./components/header.html"></include>
+      <main>
+        <include src="./components/_checkout-delivery-v3.html"></include>
+      </main>
+      <include src="./components/footer.html"></include>
+      <include src="./components/modals.html"></include>
+    </div>
+  </body>
 </html>
 
 <!-- Script for Map -->
 <script>
-    const markers = [
-        {
-            tag: 'Оптово-розничный магазин',
-            coordinate: [37.471102, 55.60101],
-            active: true,
-            card: 'map-card-1'
-        },
-        {
-            tag: 'Склад',
-            coordinate: [37.26184, 55.658317],
-            active: false,
-            card: 'map-card-2'
-        }
-    ];
+  const markers = [
+    {
+      tag: "Оптово-розничный магазин",
+      coordinate: [37.471102, 55.60101],
+      active: true,
+      card: "map-card-1",
+    },
+    {
+      tag: "Склад",
+      coordinate: [37.26184, 55.658317],
+      active: false,
+      card: "map-card-2",
+    },
+  ];
 
-    async function initMap() {
-        await ymaps3.ready;
-        const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
-        const map = new YMap(document.getElementById('main-map'), {
-            location: {
-                center: [37.47971415087885, 55.621295640143664],
-                zoom: 12
-            }
-        });
+  async function initMap() {
+    await ymaps3.ready;
+    const {
+      YMap,
+      YMapDefaultSchemeLayer,
+      YMapDefaultFeaturesLayer,
+      YMapMarker,
+    } = ymaps3;
+    const map = new YMap(document.getElementById("main-map"), {
+      location: {
+        center: [37.47971415087885, 55.621295640143664],
+        zoom: 12,
+      },
+    });
 
-        map.addChild(new YMapDefaultSchemeLayer());
-        map.addChild(new YMapDefaultFeaturesLayer({ zIndex: 1800 }));
+    map.addChild(new YMapDefaultSchemeLayer());
+    map.addChild(new YMapDefaultFeaturesLayer({ zIndex: 1800 }));
 
-        markers.forEach((el, i) => {
-            let content = document.createElement('div');
-            content.classList.add('marker', el.card);
-            content.insertAdjacentHTML(
-                'beforeend',
-                `
+    markers.forEach((el, i) => {
+      let content = document.createElement("div");
+      content.classList.add("marker", el.card);
+      content.insertAdjacentHTML(
+        "beforeend",
+        `
                 <div class="marker__content">
                     <div class="marker__svg">
                      <img src="./assets/images/marker-logo.svg" alt="" />
                     </div>
                     <div class="marker__text">${el.tag}</div>
                 </div>
-			    `
-            );
-            el.active ? content.classList.add('hover') : null;
-            clickMarker(content, el);
+			    `,
+      );
+      el.active ? content.classList.add("hover") : null;
+      clickMarker(content, el);
 
-            const marker = new YMapMarker({ coordinates: el.coordinate, draggable: false }, content);
-            map.addChild(marker);
-        });
-    }
-
-    function clickMarker(content, marker) {
-        content.addEventListener('mouseenter', function () {
-            changeMarkers(content, marker);
-            document.getElementById(marker.card).classList.add('hover');
-        });
-    }
-
-    function changeMarkers(content, marker) {
-        document.querySelectorAll('.marker').forEach((el) => el.classList.remove('hover'));
-        document.querySelectorAll('.map-card').forEach((el) => el.classList.remove('hover'));
-        markers.forEach((el) => (el.active = false));
-        marker.active = true;
-        content.classList.add('hover');
-    }
-
-    initMap();
-
-    document.querySelectorAll('.map-card').forEach((el) => {
-        el.addEventListener('mouseenter', () => {
-            document.querySelectorAll('.map-card').forEach((el) => el.classList.remove('hover'));
-            document.querySelectorAll('.marker').forEach((el) => el.classList.remove('hover'));
-
-            el.classList.add('hover');
-
-            document.querySelectorAll('.marker').forEach((marker) => {
-                marker.classList.contains(el.id) && marker.classList.add('hover');
-            });
-        });
+      const marker = new YMapMarker(
+        { coordinates: el.coordinate, draggable: false },
+        content,
+      );
+      map.addChild(marker);
     });
+  }
+
+  function clickMarker(content, marker) {
+    content.addEventListener("mouseenter", function () {
+      changeMarkers(content, marker);
+      document.getElementById(marker.card).classList.add("hover");
+    });
+  }
+
+  function changeMarkers(content, marker) {
+    document
+      .querySelectorAll(".marker")
+      .forEach((el) => el.classList.remove("hover"));
+    document
+      .querySelectorAll(".map-card")
+      .forEach((el) => el.classList.remove("hover"));
+    markers.forEach((el) => (el.active = false));
+    marker.active = true;
+    content.classList.add("hover");
+  }
+
+  initMap();
+
+  document.querySelectorAll(".map-card").forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      document
+        .querySelectorAll(".map-card")
+        .forEach((el) => el.classList.remove("hover"));
+      document
+        .querySelectorAll(".marker")
+        .forEach((el) => el.classList.remove("hover"));
+
+      el.classList.add("hover");
+
+      document.querySelectorAll(".marker").forEach((marker) => {
+        marker.classList.contains(el.id) && marker.classList.add("hover");
+      });
+    });
+  });
 </script>
