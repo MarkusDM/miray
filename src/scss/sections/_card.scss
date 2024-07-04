@@ -389,6 +389,31 @@
     }
 
 
+    &__retail-sum-inner {
+        display: flex;
+        align-items: center;
+    }
+
+    &__retail-quantity {
+        
+     
+       
+    }
+
+    &__retail-inner-wrap {
+        display: flex;
+        align-items:center;
+        span {
+           
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 21.6px;
+            text-align: left;
+
+        }
+    }
+
+
     &__color:last-child {
         margin-right: 0;
     }
@@ -499,6 +524,12 @@
             justify-content: space-between;
             width: 100%;
 
+
+            input[type="text"] {
+                width: 100%;
+               
+            }
+
             @media (max-width: 48em) {
                 padding: 1rem;
             }
@@ -508,6 +539,7 @@
         &-minus {
             width: 4.4rem;
             height: 4.4rem;
+            min-width: 4.4rem;
             border-radius: 50%;
             background-color: $bgFon;
             display: flex;

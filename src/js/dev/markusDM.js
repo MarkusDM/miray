@@ -23,32 +23,51 @@ $('.card__description-tabs-item').click(function () {
 });
 
 
-$('.card__retail-minus').click(function() {
-  let $input = $(this).parent().find('.card__retail-quantity');
-  let count = parseInt($input.val()) - 1;
-  count = count < 1 ? 1 : count;
-  $input.val(count);
+function updateInputValue($input, count) {
+  $input.val(count + ' штук');
+}
+
+$(document).ready(function() {
+  $('.calc-global').each(function() {
+      const $card = $(this);
+      const $input = $card.find('.input-sum');
+
+      function updateInputValue(count) {
+          $input.val(count + ' штук');
+      }
+
+      $card.find('.input-sum-minus').click(function() {
+          let count = parseInt($input.val()) - 1;
+          count = count < 1 ? 1 : count;
+          updateInputValue(count);
+      });
+
+      $card.find('.input-sum-plus').click(function() {
+          let count = parseInt($input.val()) + 1;
+          count = count > parseInt($input.data('max-count')) ? parseInt($input.data('max-count')) : count;
+          updateInputValue(count);
+      });
+
+      $input.bind("change keyup input click", function() {
+          this.value = this.value.replace(/[^0-9]/g, '');
+          if (this.value === "") {
+              this.value = 1;
+          }
+          let count = parseInt(this.value);
+          if (count < 1) {
+              count = 1;
+          }
+          if (count > parseInt($input.data('max-count'))) {
+              count = parseInt($input.data('max-count'));
+          }
+          updateInputValue(count);
+      });
+
+      // Initialize input values
+      let count = parseInt($input.val());
+      updateInputValue(count);
+  });
 });
-
-$('.card__retail-plus').click(function() {
-  let $input = $(this).parent().find('.card__retail-quantity');
-  let count = parseInt($input.val()) + 1;
-  count = count > parseInt($input.data('max-count')) ? parseInt($input.data('max-count')) : count;
-  $input.val(parseInt(count));
-}); 
-
-
-$('.card__retail-quantity').bind("change keyup input click", function() {
-  if (this.value.match(/[^0-9]/g)) {
-      this.value = this.value.replace(/[^0-9]/g, '');
-  }
-  if (this.value == "") {
-      this.value = 1;
-  }
-  if (this.value > parseInt($(this).data('max-count'))) {
-      this.value = parseInt($(this).data('max-count'));
-  }    
-});   
 
 tippy('[data-tippy-content]', {
   arrow: roundArrow,

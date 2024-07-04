@@ -59,7 +59,7 @@
                             <span>Выбрать все</span>
                         </label>
 
-                        <button class=" text__regular-16">
+                        <button class="basket__cards-heading-remove text__regular-16">
                             Удалить выбранное
                         </button>
                     </div>
@@ -97,10 +97,10 @@
                                             </div>
 
                                             <div class="basket__card-info-top-counter">
-                                                <div class="basket__card-info-top-counter-row">
-                                                    <div class="basket__card-info-top-counter-field quantity">
+                                                <div class="basket__card-info-top-counter-row calc-global">
+                                                    <div class="basket__card-info-top-counter-field ">
                                                         <button
-                                                            class="quantity__button_minus basket__card-info-top-counter-field-button"
+                                                            class="quantity__button_minus basket__card-info-top-counter-field-button input-sum-minus"
                                                         >
                                                             <svg
                                                                 width="24"
@@ -116,10 +116,10 @@
                                                             </svg>
                                                         </button>
 
-                                                        <input type="number" value="10" min="1" />
+                                                        <input type="text" class="input-sum"  type="number" value="1 " data-max-count="20"" />
 
                                                         <button
-                                                            class="quantity__button_plus basket__card-info-top-counter-field-button"
+                                                            class="quantity__button_plus basket__card-info-top-counter-field-button input-sum-plus"
                                                         >
                                                             <svg
                                                                 width="24"

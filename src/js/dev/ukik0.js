@@ -398,73 +398,73 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //quantity
-  const changeInputText = (newval, inp, input) => {
-    if (
-      Number(newval) === 2 ||
-      Number(newval) === 3 ||
-      Number(newval) === 4 ||
-      (Number(newval) > 21 &&
-        !inp.value.endsWith("1") &&
-        !inp.value.endsWith("5") &&
-        !inp.value.endsWith("6") &&
-        !inp.value.endsWith("7") &&
-        !inp.value.endsWith("8") &&
-        !inp.value.endsWith("9") &&
-        !inp.value.endsWith("0"))
-    ) {
-      input.dataset.text = "штуки";
-    } else if (inp.value.endsWith("1") && Number(newval) !== 11) {
-      input.dataset.text = "штука";
-    } else {
-      input.dataset.text = "штук";
-    }
-  };
-  const initQuantityInputs = () => {
-    if (document.querySelectorAll(".quantity").length) {
-      const min = 1;
-      const step = 1;
+  // const changeInputText = (newval, inp, input) => {
+  //   if (
+  //     Number(newval) === 2 ||
+  //     Number(newval) === 3 ||
+  //     Number(newval) === 4 ||
+  //     (Number(newval) > 21 &&
+  //       !inp.value.endsWith("1") &&
+  //       !inp.value.endsWith("5") &&
+  //       !inp.value.endsWith("6") &&
+  //       !inp.value.endsWith("7") &&
+  //       !inp.value.endsWith("8") &&
+  //       !inp.value.endsWith("9") &&
+  //       !inp.value.endsWith("0"))
+  //   ) {
+  //     input.dataset.text = "штуки";
+  //   } else if (inp.value.endsWith("1") && Number(newval) !== 11) {
+  //     input.dataset.text = "штука";
+  //   } else {
+  //     input.dataset.text = "штук";
+  //   }
+  // };
+  // const initQuantityInputs = () => {
+  //   if (document.querySelectorAll(".quantity").length) {
+  //     const min = 1;
+  //     const step = 1;
 
-      document.querySelectorAll(".quantity").forEach((input) => {
-        const inp = input.querySelector("input");
-        const btnminus = input.querySelector(".quantity__button_minus");
-        const btnplus = input.querySelector(".quantity__button_plus");
+  //     document.querySelectorAll(".quantity").forEach((input) => {
+  //       const inp = input.querySelector("input");
+  //       const btnminus = input.querySelector(".quantity__button_minus");
+  //       const btnplus = input.querySelector(".quantity__button_plus");
 
-        const qtyminus = (e) => {
-          const current = Number(inp.value);
-          let newval = current - step;
+  //       const qtyminus = (e) => {
+  //         const current = Number(inp.value);
+  //         let newval = current - step;
 
-          if (newval < min) {
-            newval = min;
+  //         if (newval < min) {
+  //           newval = min;
 
-            inp.closest(".recommendations__card._is-active") &&
-              inp
-                .closest(".recommendations__card._is-active")
-                .classList.remove("_is-active");
-          }
+  //           inp.closest(".recommendations__card._is-active") &&
+  //             inp
+  //               .closest(".recommendations__card._is-active")
+  //               .classList.remove("_is-active");
+  //         }
 
-          inp.value = Number(newval);
+  //         inp.value = Number(newval);
 
-          changeInputText(newval, inp, input);
+  //         changeInputText(newval, inp, input);
 
-          e.preventDefault();
-        };
+  //         e.preventDefault();
+  //       };
 
-        const qtyplus = (e) => {
-          const current = Number(inp.value);
-          const newval = current + step;
+  //       const qtyplus = (e) => {
+  //         const current = Number(inp.value);
+  //         const newval = current + step;
 
-          inp.value =
-            Number(newval) > Number(inp.max) ? inp.max : Number(newval);
+  //         inp.value =
+  //           Number(newval) > Number(inp.max) ? inp.max : Number(newval);
 
-          changeInputText(newval, inp, input);
+  //         changeInputText(newval, inp, input);
 
-          e.preventDefault();
-        };
+  //         e.preventDefault();
+  //       };
 
-        btnminus.addEventListener("click", qtyminus);
-        btnplus.addEventListener("click", qtyplus);
-      });
-    }
-  };
-  initQuantityInputs();
+  //       btnminus.addEventListener("click", qtyminus);
+  //       btnplus.addEventListener("click", qtyplus);
+  //     });
+  //   }
+  // };
+  // initQuantityInputs();
 });

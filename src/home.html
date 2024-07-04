@@ -200,7 +200,7 @@
     </body>
 </html>
 <!-- Script for Map -->
-<script>
+<!-- <script>
     const markers = [
         {
             tag: 'Главный офис',
@@ -250,13 +250,39 @@
                     </div>
                     <div class="marker__text">${el.tag}</div>
                 </div>
-			    `
+                `
             );
             el.active ? content.classList.add('hover') : null;
             clickMarker(content, el);
 
             const marker = new YMapMarker({ coordinates: el.coordinate, draggable: false }, content);
             map.addChild(marker);
+        });
+
+        document.querySelectorAll('.map-card').forEach((el) => {
+            el.addEventListener('mouseenter', () => {
+                document.querySelectorAll('.map-card').forEach((el) => el.classList.remove('hover'));
+                document.querySelectorAll('.marker').forEach((el) => el.classList.remove('hover'));
+
+                el.classList.add('hover');
+
+                document.querySelectorAll('.marker').forEach((marker) => {
+                    marker.classList.contains(el.id) && marker.classList.add('hover');
+                });
+            });
+
+            // Добавляем обработчик клика для мобильной версии
+            el.addEventListener('click', () => {
+                if (window.innerWidth <= 768) { // Проверка на мобильную версию
+                    const markerData = markers.find(marker => marker.card === el.id);
+                    if (markerData) {
+                        map.panTo(markerData.coordinate, {
+                            delay: 0,
+                            duration: 500
+                        });
+                    }
+                }
+            });
         });
     }
 
@@ -276,17 +302,4 @@
     }
 
     initMap();
-
-    document.querySelectorAll('.map-card').forEach((el) => {
-        el.addEventListener('mouseenter', () => {
-            document.querySelectorAll('.map-card').forEach((el) => el.classList.remove('hover'));
-            document.querySelectorAll('.marker').forEach((el) => el.classList.remove('hover'));
-
-            el.classList.add('hover');
-
-            document.querySelectorAll('.marker').forEach((marker) => {
-                marker.classList.contains(el.id) && marker.classList.add('hover');
-            });
-        });
-    });
-</script>
+</script> -->

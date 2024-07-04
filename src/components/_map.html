@@ -308,7 +308,7 @@
             behaviors: ['drag']
         });
 
-        document.querySelector('.map__card').classList.add('hover');
+        console.log(map);
 
         map.addChild(new YMapDefaultSchemeLayer());
         map.addChild(new YMapDefaultFeaturesLayer({ zIndex: 1800 }));
@@ -325,13 +325,38 @@
                     </div>
                     <div class="marker__text">${el.tag}</div>
                 </div>
-			    `
+                `
             );
             el.active ? content.classList.add('hover') : null;
             clickMarker(content, el);
 
             const marker = new YMapMarker({ coordinates: el.coordinate, draggable: false }, content);
             map.addChild(marker);
+        });
+
+        document.querySelectorAll('.map-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.querySelectorAll('.map-card').forEach(el => el.classList.remove('hover'));
+                document.querySelectorAll('.marker').forEach(el => el.classList.remove('hover'));
+
+                el.classList.add('hover');
+
+                document.querySelectorAll('.marker').forEach(marker => {
+                    marker.classList.contains(el.id) && marker.classList.add('hover');
+                });
+            });
+
+            el.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    const markerData = markers.find(marker => marker.card === el.id);
+                    if (markerData) {
+                        map.zoomPanTo({
+                            center: markerData.coordinate,
+                            zoom: 15
+                        });
+                    }
+                }
+            });
         });
     }
 
@@ -343,25 +368,12 @@
     }
 
     function changeMarkers(content, marker) {
-        document.querySelectorAll('.marker').forEach((el) => el.classList.remove('hover'));
-        document.querySelectorAll('.map-card').forEach((el) => el.classList.remove('hover'));
-        markers.forEach((el) => (el.active = false));
+        document.querySelectorAll('.marker').forEach(el => el.classList.remove('hover'));
+        document.querySelectorAll('.map-card').forEach(el => el.classList.remove('hover'));
+        markers.forEach(el => el.active = false);
         marker.active = true;
         content.classList.add('hover');
     }
 
     initMap();
-
-    document.querySelectorAll('.map-card').forEach((el) => {
-        el.addEventListener('mouseenter', () => {
-            document.querySelectorAll('.map-card').forEach((el) => el.classList.remove('hover'));
-            document.querySelectorAll('.marker').forEach((el) => el.classList.remove('hover'));
-
-            el.classList.add('hover');
-
-            document.querySelectorAll('.marker').forEach((marker) => {
-                marker.classList.contains(el.id) && marker.classList.add('hover');
-            });
-        });
-    });
 </script>

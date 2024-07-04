@@ -212,6 +212,7 @@
 
                 &-text {
                     max-width: 34.1rem;
+                    min-width: 34.1rem;
                     width: 100%;
                     display: flex;
                     flex-direction: column;
@@ -316,7 +317,7 @@
                         input {
                             font-size: 1.8rem;
                             color: $fontColor;
-                            width: 5.2rem;
+                            width: 100%;
                             text-align: center;
                             pointer-events: none;
 
@@ -508,6 +509,8 @@
                 gap: 0.4rem;
                 width: fit-content;
                 cursor: pointer;
+              
+                
 
                 @include small-tablet {
                     gap: 0.8rem;
@@ -1001,5 +1004,14 @@
                 }
             }
         }
+    }
+
+
+    &__cards-heading-remove {
+
+        @media (max-width: 48em) {
+            font-size: 3.6rem;
+        }
+      
     }
 }
