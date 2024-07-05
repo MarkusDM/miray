@@ -31,43 +31,44 @@ $(document).ready(function() {
   $('.calc-global').each(function() {
       const $card = $(this);
       const $input = $card.find('.input-sum');
-
+      
       function updateInputValue(count) {
           $input.val(count + ' штук');
       }
 
+      function parseInputValue(value) {
+          return parseInt(value.replace(/[^0-9]/g, ''), 10) || 1;
+      }
+
       $card.find('.input-sum-minus').click(function() {
-          let count = parseInt($input.val()) - 1;
+          let count = parseInputValue($input.val()) - 1;
           count = count < 1 ? 1 : count;
           updateInputValue(count);
       });
 
       $card.find('.input-sum-plus').click(function() {
-          let count = parseInt($input.val()) + 1;
+          let count = parseInputValue($input.val()) + 1;
           count = count > parseInt($input.data('max-count')) ? parseInt($input.data('max-count')) : count;
           updateInputValue(count);
       });
 
       $input.bind("change keyup input click", function() {
-          this.value = this.value.replace(/[^0-9]/g, '');
-          if (this.value === "") {
-              this.value = 1;
+          let value = parseInputValue($input.val());
+          let maxCount = parseInt($input.data('max-count'), 10);
+          if (value < 1) {
+              value = 1;
+          } else if (value > maxCount) {
+              value = maxCount;
           }
-          let count = parseInt(this.value);
-          if (count < 1) {
-              count = 1;
-          }
-          if (count > parseInt($input.data('max-count'))) {
-              count = parseInt($input.data('max-count'));
-          }
-          updateInputValue(count);
+          updateInputValue(value);
       });
 
       // Initialize input values
-      let count = parseInt($input.val());
+      let count = parseInputValue($input.val());
       updateInputValue(count);
   });
 });
+
 
 tippy('[data-tippy-content]', {
   arrow: roundArrow,

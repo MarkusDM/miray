@@ -319,13 +319,13 @@
                             color: $fontColor;
                             width: 100%;
                             text-align: center;
-                            pointer-events: none;
+                          
 
                             @include small-tablet {
                                 width: 35.2rem;
                                 font-weight: 400;
                                 font-size: 3.6rem;
-                                pointer-events: auto;
+                                
                             }
                         }
                     }
