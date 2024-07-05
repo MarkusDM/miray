@@ -3523,6 +3523,32 @@
     }
 
     initMap();
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // Находим все элементы с классом .map-card
+    const mapCards = document.querySelectorAll('.map-card');
+
+    // Добавляем обработчик клика на каждую .map-card
+    mapCards.forEach(function (card) {
+        card.addEventListener('click', function (event) {
+            // Проверяем ширину окна
+            if (window.innerWidth <= 768) {
+                // Находим элемент #main-map
+                const mainMap = document.getElementById('main-map');
+                
+                // Если элемент #main-map существует
+                if (mainMap) {
+                    // Прокручиваем страницу к элементу #main-map
+                    mainMap.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
 </script>
       </main>
       <div class="menu-bar">
