@@ -117,8 +117,8 @@ $(document).ready(function() {
   function handleHover() {
     if (window.innerWidth >= desktopMinWidth) {
       // Добавляем обработчик hover для десктопной версии
-      $('.has-hover-modal-card').hover(function() {
-        $('.card-modal').toggleClass('active');
+      $('.has-hover-modal-card').mouseenter(function() {
+        $('.card-modal').addClass('active');
       });
     } else {
       // Удаляем обработчик hover для мобильной версии
@@ -131,6 +131,11 @@ $(document).ready(function() {
 
   // Выполняем проверку при изменении размера окна
   $(window).resize(handleHover);
+});
+
+
+$('.card-modal__close').click(function() {
+  $('.card-modal').removeClass('active');
 });
 
 $(document).on('mouseup', function(e){
