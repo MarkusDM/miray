@@ -407,5 +407,36 @@ body::after {
 
     .modal__body {
         padding: 12rem;
+        @media (max-width: 48em) {
+            min-height: 39rem;
+
+        }
+    }
+
+    .checkout-complete-modal__inner::before {
+        @media (max-width: 48em) {
+            bottom: -14rem;
+            left: -11rem;
+            width: 32.2rem;
+            height: 43.3rem;
+            background-image: url(./assets/images/modals/image44.webp);
+            transform: rotate(20deg);
+
+        }
+       
+    }
+
+
+    .checkout-complete-modal__inner::after {
+        @media (max-width: 48em) {
+            bottom: -12rem;
+        right: -17rem;
+        width: 41.4rem;
+        height: 37.4rem;
+        background-image: url(./assets/images/modals/image45.webp);
+        transform: rotate(-49deg);
+
+        }
+        
     }
 }
