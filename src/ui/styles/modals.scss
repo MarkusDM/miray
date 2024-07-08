@@ -142,6 +142,9 @@ body::after {
 
 
 
+
+
+
 // --------------------------------------------------------------------------
 
 .checkout-complete-modal {
@@ -396,5 +399,13 @@ body::after {
         &::after {
             display: none;
         }
+    }
+}
+
+
+#checkoutCompleteGloabl {
+
+    .modal__body {
+        padding: 12rem;
     }
 }

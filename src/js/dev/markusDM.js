@@ -118,7 +118,7 @@ $(document).ready(function() {
     if (window.innerWidth >= desktopMinWidth) {
       // Добавляем обработчик hover для десктопной версии
       $('.has-hover-modal-card').mouseenter(function() {
-        $('.card-modal').addClass('active');
+        $('.card-modal').fadeIn();
       });
     } else {
       // Удаляем обработчик hover для мобильной версии
@@ -134,20 +134,20 @@ $(document).ready(function() {
 });
 
 
-$('.card-modal__close').click(function() {
-  $('.card-modal').removeClass('active');
-});
+// $('.card-modal__close').click(function() {
+//   $('.card-modal').removeClass('active');
+// });
 
-$(document).on('mouseup', function(e){
-  let s = $('.card-modal.active'); 
-  if(!s.is(e.target) && s.has(e.target).length === 0) {
+// $(document).on('mouseup', function(e){
+//   let s = $('.card-modal.active'); 
+//   if(!s.is(e.target) && s.has(e.target).length === 0) {
   
-    s.removeClass('active');
-  }
-});
+//     s.removeClass('active');
+//   }
+// });
 
 $('.card-modal__close').click(function() {
-  $('.card-modal').removeClass('active');
+  $('.card-modal').hide();
 });
 
 $('.pagination').each(function () {
