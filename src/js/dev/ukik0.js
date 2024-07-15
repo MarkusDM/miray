@@ -3,21 +3,21 @@ import { _slideToggle, bodyLock, bodyUnlock } from "../utils/utils";
 import { rangeSlider } from "../library/nouislider";
 
 $(document).ready(function() {
-  $(".recommendations__card-group-button.--secondary").hover(
-      function() {
-          const parent = $(this).closest(".recommendations__card-group");
+  $(document).on('mouseenter', '.recommendations__card-group-button.--secondary', function() {
+      const parent = $(this).closest(".recommendations__card-group");
 
-          $(this).addClass("--active");
-          parent.find(".recommendations__card-group-button.--primary").addClass("--hovered");
-      },
-      function() {
-          const parent = $(this).closest(".recommendations__card-group");
+      $(this).addClass("--active");
+      parent.find(".recommendations__card-group-button.--primary").addClass("--hovered");
+  });
 
-          $(this).removeClass("--active");
-          parent.find(".recommendations__card-group-button.--primary").removeClass("--hovered");
-      }
-  );
+  $(document).on('mouseleave', '.recommendations__card-group-button.--secondary', function() {
+      const parent = $(this).closest(".recommendations__card-group");
+
+      $(this).removeClass("--active");
+      parent.find(".recommendations__card-group-button.--primary").removeClass("--hovered");
+  });
 });
+
 document.addEventListener("DOMContentLoaded", () => {
   // $(".recommendations__card-group-button.--secondary").each((_, button) => {
   //   $(button).hover(
