@@ -185,25 +185,45 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function() {
-  const minValue = 1;
-
-  $('.card__calc').each(function() {
-      const $calculator = $(this);
-
-      $calculator.find('.card__calc-plus').click(function() {
-          let currentValue = parseInt($calculator.find('.card__calc-input').val());
-          $calculator.find('.card__calc-input').val(currentValue + 1);
-      });
-
-      $calculator.find('.card__calc-minus').click(function() {
-          let currentValue = parseInt($calculator.find('.card__calc-input').val());
-          if (currentValue > minValue) {
-              $calculator.find('.card__calc-input').val(currentValue - 1);
+document.addEventListener('click', function (event) {
+  if (event.target && event.target.closest('.recommendations__card-calc-minus.input-sum-minus')){
+      let button = event.target.closest('.recommendations__card-calc-minus.input-sum-minus');
+      let input = button.nextElementSibling;
+      if (input && input.name === 'count-items') {
+          if (input.value >= 1) {//Получить значение инпута, у тебя видел функция там есть                    
+              input.value--;//Отнимаем
+              if(input.value==0){
+                  let mainbutton = event.target.closest('.recommendations__card-calc.calc-global');
+                  mainbutton.previousElementSibling.style.display = "flex";
+                  mainbutton.style.display = "none";
+              }  //Если 0 то скрываем, у тебя лок стоит на мин велью, не могу полвиять
           }
-      });
-  });
+      }
+  }else if (event.target && event.target.closest('.recommendations__card-calc-plus.input-sum-plus')){
+      let button = event.target.closest('.recommendations__card-calc-plus.input-sum-plus');
+      let input = button.previousElementSibling;
+      if (input && input.name === 'count-items') {
+          if (input.value >= 1) {
+              let dataId = input.getAttribute('data-id');
+              let type = 'add';
+              addToBasket(dataId, type, '');
+              input.value++;
+          }
+      }
+  }else if (event.target && event.target.closest('.recommendations__card-calc-box')){
+      let button = event.target.closest('.recommendations__card-calc-box');
+      let input = button.previousElementSibling;
+      if (input && input.name === 'count-items') {
+          if (input.value >= 1) {
+              let dataId = input.getAttribute('data-id');
+              let type = 'add_corob';
+              addToBasket(dataId, type, 'corob');
+              input.value+=input.getAttribute('data-corob');
+          }
+      }
+  }
 });
+
 
 $('.card__swiper-slide-like').on('click', function() {
   $(this).toggleClass('active');
