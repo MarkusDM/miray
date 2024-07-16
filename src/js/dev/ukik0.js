@@ -18,61 +18,88 @@ $(document).ready(function() {
   });
 });
 
+
+$(document).ready(function() {
+  function isMobile() {
+      return window.innerWidth <= 768;
+  }
+
+  function scrollToTop() {
+      $('html, body').animate({ scrollTop: 0 }, 'slow');
+  }
+
+  $('.catalog__filters-block, .catalog__filters-block-nested').on('click', function() {
+      if (isMobile()) {
+          scrollToTop();
+      }
+  });
+});
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
-  // $(".recommendations__card-group-button.--secondary").each((_, button) => {
-  //   $(button).hover(
-  //     function () {
-  //       const parent = $(this).closest(".recommendations__card-group");
+  $(".recommendations__card-group-button.--secondary").each((_, button) => {
+    $(button).hover(
+      function () {
+        const parent = $(this).closest(".recommendations__card-group");
 
-  //       $(this).addClass("--active");
-  //       $(parent)
-  //         .find(".recommendations__card-group-button.--primary")
-  //         .addClass("--hovered");
-  //     },
-  //     function () {
-  //       const parent = $(this).closest(".recommendations__card-group");
+        $(this).addClass("--active");
+        $(parent)
+          .find(".recommendations__card-group-button.--primary")
+          .addClass("--hovered");
+      },
+      function () {
+        const parent = $(this).closest(".recommendations__card-group");
 
-  //       $(this).removeClass("--active");
-  //       $(parent)
-  //         .find(".recommendations__card-group-button.--primary")
-  //         .removeClass("--hovered");
-  //     },
-  //   );
-  // });
+        $(this).removeClass("--active");
+        $(parent)
+          .find(".recommendations__card-group-button.--primary")
+          .removeClass("--hovered");
+      },
+    );
+  });
 
   //catalog filters
   const filters = document.querySelector(".catalog__filters");
-  function toggleFilterActiveMenuClass(listClass, headingClass) {
-    Array.from(document.querySelectorAll(listClass), (block) => {
-      const heading = block.querySelector(headingClass);
 
-      if (heading) {
-        heading.addEventListener("click", () => {
-          block.classList.toggle("--active");
-
-          if (
-            listClass === ".catalog__filters-block" &&
-            window.innerWidth <= 768
-          ) {
-            const height = calculateTotalHeightOfChildren(filters);
-
-            block.querySelector(
-              ".catalog__filters-fields-wrapper",
-            ).style.height = `${Math.ceil(height / 10)}rem`;
-          }
-        });
-      }
-    });
+  function calculateTotalHeightOfChildren(element) {
+      let totalHeight = 0;
+      Array.from(element.children).forEach(child => {
+          totalHeight += child.offsetHeight;
+      });
+      return totalHeight;
   }
-
-  toggleFilterActiveMenuClass(
-    ".catalog__filters-block",
-    ".catalog__filters-block-heading",
-  );
-  toggleFilterActiveMenuClass(
-    ".catalog__filters-block-nested",
-    ".catalog__filters-block-nested-heading",
-  );
+  
+  function toggleFilterActiveMenuClass(listClass, headingClass) {
+      Array.from(document.querySelectorAll(listClass)).forEach(block => {
+          const heading = block.querySelector(headingClass);
+  
+          if (heading) {
+              heading.addEventListener("click", () => {
+                  console.log('Heading clicked:', headingClass); // Debug: лог для проверки клика
+                  block.classList.toggle("--active");
+  
+                  if (window.innerWidth <= 768) { // Check for mobile version
+                      console.log('Mobile version detected'); // Debug: лог для проверки мобильной версии
+                    
+                      if (listClass === ".catalog__filters-block") {
+                          const height = calculateTotalHeightOfChildren(filters);
+                          const fieldsWrapper = block.querySelector(".catalog__filters-fields-wrapper");
+  
+                          if (fieldsWrapper) {
+                              fieldsWrapper.style.height = `${Math.ceil(height / 10)}rem`;
+                          }
+                      }
+                  }
+              });
+          }
+      });
+  }
+  
+  toggleFilterActiveMenuClass(".catalog__filters-block", ".catalog__filters-block-heading");
+  toggleFilterActiveMenuClass(".catalog__filters-block-nested", ".catalog__filters-block-nested-heading");
+  
 
   function calculateTotalHeightOfChildren(parentElement) {
     if (!(parentElement instanceof Element)) {
