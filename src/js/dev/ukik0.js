@@ -20,18 +20,11 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-  function isMobile() {
-      return window.innerWidth <= 768;
-  }
 
-  function scrollToTop() {
-      $('html, body').animate({ scrollTop: 0 }, 'slow');
-  }
 
-  $('.catalog__filters-block, .catalog__filters-block-nested').on('click', function() {
-      if (isMobile()) {
-          scrollToTop();
-      }
+  $('.catalog__filters-block').on('click', function() {
+        $('html, body').animate({scrollTop: 0}, 600);
+        return false;
   });
 });
 
@@ -233,62 +226,41 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //basket checkboxes
-  if (document.querySelector(".basket")) {
-    Array.from(
-      document.querySelectorAll(".basket__card-addiction-heading"),
-      (button) => {
-        button.addEventListener("click", () => {
-          const parent = button.parentElement;
-
-          parent.classList.toggle("--active");
+  if ($(".basket").length) {
+    $(".basket__card-addiction-heading").each(function () {
+        $(this).on("click", function () {
+            $(this).parent().toggleClass("--active");
         });
-      },
-    );
-
-    Array.from(
-      document.querySelectorAll(".basket__detailed-order-content-item-heading"),
-      (button) => {
-        button.addEventListener("click", () => {
-          const parent = button.parentElement;
-
-          parent.classList.toggle("--active");
-        });
-      },
-    );
-
-    const selectAllButton = document.querySelector(
-      ".basket__cards-heading-field input",
-    );
-
-    selectAllButton.addEventListener("change", ({ target }) => {
-      Array.from(
-        document.querySelectorAll('.basket__cards input[type="checkbox"]'),
-        (input) => {
-          input.checked = !!target.checked;
-        },
-      );
     });
 
-    Array.from(
-      document.querySelectorAll('.basket__cards input[type="checkbox"]'),
-      (input) => {
-        input.addEventListener("change", ({ target }) => {
-          checkBasketCards();
+    $(".basket__detailed-order-content-item-heading").each(function () {
+        $(this).on("click", function () {
+            $(this).parent().toggleClass("--active");
         });
-      },
-    );
+    });
 
-    const checkBasketCards = () => {
-      const cardsLength = Array.from(
-        document.querySelectorAll(".basket__card-row"),
-      ).length;
-      const checkedCardsLength = Array.from(
-        document.querySelectorAll(".basket__card-field input:checked"),
-      ).length;
+    const selectAllButton = $(".basket__cards-heading-field input");
 
-      selectAllButton.checked = cardsLength === checkedCardsLength;
-    };
-  }
+    selectAllButton.on("change", function () {
+        const isChecked = $(this).prop("checked");
+        $('.basket__cards input[type="checkbox"]').each(function () {
+            $(this).prop("checked", isChecked);
+        });
+    });
+
+    $('.basket__cards input[type="checkbox"]').each(function () {
+        $(this).on("change", function () {
+            checkBasketCards();
+        });
+    });
+
+    function checkBasketCards() {
+        const cardsLength = $(".basket__card-row").length;
+        const checkedCardsLength = $(".basket__card-field input:checked").length;
+
+        selectAllButton.prop("checked", cardsLength === checkedCardsLength);
+    }
+}
 
   //contacts y-map
   if (document.querySelector(".contacts")) {

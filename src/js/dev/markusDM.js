@@ -70,16 +70,34 @@ $(document).ready(function() {
 });
 
 
-tippy('[data-tippy-content]', {
-  arrow: roundArrow,
-  
+// Инициализация tippy для элементов на странице
+function initializeTippy() {
+  tippy('[data-tippy-content]', {
+    arrow: roundArrow,
+  });
+
+  tippy('[data-tippy-content-bottom]', {
+    arrow: roundArrow,
+    placement: 'bottom',
+  });
+}
+
+// Запуск инициализации
+initializeTippy();
+
+// Используйте MutationObserver для отслеживания изменений в DOM
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach(() => {
+    initializeTippy(); // Переинициализируем tippy при каждом изменении
+  });
 });
 
-tippy('[data-tippy-content-bottom]', {
-  arrow: roundArrow,
-  placement: 'bottom',
-  
+// Настройка наблюдателя
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
 });
+
 
 
 $('.modal-profile-open').click(function() {

@@ -137,72 +137,68 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-  swiperSettings(".recommendations", {
-    on: {
-      afterInit: (swiper) => {
-        swiper.slides.forEach((slide) => {
-          const imagesContainer = slide.querySelector(
-            ".recommendations__card-image",
-          );
-          const images = imagesContainer.querySelectorAll("img");
-          const row = slide.querySelector(".recommendations__card-row");
-
-          const bullets = document.createElement("div");
-          bullets.classList.add("slide-hover-pag-bullets");
-          slide.querySelector(".recommendations__card-image").append(bullets);
-
-          images[0].classList.add("_is-active");
-
-          if (images.length > 1) {
-            slide.classList.add("_hover-init");
-
-            for (let i = 1; i <= images.length; i++) {
-              const div = document.createElement("div");
-              div.classList.add("slide-hover-pag");
-              row.append(div);
-
-              const bullet = document.createElement("div");
-              bullet.classList.add("slide-hover-pag-bullet");
-              bullets.append(bullet);
-            }
-
-            imagesContainer.addEventListener("mouseover", function (e) {
-              if (e.target.closest(".slide-hover-pag")) {
-                const target = e.target.closest(".slide-hover-pag");
-                const idx = Array.from(
-                  slide.querySelectorAll(".slide-hover-pag"),
-                ).indexOf(target);
-
+    swiperSettings(".recommendations", {
+      on: {
+        afterInit: (swiper) => {
+          swiper.slides.forEach((slide) => {
+            const imagesContainer = slide.querySelector(
+              ".recommendations__card-image"
+            );
+            const images = imagesContainer.querySelectorAll("img");
+            const row = slide.querySelector(".recommendations__card-row");
+    
+            const bullets = document.createElement("div");
+            bullets.classList.add("slide-hover-pag-bullets");
+            imagesContainer.append(bullets);
+    
+            images[0].classList.add("_is-active");
+    
+            if (images.length > 1) {
+              slide.classList.add("_hover-init");
+    
+              images.forEach((image, index) => {
+                const bullet = document.createElement("div");
+                bullet.classList.add("slide-hover-pag-bullet");
+                if (index === 0) bullet.classList.add("_is-active");
+                bullets.append(bullet);
+    
+                const pag = document.createElement("div");
+                pag.classList.add("slide-hover-pag");
+                row.append(pag);
+    
+                pag.addEventListener("mouseover", () => {
+                  removeClasses(images, "_is-active");
+                  image.classList.add("_is-active");
+    
+                  removeClasses(
+                    slide.querySelectorAll(".slide-hover-pag-bullet"),
+                    "_is-active"
+                  );
+                  bullet.classList.add("_is-active");
+                });
+              });
+    
+              imagesContainer.addEventListener("mouseleave", () => {
                 removeClasses(images, "_is-active");
-                images[idx].classList.add("_is-active");
-
+                images[0].classList.add("_is-active");
+    
                 removeClasses(
                   slide.querySelectorAll(".slide-hover-pag-bullet"),
-                  "_is-active",
+                  "_is-active"
                 );
-                slide
-                  .querySelectorAll(".slide-hover-pag-bullet")
-                  [idx].classList.add("_is-active");
-              }
-            });
-
-            imagesContainer.addEventListener("mouseleave", function () {
-              removeClasses(images, "_is-active");
-              images[0].classList.add("_is-active");
-
-              removeClasses(
-                slide.querySelectorAll(".slide-hover-pag-bullet"),
-                "_is-active",
-              );
-              slide
-                .querySelectorAll(".slide-hover-pag-bullet")[0]
-                .classList.add("_is-active");
-            });
-          }
-        });
+                bullets.firstChild.classList.add("_is-active");
+              });
+            }
+          });
+        },
       },
-    },
-  });
+    });
+    
+    function removeClasses(elements, className) {
+      elements.forEach((element) => {
+        element.classList.remove(className);
+      });
+    }
   swiperSettings(".watched-b", {});
   swiperSettings(".variants", {
     breakpoints: {
